@@ -1,9 +1,9 @@
-import { ADD_POSTS_ROUTE } from "../../utils/consts";
+import { ADD_BOOKS_ROUTE, ADD_NEWS_ROUTE, ADD_POSTS_ROUTE, ADD_TOOLS_ROUTE } from "../../utils/consts";
 import { MAIN_ROUTE } from "../../utils/consts";
+import AddPostsLinks from "../pages/addPosts/AddPostsLinks";
 import AddPostsPage from "../pages/addPosts/AddPostsPage";
 import MainPage from "../pages/addPosts/main/MainPage";
 
-// todo 4
 export default [
 	// VISITOR ROUTES
 	{
@@ -25,6 +25,27 @@ export default [
 	{
 		path: ADD_POSTS_ROUTE,
 		element: <AddPostsPage />,
+		isPublic: true, // TODO !!! false
+		isForUser: true, // TODO !!! false
+		isForAdmin: true,
+	},
+	{
+		path: ADD_TOOLS_ROUTE,
+		element: <AddPostsLinks />,
+		isPublic: true, // TODO !!! false
+		isForUser: true, // TODO !!! false
+		isForAdmin: true,
+	},
+	{
+		path: ADD_BOOKS_ROUTE,
+		element: <AddPostsLinks />,
+		isPublic: true, // TODO !!! false
+		isForUser: true, // TODO !!! false
+		isForAdmin: true,
+	},
+	{
+		path: ADD_NEWS_ROUTE,
+		element: <AddPostsLinks />,
 		isPublic: true, // TODO !!! false
 		isForUser: true, // TODO !!! false
 		isForAdmin: true,
