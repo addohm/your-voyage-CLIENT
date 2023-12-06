@@ -1,7 +1,6 @@
 import ToolCardTitle from "./ToolCardTitle"
 
 export default function ToolCardsHiddenTitles({ tools, toolCardsHidden, toolCardsHiddenSet, toolNameClicked, toolNameClickedSet }) {
-    // todo 5
     return (
         toolCardsHidden &&
         <div className='f fwn g30 jcsb w1655 m0a'>

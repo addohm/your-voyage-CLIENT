@@ -1,6 +1,8 @@
 import React from 'react'
 import "./index.scss"
 import LoginGoogle from "../LoginGoogle/LoginGoogle"
+import { Link } from 'react-router-dom';
+import { MAIN_ROUTE } from '../../utils/consts';
 
 export default function Header() {
 
@@ -14,7 +16,9 @@ export default function Header() {
 
     return (
         <div className='header fcc jcsb p15'>
-            <div className='fz20 brand hoverScale hoverFont500'>XY Consulting</div>
+            <Link to={MAIN_ROUTE}>
+                <div className='fz20 brand hoverScale hoverFont500'>XY Consulting</div>
+            </Link>
             <div className="fcc g15">
                 <div className='header__btn' onClick={() => goTo("about")}>About</div>
                 <div className='header__btn' onClick={() => goTo("coaching")}>Coaching</div>

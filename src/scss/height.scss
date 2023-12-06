@@ -1,6 +1,9 @@
 .h100p{
 	height: 100%;
 }
+.mih100vh{
+	min-height: 100vh;
+}
 // gen h-vh: height: 100vh-200-300...;
 @for $i from 0 through 10 {
 	.h#{$i}00vh {
