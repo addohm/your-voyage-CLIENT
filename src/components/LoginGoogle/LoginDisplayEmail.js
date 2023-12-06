@@ -17,7 +17,7 @@ export default function LoginDisplayEmail({ user }) {
                 onMouseEnter={() => isUserEmailHoveredSet(true)}
                 onMouseLeave={() => isUserEmailHoveredSet(false)}
             >
-                <div className="oh wsn toe w110">{user?.email.replace(/@.*/, '')}</div>
+                <div className="oh wsn toe w110">{user?.email?.replace(/@.*/, '')}</div>
                 <Arrow className={`poa r8 t-2 ${isUserEmailHovered ? "tr180" : ""}`} />
                 <LoginDisplayEmailHoveredWrap user={user} isUserEmailHovered={isUserEmailHovered}>
                     <AdminAddContent />

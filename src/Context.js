@@ -6,12 +6,15 @@ const Context = React.createContext()
 function ContextProvider({ children }) {
 
     const { user, userSet } = useAutoAuth()
+    const [pastedOrDroppedImg, pastedOrDroppedImgSet] = useState([])
 
     // ! RETURN
     return (
         <Context.Provider value={{
             // user
-            user, userSet
+            user, userSet,
+            // pastedOrDroppedImg
+            pastedOrDroppedImg, pastedOrDroppedImgSet
         }}>
 
             {children}

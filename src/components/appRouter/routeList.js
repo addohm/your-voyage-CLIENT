@@ -1,14 +1,22 @@
-import { ADD_BOOKS_ROUTE, ADD_NEWS_ROUTE, ADD_POSTS_ROUTE, ADD_TOOLS_ROUTE } from "../../utils/consts";
+import { ADD_BOOKS_ROUTE, ADD_NEWS_ROUTE, ADD_POSTS_ROUTE, ADD_TOOLS_ROUTE, TOOL_ROUTE } from "../../utils/consts";
 import { MAIN_ROUTE } from "../../utils/consts";
 import AddPostsLinks from "../pages/addPosts/AddPostsLinks";
 import AddPostsPage from "../pages/addPosts/AddPostsPage";
-import MainPage from "../pages/addPosts/main/MainPage";
+import MainPage from "../pages/main/MainPage";
+import PostFull from "../post/PostFull";
 
 export default [
 	// VISITOR ROUTES
 	{
 		path: MAIN_ROUTE,
 		element: <MainPage />,
+		isPublic: true,
+		isForUser: true,
+		isForAdmin: true,
+	},
+	{
+		path: TOOL_ROUTE,
+		element: <PostFull />,
 		isPublic: true,
 		isForUser: true,
 		isForAdmin: true,
