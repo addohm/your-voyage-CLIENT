@@ -1,0 +1,66 @@
+// gen pt
+@for $i from 1 through 300 {
+	.pt#{$i} {
+        padding-top: #{$i}px;
+    }
+}
+// gen pr
+@for $i from 1 through 100 {
+	.pr#{$i} {
+        padding-right: #{$i}px;
+    }
+}
+// gen pb
+@for $i from 1 through 100 {
+	.pb#{$i} {
+        padding-bottom: #{$i}px;
+    }
+}
+// gen pl
+@for $i from 1 through 100 {
+	.pl#{$i} {
+        padding-left: #{$i}px;
+    }
+}
+// gen px
+@for $i from 1 through 100 {
+	.px#{$i} {
+        padding: 0 #{$i}px;
+    }
+}
+// gen py
+@for $i from 1 through 100 {
+	.py#{$i} {
+        padding: #{$i}px 0;
+    }
+}
+// gen padding
+@for $i from 1 through 100 {
+	.p#{$i} {
+        padding: #{$i}px;
+    }
+}
+// ! other
+// other
+.p{
+    padding: 15px;
+}
+.pt{
+    padding-top: 15px;
+}
+.pr{
+    padding-right: 15px;
+}
+.pb{
+    padding-bottom: 15px;
+}
+.pl{
+    padding-left: 15px;
+}
+// x/y
+.px{
+    padding: 0 15px;
+}
+.py{
+    padding: 15px 0;
+}

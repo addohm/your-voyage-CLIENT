@@ -1,0 +1,86 @@
+@import "../../scss/vars.scss";
+
+@mixin transition {
+    transition: all 0.3s ease;
+}
+
+.transition {
+    @include transition;
+}
+
+.expTitleActive{
+    div:nth-child(1){
+        @include transition;
+        animation: expDiv1Active 1s forwards;
+    }
+    div:nth-child(2){
+        @include transition;
+        animation: expDiv2Active 1s forwards;
+    }
+}
+
+@keyframes expDiv1Active {
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(50px);
+    }
+}
+@keyframes expDiv2Active {
+    from{
+        transform: translate(0px, 0px);
+    }
+    to{
+        transform: translate(-68px, 20px);
+    }
+}
+// !
+.expTitleNotActive{
+    div:nth-child(1){
+        @include transition;
+        animation: expDiv1NotActive 1s forwards;
+    }
+    div:nth-child(2){
+        @include transition;
+        animation: expDiv2NotActive 1s forwards;
+    }
+}
+
+@keyframes expDiv1NotActive {
+    from{
+        transform: translateX(50px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+@keyframes expDiv2NotActive {
+    from{
+        transform: translate(-68px, 20px);
+    }
+    to{
+        transform: translate(0px, 0px);
+    }
+}
+
+// ! rotatingBorder
+.rotatingBorder{
+    border: 2px $black solid;
+    border-color: $black transparent transparent transparent;
+    animation: rotatingBorder 2.5s infinite ease-in-out;
+}
+
+@keyframes rotatingBorder {
+    0%{
+        opacity: 0;
+        transform: rotate(75deg);
+    }
+    50%{
+        opacity: 0.15;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(360deg);
+    }
+}

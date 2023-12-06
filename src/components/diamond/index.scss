@@ -1,0 +1,14 @@
+.diamond{
+    animation: diamond 1.9s infinite alternate;
+}
+
+@keyframes diamond {
+    0%,100% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+    50% {
+        filter: blur(10px);
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,49 @@
+@import "./vars.scss";
+@import "./border.scss";
+@import "./color.scss";
+@import "./flex.scss";
+@import "./font.scss";
+@import "./margin.scss";
+@import "./muiNormalize.scss";
+@import "./other.scss";
+@import "./padding.scss";
+@import "./position.scss";
+@import "./scrollbar.scss";
+@import "./width.scss";
+@import "./height.scss";
+@import "./animation.scss";
+@import "./hover.scss";
+@import "./theme.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif;
+    user-select: none;
+}
+
+body {
+    background: $appBg;
+    overflow-x: hidden; // !
+}
+
+i{
+    font-family: inherit;
+}
+
+// !
+div{
+    z-index: 1;
+}
+
+input{
+    border: none;
+    border-bottom: 1px solid $brand;
+    text-indent: 4px;
+    &:focus{
+        outline: 2px solid $brand;
+        border-bottom: 0px solid $brand;
+        border-radius: 4px;
+    }
+}

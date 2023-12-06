@@ -1,0 +1,51 @@
+// ! BACKGROUND & COLOR
+.brand{
+	color: $brand;
+}
+.danger{
+	color: $danger;
+}
+.dangerBg{
+	background: lighten($danger, 25%);
+}
+.dangerBg2{
+	background: lighten($danger, 15%);
+}
+.dangerBorder{
+	border: 2px solid $danger;
+}
+.blackBorder{
+	border: 2px solid $black;
+}
+.white{
+	color: $white;
+}
+.black{
+	color: $black;
+}
+.gray{
+	color: $gray;
+}
+.green{
+	color: #46B7A7;
+	&_d10{
+		color: darken(#46B7A7, 10%);
+	}
+}
+.bg{
+	&_gray{
+		background: #dadada;
+	}
+	&_green{
+		background: #85b9b2;
+	}
+	&_white{
+		background: $white;
+	}
+	&_black{
+		background: $black;
+	}
+	&_brand{
+		background: $brand;
+	}
+}

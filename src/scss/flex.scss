@@ -1,0 +1,61 @@
+.f{
+	display: flex;
+	flex-wrap: wrap;
+}
+.if{
+	display: inline-flex;
+	flex-wrap: wrap;
+}
+.fwn{
+	flex-wrap: nowrap;
+}
+.fc{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.fcc{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.aic{
+	align-items: center;
+}
+.aifs{
+	align-items: flex-start;
+}
+.aife{
+	align-items: flex-end;
+}
+.jcc{
+	justify-content: center;
+}
+.jcfs{
+	justify-content: flex-start;
+}
+.jcfe{
+	justify-content: flex-end;
+}
+.jcsb{
+	justify-content: space-between;
+}
+.jcse{
+	justify-content: space-evenly;
+}
+.jcsa{
+	justify-content: space-around;
+}
+.asfs{
+	align-self: flex-start;
+}
+.asfe{
+	align-self: flex-end;
+}
+// gen gap
+@for $i from 1 through 100 {
+	.g#{$i} {
+	  gap: #{$i}px;
+	}
+ }

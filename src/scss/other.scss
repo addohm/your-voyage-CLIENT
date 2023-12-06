@@ -1,0 +1,68 @@
+// ! hiddenInput
+// input is centered to (.por: position: relative)
+// parent MUST have .por className
+// to show browser native "required" hint, if input value is ""/false/...
+.hiddenInput{
+	position: absolute;
+	left:50%;
+	top: 100%;
+	transform: translate(-50%,-100%);
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+}
+// ? hiddenInput
+// ! OTHER
+.op0{
+	opacity: 0;
+}
+.op01{
+	opacity: 0.1;
+}
+.oh{
+	overflow: hidden;
+}
+.toe{
+	text-overflow: ellipsis;
+}
+.wsn{
+	white-space: nowrap;
+}
+.br{
+	border: 1px solid red !important;
+}
+.bb{
+	border: 1px solid blue !important;
+}
+.bd{
+	border: 2px dashed $gray;
+}
+.oa{
+	overflow: auto;
+}
+.pin{
+	pointer-events: none;
+}
+.lsn{
+	list-style: none;
+}
+.tr180{
+	transform: rotate(180deg);
+}
+.tr-90{
+	transform: rotate(-90deg);
+}
+.ofCover{
+	object-fit: cover;
+}
+.ofContain{
+	object-fit: contain;
+}
+.changeOrder21{
+	div:nth-child(2){
+		order: 1;
+	}
+	div:nth-child(1){
+		order: 2;
+	}
+}

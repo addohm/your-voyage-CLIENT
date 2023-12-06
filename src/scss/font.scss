@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskerville:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+
+
+.font2{
+	font-family: Baskerville;
+}
+.font3{
+	font-family: Londrina Solid;
+}
+.font4{
+	font-family: Londrina Outline;
+}
+
+// gen fw
+@for $i from 1 through 9 {
+	.fw#{$i}00 {
+	  font-weight: #{$i}00;
+	}
+ }
+// gen fz
+@for $i from 1 through 100 {
+	.fz#{$i} {
+	  font-size: #{$i}px;
+	}
+ }
+ // gen letter spacing
+@for $i from 1 through 10 {
+	.ls#{$i} {
+	  letter-spacing: #{$i}px;
+	}
+ }
+  // gen line height
+@for $i from 1 through 100 {
+	.lh#{$i} {
+	  line-height: #{$i}px;
+	}
+ }
+ // ! title
+ // TODO clamp(min,def,max) ?
+.title{
+	font-size: 30px;
+}
+.title2{
+	font-size: 20px;
+}
+.title3{
+	font-size: 16px;
+}
+.title,.title2,.title3{
+    font-weight: 500;
+}
+// ! other
+.tac{
+	text-align: center;
+}
+.tal{
+	text-align: left;
+}
+.tar{
+	text-align: right;
+}
+.fsi{
+	font-style: italic;
+}
+.tdu{
+	text-decoration: underline;
+}
+.tdn{
+	text-decoration: none;
+}
+.ttu{
+	text-transform: uppercase;
+}
+.ts{
+	-webkit-text-stroke: 1px $black;
+}

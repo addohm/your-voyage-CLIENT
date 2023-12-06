@@ -1,0 +1,85 @@
+// ! POSITION & DISPLAY
+.por{
+	position: relative !important;
+}
+.poa{
+	position: absolute !important;
+}
+.pof{
+	position: fixed !important;
+}
+.db{
+	display: block;
+}
+.dib{
+	display: inline-block;
+}
+.di{
+	display: inline;
+}
+.dn{
+	display: none !important;
+}
+// center absolute: .por on parent, .poa on child
+.ca{
+	transform: translate(-50%,-50%);
+	left: 50%;
+	top: 50%;
+}
+// gen top
+@for $i from 0 through 500 {
+	.t#{$i} {
+		top: #{$i}px;
+	}
+ }
+ // gen - top
+@for $i from 0 through 500 {
+	.t-#{$i} {
+		top: -#{$i}px;
+	}
+ }
+// gen right
+@for $i from 0 through 500 {
+	.r#{$i} {
+	  right: #{$i}px;
+	}
+ }
+// gen - right
+@for $i from 0 through 100 {
+	.r-#{$i} {
+	  right: -#{$i}px;
+	}
+ }
+// gen bottom
+@for $i from 0 through 100 {
+	.b#{$i} {
+		bottom: #{$i}px;
+	}
+ }
+ // gen - bottom
+@for $i from 0 through 100 {
+	.b-#{$i} {
+		bottom: -#{$i}px;
+	}
+ }
+// gen left
+@for $i from 0 through 500 {
+	.l#{$i} {
+	  left: #{$i}px;
+	}
+ }
+// gen - left
+@for $i from 0 through 500 {
+	.l-#{$i} {
+	  left: -#{$i}px;
+	}
+ }
+// gen z-index
+@for $i from 0 through 10 {
+	.zi#{$i} {
+	  z-index: #{$i};
+	}
+ }
+ .zi-1 {
+	z-index: -1;
+  }

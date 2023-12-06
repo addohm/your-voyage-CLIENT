@@ -1,0 +1,57 @@
+// ! delAnim
+.delAnim{
+	animation: delAnim 0.9s forwards;
+}
+@keyframes delAnim {
+	to{
+		opacity: 0;
+		scale: 0;
+	}
+}
+// ! cardAnim
+.cardAnim{
+	opacity: 0;
+	scale: 0.9;
+	animation: cardAnim 0.9s forwards;
+}
+@keyframes cardAnim {
+	to{
+		opacity: 1;
+		scale: 1;
+	}
+}
+// ! opAnim
+.opAnim{
+	opacity: 0;
+	animation: opAnim 0.9s forwards;
+}
+@keyframes opAnim {
+	to{
+		opacity: 1;
+	}
+}
+// ! blurAnim
+.blurAnim{
+	filter: blur(5px);
+	animation: blurAnim 0.5s forwards;
+}
+@keyframes blurAnim {
+	to{
+		filter: blur(0px);
+	}
+}
+// ! fadeAway
+.fadeAway{
+	animation: fadeAway 0.5s forwards;
+}
+@keyframes fadeAway {
+	0%{
+		opacity: 1;
+		// transform: scale(1);
+	}
+	100%{
+		opacity: 0;
+		// transform: scale(0);
+		display: none;
+	}
+}

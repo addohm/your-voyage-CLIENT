@@ -1,0 +1,43 @@
+// ! BORDERS
+.brL{
+	border-radius: $borderRadiusLarge;
+	img{
+	 border-radius: $borderRadiusLarge;
+	}
+}
+.brM{
+	border-radius: $borderRadiusMedium;
+	img{
+	 border-radius: $borderRadiusMedium;		
+	}
+}
+.brS{
+	border-radius: $borderRadiusSmall;
+	img{
+	 border-radius: $borderRadiusSmall;		
+	}
+}
+.br50{
+	border-radius: 50%;
+}
+// gen border-radius
+@for $i from 0 through 30 {
+	.br#{$i} {
+		border-radius: #{$i}px;
+	}
+ }
+// gen border color
+@for $i from 0 through 10 {
+	.bs#{$i}_g {
+		border: #{$i}px solid gray;
+	}
+	.bs#{$i}_lg {
+		border: #{$i}px solid lightgray;
+	}
+	.bs#{$i}_b {
+		border: #{$i}px solid black;
+	}
+	.bs#{$i}_brand {
+		border: #{$i}px solid $brand;
+	}
+ }

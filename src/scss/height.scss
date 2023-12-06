@@ -1,0 +1,27 @@
+.h100p{
+	height: 100%;
+}
+// gen h-vh: height: 100vh-200-300...;
+@for $i from 0 through 10 {
+	.h#{$i}00vh {
+        height: #{$i}00vh;
+	}
+ }
+ // gen h-vh: height: 10vh-20-30...;
+@for $i from 0 through 9 {
+	.h#{$i}0vh {
+        height: #{$i}0vh;
+	}
+ }
+// gen height
+@for $i from 0 through 500 {
+	.h#{$i} {
+        height: #{$i}px;
+	}
+ }
+  // gen min-height
+@for $i from 0 through 900 {
+	.mih#{$i} {
+		min-height: #{$i}px;
+	}
+ }

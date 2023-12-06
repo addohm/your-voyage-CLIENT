@@ -1,0 +1,27 @@
+.megaphoneWrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    rotate: -25deg;
+}
+
+.megaphone{
+    width: 200px;
+}
+
+@keyframes moveUpDown {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: 1;
+      filter: blur(0px);
+      font-size: 2rem;
+    }
+    50% {
+      transform: translateY(-20px); /* Adjust the vertical movement as needed */
+      opacity: 0.5;
+      filter: blur(1px);
+      font-size: 1.5rem;
+      color: #ee8235;
+    }
+  }

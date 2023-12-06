@@ -1,0 +1,95 @@
+@import "vars.scss";
+
+@mixin transition {
+    transition: all 0.3s ease;
+}
+
+.hoverScale{
+    @include transition;
+    &:hover{
+        transform: scale(1.1);
+    }
+    &:active{
+        transition: all 0.9s ease;
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+}
+.hoverOpacity{
+    @include transition;
+    &:hover{
+        opacity: 0.2;
+    }
+}
+.hoverBrandColor{
+    @include transition;
+    &:hover{
+        color: $brand;
+    }
+}
+.hoverFont500{
+    @include transition;
+    &:hover{
+        font-weight: 500;
+    }
+}
+.hoverFontTop{
+    @include transition;
+    &:hover{
+        position: relative;
+        top: -2px;
+    }
+}
+.hoverFont3{
+    &:hover{
+        font-family: Londrina Outline;
+    }
+}
+.hoverFont4{
+    &:hover{
+        font-family: Londrina Solid;
+    }
+}
+.hoverMainImg{
+    @include transition;
+    &:hover{
+        border: 5px solid lighten($brand, 10%);
+        border-bottom-left-radius: 50%;
+        border-top-right-radius: 50%;
+        background: lighten($brand, 10%);
+    }
+}
+.hoverMainImg2{
+    @include transition;
+    &:hover{
+        border: 5px solid lighten($brand, 10%);
+        border-top-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        background: lighten($brand, 10%);
+    }
+}
+.hoverImgRotateY{
+    &:hover{
+        img{
+            @include transition;
+            transform: rotateY(180deg);
+        }
+    }
+}
+.scaleImgWidth{
+    animation: scaleImgWidth 1s forwards;
+}
+@keyframes scaleImgWidth {
+    from{
+        opacity: 0;
+        width: 0%;
+    }
+    to{
+        opacity: 1;
+        width: 100px;
+    }
+}
+
+.transition15 {
+    transition: all 1.5s ease;
+}

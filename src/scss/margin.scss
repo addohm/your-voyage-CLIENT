@@ -1,0 +1,97 @@
+// gen mt
+@for $i from 1 through 200 {
+	.mt#{$i} {
+        margin-top: #{$i}px;
+    }
+}
+// gen - mt
+@for $i from 1 through 200 {
+	.mt-#{$i} {
+        margin-top: -#{$i}px;
+    }
+}
+// gen mr
+@for $i from 1 through 100 {
+	.mr#{$i} {
+        margin-right: #{$i}px;
+    }
+}
+// gen mb
+@for $i from 1 through 100 {
+	.mb#{$i} {
+        margin-bottom: #{$i}px;
+    }
+}
+// gen - mb
+@for $i from 1 through 200 {
+	.mb-#{$i} {
+        margin-bottom: -#{$i}px;
+    }
+}
+// gen ml
+@for $i from 1 through 100 {
+	.ml#{$i} {
+        margin-left: #{$i}px;
+    }
+}
+// gen mx
+@for $i from 1 through 100 {
+	.mx#{$i} {
+        margin: 0 #{$i}px;
+    }
+}
+// gen my
+@for $i from 1 through 100 {
+	.my#{$i} {
+        margin: #{$i}px 0;
+    }
+}
+// gen m
+@for $i from 1 through 100 {
+	.m#{$i} {
+        margin: #{$i}px;
+    }
+}
+// ! other
+// auto
+.ma{
+	margin: auto;
+}
+.m0a{
+    margin: 0 auto;
+}
+.mra{
+	margin-right: auto;
+}
+.mla{
+	margin-left: auto;
+}
+.mta{
+    margin-top: auto;
+}
+.mba{
+    margin-bottom: auto;
+}
+// other
+.m{
+    margin: 15px;
+}
+.mt{
+    margin-top: 15px;
+}
+.mr{
+    margin-right: 15px;
+}
+.mb{
+    margin-bottom: 15px;
+}
+.ml{
+    margin-left: 15px;
+}
+// x/y
+.mx{
+    margin: 0 15px;
+}
+.my{
+    margin: 15px 0;
+}

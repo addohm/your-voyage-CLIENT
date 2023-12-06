@@ -1,0 +1,29 @@
+// MUI buttons style by default
+.MuiButtonBase-root.MuiButton-root{
+	display: block;
+	margin: 0 auto;
+	border-radius: $borderRadiusLarge;
+	// contained
+	&.MuiButton-contained{
+		background: $brand;
+	}
+	// outlined
+	&.MuiButton-outlined{
+		color: $brand;
+		border: 1px solid $brand;
+	}
+	// disabled
+	&:disabled{
+		background: $gray;
+		color: $white;
+	}
+}
+
+// ! MUI TextField(input) style by default
+.MuiFormControl-root.MuiTextField-root{ // input
+	width: 100%;
+}
+.MuiInputBase-root.MuiFilledInput-root{ // autocompelete inner input
+	padding-top: 8px !important;
+}
+// ? MUI TextField(input) style by default
