@@ -3,19 +3,7 @@
 	color: $brand;
 }
 .danger{
-	color: $danger;
-}
-.dangerBg{
-	background: lighten($danger, 25%);
-}
-.dangerBg2{
-	background: lighten($danger, 15%);
-}
-.dangerBorder{
-	border: 2px solid $danger;
-}
-.blackBorder{
-	border: 2px solid $black;
+	color: $danger !important;
 }
 .white{
 	color: $white;
@@ -47,5 +35,16 @@
 	}
 	&_brand{
 		background: $brand;
+	}
+	&_danger{
+		background: lighten($danger, 25%);
+	}
+}
+.border{
+	&_danger{
+		border: 1px solid $danger !important;
+	}
+	&_black{
+		border: 2px solid $black;
 	}
 }

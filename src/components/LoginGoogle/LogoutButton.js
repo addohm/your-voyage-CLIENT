@@ -8,7 +8,7 @@ export default function LogoutButton({ user, isUserEmailHovered }) {
     return (
         user && isUserEmailHovered &&
         <div className="poa w100p bg_white py15 brL">
-            <Button onClick={logout} variant="contained" className="mt30 danger">Log out</Button>
+            <Button onClick={logout} variant="outlined" className="mt30 danger border_danger">Log out</Button>
         </div>
     )
 }
