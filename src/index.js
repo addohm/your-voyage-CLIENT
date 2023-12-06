@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './scss/index.scss';
 import App from './App';
+import { ContextProvider } from './Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <App />
+  <ContextProvider>
+    <App />
+  </ContextProvider>
 )

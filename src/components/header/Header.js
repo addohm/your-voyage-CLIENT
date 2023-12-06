@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from "@mui/material/Button"
 import "./index.scss"
+import LoginGoogle from "../LoginGoogle/LoginGoogle"
 
 export default function Header() {
 
@@ -19,7 +19,7 @@ export default function Header() {
                 <div className='header__btn' onClick={() => goTo("about")}>About</div>
                 <div className='header__btn' onClick={() => goTo("coaching")}>Coaching</div>
                 <div className='header__btn' onClick={() => goTo("tools")}>Tools</div>
-                <div className='header__btn'>Contact</div>
+                <LoginGoogle />
             </div>
         </div>
     )
