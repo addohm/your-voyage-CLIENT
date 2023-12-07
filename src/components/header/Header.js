@@ -1,13 +1,19 @@
 import React from 'react'
 import "./index.scss"
 import LoginGoogle from "../LoginGoogle/LoginGoogle"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { MAIN_ROUTE } from '../../utils/consts';
 import HeaderFixedMargin from './HeaderFixedMargin';
 
 export default function Header() {
 
-    function goTo(className) {
+    const navigate = useNavigate()
+    const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    async function goTo(className) {
+        navigate(MAIN_ROUTE)
+        await delay(100);
+
         document.querySelector(`.${className}`).scrollIntoView({ behavior: "smooth" })
         setTimeout(() => {
             // when animation done go once again

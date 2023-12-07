@@ -19,3 +19,13 @@ export const getPosts = async (type) => {
         console.log(error)
     }
 }
+
+// ! getPost
+export const getPost = async (type, _id) => {
+    try {
+        const { data } = await instance.post(`/getPost`, { type, _id })
+        return data
+    } catch (error) {
+        console.log(error)
+    }
+}

@@ -14,7 +14,7 @@ export default function AddPostsLinks() {
                 <Link to={ADD_BOOKS_ROUTE} className={`tac mt ${location === ADD_BOOKS_ROUTE ? "fw600" : ""}`}>Add Books</Link>
                 <Link to={ADD_NEWS_ROUTE} className={`tac mt ${location === ADD_NEWS_ROUTE ? "fw600" : ""}`}>Add News</Link>
             </div>
-            <AddPost />
+            <AddPost location={location} />
         </>
     )
 }
