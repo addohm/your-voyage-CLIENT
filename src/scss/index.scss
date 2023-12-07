@@ -41,6 +41,7 @@ input{
     border: none;
     border-bottom: 1px solid $brand;
     text-indent: 4px;
+    background: transparent;
     &:focus{
         outline: 2px solid $brand;
         border-bottom: 0px solid $brand;
