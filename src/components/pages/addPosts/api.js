@@ -19,3 +19,13 @@ export const addPost = async (form, type) => {
         console.log(error)
     }
 }
+
+// ! addFile
+export const addFile = async (path, formData) => {
+    try {
+        const { data } = await instance.post(path, formData)
+        return data
+    } catch (error) {
+        console.log(error)
+    }
+}

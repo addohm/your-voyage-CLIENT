@@ -15,7 +15,7 @@ export default function Header() {
     }
 
     return (
-        <div className='header fcc jcsb p15'>
+        <div className='header pof t0 l0 w100p zi9 fcc jcsb p15'>
             <Link to={MAIN_ROUTE}>
                 <div className='fz20 brand hoverScale hoverFont500'>XY Consulting</div>
             </Link>
