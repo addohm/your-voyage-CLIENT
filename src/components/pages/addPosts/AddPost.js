@@ -1,18 +1,22 @@
-import { ADD_POSTS_ROUTE } from "../../../utils/consts"
+import { useLocation, useParams } from "react-router-dom"
 import TextEditor from "../../textEditor/TextEditor"
 import usePost from "./usePost"
 import { Button } from "@mui/material"
+import usePostFull from "../../post/usePostFull"
 
-export default function AddPost({ location }) {
+export default function AddPost() {
 
-    const { addPost } = usePost()
-    const type = location.match(/(?:-)(.+)/)[1]
+    let { type, id } = useParams()
+    type = type.replace(":type", "")
+    const { addPost, editPost } = usePost(type, id)
+    const { post } = usePostFull(type, id)
+    const location = useLocation().pathname
+    const isAddLocation = location.includes("/add/") ? true : false
 
     return (
-        location !== ADD_POSTS_ROUTE &&
-        <form className="maw700 m0a mt" onSubmit={addPost}>
-            <input className="h50 fz18 mb" name="title" placeholder="title" />
-            <TextEditor />
+        <form className="maw700 m0a mt" onSubmit={(e) => isAddLocation ? addPost(e) : editPost(e)}>
+            <input defaultValue={post?.title} className="h50 fz18 mb" name="title" placeholder="title" />
+            <TextEditor defaultValue={post?.textEditorValue} />
             <Button type="submit">add to {type}</Button>
         </form>
     )

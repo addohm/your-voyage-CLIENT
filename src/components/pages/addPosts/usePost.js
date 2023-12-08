@@ -6,7 +6,7 @@ import useAddFile from "./useAddFile"
 import { useContext } from "react"
 import { Context } from "../../../Context"
 
-export default function usePost() {
+export default function usePost(type, id) {
 
     const navigate = useNavigate()
 
@@ -14,16 +14,28 @@ export default function usePost() {
     const { fileArr } = useAddFile()
 
     async function addPost(e) {
+        // TODO has DUP
         e.preventDefault()
         // add file: pasted/dropped
         await fileArr("upload/siteContent", pastedOrDroppedImg)
         // add post
         const form = parseForm(e)
-        const res = await api.addPost(form, "tool")
-        navigate(`/tool/${res._id}`) // TODO path from consts ???
+        const res = await api.addPost(form, type)
+        navigate(`/${type}/${res._id}`) // TODO path from consts ???
+    }
+
+    async function editPost(e) {
+        // TODO has DUP
+        e.preventDefault()
+        // add file: pasted/dropped
+        await fileArr("upload/siteContent", pastedOrDroppedImg)
+        // add post
+        const form = parseForm(e)
+        const res = await api.editPost(form, type, id)
+        navigate(`/${type}/${res._id}`) // TODO path from consts ???
     }
 
     return (
-        { addPost }
+        { addPost, editPost }
     )
 }

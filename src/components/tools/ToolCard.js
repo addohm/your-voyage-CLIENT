@@ -4,6 +4,8 @@ import Animation from "../animation/Animation";
 import ToolCardText from "./ToolCardText";
 import "./index.scss"
 import { Button } from "@mui/material";
+import ToolCardBtn from "./ToolCardBtn";
+import ToolCardIcons from "./ToolCardIcons";
 
 export default function ToolCard({ img, title, textEditorValue, type, _id }) {
 
@@ -19,11 +21,8 @@ export default function ToolCard({ img, title, textEditorValue, type, _id }) {
                         <div className="title2 my5">{title}</div>
                         <ToolCardText textEditorValue={textEditorValue} className={!isCardHovered ? "op1 transition05" : "op0 transition05"} />
                     </div>
-                    {isCardHovered &&
-                        <Animation type="left">
-                            <Button className="poa b40 l140" variant="outlined">READ MORE</Button>
-                        </Animation>
-                    }
+                    <ToolCardBtn isCardHovered={isCardHovered} />
+                    <ToolCardIcons isCardHovered={isCardHovered} type={type} _id={_id} />
                 </div>
             </Link>
         </Animation>

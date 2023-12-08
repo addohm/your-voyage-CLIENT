@@ -5,13 +5,13 @@ import "./index.scss"
 import usePastedOrDroppedFile from "./usePastedOrDroppedFile";
 import TextEditorLabel from "./TextEditorLabel";
 
-export default function TextEditor({ editValue, className, label, type }) { // type: product/article
+export default function TextEditor({ defaultValue, className, label, type }) { // type: product/article
 
 	const [value, valueSet] = useState("")
 
 	useEffect(() => {
-		editValue && valueSet(editValue?.replace(/•/g, ""))
-	}, [editValue])
+		defaultValue && valueSet(defaultValue?.replace(/•/g, ""))
+	}, [defaultValue])
 
 	const onChange = useCallback((value) => {
 		valueSet(value?.replace(/•/g, ""));

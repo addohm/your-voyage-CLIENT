@@ -1,5 +1,6 @@
-import { ADD_BOOKS_ROUTE, ADD_NEWS_ROUTE, ADD_POSTS_ROUTE, ADD_TOOLS_ROUTE, TOOL_ROUTE } from "../../utils/consts";
+import { ADD_POSTS_ROUTE, ADD_POST_ROUTE, EDIT_POST_ROUTE, TOOL_ROUTE } from "../../utils/consts";
 import { MAIN_ROUTE } from "../../utils/consts";
+import AddPost from "../pages/addPosts/AddPost";
 import AddPostsLinks from "../pages/addPosts/AddPostsLinks";
 import AddPostsPage from "../pages/addPosts/AddPostsPage";
 import MainPage from "../pages/main/MainPage";
@@ -29,7 +30,7 @@ export default [
 	// 	isForUser: true,
 	// 	isForAdmin: true,
 	// },
-	// ADMIN ROUTES
+	// ! ADMIN ROUTES
 	{
 		path: ADD_POSTS_ROUTE,
 		element: <AddPostsPage />,
@@ -38,22 +39,15 @@ export default [
 		isForAdmin: true,
 	},
 	{
-		path: ADD_TOOLS_ROUTE,
+		path: ADD_POST_ROUTE,
 		element: <AddPostsLinks />,
 		isPublic: true, // TODO !!! false
 		isForUser: true, // TODO !!! false
 		isForAdmin: true,
 	},
 	{
-		path: ADD_BOOKS_ROUTE,
-		element: <AddPostsLinks />,
-		isPublic: true, // TODO !!! false
-		isForUser: true, // TODO !!! false
-		isForAdmin: true,
-	},
-	{
-		path: ADD_NEWS_ROUTE,
-		element: <AddPostsLinks />,
+		path: EDIT_POST_ROUTE,
+		element: <AddPost />,
 		isPublic: true, // TODO !!! false
 		isForUser: true, // TODO !!! false
 		isForAdmin: true,
