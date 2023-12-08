@@ -1,0 +1,11 @@
+@import "../../scss/vars.scss";
+
+.toolCard{
+    overflow: hidden;
+    background: $white;
+    img{
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+    }
+}

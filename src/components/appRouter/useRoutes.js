@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useEffect, useState } from "react";
-import { Route } from "react-router-dom";
+import { Route, useLocation } from "react-router-dom";
 import { Context } from "../../Context";
 import routeList from "./routeList";
 
@@ -8,6 +8,7 @@ export default function useRoutes() {
 
 	const { user } = useContext(Context)
 	const [routes, routesSet] = useState([])
+	const location = useLocation().pathname
 
 	useEffect(() => {
 		function defineRoutes() {
@@ -26,6 +27,10 @@ export default function useRoutes() {
 
 		defineRoutes()
 	}, [user])
+
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [location])
 
 	return (
 		{ routes }

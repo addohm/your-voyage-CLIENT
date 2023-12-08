@@ -1,9 +1,10 @@
 import MarkDown from "../textEditor/Markdown"
 
-export default function ToolCardText({ textEditorValue }) {
-    const textWithoutImg = textEditorValue.replace(/!\[image\]\([^)]+\.png\)/g, "")
+export default function ToolCardText({ textEditorValue, className }) {
+    let textWithoutImg = textEditorValue.replace(/!\[image\]\([^)]+\.png\)/g, "")
+    textWithoutImg = textWithoutImg.substring(0, 120) + " ..."
     return (
-        <div className="tac">
+        <div className={className}>
             <MarkDown>
                 {textWithoutImg}
             </MarkDown>
