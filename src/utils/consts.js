@@ -4,6 +4,6 @@ export const MAIN_ROUTE = "/"
 export const ADD_POSTS_ROUTE = "/add-posts"
 export const ADD_POST_ROUTE = "/add/:type"
 // 
-export const TOOL_ROUTE = "/tool/:id"
+export const POST_ROUTE = "/:type/:id"
 // 
 export const EDIT_POST_ROUTE = "/edit/:type/:id"

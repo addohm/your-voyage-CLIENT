@@ -4,7 +4,7 @@ import parseTextEditorImg from "../textEditor/parseTextEditorImg"
 
 export default function ToolCards({ toolNameClicked, toolCardsHidden }) {
 
-    const [posts, postsSet] = usePosts(toolNameClicked.replace(/.$/, '')) // tools => tool
+    const [posts, postsSet] = usePosts(toolNameClicked)
 
     return (
         toolCardsHidden &&

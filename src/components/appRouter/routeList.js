@@ -1,4 +1,4 @@
-import { ADD_POSTS_ROUTE, ADD_POST_ROUTE, EDIT_POST_ROUTE, TOOL_ROUTE } from "../../utils/consts";
+import { ADD_POSTS_ROUTE, ADD_POST_ROUTE, EDIT_POST_ROUTE, POST_ROUTE } from "../../utils/consts";
 import { MAIN_ROUTE } from "../../utils/consts";
 import AddPost from "../pages/addPosts/AddPost";
 import AddPostsLinks from "../pages/addPosts/AddPostsLinks";
@@ -16,7 +16,7 @@ export default [
 		isForAdmin: true,
 	},
 	{
-		path: TOOL_ROUTE,
+		path: POST_ROUTE,
 		element: <PostFull />,
 		isPublic: true,
 		isForUser: true,

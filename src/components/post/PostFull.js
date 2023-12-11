@@ -6,8 +6,8 @@ import "./index.scss"
 
 export default function PostFull() {
 
-    const { id } = useParams()
-    const { post } = usePostFull("tool", id) // TODO remove "tool"
+    const { id, type } = useParams()
+    const { post } = usePostFull(type, id)
 
     return (
         <div className='postFull maw800 m0a br'>
