@@ -13,7 +13,7 @@ export default function Tools() {
 
     function hideToolCardsShowExactCards(name) {
         // go to coach: don't refactor
-        if (name === "coach") { document.querySelector(".coach").scrollIntoView({ behavior: "smooth" }); return }
+        if (name === "coach") { document.querySelector(".coach").scrollIntoView({ behavior: "smooth" }); setTimeout(() => { document.querySelector(".coach").scrollIntoView({ behavior: "smooth" }) }, 2000); return }
         toolCardsHiddenSet(prev => !prev)
         toolNameClickedSet(name)
     }

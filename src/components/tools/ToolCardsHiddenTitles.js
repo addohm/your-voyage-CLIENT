@@ -4,7 +4,7 @@ export default function ToolCardsHiddenTitles({ tools, toolCardsHidden, toolCard
 
     function onClick(name) {
         // go to coach: don't refactor
-        if (name === "coach") { document.querySelector(".coach").scrollIntoView({ behavior: "smooth" }); return }
+        if (name === "coach") { document.querySelector(".coach").scrollIntoView({ behavior: "smooth" }); setTimeout(() => { document.querySelector(".coach").scrollIntoView({ behavior: "smooth" }) }, 2000); return }
         toolNameClickedSet(name)
     }
 
