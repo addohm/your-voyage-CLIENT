@@ -5,6 +5,7 @@ import LeftTitle from '../other/LeftTitle.js'
 import Arrow from '../banner/Arrow.js'
 import ToolCardsHiddenTitles from './ToolCardsHiddenTitles.js'
 import ToolCards from './ToolCards.js'
+import goToCoach from '../../utils/goToCoach.js'
 
 export default function Tools() {
 
@@ -12,8 +13,7 @@ export default function Tools() {
     const [toolNameClicked, toolNameClickedSet] = useState("")
 
     function hideToolCardsShowExactCards(name) {
-        // go to coach: don't refactor
-        if (name === "coach") { document.querySelector(".coach").scrollIntoView({ behavior: "smooth" }); setTimeout(() => { document.querySelector(".coach").scrollIntoView({ behavior: "smooth" }) }, 2000); return }
+        if (name === "coach") { goToCoach(); return }
         toolCardsHiddenSet(prev => !prev)
         toolNameClickedSet(name)
     }

@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import AppRouter from "./components/appRouter/AppRouter";
+import GoToTop from "./components/other/GoToTop";
 
 const App = () => {
 
@@ -10,6 +11,7 @@ const App = () => {
       <Header />
       <AppRouter />
       <Footer />
+      <GoToTop />
     </div>
   );
 };

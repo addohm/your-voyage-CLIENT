@@ -19,6 +19,7 @@ export default function ToolCards({ toolNameClicked, toolCardsHidden }) {
                     )
                 })}
             </div>
+            {posts?.length === 0 && <div className="title2 w100p tac mt">No posts yet...</div>}
         </div>
     )
 }

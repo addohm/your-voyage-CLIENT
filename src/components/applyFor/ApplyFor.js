@@ -4,6 +4,7 @@ import dummy from "./img/dummy.png"
 import coach from "./img/coach.png"
 import { Button } from "@mui/material"
 import Dots from '../dots/Dots'
+import goToCoach from '../../utils/goToCoach'
 
 export default function ApplyFor() {
     return (
@@ -25,7 +26,7 @@ export default function ApplyFor() {
                     </div>
                     <div className='tac mt75 mb45'>Career exploration with VIP treatment? I'm in! Are you ready to re-ignite curiosity, take charge, and gain the clarity you need to start again?</div>
                 </div>
-                <Button variant='contained'>APPLY Now!</Button>
+                <Button variant='contained' onClick={goToCoach}>APPLY NOW!</Button>
             </div>
         </div>
     )

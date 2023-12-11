@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Animation from "../animation/Animation";
 import ToolCardText from "./ToolCardText";
 import "./index.scss"
-import { Button } from "@mui/material";
 import ToolCardBtn from "./ToolCardBtn";
 import ToolCardIcons from "./ToolCardIcons";
 

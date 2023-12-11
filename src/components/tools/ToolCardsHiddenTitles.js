@@ -1,10 +1,10 @@
+import goToCoach from "../../utils/goToCoach"
 import ToolCardTitle from "./ToolCardTitle"
 
 export default function ToolCardsHiddenTitles({ tools, toolCardsHidden, toolCardsHiddenSet, toolNameClicked, toolNameClickedSet }) {
 
     function onClick(name) {
-        // go to coach: don't refactor
-        if (name === "coach") { document.querySelector(".coach").scrollIntoView({ behavior: "smooth" }); setTimeout(() => { document.querySelector(".coach").scrollIntoView({ behavior: "smooth" }) }, 2000); return }
+        if (name === "coach") { goToCoach(); return }
         toolNameClickedSet(name)
     }
 

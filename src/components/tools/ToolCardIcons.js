@@ -1,5 +1,5 @@
 import Animation from '../animation/Animation'
-import { Clear } from '@mui/icons-material';
+import ToolCardIconDelete from './ToolCardIconDelete';
 import ToolCardIconEdit from './ToolCardIconEdit';
 
 export default function ToolCardIcons({ isCardHovered, type, _id }) {
@@ -8,7 +8,7 @@ export default function ToolCardIcons({ isCardHovered, type, _id }) {
         <Animation type="opacity">
             <div className='poa r4 b4'>
                 <ToolCardIconEdit type={type} _id={_id} />
-                <Clear style={{ height: 30, width: 30 }} />
+                <ToolCardIconDelete type={type} _id={_id} />
             </div>
         </Animation>
     )

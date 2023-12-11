@@ -53,6 +53,9 @@
 .asfe{
 	align-self: flex-end;
 }
+.asc{
+	align-self: center;
+}
 // gen gap
 @for $i from 1 through 100 {
 	.g#{$i} {

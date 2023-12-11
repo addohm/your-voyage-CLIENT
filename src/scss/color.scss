@@ -39,6 +39,12 @@
 	&_danger{
 		background: lighten($danger, 25%);
 	}
+	&_app{
+		background: $appBg;
+	}
+	&_transparent{
+		background: transparent;	
+	}
 }
 .border{
 	&_danger{

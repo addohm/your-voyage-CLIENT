@@ -4,6 +4,7 @@ import { Button } from '@mui/material'
 import img from './img/img2.png'
 import Animation from '../animation/Animation'
 import TextSplit from '../animation/TextSplit'
+import goToCoach from '../../utils/goToCoach'
 
 export default function Banner2() {
 
@@ -33,7 +34,7 @@ export default function Banner2() {
             <TextSplit str="I help individuals pursue unconventional career paths and daring aspirations they've been considering. But often, hesitation prevents them from taking the next step. With my coaching program, I assist clients in articulating their experiences, overcoming self-doubt, and transitioning to fulfilling creative endeavors. This shift aligns their opportunities with their desired lifestyle and aspirations. By empowering individuals to embrace their unique talents, they gain the confidence to take on new challenges and succeed in uncharted professional territories." />
           </div>
         </Animation>
-        <Button className='w70p' variant='contained'>Apply for 1:1 coaching</Button>
+        <Button className='w70p' variant='contained' onClick={goToCoach}>APPLY FOR 1:1 COACHING</Button>
       </div>
       <Animation type="opacity">
         <img className='hoverMainImg2' src={img} />
