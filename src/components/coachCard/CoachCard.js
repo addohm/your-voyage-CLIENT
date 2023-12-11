@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import CoachCardRadio from "./CoachCardRadio";
 import CoachCardRatings from "./CoachCardRatings";
+import useCoachCard from "./useCoachCard";
 
 export default function CoachCard({ img, title, radio, rating, ind, className, children, isCoach }) {
 
@@ -13,17 +14,19 @@ export default function CoachCard({ img, title, radio, rating, ind, className, c
         })
     }, [])
 
+    const { applyForCoaching } = useCoachCard()
+
     return (
-        <div className={`maw445 bg_white brL ${className} p15`} >
+        <form className={`maw445 bg_white brL ${className} p15`} onSubmit={applyForCoaching} >
             <div className='fcc'>
                 <img src={img} />
                 <div className="pl15 ttu">{title}</div>
             </div>
             <CoachCardRatings rating={rating} isReadOnly={isCoach} />
-            {radio.map(options => (
-                <CoachCardRadio options={options} />
+            {radio.map((options, outerInd) => (
+                <CoachCardRadio options={options} outerInd={outerInd} />
             ))}
             {children}
-        </div>
+        </form>
     )
 }

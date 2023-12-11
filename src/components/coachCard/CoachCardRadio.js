@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./index.scss"
 import arrow2 from "./img/arrow2.svg"
 
-export default function CoachCardRadio({ options }) {
+export default function CoachCardRadio({ options, outerInd }) {
 
     const [selectedOption, selectedOptionSet] = useState(null)
     const [clickedOptionInd, clickedOptionIndSet] = useState(null)
@@ -17,8 +17,8 @@ export default function CoachCardRadio({ options }) {
                     {option}
                     <input
                         type="radio"
-                        name="customRadio"
-                        value="option"
+                        name={"radio" + outerInd}
+                        value={option}
                         checked={selectedOption === option}
                         onChange={() => selectedOptionSet(option)}
                     />
