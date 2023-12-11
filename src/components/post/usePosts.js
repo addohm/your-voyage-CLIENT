@@ -8,6 +8,7 @@ export default function usePosts(type) {
     useEffect(() => {
         async function getPosts() {
             if (!type) return
+            if (type === "coach") return
             const res = await api.getPosts(type)
             res && postsSet(res)
         }

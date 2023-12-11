@@ -12,6 +12,8 @@ export default function Tools() {
     const [toolNameClicked, toolNameClickedSet] = useState("")
 
     function hideToolCardsShowExactCards(name) {
+        // go to coach: don't refactor
+        if (name === "coach") { document.querySelector(".coach").scrollIntoView({ behavior: "smooth" }); return }
         toolCardsHiddenSet(prev => !prev)
         toolNameClickedSet(name)
     }

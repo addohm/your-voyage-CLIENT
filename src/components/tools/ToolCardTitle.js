@@ -1,17 +1,19 @@
 import Animation from "../animation/Animation";
 import ReviewArrow from "../review/ReviewArrow"
+import ToolCardTitleAddTool from "./ToolCardTitleAddTool";
 
 export default function ToolCardTitle({ name, animationType, toolNameClicked, toolCardsHiddenSet }) {
 
     const thisTitleClicked = name === toolNameClicked
+    const iconSize = 40
 
     return (
         <div className="f por" onClick={() => thisTitleClicked && toolCardsHiddenSet(false)}>
             {thisTitleClicked &&
                 <ReviewArrow
                     onClick={() => toolCardsHiddenSet(false)}
-                    height={40}
-                    width={40}
+                    height={iconSize}
+                    width={iconSize}
                     className="poa l-40"
                     animationType="scale"
                 />
@@ -28,6 +30,7 @@ export default function ToolCardTitle({ name, animationType, toolNameClicked, to
                     </Animation>
                 )
             })}
+            <ToolCardTitleAddTool thisTitleClicked={thisTitleClicked} iconSize={iconSize} name={name} />
         </div>
     )
 }
