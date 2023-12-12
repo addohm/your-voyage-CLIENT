@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import InputRequiredNativeTooltip from '../form/InputRequiredNativeTooltip';
 
 const CoachCardRating = ({ name, rating, isReadOnly }) => {
 
@@ -21,7 +22,7 @@ const CoachCardRating = ({ name, rating, isReadOnly }) => {
     };
 
     return (
-        <div>
+        <div className="por">
             {[...Array(5)].map((_, index) => (
                 <Heart
                     key={index}
@@ -34,6 +35,7 @@ const CoachCardRating = ({ name, rating, isReadOnly }) => {
                     rating={_rating}
                 />
             ))}
+            <InputRequiredNativeTooltip required={_rating === 0}  className="ca"/>
         </div>
     );
 };

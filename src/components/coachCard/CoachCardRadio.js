@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./index.scss"
 import arrow2 from "./img/arrow2.svg"
+import InputRequiredNativeTooltip from '../form/InputRequiredNativeTooltip';
 
 export default function CoachCardRadio({ options, outerInd }) {
 
@@ -11,7 +12,7 @@ export default function CoachCardRadio({ options, outerInd }) {
         <div className='fcc fwn por'>
             {options.map((option, ind) => (
                 <label
-                    className={`radio-container hoverBrandColor ${selectedOption === option ? 'brand fw600' : ''} ${ind === 0 ? "tar" : "tal"}`}
+                    className={`por radio-container hoverBrandColor ${selectedOption === option ? 'brand fw600' : ''} ${ind === 0 ? "tar" : "tal"}`}
                     onClick={() => clickedOptionIndSet(ind)}
                 >
                     {option}
@@ -22,6 +23,7 @@ export default function CoachCardRadio({ options, outerInd }) {
                         checked={selectedOption === option}
                         onChange={() => selectedOptionSet(option)}
                     />
+                    <InputRequiredNativeTooltip required={!selectedOption} className="r0 b0" />
                 </label>
             ))}
             <img src={arrow2} className={`poa t-5 ${clickedOptionInd === 0 ? "tr180" : ""}`} />
