@@ -13,8 +13,8 @@ export default function AddPost() {
 
     return (
         <form className="maw700 m0a mt" onSubmit={(e) => addOrEditPost(e)}>
-            <input required defaultValue={post?.title} className="db h50 fz18 mb" name="title" placeholder="title" />
-            <input required defaultValue={post?.link} className="db h50 fz18 mb" name="link" placeholder="link" />
+            <input required defaultValue={post?.title} className="db h50 w300 fz18 mb" name="title" placeholder="title" />
+            <input defaultValue={post?.link} className="db h50 w300 fz18 mb" name="link" placeholder="link / affiliate link" />
             <TextEditor defaultValue={post?.textEditorValue} className="mb" />
             <Button type="submit" variant="contained">add to {type}</Button>
         </form>

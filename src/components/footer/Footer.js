@@ -5,7 +5,7 @@ import youtube from "./img/youtube.svg"
 
 export default function Footer() {
     return (
-        <div className='fcc jcsb p15 w100p poa b0 l0'>
+        <div className='fcc jcsb pb px100 w100p poa b0 l0'>
             <div>
                 <div className='fw600'>Career Coach & hr director</div>
                 <div className='fw600 brand tac'>Xiaoyang Li</div>

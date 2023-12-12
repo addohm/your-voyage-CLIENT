@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { BgText } from "../bgText/BgText";
 import Diamonds from "../diamond/Diamonds";
+import windowScrolls from "../../utils/windowScrolls";
 
 export default function AppBg() {
 
@@ -43,12 +44,10 @@ export default function AppBg() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const windowHeight = window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight;
-            const scrollTop = window.scrollY;
+            const { isScrolledToWindowBottom } = windowScrolls()
 
             // Check if scrolled to the very bottom of the page
-            if (windowHeight + scrollTop === documentHeight) {
+            if (isScrolledToWindowBottom) {
                 isScrolledToVeryBottomSet(true)
             } else {
                 isScrolledToVeryBottomSet(false)
