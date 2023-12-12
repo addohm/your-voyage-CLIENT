@@ -20,7 +20,7 @@ export default function Tools() {
 
     return (
         // ! pt300 for centering, flex works bad
-        <div className='h100vh pt300 tools'>
+        <div className='mih100vh pt300 tools'>
             <ToolCardsHiddenTitles tools={tools} toolCardsHidden={toolCardsHidden} toolCardsHiddenSet={toolCardsHiddenSet} toolNameClicked={toolNameClicked} toolNameClickedSet={toolNameClickedSet} />
             <div className='fcc por'>
                 <div className="poa l-50 t150">
