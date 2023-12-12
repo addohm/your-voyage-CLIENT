@@ -12,24 +12,16 @@ export default function usePost(type, id) {
     const { pastedOrDroppedImg } = useContext(Context)
     const { fileArr } = useAddFile()
 
-    async function addPost(e) {
+    async function addOrEditPost(e) {
         e.preventDefault()
         // add file: pasted/dropped
         await fileArr("upload/siteContent", pastedOrDroppedImg)
-        // add post
+        // add/edit post
         const form = parseForm(e)
-        const res = await api.addPost(form, type)
-        navigate(`/${type}/${res._id}`)
-    }
-
-    async function editPost(e) {
-        e.preventDefault()
-        e.stopPropagation()
-        // add file: pasted/dropped
-        await fileArr("upload/siteContent", pastedOrDroppedImg)
-        // add post
-        const form = parseForm(e)
-        const res = await api.editPost(form, type, id)
+        // alert: add image
+        if (!form.textEditorValue.includes("[image]")) { alert("paste or drop at least one image"); return }
+        // no id = no post => create post; has id => edit post
+        const res = !id ? await api.addPost(form, type) : await api.editPost(form, type, id)
         navigate(`/${type}/${res._id}`)
     }
 
@@ -43,6 +35,6 @@ export default function usePost(type, id) {
     }
 
     return (
-        { addPost, editPost, deletePost }
+        { addOrEditPost, deletePost }
     )
 }

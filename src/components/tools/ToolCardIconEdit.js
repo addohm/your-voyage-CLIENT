@@ -8,7 +8,7 @@ export default function ToolCardIconEdit({ type, _id }) {
 
     function editPost(e) {
         e.stopPropagation()
-        navigate(`edit/${type}/${_id}`)
+        navigate(`/edit/${type}/${_id}`)
     }
 
     return (

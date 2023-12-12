@@ -21,7 +21,7 @@ export default function ToolCard({ img, title, textEditorValue, type, _id }) {
                         <ToolCardText textEditorValue={textEditorValue} className={!isCardHovered ? "op1 transition05" : "op0 transition05"} />
                     </div>
                     <ToolCardBtn isCardHovered={isCardHovered} />
-                    <ToolCardIcons isCardHovered={isCardHovered} type={type} _id={_id} />
+                    <ToolCardIcons isVisible={isCardHovered} type={type} _id={_id} className="poa r4 b4" />
                 </div>
             </Link>
         </Animation>

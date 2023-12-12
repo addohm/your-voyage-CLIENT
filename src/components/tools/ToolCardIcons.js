@@ -2,11 +2,11 @@ import Animation from '../animation/Animation'
 import ToolCardIconDelete from './ToolCardIconDelete';
 import ToolCardIconEdit from './ToolCardIconEdit';
 
-export default function ToolCardIcons({ isCardHovered, type, _id }) {
+export default function ToolCardIcons({ isVisible, type, _id, className }) {
     return (
-        isCardHovered &&
+        isVisible &&
         <Animation type="opacity">
-            <div className='poa r4 b4'>
+            <div className={className}>
                 <ToolCardIconEdit type={type} _id={_id} />
                 <ToolCardIconDelete type={type} _id={_id} />
             </div>
