@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import AddPost from './AddPost'
 import AddPostTypes from './AddPostTypes'
 
-export default function AddPostsPage({ postTypes, title, ignoreInputs, ignoreImg }) {
+export default function AddPostsPage({ postTypes, title }) {
 
     const [stateType, stateTypeSet] = useState(postTypes?.[0])
 
@@ -10,7 +10,7 @@ export default function AddPostsPage({ postTypes, title, ignoreInputs, ignoreImg
         <>
             <div className='title tac mt'>{title}</div>
             <AddPostTypes postTypes={postTypes} stateType={stateType} stateTypeSet={stateTypeSet} />
-            <AddPost _type={stateType} ignoreInputs={ignoreInputs} ignoreImg={ignoreImg} />
+            <AddPost _type={stateType} />
         </>
     )
 }

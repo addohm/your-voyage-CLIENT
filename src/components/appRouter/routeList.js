@@ -55,7 +55,7 @@ export default [
 	// ? POST
 	{
 		path: EDIT_FOOTER_PAGE_ROUTE,
-		element: <AddPostsPage postTypes={["terms", "privacy"]} title="Add To Footer" ignoreInputs={["title", "link"]} ignoreImg={true} />,
+		element: <AddPostsPage postTypes={["terms", "privacy"]} title="Add To Footer" />,
 		isPublic: true, // TODO !!! false
 		isForUser: true, // TODO !!! false
 		isForAdmin: true,
