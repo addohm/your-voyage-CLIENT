@@ -14,7 +14,7 @@ export default function PostFull() {
     return (
         <>
             <div className='postFull maw800 m0a'>
-                <ToolCardIcons isVisible={true} type={type} _id={id} className="poa" />
+                <ToolCardIcons isVisible={true} type={type} _id={id} className="poa t-30" />
                 <div className='title tac mb'>{post?.title}</div>
                 <Markdown>{post?.textEditorValue}</Markdown>
                 <PostFullLink link={post?.link} />

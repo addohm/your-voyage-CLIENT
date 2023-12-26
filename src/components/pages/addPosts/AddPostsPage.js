@@ -1,11 +1,16 @@
-import React from 'react'
-import AddPostsLinks from './AddPostsLinks'
+import React, { useState } from 'react'
+import AddPost from './AddPost'
+import AddPostTypes from './AddPostTypes'
 
-export default function AddPostsPage() {
+export default function AddPostsPage({ postTypes, title, ignoreInputs, ignoreImg }) {
+
+    const [stateType, stateTypeSet] = useState(postTypes?.[0])
+
     return (
         <>
-            <div className='title tac mt'>Add Posts</div>
-            <AddPostsLinks />
+            <div className='title tac mt'>{title}</div>
+            <AddPostTypes postTypes={postTypes} stateType={stateType} stateTypeSet={stateTypeSet} />
+            <AddPost _type={stateType} ignoreInputs={ignoreInputs} ignoreImg={ignoreImg} />
         </>
     )
 }

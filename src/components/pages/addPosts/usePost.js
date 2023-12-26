@@ -5,7 +5,7 @@ import useAddFile from "./useAddFile"
 import { useContext } from "react"
 import { Context } from "../../../Context"
 
-export default function usePost(type, id) {
+export default function usePost({ type, id, ignoreImg }) {
 
     const navigate = useNavigate()
 
@@ -19,7 +19,7 @@ export default function usePost(type, id) {
         // add/edit post
         const form = parseForm(e)
         // alert: add image
-        if (!form.textEditorValue.includes("[image]")) { alert("paste or drop at least one image"); return }
+        if (!ignoreImg && !form.textEditorValue.includes("[image]")) { alert("paste or drop at least one image"); return }
         // no id = no post => create post; has id => edit post
         const res = !id ? await api.addPost(form, type) : await api.editPost(form, type, id)
         navigate(`/${type}/${res._id}`)
