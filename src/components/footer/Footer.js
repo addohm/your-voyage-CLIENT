@@ -2,6 +2,7 @@ import React from 'react'
 import instagram from "./img/instagram.svg"
 import linkedin from "./img/linkedin.svg"
 import youtube from "./img/youtube.svg"
+import FooterLink from './FooterLink'
 
 export default function Footer() {
     return (
@@ -16,9 +17,9 @@ export default function Footer() {
                 <img src={youtube} />
             </div>
             <div className='f fwn jcsb w140'>
-                <div>Terms</div>
+                <FooterLink text="Terms" type="terms" />
                 <div>/</div>
-                <div>Privacy</div>
+                <FooterLink text="Privacy" type="privacy" />
             </div>
         </div>
     )
