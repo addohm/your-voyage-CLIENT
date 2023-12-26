@@ -4,16 +4,14 @@ import * as api from "./api"
 import useAddFile from "./useAddFile"
 import { useContext } from "react"
 import { Context } from "../../../Context"
+import usePostRequires from "./usePostRequires"
 
 export default function usePost({ type, id }) {
 
     const navigate = useNavigate()
     const { pastedOrDroppedImg } = useContext(Context)
     const { fileArr } = useAddFile()
-
-    // don't show inputs (title,link) in edit footer; don't require image in edit footer textEditor
-    const isInEditFooterLocation = type === "terms" || type === "privacy"
-    let [isAddImgRequired, isInputVisible] = [!isInEditFooterLocation, !isInEditFooterLocation]
+    const { isAddImgRequired, isInputVisible } = usePostRequires(type)
 
     async function addOrEditPost(e) {
         e.preventDefault()
