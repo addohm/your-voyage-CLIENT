@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Animation from '../animation/Animation'
 
 export default function PrintingText({ text, className, time = 10 }) {
 

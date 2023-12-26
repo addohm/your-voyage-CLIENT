@@ -2,18 +2,11 @@ import { useEffect } from "react";
 import CoachCardRadio from "./CoachCardRadio";
 import CoachCardRatings from "./CoachCardRatings";
 import useCoachCard from "./useCoachCard";
+import useDefaultCoachValues from "./useDefaultCoachValues";
 
 export default function CoachCard({ img, title, radio, rating, ind, className, children, isCoach }) {
 
-    useEffect(() => {
-        document.querySelector(".coach").querySelectorAll(".radio-container").forEach(each => {
-            const defaultCoachValues = ["TRAVELING", "FULL-TIME", "ONSITE", "CONTRACT"]
-            if (defaultCoachValues.includes(each.innerText)) {
-                each.click()
-            }
-        })
-    }, [])
-
+    useDefaultCoachValues()
     const { applyForCoaching } = useCoachCard()
 
     return (

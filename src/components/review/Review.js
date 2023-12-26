@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReviewImg from './ReviewImg';
 import ReviewArrow from './ReviewArrow';
-import PrintingText from '../banner/PrintingText';
+import PrintingText from '../animation/PrintingText';
 import ReviewType from './ReviewType';
 
 export default function Review({ list }) {

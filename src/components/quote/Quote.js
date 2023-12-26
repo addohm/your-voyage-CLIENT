@@ -1,6 +1,6 @@
 import React from 'react'
 import Title from '../other/Title'
-import PrintingText from '../banner/PrintingText'
+import PrintingText from '../animation/PrintingText'
 
 export default function Quote({ title, text, titleClassName, className }) {
     return (
