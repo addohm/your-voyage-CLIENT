@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import "./index.scss"
-import LoginGoogle from "../LoginGoogle/LoginGoogle"
 import { Link, useNavigate } from 'react-router-dom';
 import { MAIN_ROUTE } from '../../utils/consts';
 import HeaderFixedMargin from './HeaderFixedMargin';
 import delay from '../../utils/delay';
+import HeaderLoginBtn from './HeaderLoginBtn';
 
 export default function Header() {
 
@@ -47,7 +47,7 @@ export default function Header() {
                     <div className='header__btn' onClick={() => goTo("about")}>About</div>
                     <div className='header__btn' onClick={() => goTo("coaching")}>Coaching</div>
                     <div className='header__btn' onClick={() => goTo("tools")}>Tools</div>
-                    <LoginGoogle />
+                    <HeaderLoginBtn />
                 </div>
             </div>
             <HeaderFixedMargin />

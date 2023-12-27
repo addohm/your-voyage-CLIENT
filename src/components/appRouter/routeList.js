@@ -1,5 +1,6 @@
 import { ADD_POSTS_PAGE_ROUTE, ADD_POST_ROUTE, EDIT_FOOTER_PAGE_ROUTE, EDIT_POST_ROUTE, POST_ROUTE } from "../../utils/consts";
 import { MAIN_ROUTE } from "../../utils/consts";
+import VerifyLoginToken from "../loginEmail/LoginEmailVerifyToken";
 import AddPost from "../pages/addPosts/AddPost";
 import AddPostsPage from "../pages/addPosts/AddPostsPage";
 import MainPage from "../pages/main/MainPage";
@@ -17,6 +18,13 @@ export default [
 	{
 		path: POST_ROUTE,
 		element: <PostFull />,
+		isPublic: true,
+		isForUser: true,
+		isForAdmin: true,
+	},
+	{
+		path: "/verifyLoginToken/:token",
+		element: <VerifyLoginToken />,
 		isPublic: true,
 		isForUser: true,
 		isForAdmin: true,

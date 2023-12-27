@@ -7,6 +7,8 @@ function ContextProvider({ children }) {
 
     const { user, userSet } = useAutoAuth()
     const [pastedOrDroppedImg, pastedOrDroppedImgSet] = useState([])
+    const [dialog, dialogSet] = useState({ show: false, title: "", children: "" })
+    const [snackbar, snackbarSet] = useState({ show: false, text: "", link: "", linkText: "", linkType: "" })
 
     // ! RETURN
     return (
@@ -14,7 +16,11 @@ function ContextProvider({ children }) {
             // user
             user, userSet,
             // pastedOrDroppedImg
-            pastedOrDroppedImg, pastedOrDroppedImgSet
+            pastedOrDroppedImg, pastedOrDroppedImgSet,
+            // dialog
+            dialog, dialogSet,
+            // snackbar
+            snackbar, snackbarSet
         }}>
 
             {children}

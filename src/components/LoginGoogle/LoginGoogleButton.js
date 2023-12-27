@@ -1,3 +1,4 @@
+import { Button } from "@mui/material"
 import useLogin from "./useLoginGoogle"
 
 export default function LoginGoogleButton({ user }) {
@@ -6,6 +7,12 @@ export default function LoginGoogleButton({ user }) {
 
     return (
         !user &&
-        <div className='header__btn' onClick={signInWithGoogle}>Sign in</div>
+        <Button
+            variant="contained"
+            onClick={signInWithGoogle}
+            style={{ background: "#1976D2" }}
+        >
+            Sign in with Google
+        </Button>
     )
 }

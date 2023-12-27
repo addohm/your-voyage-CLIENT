@@ -1,0 +1,12 @@
+@import "../../scss/vars.scss";
+
+// mui snackbar
+.MuiSnackbar-root{
+	@media (max-width:$mobile) {
+		bottom: 70px !important;
+	}
+	a{
+		color: $white;
+		text-decoration: underline;
+	}
+}

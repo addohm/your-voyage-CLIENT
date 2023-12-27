@@ -3,6 +3,8 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import AppRouter from "./components/appRouter/AppRouter";
 import GoToTop from "./components/other/GoToTop";
+import Dialog from "./components/dialog/Dialog";
+import Snackbar from "./components/snackbar/Snackbar";
 
 const App = () => {
 
@@ -12,6 +14,8 @@ const App = () => {
       <AppRouter />
       <Footer />
       <GoToTop />
+      <Dialog />
+      <Snackbar />
     </div>
   );
 };

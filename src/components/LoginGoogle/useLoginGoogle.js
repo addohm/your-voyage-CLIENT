@@ -7,9 +7,9 @@ import * as api from "./api"
 import { auth, googleProvider } from "./firebaseConfig"
 import { signInWithPopup, signOut } from "firebase/auth"
 
-export default function useLogin() {
+export default function useLoginGoogle() {
 
-    const { userSet } = useContext(Context)
+    const { userSet, dialogSet } = useContext(Context)
 
     const signInWithGoogle = async (e) => {
         e.preventDefault()
@@ -21,9 +21,9 @@ export default function useLogin() {
         // add token to localStorage
         token && localStorage.setItem("token", token)
         // save user to context
-        user && userSet(user)
-        // // go to profile page
-        // window.location.href = PROFILE_ROUTE
+        if (!user) return
+        userSet(user)
+        dialogSet({ show: false })
     };
 
     const logout = async (e) => {

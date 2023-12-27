@@ -11,7 +11,6 @@ export default function LoginGoogle() {
     return (
         <div>
             {/* <LoginTitle user={user} title="Sign In" /> */}
-            <LoginDisplayEmail user={user} />
             <LoginGoogleButton user={user} />
         </div>
     )
