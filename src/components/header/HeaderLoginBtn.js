@@ -13,7 +13,7 @@ export default function HeaderLoginBtn() {
         !user
             ?
             <div
-                className='header__btn'
+                className='header__btn loginBtn'
                 onClick={() => dialogSet({
                     show: true,
                     title: "Login",
