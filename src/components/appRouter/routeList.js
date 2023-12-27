@@ -33,7 +33,7 @@ export default [
 	// ! POST
 	{
 		path: ADD_POSTS_PAGE_ROUTE,
-		element: <AddPostsPage postTypes={["tools", "books", "news"]} title="Add Posts" />,
+		element: <AddPostsPage postTypes={["tools", "books", "news"]} title="" />,
 		isPublic: true, // TODO !!! false
 		isForUser: true, // TODO !!! false
 		isForAdmin: true,
@@ -53,11 +53,4 @@ export default [
 		isForAdmin: true,
 	},
 	// ? POST
-	{
-		path: EDIT_FOOTER_PAGE_ROUTE,
-		element: <AddPostsPage postTypes={["terms", "privacy"]} title="Add To Footer" />,
-		isPublic: true, // TODO !!! false
-		isForUser: true, // TODO !!! false
-		isForAdmin: true,
-	},
 ]

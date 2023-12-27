@@ -6,7 +6,7 @@ import usePastedOrDroppedFile from "./usePastedOrDroppedFile";
 import TextEditorLabel from "./TextEditorLabel";
 import InputRequiredNativeTooltip from "../form/InputRequiredNativeTooltip";
 
-export default function TextEditor({ defaultValue, className, label, type }) { // type: product/article
+export default function TextEditor({ defaultValue, className, label, type, isVisible }) { // type: product/article
 
 	const [value, valueSet] = useState("")
 
@@ -22,6 +22,7 @@ export default function TextEditor({ defaultValue, className, label, type }) { /
 	const noValue = value.length === 0
 
 	return (
+		(isVisible === undefined || isVisible) &&
 		<div className={`por w100p ${className}`}>
 			<TextEditorLabel label={label} valueLength={value.length} className="mb05" />
 			<SimpleMDE

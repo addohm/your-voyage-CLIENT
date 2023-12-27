@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-import usePosts from "../post/usePosts";
+import useGetLastTermsOrPrivacyId from "./useGetLastTermsOrPrivacyId";
 
 export default function FooterLink({ text, type }) { // type: "terms" or "privacy"
 
-    const [termsOrPrivacy] = usePosts(type) // terms or privacy are like regular posts
-    const id = termsOrPrivacy?.reverse()?.[0]?._id // get terms or privacy last post id
+    const id = useGetLastTermsOrPrivacyId(type)
 
     return (
         <Link to={`${type}/${id}`}>
