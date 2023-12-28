@@ -2,6 +2,7 @@ import { Button } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { ADD_POSTS_PAGE_ROUTE } from '../../utils/consts'
 import useGetLastTermsOrPrivacyId from '../footer/useGetLastTermsOrPrivacyId'
+import ForAdmin from './ForAdmin'
 
 export default function AdminAddContent() {
 
@@ -24,10 +25,12 @@ export default function AdminAddContent() {
     ]
 
     return (
-        list.map(({ route, title }) => (
-            <Link to={route} className='mb'>
-                <Button variant='outlined'>{title}</Button>
-            </Link>
-        ))
+        <ForAdmin>
+            {list.map(({ route, title }) => (
+                <Link to={route}>
+                    <Button style={{ marginBottom: 10 }} variant='outlined'>{title}</Button>
+                </Link>
+            ))}
+        </ForAdmin>
     )
 }
