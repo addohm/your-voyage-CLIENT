@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./index.scss"
 import arrow2 from "./img/arrow2.svg"
 import InputRequiredNativeTooltip from '../form/InputRequiredNativeTooltip';
+import Input from '../form/Input';
 
 export default function CoachCardRadio({ options, outerInd }) {
 
@@ -16,7 +17,7 @@ export default function CoachCardRadio({ options, outerInd }) {
                     onClick={() => clickedOptionIndSet(ind)}
                 >
                     {option}
-                    <input
+                    <Input
                         type="radio"
                         name={"radio" + outerInd}
                         value={option}

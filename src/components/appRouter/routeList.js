@@ -5,6 +5,7 @@ import AddPost from "../pages/addPosts/AddPost";
 import AddPostsPage from "../pages/addPosts/AddPostsPage";
 import MainPage from "../pages/main/MainPage";
 import PostFull from "../post/PostFull";
+import VerifyOrderToken from "../stripe/VerifyOrderToken";
 
 export default [
 	// VISITOR ROUTES
@@ -29,7 +30,14 @@ export default [
 		isForUser: true,
 		isForAdmin: true,
 	},
-	// // USER ROUTES
+	{
+		path: "/verifyOrderToken/:token",
+		element: <VerifyOrderToken />,
+		isPublic: true,
+		isForUser: true,
+		isForAdmin: true,
+	},
+	// ! USER ROUTES
 	// {
 	// 	path: "/",
 	// 	element: ,

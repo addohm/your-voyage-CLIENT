@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { Context } from "../../Context"
+import Input from "../form/Input"
 
 export default function CoachCardApplierEmail() {
 
@@ -11,7 +12,7 @@ export default function CoachCardApplierEmail() {
     }
 
     return (
-        <input
+        <Input
             required
             className="mb10 h40 w200"
             name="email"

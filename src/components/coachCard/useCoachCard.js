@@ -1,14 +1,11 @@
 import parseForm from "../../utils/parseForm"
-import axios from "../../utils/axios"
 
 export default function useCoachCard() {
 
-    async function applyForCoaching(e) {
-        e.preventDefault()
-        const form = parseForm(e)
-        const res = await axios("/applyForCoaching", { ...form, type: "coaching" })
-        console.log(res)
+    function memoCoachCard(e) {
+        const form = parseForm(e.target.closest("form"))
+        localStorage.setItem("coachCard", JSON.stringify(form))
     }
 
-    return { applyForCoaching }
+    return { memoCoachCard }
 }
