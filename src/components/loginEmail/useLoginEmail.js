@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import parseForm from "../../utils/parseForm"
-import * as api from "./api"
 import { Context } from "../../Context"
+import axios from "../../utils/axios"
 
 export default function useLoginEmail() {
 
@@ -11,7 +11,7 @@ export default function useLoginEmail() {
         e.preventDefault()
         const form = parseForm(e) // get email
         e.target.querySelector("input").value = "" // clear input email
-        const res = await api.loginSendEmail(form)
+        const res = await axios("/loginSendEmail", { ...form })
         if (!res.ok) return
         dialogSet({ show: false })
         snackbarSet({ show: true, text: "Please confirm login at: ", link: form.email, linkText: form.email, linkType: "web" })

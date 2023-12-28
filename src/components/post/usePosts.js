@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import * as api from "./api"
+import axios from '../../utils/axios'
 
 export default function usePosts(type) {
 
@@ -9,7 +9,7 @@ export default function usePosts(type) {
         async function getPosts() {
             if (!type) return
             if (type === "coach") return
-            const res = await api.getPosts(type)
+            const res = await axios("/getPosts", { type })
             res && postsSet(res)
         }
 

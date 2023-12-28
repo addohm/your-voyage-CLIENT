@@ -1,7 +1,7 @@
 import axios from "axios"
 import { baseURL } from "./consts"
 
-function _axios() {
+async function _axios(route, obj) {
     const instance = axios.create({
         baseURL: baseURL
     })
@@ -11,7 +11,14 @@ function _axios() {
         return config
     })
 
-    return instance
+    if (!route) return
+    try {
+        const { data } = await instance.post(route, { ...obj })
+        return data
+
+    } catch (error) {
+        console.log("AXIOS ERROR:", error)
+    }
 }
 
-export default _axios() 
+export default _axios

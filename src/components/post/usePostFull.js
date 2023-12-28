@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import * as api from "./api"
+import axios from '../../utils/axios'
 
 export default function usePostFull(type, id) {
 
@@ -8,7 +8,7 @@ export default function usePostFull(type, id) {
     useEffect(() => {
         async function getPost() {
             if (!type || !id) return
-            const res = await api.getPost(type, id)
+            const res = await axios("/getPost", { type, id })
             res && postSet(res)
         }
 

@@ -2,7 +2,7 @@
 import { useContext } from "react";
 import { Context } from "../../Context";
 // api
-import * as api from "./api"
+import axios from "../../utils/axios";
 // firebase
 import { auth, googleProvider } from "./firebaseConfig"
 import { signInWithPopup, signOut } from "firebase/auth"
@@ -17,7 +17,7 @@ export default function useLoginGoogle() {
         const res = await signInWithPopup(auth, googleProvider);
         const email = res.user.email
         // add user to DB
-        const { token, user } = await api.loginGoogle(email)
+        const { token, user } = await axios("/loginGoogle", { email })
         // add token to localStorage
         token && localStorage.setItem("token", token)
         // save user to context

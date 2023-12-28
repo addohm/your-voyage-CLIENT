@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 // api
-import * as api from "./api"
+import axios from "../../utils/axios"
 
 export default function useAutoAuth() {
 
@@ -12,7 +12,7 @@ export default function useAutoAuth() {
         async function autoAuth() {
             const token = localStorage.getItem("token")
             if (token) { // if user logged in => auto auth on every reload
-                const res = await api.autoAuth(token)
+                const res = await axios("/autoAuth", { token })
                 res?.user && userSet(res?.user)
             }
         }
