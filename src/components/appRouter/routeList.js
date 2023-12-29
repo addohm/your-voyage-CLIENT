@@ -1,7 +1,7 @@
 import { ADD_POSTS_PAGE_ROUTE, ADD_POST_ROUTE, EDIT_FOOTER_PAGE_ROUTE, EDIT_POST_ROUTE, MESSAGES_ROUTE, POST_ROUTE } from "../../utils/consts";
 import { MAIN_ROUTE } from "../../utils/consts";
 import VerifyLoginToken from "../loginEmail/LoginEmailVerifyToken";
-import Messages from "../messages/Messages";
+import MessagesHub from "../messages/MessagesHub";
 import AddPost from "../pages/addPosts/AddPost";
 import AddPostsPage from "../pages/addPosts/AddPostsPage";
 import MainPage from "../pages/main/MainPage";
@@ -41,7 +41,7 @@ export default [
 	// ! USER ROUTES
 	{
 		path: MESSAGES_ROUTE,
-		element: <Messages />,
+		element: <MessagesHub />,
 		isPublic: false,
 		isForUser: true,
 		isForAdmin: true,
