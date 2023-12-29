@@ -4,10 +4,10 @@ import img2 from "./img/img2.png"
 
 // same
 const radio = [
-    ["traveling", "staying at home"],
-    ["Part-Time", "Full-Time"],
-    ["onsite", "Remote"],
-    ["Freelance", "Contract"],
+    ["TRAVELING", "STAYING AT HOME"],
+    ["PART-TIME", "FULL-TIME"],
+    ["ONSITE", "REMOTE"],
+    ["FREELANCE", "CONTRACT"],
 ]
 
 // diff
@@ -17,10 +17,10 @@ export const info = [
         title: "let's get acquainted",
         radio,
         rating: [
-            { name: "tech innovations", rating: 5 },
-            { name: "gadgets", rating: 4 },
-            { name: "new strategies", rating: 5 },
-            { name: "vacation", rating: 3 },
+            { name: "TECH INNOVATIONS", rating: 5 },
+            { name: "GADGETS", rating: 4 },
+            { name: "NEW STRATEGIES", rating: 5 },
+            { name: "VACATION", rating: 3 },
         ]
     },
     {
@@ -28,10 +28,10 @@ export const info = [
         title: <>now is your turn<Dots /></>,
         radio,
         rating: [
-            { name: "tech innovations", rating: 0 },
-            { name: "gadgets", rating: 0 },
-            { name: "new strategies", rating: 0 },
-            { name: "vacation", rating: 0 },
+            { name: "TECH INNOVATIONS", rating: 0 },
+            { name: "GADGETS", rating: 0 },
+            { name: "NEW STRATEGIES", rating: 0 },
+            { name: "VACATION", rating: 0 },
         ]
     },
 ]
