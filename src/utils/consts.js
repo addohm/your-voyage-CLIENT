@@ -9,3 +9,4 @@ export const ADD_POST_ROUTE = "/add/:type"
 export const EDIT_POST_ROUTE = "/edit/:type/:id"
 // 
 export const EDIT_FOOTER_PAGE_ROUTE = "/edit/footer"
+export const MESSAGES_ROUTE = "/messages"
