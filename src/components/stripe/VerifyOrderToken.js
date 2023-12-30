@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { Context } from "../../Context"
 import axios from "../../utils/axios"
-import { MAIN_ROUTE } from "../../utils/consts"
+import { MAIN_ROUTE, MESSAGES_ROUTE } from "../../utils/consts"
 
 export default function VerifyOrderToken() {
 
@@ -16,7 +16,7 @@ export default function VerifyOrderToken() {
             // then client makes app.post("/applyForCoaching") from "/verifyOrderToken" page
             // then if token verified => create order in DB
             const form = JSON.parse(localStorage.getItem("coachCard"))
-            const res = await axios("/applyForCoaching", { ...form, token, type: "coaching" })
+            const res = await axios("/applyForCoaching", { ...form, token, type: "coaching", coachEmail: "sendtshop@gmail.com" }) // TODO !!!
 
             // ! error
             if (!res) {
@@ -29,7 +29,7 @@ export default function VerifyOrderToken() {
             }
 
             // ! ok
-            navigate(MAIN_ROUTE)
+            navigate(MESSAGES_ROUTE)
             dialogSet({
                 show: true,
                 title: "Order created!",

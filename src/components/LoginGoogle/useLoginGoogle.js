@@ -16,8 +16,10 @@ export default function useLoginGoogle() {
         // get google verified email 
         const res = await signInWithPopup(auth, googleProvider);
         const email = res.user.email
+        const name = res.user.displayName
+        const img = res.user.photoURL
         // add user to DB
-        const { token, user } = await axios("/loginGoogle", { email })
+        const { token, user } = await axios("/loginGoogle", { email, name, img })
         // add token to localStorage
         token && localStorage.setItem("token", token)
         // save user to context

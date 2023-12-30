@@ -3,10 +3,11 @@ export const MAIN_ROUTE = "/"
 // 
 export const ADD_POSTS_PAGE_ROUTE = "/add/"
 // 
-export const POST_ROUTE = "/:type/:id"
+export const POST_ROUTE = "post/:type/:id"
 // 
 export const ADD_POST_ROUTE = "/add/:type"
 export const EDIT_POST_ROUTE = "/edit/:type/:id"
 // 
 export const EDIT_FOOTER_PAGE_ROUTE = "/edit/footer"
 export const MESSAGES_ROUTE = "/messages"
+export const MESSAGE_ROUTE = "/message/:token"

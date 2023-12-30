@@ -2,9 +2,9 @@ import SendMessage from "./SendMessage"
 import Messages from "./Messages"
 import useSocket from "./useSocket"
 
-export default function Socket() {
+export default function Socket({ room }) {
 
-    const { messageSet, sendMessage, messageReceived } = useSocket()
+    const { messageSet, sendMessage, messageReceived } = useSocket(room)
 
     return (
         <>

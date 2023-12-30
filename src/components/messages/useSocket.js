@@ -3,14 +3,13 @@ import { useContext, useEffect, useState } from "react"
 import { Context } from "../../Context"
 import getMsgColor from "./getMsgColor"
 
-export default function useSocket() {
+export default function useSocket(room) {
 
     const { user } = useContext(Context)
 
     // ! socket send
     const [message, messageSet] = useState("") // input value
     const socket = io.connect("http://localhost:5001") // TODO !!!
-    const room = 123 // TODO !!!
 
     function sendMessage() {
         socket.emit("send_message", { message, room, email: user.email })

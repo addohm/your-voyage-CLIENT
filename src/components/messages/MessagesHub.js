@@ -1,11 +1,11 @@
 import CheckSubscription from "./CheckSubscription";
-import Socket from "./Socket";
+import Rooms from "./Rooms";
 
 export default function MessagesHub() {
     return (
         <>
             <CheckSubscription />
-            <Socket />
+            <Rooms />
         </>
     )
 }
