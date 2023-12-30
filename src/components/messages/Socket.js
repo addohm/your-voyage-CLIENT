@@ -8,8 +8,9 @@ export default function Socket({ room }) {
 
     return (
         <>
-            <SendMessage messageSet={messageSet} sendMessage={sendMessage} />
+            {/* Socket (temp) messages */}
             <Messages messageReceived={messageReceived} />
+            <SendMessage messageSet={messageSet} sendMessage={sendMessage} />
         </>
     )
 }

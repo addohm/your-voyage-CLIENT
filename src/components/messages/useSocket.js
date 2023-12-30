@@ -1,7 +1,6 @@
 import io from "socket.io-client"
 import { useContext, useEffect, useState } from "react"
 import { Context } from "../../Context"
-import getMsgColor from "./getMsgColor"
 
 export default function useSocket(room) {
 
@@ -12,7 +11,7 @@ export default function useSocket(room) {
     const socket = io.connect("http://localhost:5001") // TODO !!!
 
     function sendMessage() {
-        socket.emit("send_message", { message, room, email: user.email })
+        socket.emit("send_message", { msg: message, room, email: user.email })
     }
 
     useEffect(() => {
@@ -25,8 +24,7 @@ export default function useSocket(room) {
 
     useEffect(() => {
         socket.on("receive_message", (data) => {
-            const msgColor = getMsgColor(data?.email, user?.email)
-            messageReceivedSet(prev => [...prev, { msg: data?.message, msgColor }])
+            messageReceivedSet(prev => [...prev, data])
         })
     }, [socket])
     // ? socket receive
