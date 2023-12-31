@@ -37,7 +37,7 @@
 		background: $brand;
 	}
 	&_danger{
-		background: lighten($danger, 25%);
+		background: lighten($danger, 25%) !important;
 	}
 	&_app{
 		background: $appBg;

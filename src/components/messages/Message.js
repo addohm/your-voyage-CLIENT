@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import "./index.scss"
 import timestampToTime from "../../utils/timestampToTime"
 import MessageMenu from "./MessageMenu"
@@ -8,9 +8,10 @@ export default function Message(props) {
 
     const { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt } = props
     const [isContentEditable, isContentEditableSet] = useState(null)
+    const msgRef = useRef(null)
 
     return (
-        <div className={`fcc g10 p15 mb10 brL ${isMyMsg ? "myMsg" : "otherMsg"} ${isUpdated ? "updatedMsg" : ""} msg`}>
+        <div ref={msgRef} className={`fcc g10 p15 mb10 brL ${isMyMsg ? "myMsg" : "otherMsg"} ${isUpdated ? "updatedMsg" : ""} msg`}>
             <div
                 className="por f w100p"
             >
@@ -24,7 +25,7 @@ export default function Message(props) {
                         defaultValue={msg}
                         rows={calculateTextareaRows(msg)}
                     />}
-                <MessageMenu isMyMsg={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} />
+                <MessageMenu msgRef={msgRef} isMyMsg={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} />
             </div>
             {isUpdated
                 ?
