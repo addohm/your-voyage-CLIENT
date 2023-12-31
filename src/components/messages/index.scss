@@ -7,3 +7,13 @@
     background-color: rgb(219, 244, 253);
     margin-right: auto;
 }
+
+.updatedMsg{
+    border-left: 5px solid green;
+}
+
+.msg{
+    max-width: 330px;
+    hyphens: auto;
+    white-space: pre-line;
+}

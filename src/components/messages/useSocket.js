@@ -29,11 +29,13 @@ export default function useSocket(room, dbMessagesSet) {
 
     // ! update socket message
     useEffect(() => {
-        socket.on("reload_room", (data) => { // TODO !!! rename reload_room to edit_message
+        socket.on("edit_message", (data) => {
             dbMessagesSet(prev => {
                 const updatedMessages = prev.map(message => {
                     if (message._id === data._id) {
                         message.msg = data.msg
+                        message.isUpdated = true
+                        message.updatedAt = data.updatedAt
                     }
                     return message
                 })
