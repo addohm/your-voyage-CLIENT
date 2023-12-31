@@ -14,5 +14,5 @@ export default function useSocketHub(token) {
         getMessages()
     }, [])
 
-    return { dbMessages }
+    return { dbMessages, dbMessagesSet }
 }

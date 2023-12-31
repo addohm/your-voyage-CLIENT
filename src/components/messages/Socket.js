@@ -1,15 +1,12 @@
 import SendMessage from "./SendMessage"
-import Messages from "./Messages"
 import useSocket from "./useSocket"
 
-export default function Socket({ room }) {
+export default function Socket({ room, dbMessagesSet }) { // TODO !!! rename dbMessages
 
-    const { messageSet, sendMessage, messageReceived } = useSocket(room)
+    const { messageSet, sendMessage } = useSocket(room, dbMessagesSet)
 
     return (
         <>
-            {/* Socket (temp) messages */}
-            <Messages messageReceived={messageReceived} />
             <SendMessage messageSet={messageSet} sendMessage={sendMessage} />
         </>
     )

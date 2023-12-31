@@ -4,7 +4,7 @@ import "./index.scss"
 
 export default function Message(props) {
 
-    const { msg, isMyMsg, _id, email } = props
+    const { msg, isMyMsg, _id, email, room } = props
     const [isContentEditable, isContentEditableSet] = useState(null)
 
     return (
@@ -12,7 +12,7 @@ export default function Message(props) {
             contentEditable={isContentEditable}
         >
             <div>{msg}</div>
-            <MessageEdit isVisible={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} />
+            <MessageEdit isVisible={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} />
         </div>
     )
 }

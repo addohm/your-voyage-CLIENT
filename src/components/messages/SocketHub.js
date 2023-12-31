@@ -6,13 +6,13 @@ import Messages from "./Messages";
 export default function SocketHub() {
 
     const { token } = useParams()
-    const { dbMessages } = useSocketHub(token)
+    const { dbMessages, dbMessagesSet } = useSocketHub(token)
 
     return (
         <>
             {/* DB messages */}
             <Messages messageReceived={dbMessages} />
-            <Socket room={token} />
+            <Socket room={token} dbMessagesSet={dbMessagesSet} />
         </>
     )
 }

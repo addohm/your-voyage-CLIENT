@@ -2,7 +2,7 @@ import io from "socket.io-client"
 import { useContext, useEffect, useState } from "react"
 import { Context } from "../../Context"
 
-export default function useSocket(room) {
+export default function useSocket(room, dbMessagesSet) {
 
     const { user } = useContext(Context)
 
@@ -20,14 +20,28 @@ export default function useSocket(room) {
     // ? socket send
 
     // ! socket receive
-    const [messageReceived, messageReceivedSet] = useState([]) // message from another user
-
     useEffect(() => {
         socket.on("receive_message", (data) => {
-            messageReceivedSet(prev => [...prev, data])
+            dbMessagesSet(prev => [...prev, data])
         })
     }, [socket])
     // ? socket receive
 
-    return { messageSet, sendMessage, messageReceived }
+    // ! update socket message
+    useEffect(() => {
+        socket.on("reload_room", (data) => { // TODO !!! rename reload_room to edit_message
+            dbMessagesSet(prev => {
+                const updatedMessages = prev.map(message => {
+                    if (message._id === data._id) {
+                        message.msg = data.msg
+                    }
+                    return message
+                })
+                return updatedMessages
+            })
+        })
+    }, [socket])
+    // ? update socket message
+
+    return { messageSet, sendMessage }
 }
