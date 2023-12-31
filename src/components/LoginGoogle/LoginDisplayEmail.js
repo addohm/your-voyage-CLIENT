@@ -2,7 +2,7 @@ import { useState } from "react"
 import LogoutButton from "./LogoutButton"
 import { KeyboardArrowDown as Arrow } from '@mui/icons-material';
 import AdminAddContent from "../admin/AdminAddContent";
-import LoginDisplayEmailHoveredWrap from "./LoginDisplayEmailHoveredWrap";
+import Menu from "./Menu";
 import UserContent from "../user/UserContent";
 
 export default function LoginDisplayEmail({ user }) {
@@ -20,11 +20,11 @@ export default function LoginDisplayEmail({ user }) {
             >
                 <div className="oh wsn toe w110">{user?.email?.replace(/@.*/, '')}</div>
                 <Arrow className={`poa r8 t-2 ${isUserEmailHovered ? "tr180" : ""}`} />
-                <LoginDisplayEmailHoveredWrap user={user} isUserEmailHovered={isUserEmailHovered}>
+                <Menu isVisible={user && isUserEmailHovered}>
                     <AdminAddContent />
                     <UserContent />
                     <LogoutButton />
-                </LoginDisplayEmailHoveredWrap>
+                </Menu>
             </div>
         </>
     )
