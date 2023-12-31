@@ -20,7 +20,7 @@ export default function LoginDisplayEmail({ user }) {
             >
                 <div className="oh wsn toe w110">{user?.email?.replace(/@.*/, '')}</div>
                 <Arrow className={`poa r8 t-2 ${isUserEmailHovered ? "tr180" : ""}`} />
-                <Menu isVisible={user && isUserEmailHovered}>
+                <Menu isVisible={user && isUserEmailHovered} className="poa w100p bg_white py15 brL">
                     <AdminAddContent />
                     <UserContent />
                     <LogoutButton />

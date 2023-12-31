@@ -8,7 +8,7 @@ export default function MessageEdit({ isVisible, isContentEditableSet, isContent
     }
 
     async function saveMessage(e) {
-        const msg = e.target.closest("div").innerText // update message text
+        const msg = document.querySelector(".updatedMessageText").value
         isContentEditableSet(false)
         await axios("/editMessage", { _id, email, msg, room, type: "messages" })
     }

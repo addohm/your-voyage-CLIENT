@@ -1,7 +1,8 @@
 import { useState } from "react"
-import MessageEdit from "./MessageEdit"
 import "./index.scss"
 import timestampToTime from "../../utils/timestampToTime"
+import MessageMenu from "./MessageMenu"
+import calculateTextareaRows from "../../utils/calculateTextareaRows"
 
 export default function Message(props) {
 
@@ -10,13 +11,20 @@ export default function Message(props) {
 
     return (
         <div className={`fcc g10 p15 mb10 brL ${isMyMsg ? "myMsg" : "otherMsg"} ${isUpdated ? "updatedMsg" : ""} msg`}>
-            {/* MessageEdit takes inner text from closest div (this) */}
             <div
-                className="f w100p"
-                contentEditable={isContentEditable}
+                className="por f w100p"
             >
-                <div>{msg}</div>
-                <MessageEdit isVisible={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} />
+                {!isContentEditable
+                    ?
+                    <div>{msg}</div>
+                    :
+                    <textarea
+                        className="updatedMessageText"
+                        autoFocus
+                        defaultValue={msg}
+                        rows={calculateTextareaRows(msg)}
+                    />}
+                <MessageMenu isMyMsg={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} />
             </div>
             {isUpdated
                 ?

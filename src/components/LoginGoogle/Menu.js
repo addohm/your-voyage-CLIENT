@@ -1,7 +1,7 @@
-export default function Menu({ isVisible, children }) {
+export default function Menu({ isVisible, children, className }) {
     return (
         isVisible &&
-        <div className="poa w100p bg_white py15 brL">
+        <div className={`${className}`}>
             {children}
         </div>
     )
