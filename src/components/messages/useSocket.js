@@ -51,7 +51,8 @@ export default function useSocket(room, dbMessagesSet) {
             dbMessagesSet(prev => {
                 const updatedMessages = prev.map(message => {
                     if (message._id === data._id) {
-                        message.isDeleted = true
+                        message.isDeleted = data.isDeleted
+                        message.isRestored = data.isRestored
                         message.updatedAt = data.updatedAt
                     }
                     return message
