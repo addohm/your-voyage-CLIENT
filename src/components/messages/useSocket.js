@@ -34,7 +34,8 @@ export default function useSocket(room, dbMessagesSet) {
                 const updatedMessages = prev.map(message => {
                     if (message._id === data._id) {
                         message.msg = data.msg
-                        message.isUpdated = true
+                        message.isUpdated = data.isUpdated
+                        message.isRestored = data.isRestored
                         message.updatedAt = data.updatedAt
                     }
                     return message
