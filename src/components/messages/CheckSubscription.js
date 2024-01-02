@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "../../utils/axios"
 import RenewSubscription from "./RenewSubscription"
+import For from "../other/For"
 
 export default function CheckSubscription() {
 
@@ -19,10 +20,12 @@ export default function CheckSubscription() {
     const { ok, msg, error } = subscription
 
     return (
-        <div className="tac mb40">
-            <div className="mb15">{msg}</div>
-            {error && <div>{error}</div>}
-            <RenewSubscription ok={ok} />
-        </div>
+        <For role="user">
+            <div className="tac mb40">
+                <div className="mb15">{msg}</div>
+                {error && <div>{error}</div>}
+                <RenewSubscription ok={ok} />
+            </div>
+        </For>
     )
 }

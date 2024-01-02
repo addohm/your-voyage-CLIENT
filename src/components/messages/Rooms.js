@@ -6,6 +6,8 @@ export default function Rooms() {
     const { rooms } = useRooms()
 
     return (
-        rooms?.map(room => <Room key={room?.room} {...room} />)
+        <div className="fc aic">
+            {rooms?.map(room => <Room key={room?.room} {...room} />)}
+        </div>
     )
 }

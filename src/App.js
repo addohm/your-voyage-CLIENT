@@ -9,13 +9,15 @@ import Snackbar from "./components/snackbar/Snackbar";
 const App = () => {
 
   return (
-    <div className="por mih100vh">
-      <Header />
-      <AppRouter />
+    <div className="por">
+      <div className="por mih100vh">
+        <Header />
+        <AppRouter />
+        <GoToTop />
+        <Dialog />
+        <Snackbar />
+      </div>
       <Footer />
-      <GoToTop />
-      <Dialog />
-      <Snackbar />
     </div>
   );
 };
