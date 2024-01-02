@@ -4,15 +4,13 @@ import { useContext } from 'react';
 import { Context } from '../../Context';
 import { Button } from '@mui/material';
 
-export default function MessageDelete({ msgRef, isVisible, _id }) {
+export default function MessageDelete({ isVisible, _id, email, room }) {
 
     const { dialogSet } = useContext(Context)
 
     function confirmDeleteMessage() {
-        axios("/deleteMessage", { _id, type: "messages" })
+        axios("/deleteMessage", { _id, email, room, type: "messages" })
         dialogSet({ show: false })
-        msgRef.current.classList.add("delAnim")
-        setTimeout(() => msgRef.current.remove(), 900);
     }
 
     async function deleteMessage(e) {

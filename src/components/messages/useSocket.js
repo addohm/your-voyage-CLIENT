@@ -45,5 +45,15 @@ export default function useSocket(room, dbMessagesSet) {
     }, [socket])
     // ? update socket message
 
+    // ! delete socket message
+    useEffect(() => {
+        socket.on("delete_message", (data) => {
+            dbMessagesSet(prev => {
+                return prev.filter(message => message._id !== data._id)
+            })
+        })
+    }, [socket])
+    // ? delete socket message
+
     return { messageSet, sendMessage }
 }
