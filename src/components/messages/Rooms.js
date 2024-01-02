@@ -6,6 +6,6 @@ export default function Rooms() {
     const { rooms } = useRooms()
 
     return (
-        rooms?.map(room => <Room key={room?.roomToken} {...room} />)
+        rooms?.map(room => <Room key={room?.room} {...room} />)
     )
 }
