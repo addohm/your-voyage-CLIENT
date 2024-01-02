@@ -12,7 +12,7 @@ export default function Message(props) {
     return (
         <div className={`fcc g10 p15 mb10 brL ${isMyMsg ? "myMsg" : "otherMsg"} ${isUpdated ? "updatedMsg" : ""} ${isDeleted ? "deletedMsg" : ""} msg`}>
             <div className="por f w100p">
-                <MessageText msg={msg} isContentEditable={isContentEditable} />
+                <MessageText msg={msg} isContentEditable={isContentEditable} isDeleted={isDeleted} />
                 <MessageMenu isMyMsg={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} />
             </div>
             <MessageTime isUpdated={isUpdated} updatedAt={updatedAt} createdAt={createdAt} isDeleted={isDeleted} />

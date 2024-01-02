@@ -1,10 +1,12 @@
 import calculateTextareaRows from "../../utils/calculateTextareaRows";
 
-export default function MessageText({ msg, isContentEditable }) {
+export default function MessageText({ msg, isContentEditable, isDeleted }) {
     return (
         !isContentEditable
             ?
-            <div>{msg}</div>
+            <div>
+                {!isDeleted ? msg : "This message has been deleted"}
+            </div>
             :
             <textarea
                 className="updatedMessageText"
