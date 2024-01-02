@@ -49,7 +49,14 @@ export default function useSocket(room, dbMessagesSet) {
     useEffect(() => {
         socket.on("delete_message", (data) => {
             dbMessagesSet(prev => {
-                return prev.filter(message => message._id !== data._id)
+                const updatedMessages = prev.map(message => {
+                    if (message._id === data._id) {
+                        message.isDeleted = true
+                        message.updatedAt = data.updatedAt
+                    }
+                    return message
+                })
+                return updatedMessages
             })
         })
     }, [socket])
