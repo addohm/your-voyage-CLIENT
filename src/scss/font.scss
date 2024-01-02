@@ -77,3 +77,13 @@
 .ts{
 	-webkit-text-stroke: 1px $black;
 }
+  // gen lines of text to show
+  @for $i from 0 through 10 {
+	.textLines#{$i} {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: #{$i}; // number of lines
+		-webkit-box-orient: vertical;
+	}
+ }

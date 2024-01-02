@@ -1,17 +1,19 @@
 import io from "socket.io-client"
 import { useContext, useEffect, useState } from "react"
 import { Context } from "../../Context"
+import Room from "./Room"
 
 export default function useSocket(room, dbMessagesSet) {
 
-    const { user } = useContext(Context)
+    const { user, snackbarSet } = useContext(Context)
+    const showSnackbar = (data) => snackbarSet({ show: true, text: <Room {...data} /> })
 
     // ! socket send
     const [message, messageSet] = useState("") // input value
     const socket = io.connect("http://localhost:5001") // TODO !!!
 
     function sendMessage() {
-        socket.emit("send_message", { msg: message, room, email: user.email })
+        socket.emit("send_message", { msg: message, room, email: user.email, name: user.name, img: user.img })
     }
 
     useEffect(() => {
@@ -22,6 +24,7 @@ export default function useSocket(room, dbMessagesSet) {
     // ! socket receive
     useEffect(() => {
         socket.on("receive_message", (data) => {
+            showSnackbar(data)
             dbMessagesSet(prev => [...prev, data])
         })
     }, [socket])
@@ -30,6 +33,7 @@ export default function useSocket(room, dbMessagesSet) {
     // ! update socket message
     useEffect(() => {
         socket.on("edit_message", (data) => {
+            showSnackbar(data)
             dbMessagesSet(prev => {
                 const updatedMessages = prev.map(message => {
                     if (message._id === data._id) {

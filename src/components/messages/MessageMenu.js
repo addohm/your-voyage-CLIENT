@@ -16,7 +16,7 @@ export default function MessageMenu({ isMyMsg, isContentEditableSet, isContentEd
         >
             <MoreVert className="poa r-10 t-4" />
             <Menu isVisible={isMyMsg && isHovered} className="poa r10 t-4 bg_white px15 brL" >
-                <MessageEdit isVisible={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} />
+                <MessageEdit isVisible={isMyMsg && !isDeleted} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} />
                 <MessageDelete Icon={() => <Close />} isVisible={isMyMsg && !isDeleted} _id={_id} email={email} room={room} />
                 <MessageDelete Icon={() => <ReplayOutlined />} isRestoring={true} isVisible={isMyMsg && isDeleted} _id={_id} email={email} room={room} />
             </Menu>
