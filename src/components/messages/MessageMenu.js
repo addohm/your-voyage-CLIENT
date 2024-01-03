@@ -3,13 +3,15 @@ import Menu from "../LoginGoogle/Menu";
 import MessageEdit from "./MessageEdit";
 import { MoreVert, Close, ReplayOutlined } from '@mui/icons-material';
 import MessageDelete from "./MessageDelete";
+import timestampToUnix from "../../utils/timestampToUnix";
 
-export default function MessageMenu({ isMyMsg, isContentEditableSet, isContentEditable, _id, email, room, isDeleted }) {
+export default function MessageMenu({ isMyMsg, isContentEditableSet, isContentEditable, _id, email, room, isDeleted, createdAt }) {
 
     const [isHovered, isHoveredSet] = useState(null)
+    const isMsgOlderThan5Mins = timestampToUnix(createdAt) < timestampToUnix(Date.now() - 5 * 60 * 1000)
 
     return (
-        isMyMsg &&
+        (!isMsgOlderThan5Mins && isMyMsg) &&
         <div
             onMouseEnter={() => isHoveredSet(true)}
             onMouseLeave={() => isHoveredSet(false)}
