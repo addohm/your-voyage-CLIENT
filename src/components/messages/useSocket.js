@@ -68,5 +68,5 @@ export default function useSocket(room, dbMessagesSet) {
     }, [socket])
     // ? delete socket message
 
-    return { messageSet, sendMessage }
+    return { message, messageSet, sendMessage }
 }
