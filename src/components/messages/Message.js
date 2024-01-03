@@ -3,15 +3,16 @@ import "./index.scss"
 import MessageMenu from "./MessageMenu"
 import MessageText from "./MessageText"
 import MessageTime from "./MessageTime"
+import MessageDate from "./MessageDate"
 
 export default function Message(props) {
 
-    const { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate } = props
+    const { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate, messageDateTopCopySet } = props
     const [isContentEditable, isContentEditableSet] = useState(null)
 
     return (
         <>
-            {msgDate && <div className="bg_white p15 my30 brL fw600">{msgDate}</div>}
+            <MessageDate msgDate={msgDate} messageDateTopCopySet={messageDateTopCopySet} />
             <div className={`fcc g10 p15 mb10 brL ${isMyMsg ? "myMsg" : "otherMsg"} ${isUpdated ? "updatedMsg" : ""} ${isDeleted ? "deletedMsg" : ""} ${isRestored ? "restoredMsg" : ""} msg`}>
                 <div className="por f w100p">
                     <MessageText msg={msg} isContentEditable={isContentEditable} isDeleted={isDeleted} />
