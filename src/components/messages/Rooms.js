@@ -8,6 +8,7 @@ export default function Rooms() {
     return (
         <div className="fc aic">
             {rooms?.map(room => <Room key={room?.room} {...room} />)}
+            {rooms?.length === 0 && <div>No active subscriptions ...</div>}
         </div>
     )
 }

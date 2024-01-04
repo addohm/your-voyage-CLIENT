@@ -21,6 +21,7 @@ export default function Messages({ messageReceived }) {
                     <Message key={ind} {...message} isMyMsg={isMyMsg} msgDate={msgDate} messageDateTopCopySet={messageDateTopCopySet} />
                 </>
             })}
+            {messageReceived?.length === 0 && <div className="fcc aic">No messages yet ...</div>}
         </div>
     )
 }
