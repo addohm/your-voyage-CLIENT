@@ -13,7 +13,7 @@ async function _axios(route, obj) {
 
     if (!route) return
     try {
-        const { data } = await instance.post(route, { ...obj })
+        const { data } = await instance.post(route, obj)
         return data
 
     } catch (error) {

@@ -23,7 +23,7 @@ export default function usePost({ type, id }) {
         if (isAddImgRequired && !form.textEditorValue.includes("[image]")) { alert("paste or drop at least one image"); return }
         // no id = no post => create post; has id => edit post
         const res = !id ? await axios("/addPost", { ...form, type }) : await axios("/editPost", { ...form, type, id })
-        navigate(`/${type}/${res._id}`)
+        navigate(`/post/${type}/${res._id}`)
     }
 
     async function deletePost(e) {
@@ -32,7 +32,7 @@ export default function usePost({ type, id }) {
         e.target.closest(".toolCard").classList.add("delAnim")
         setTimeout(() => e.target.closest(".toolCard").classList.add("dn"), 1500)
         // !! delete file
-        await axios("/deletePost", { type, id })
+        await axios("/deletePost", { type, id }) // TODO !!!
     }
 
     return (

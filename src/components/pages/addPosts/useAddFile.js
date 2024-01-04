@@ -11,7 +11,7 @@ export default function useAddFile() {
 			})
 		}
 
-		const res = await axios("/addFile", { path, formData }) // returns fileArr (on server) to store in DB: eg: ["imgPath1","imgPath2",...]
+		const res = await axios(path, formData) // returns fileArr (on server) to store in DB: eg: ["imgPath1","imgPath2",...]
 		return res?.fileArr
 	}
 
