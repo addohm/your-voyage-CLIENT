@@ -1,6 +1,6 @@
 import { Button } from '@mui/material'
 import { Link } from 'react-router-dom'
-import { ADD_POSTS_PAGE_ROUTE } from '../../utils/consts'
+import { ADD_POSTS_PAGE_ROUTE, ADD_PRIVACY_ROUTE, ADD_TERMS_ROUTE } from '../../utils/consts'
 import useGetLastTermsOrPrivacyId from '../footer/useGetLastTermsOrPrivacyId'
 import For from '../other/For'
 
@@ -8,6 +8,8 @@ export default function AdminAddContent() {
 
     const lastTermsId = useGetLastTermsOrPrivacyId("terms")
     const lastPrivacyId = useGetLastTermsOrPrivacyId("privacy")
+    const termsRoute = !lastTermsId ? ADD_TERMS_ROUTE : `/post/terms/${lastTermsId}`
+    const privacyRoute = !lastPrivacyId ? ADD_PRIVACY_ROUTE : `/post/privacy/${lastPrivacyId}`
 
     const list = [
         {
@@ -15,11 +17,11 @@ export default function AdminAddContent() {
             title: "+ POSTS",
         },
         {
-            route: `/terms/${lastTermsId}`,
+            route: termsRoute,
             title: "+ TERMS",
         },
         {
-            route: `/privacy/${lastPrivacyId}`,
+            route: privacyRoute,
             title: "+ PRIVACY",
         }
     ]

@@ -1,7 +1,7 @@
 import { Clear } from '@mui/icons-material'
 import usePost from '../pages/addPosts/usePost'
 
-export default function ToolCardIconDelete({ type, _id }) {
+export default function ToolCardIconDelete({ type, _id, isVisible }) {
 
     const { deletePost } = usePost({ type, _id })
 
@@ -10,6 +10,7 @@ export default function ToolCardIconDelete({ type, _id }) {
     }
 
     return (
+        isVisible &&
         <Clear style={{ height: 30, width: 30 }} onClick={_deletePost} />
     )
 }

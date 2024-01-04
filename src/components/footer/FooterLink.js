@@ -6,7 +6,7 @@ export default function FooterLink({ text, type }) { // type: "terms" or "privac
     const id = useGetLastTermsOrPrivacyId(type)
 
     return (
-        <Link to={`${type}/${id}`}>
+        <Link to={`/post/${type}/${id}`}>
             {text}
         </Link>
     )

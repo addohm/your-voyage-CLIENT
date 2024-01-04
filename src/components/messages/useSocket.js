@@ -13,6 +13,7 @@ export default function useSocket(room, dbMessagesSet) {
     const socket = io.connect(process.env.SERVER_URL || "http://localhost:443") // https PORT
 
     function sendMessage() {
+        if (!message) return
         socket.emit("send_message", { msg: message, room, email: user.email, name: user.name, img: user.img })
     }
 

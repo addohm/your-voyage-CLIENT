@@ -12,7 +12,7 @@ export default function Footer() {
     const location = useLocation().pathname
 
     return (
-        <div className={`fcc jcsb pb px100 w100p ${location === MAIN_ROUTE ? mainRouteStyle : ""}`}>
+        <footer className={`fcc jcsb pb px100 w100p ${location === MAIN_ROUTE ? mainRouteStyle : ""}`}>
             <div>
                 <div className='fw600'>Career Coach & hr director</div>
                 <div className='fw600 brand tac'>Xiaoyang Li</div>
@@ -27,6 +27,6 @@ export default function Footer() {
                 <div>/</div>
                 <FooterLink text="Privacy" type="privacy" />
             </div>
-        </div>
+        </footer>
     )
 }

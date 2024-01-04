@@ -13,7 +13,7 @@ export default function PostFull() {
 
     return (
         <>
-            <div className='postFull maw800 m0a'>
+            <div className='postFull maw800 mla mra mb100'>
                 <ToolCardIcons isVisible={true} type={type} _id={id} className="poa t-30" />
                 <div className='title tac mb'>{post?.title}</div>
                 <Markdown>{post?.textEditorValue}</Markdown>

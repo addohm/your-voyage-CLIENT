@@ -8,7 +8,7 @@ export default function ToolCardIcons({ isVisible, type, _id, className }) {
         <Animation type="opacity">
             <div className={className}>
                 <ToolCardIconEdit type={type} _id={_id} />
-                <ToolCardIconDelete type={type} _id={_id} />
+                <ToolCardIconDelete type={type} _id={_id} isVisible={!["terms", "privacy"].includes(type)} />
             </div>
         </Animation>
     )
