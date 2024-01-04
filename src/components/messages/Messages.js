@@ -11,7 +11,7 @@ export default function Messages({ messageReceived }) {
     const [messageDateTopCopy, messageDateTopCopySet] = useState(null)
 
     return (
-        <div className="por fc w100p maw600 p15 m0a aic">
+        <div className="por fc aic w100p maw600 p15 mla mra mt-55">
             {messageReceived?.map((message, ind) => {
                 const isMyMsg = message?.email === user?.email ? true : false
                 let msgDate = timestampToDate(message.createdAt)
