@@ -4,7 +4,7 @@ import "./index.scss"
 
 export default function Markdown_({ children }) {
 	return (
-		<pre>
+		<pre className="innerImgW100p">
 			<Markdown>{children}</Markdown>
 		</pre>
 	)

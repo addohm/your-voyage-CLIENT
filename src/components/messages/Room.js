@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import timestampToTime from "../../utils/timestampToTime";
+import Markdown from "../textEditor/Markdown";
 
 export default function Room({ img, name, room, msg, createdAt }) {
     return (
@@ -7,7 +8,7 @@ export default function Room({ img, name, room, msg, createdAt }) {
             <img className="h60 w60 br50" src={img} />
             <div className="fc black">
                 <div className="fw600 mt3">{name}</div>
-                <div className="textLines2">{msg}</div>
+                <div className="textLines2"><Markdown>{msg}</Markdown></div>
             </div>
             <div className="mla">{timestampToTime(createdAt)}</div>
         </Link>

@@ -8,6 +8,11 @@
 .wL{ // width Large
 	max-width: $wL;
 }
+.innerImgW100p{
+    img{ // !!
+        width: 100%;
+    }
+}
 //
 .w100vw{
 	width: 100vw;
