@@ -10,7 +10,7 @@ export default function Room({ img, name, room, msg, createdAt }) {
                 <div className="fw600 mt3">{name}</div>
                 <div className="textLines2"><Markdown>{msg}</Markdown></div>
             </div>
-            <div className="mla">{timestampToTime(createdAt)}</div>
+            {createdAt && <div className="mla">{timestampToTime(createdAt)}</div>}
         </Link>
     )
 }

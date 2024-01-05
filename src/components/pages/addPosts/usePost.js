@@ -20,7 +20,7 @@ export default function usePost({ type, id }) {
         // add/edit post
         const form = parseForm(e)
         // alert: add image
-        if (isAddImgRequired && !form.textEditorValue.includes("[image]")) { alert("paste or drop at least one image"); return }
+        if (isAddImgRequired && !form.textEditorValue.match(/!\[[^\]]+\]/g)) { alert("paste or drop at least one image"); return }
         // no id = no post => create post; has id => edit post
         const res = !id ? await axios("/addPost", { ...form, type }) : await axios("/editPost", { ...form, type, id })
         navigate(`/post/${type}/${res._id}`)
