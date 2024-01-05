@@ -6,9 +6,9 @@ import usePastedOrDroppedFile from "./usePastedOrDroppedFile";
 import TextEditorLabel from "./TextEditorLabel";
 import InputRequiredNativeTooltip from "../form/InputRequiredNativeTooltip";
 
-export default function TextEditor({ defaultValue, className, label, type, isVisible }) { // type: product/article
+export default function TextEditor(props) { // type: product/article
 
-	const [value, valueSet] = useState("")
+	const { defaultValue, className, label, type, isVisible, name, value, valueSet } = props
 
 	useEffect(() => {
 		defaultValue && valueSet(defaultValue?.replace(/•/g, ""))
@@ -19,12 +19,12 @@ export default function TextEditor({ defaultValue, className, label, type, isVis
 	}, [])
 
 	const { savePastedImgOnServer, saveDroppedImgOnServer } = usePastedOrDroppedFile(valueSet, type)
-	const noValue = value.length === 0
+	const noValue = value?.length === 0
 
 	return (
 		(isVisible === undefined || isVisible) &&
 		<div className={`por w100p ${className}`}>
-			<TextEditorLabel label={label} valueLength={value.length} className="mb05" />
+			<TextEditorLabel label={label} valueLength={value?.length} className="mb05" />
 			<SimpleMDE
 				value={value}
 				onChange={onChange}
@@ -33,7 +33,7 @@ export default function TextEditor({ defaultValue, className, label, type, isVis
 				onDragOver={(e) => e.preventDefault()}
 				placeholder="..."
 			/>
-			<input hidden name="textEditorValue" value={value} />
+			<input hidden name={name} value={value} />
 			<InputRequiredNativeTooltip required={noValue} className="ca" />
 		</div>
 	)

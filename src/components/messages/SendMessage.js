@@ -1,20 +1,27 @@
 import { Send } from '@mui/icons-material';
-import { TextField } from '@mui/material';
+import TextEditor from '../textEditor/TextEditor';
+import useAddFile from '../pages/addPosts/useAddFile';
+import { useContext } from 'react';
+import { Context } from '../../Context';
 
 export default function SendMessage({ message, messageSet, sendMessage }) {
 
-    function _sendMessage() {
+    const { pastedOrDroppedImg } = useContext(Context)
+    const { fileArr } = useAddFile()
+
+    async function _sendMessage() {
+        await fileArr("/upload/siteContent", pastedOrDroppedImg) // TODO !!! change multer path
         sendMessage()
         messageSet("")
     }
 
     return (
         <div className="fcc mb20">
-            <TextField
-                multiline
+            <TextEditor
+                name="msg"
+                className="maw600"
                 value={message}
-                onChange={(e) => messageSet(e.target.value)}
-                style={{ width: 330 }}
+                valueSet={messageSet}
             />
             <Send onClick={_sendMessage} className="ml10" />
         </div>

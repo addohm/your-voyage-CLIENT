@@ -1,6 +1,11 @@
 .rooms{
-    // !! make rooms width 100%, this is different from the rest of the app
-    a{
+    a{  // !! make rooms width 100%
+        width: 100%;
+    }
+}
+
+.messageText{
+    img{ // !!
         width: 100%;
     }
 }
