@@ -10,7 +10,7 @@ export default function SendMessage({ message, messageSet, sendMessage }) {
     const { fileArr } = useAddFile()
 
     async function _sendMessage() {
-        await fileArr("/upload/siteContent", pastedOrDroppedImg) // TODO !!! change multer path
+        await fileArr("/upload/msgContent", pastedOrDroppedImg)
         sendMessage()
         messageSet("")
     }
@@ -22,6 +22,7 @@ export default function SendMessage({ message, messageSet, sendMessage }) {
                 className="maw600"
                 value={message}
                 valueSet={messageSet}
+                uploadPath="/upload/msgContent"
             />
             <Send onClick={_sendMessage} className="ml10" />
         </div>

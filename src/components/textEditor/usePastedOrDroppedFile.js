@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { Context } from "../../Context"
 import { baseURL } from "../../utils/consts"
 
-export default function usePastedOrDroppedFile(valueSet, type) {
+export default function usePastedOrDroppedFile(valueSet, uploadPath) {
 
 	// ! processPastedOrDroppedFile
 	const { pastedOrDroppedImgSet } = useContext(Context)
@@ -10,7 +10,7 @@ export default function usePastedOrDroppedFile(valueSet, type) {
 	function processPastedOrDroppedFile(pastedOrDroppedFile) {
 		const fileRenamed = new File([pastedOrDroppedFile], pastedOrDroppedFile.name.split(".")[0] + Date.now() + "." + pastedOrDroppedFile.name.split(".")[1]) // eg: image1695902498918.png
 		pastedOrDroppedImgSet(prev => [...prev, fileRenamed])
-		valueSet(prev => prev + `\n![image](${baseURL}/upload/siteContent/${fileRenamed.name})`)
+		valueSet(prev => prev + `\n![image](${baseURL}${uploadPath}/${fileRenamed.name})`)
 	}
 
 	// ! savePastedImgOnServer

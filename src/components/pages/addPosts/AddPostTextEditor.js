@@ -6,6 +6,13 @@ export default function AddPostTextEditor({ defaultValue, className }) {
     const [value, valueSet] = useState("")
 
     return (
-        <TextEditor name="textEditorValue" defaultValue={defaultValue} className={className} value={value} valueSet={valueSet} />
+        <TextEditor
+            name="textEditorValue"
+            defaultValue={defaultValue}
+            className={className}
+            value={value}
+            valueSet={valueSet}
+            uploadPath="/upload/siteContent"
+        />
     )
 }

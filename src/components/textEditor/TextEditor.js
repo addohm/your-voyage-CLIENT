@@ -8,7 +8,7 @@ import InputRequiredNativeTooltip from "../form/InputRequiredNativeTooltip";
 
 export default function TextEditor(props) { // type: product/article
 
-	const { defaultValue, className, label, type, isVisible, name, value, valueSet } = props
+	const { defaultValue, className, label, type, isVisible, name, value, valueSet, uploadPath } = props
 
 	useEffect(() => {
 		defaultValue && valueSet(defaultValue?.replace(/•/g, ""))
@@ -18,7 +18,7 @@ export default function TextEditor(props) { // type: product/article
 		valueSet(value?.replace(/•/g, ""));
 	}, [])
 
-	const { savePastedImgOnServer, saveDroppedImgOnServer } = usePastedOrDroppedFile(valueSet, type)
+	const { savePastedImgOnServer, saveDroppedImgOnServer } = usePastedOrDroppedFile(valueSet, uploadPath)
 	const noValue = value?.length === 0
 
 	return (
