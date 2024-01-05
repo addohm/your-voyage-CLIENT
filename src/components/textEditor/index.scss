@@ -13,6 +13,7 @@
 	display: none;
 }
 .editor-toolbar{
+	display: none !important; // ! hide all tools
 	.separator, .preview, .side-by-side, .fullscreen {
 		display: none !important;
 	}

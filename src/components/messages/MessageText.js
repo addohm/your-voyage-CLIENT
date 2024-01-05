@@ -1,8 +1,12 @@
-import calculateTextareaRows from "../../utils/calculateTextareaRows";
+import { useState } from "react";
 import Markdown from "../textEditor/Markdown";
+import TextEditor from "../textEditor/TextEditor";
 import "./index.scss"
 
 export default function MessageText({ msg, isContentEditable, isDeleted }) {
+
+    const [value, valueSet] = useState(msg)
+
     return (
         !isContentEditable
             ?
@@ -10,11 +14,12 @@ export default function MessageText({ msg, isContentEditable, isDeleted }) {
                 {!isDeleted ? <Markdown>{msg}</Markdown> : "This message has been deleted"}
             </div>
             :
-            <textarea
-                className="updatedMessageText"
-                autoFocus
-                defaultValue={msg}
-                rows={calculateTextareaRows(msg)}
+            <TextEditor
+                name="msg"
+                className="updatedMessageText maw600"
+                value={value}
+                valueSet={valueSet}
+                uploadPath="/upload/msgContent"
             />
     )
 }
