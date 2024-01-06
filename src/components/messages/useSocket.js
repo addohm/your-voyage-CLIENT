@@ -10,7 +10,7 @@ export default function useSocket(room, dbMessagesSet) {
 
     // ! socket send
     const [message, messageSet] = useState("") // input value
-    const socket = io.connect(process.env.SERVER_URL)
+    const socket = io.connect("https://your-voyage-life.onrender.com")
 
     function sendMessage() {
         if (!message) return
