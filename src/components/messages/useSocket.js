@@ -19,7 +19,7 @@ export default function useSocket(room, dbMessagesSet) {
     }
 
     useEffect(() => {
-        socket.emit("join_room", room) // join room 1 time
+        socket.emit("join_room", { room, userEmail: user?.email }) // join room 1 time
     }, [])
     // ? socket send
 

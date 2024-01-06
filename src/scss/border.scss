@@ -1,21 +1,12 @@
 // ! BORDERS
 .brL{
 	border-radius: $borderRadiusLarge;
-	img{
-	 border-radius: $borderRadiusLarge;
-	}
 }
 .brM{
 	border-radius: $borderRadiusMedium;
-	img{
-	 border-radius: $borderRadiusMedium;		
-	}
 }
 .brS{
 	border-radius: $borderRadiusSmall;
-	img{
-	 border-radius: $borderRadiusSmall;		
-	}
 }
 .br50{
 	border-radius: 50%;
