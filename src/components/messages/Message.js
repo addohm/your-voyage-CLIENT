@@ -16,7 +16,7 @@ export default function Message(props) {
         <>
             <MessageDate msgDate={msgDate} messageDateTopCopySet={messageDateTopCopySet} />
             <div className={`fcc g10 p15 mb10 brL ${isMyMsg ? "myMsg" : "otherMsg"} ${isUpdated ? "updatedMsg" : ""} ${isDeleted ? "deletedMsg" : ""} ${isRestored ? "restoredMsg" : ""} msg`}>
-                <div className="por f w100p">
+                <div className="por f w100p pt25">
                     <MessageText msg={msg} isContentEditable={isContentEditable} isDeleted={isDeleted} />
                     <MessageMenu isMyMsg={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} isDeleted={isDeleted} createdAt={createdAt} />
                 </div>

@@ -5,8 +5,12 @@
 	// background: $white;
 	// color: $white;
 	border-radius: $borderRadiusSmall !important;
-	min-height: 200px !important;
 	margin: 0 auto;
+}
+
+// ! change the minimum height (before it starts auto-growing):
+.CodeMirror, .CodeMirror-scroll {
+    min-height: 30px !important;
 }
 // !! hide some not important editor options
 .editor-statusbar{
