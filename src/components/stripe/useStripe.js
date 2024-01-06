@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { baseURL } from "../../utils/consts";
+import { SERVER_URL } from "../../utils/consts";
 
 export default function useStripe() {
 
     const [stripeLink, stripeLinkSet] = useState("")
 
     useEffect(() => {
-        fetch(`${baseURL}/create-checkout-session`,
+        fetch(`${SERVER_URL}/create-checkout-session`,
             {
                 method: "POST",
                 headers: {

@@ -1,9 +1,9 @@
 import axios from "axios"
-import { baseURL } from "./consts"
+import { SERVER_URL } from "./consts"
 
 async function _axios(route, obj) {
     const instance = axios.create({
-        baseURL: baseURL
+        baseURL: SERVER_URL
     })
 
     instance.interceptors.request.use(config => {
