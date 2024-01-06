@@ -31,7 +31,7 @@ export default function TextEditor(props) { // type: product/article
 				onPaste={savePastedImgOnServer}
 				onDrop={saveDroppedImgOnServer}
 				onDragOver={(e) => e.preventDefault()}
-				placeholder="..."
+				placeholder="...paste or drop image here"
 			/>
 			<input hidden name={name} value={value} />
 			<InputRequiredNativeTooltip required={noValue} className="ca" />

@@ -18,7 +18,7 @@ export default function Messages({ messageReceived }) {
                 usedDates.includes(msgDate) ? msgDate = "" : usedDates.push(msgDate) // show only unique dates: eg: 10 messages for 2024/1/1, 5 messages for 2024/1/2
                 return <>
                     <MessageDateTopCopy messageDateTopCopy={messageDateTopCopy} />
-                    <Message key={ind} {...message} isMyMsg={isMyMsg} msgDate={msgDate} messageDateTopCopySet={messageDateTopCopySet} />
+                    <Message key={message._id} {...message} isMyMsg={isMyMsg} msgDate={msgDate} messageDateTopCopySet={messageDateTopCopySet} />
                 </>
             })}
             {messageReceived?.length === 0 && <div className="fcc aic">No messages yet ...</div>}

@@ -42,7 +42,7 @@ export default function useSocket(room, dbMessagesSet) {
                         message.msg = data.msg
                         message.isUpdated = data.isUpdated
                         message.isRestored = data.isRestored
-                        message.updatedAt = data.updatedAt
+                        message.updatedAt = Date.now()
                     }
                     return message
                 })
@@ -60,7 +60,7 @@ export default function useSocket(room, dbMessagesSet) {
                     if (message._id === data._id) {
                         message.isDeleted = data.isDeleted
                         message.isRestored = data.isRestored
-                        message.updatedAt = data.updatedAt
+                        message.updatedAt = Date.now()
                     }
                     return message
                 })
