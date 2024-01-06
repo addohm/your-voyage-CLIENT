@@ -2,6 +2,7 @@ import io from "socket.io-client"
 import { useContext, useEffect, useState } from "react"
 import { Context } from "../../Context"
 import Room from "./Room"
+import { baseURL } from "../../utils/consts"
 
 export default function useSocket(room, dbMessagesSet) {
 
@@ -10,7 +11,7 @@ export default function useSocket(room, dbMessagesSet) {
 
     // ! socket send
     const [message, messageSet] = useState("") // input value
-    const socket = io.connect("https://your-voyage-life.onrender.com")
+    const socket = io.connect(baseURL)
 
     function sendMessage() {
         if (!message) return

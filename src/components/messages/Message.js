@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "./index.scss"
 import MessageMenu from "./MessageMenu"
 import MessageText from "./MessageText"
@@ -9,6 +9,8 @@ export default function Message(props) {
 
     const { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate, messageDateTopCopySet } = props
     const [isContentEditable, isContentEditableSet] = useState(null)
+
+    useEffect(() => { window.scrollTo(0, document.body.scrollHeight) }, []) // gotoBottom onLoad
 
     return (
         <>
