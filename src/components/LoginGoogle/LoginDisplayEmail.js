@@ -14,12 +14,15 @@ export default function LoginDisplayEmail({ user }) {
         <>
             {/* <div className="title tal">Email:</div> */}
             <div
-                className="por w150 tar"
+                className="por tar"
                 onMouseEnter={() => isUserEmailHoveredSet(true)}
                 onMouseLeave={() => isUserEmailHoveredSet(false)}
             >
-                <div className="oh wsn toe w110">{user?.email?.replace(/@.*/, '')}</div>
-                <Arrow className={`poa r8 t-2 ${isUserEmailHovered ? "tr180" : ""}`} />
+                <div className="f g5 aic maw200">
+                    <img src={user?.img} className="w30 h30 br50" />
+                    <div className="oh wsn toe">{user?.email?.replace(/@.*/, '')}</div>
+                <Arrow className={`${isUserEmailHovered ? "tr180" : ""}`} />
+                </div>
                 <Menu isVisible={user && isUserEmailHovered} className="poa w100p bg_white py15 brL">
                     <AdminAddContent />
                     <UserContent />
