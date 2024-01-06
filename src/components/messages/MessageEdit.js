@@ -13,8 +13,9 @@ export default function MessageEdit({ isVisible, isContentEditableSet, isContent
     const { pastedOrDroppedImg } = useContext(Context)
     const { fileArr } = useAddFile()
 
+    // todo 2
     async function saveMessage(e) {
-        const msg = document.querySelector(".updatedMessageText").innerText
+        const msg = e.target.closest(".msg").querySelector(".updatedMessageText").innerText
         await fileArr("/upload/msgContent", pastedOrDroppedImg)
         isContentEditableSet(false)
         await axios("/editMessage", { _id, email, msg, room, type: "messages" })
