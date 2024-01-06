@@ -4,6 +4,8 @@ import MessageMenu from "./MessageMenu"
 import MessageText from "./MessageText"
 import MessageTime from "./MessageTime"
 import MessageDate from "./MessageDate"
+import MessageEdit from "./MessageEdit"
+import { Send } from "@mui/icons-material"
 
 export default function Message(props) {
 
@@ -20,7 +22,8 @@ export default function Message(props) {
                     <MessageText msg={msg} isContentEditable={isContentEditable} isDeleted={isDeleted} />
                     <MessageMenu isMyMsg={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} isDeleted={isDeleted} createdAt={createdAt} />
                 </div>
-                <MessageTime isUpdated={isUpdated} updatedAt={updatedAt} createdAt={createdAt} isDeleted={isDeleted} isRestored={isRestored} />
+                <MessageEdit SaveIcon={() => <Send />} isVisible={isContentEditable} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} />
+                <MessageTime isVisible={!isContentEditable} isUpdated={isUpdated} updatedAt={updatedAt} createdAt={createdAt} isDeleted={isDeleted} isRestored={isRestored} />
             </div>
         </>
     )

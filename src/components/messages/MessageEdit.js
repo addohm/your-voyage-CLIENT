@@ -1,10 +1,10 @@
-import { Edit, Check } from '@mui/icons-material';
+import { Edit } from '@mui/icons-material';
 import axios from '../../utils/axios';
 import { useContext } from 'react';
 import { Context } from '../../Context';
 import useAddFile from '../pages/addPosts/useAddFile';
 
-export default function MessageEdit({ isVisible, isContentEditableSet, isContentEditable, _id, email, room }) {
+export default function MessageEdit({ isVisible, isContentEditableSet, isContentEditable, _id, email, room, SaveIcon }) {
 
     function editMessage() {
         isContentEditableSet(true)
@@ -13,7 +13,6 @@ export default function MessageEdit({ isVisible, isContentEditableSet, isContent
     const { pastedOrDroppedImg } = useContext(Context)
     const { fileArr } = useAddFile()
 
-    // todo 2
     async function saveMessage(e) {
         const msg = e.target.closest(".msg").querySelector(".updatedMessageText").innerText
         await fileArr("/upload/msgContent", pastedOrDroppedImg)
@@ -28,7 +27,10 @@ export default function MessageEdit({ isVisible, isContentEditableSet, isContent
                 ?
                 <Edit onClick={editMessage} />
                 :
-                <Check onClick={saveMessage} />}
+                <div onClick={saveMessage} className="dib">
+                    <SaveIcon />
+                </div>
+            }
         </>
     )
 }
