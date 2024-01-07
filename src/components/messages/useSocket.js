@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react"
 import { Context } from "../../Context"
 import Room from "./Room"
 import { SERVER_URL } from "../../utils/consts"
+import axios from "../../utils/axios"
 
 export default function useSocket(room, dbMessagesSet) {
 
@@ -26,7 +27,12 @@ export default function useSocket(room, dbMessagesSet) {
     // ! socket receive
     useEffect(() => {
         socket.on("receive_message", (data) => {
-            showSnackbar(data)
+            const isReceivedMsgMyMsg = user?.email === data.email
+            if (!isReceivedMsgMyMsg) { // if I received NOT MINE message (msg TO ME)
+                showSnackbar(data) // show snackbar
+                // ! there are 2 markAllMessagesAsRead: 1: enter the room (from outside the room) 2: received message (being inside the room)
+                axios("/markAllMessagesAsRead", { room, userEmail: user?.email })
+            }
             dbMessagesSet(prev => [...prev, data])
         })
     }, [socket])

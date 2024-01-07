@@ -3,6 +3,16 @@ import axios from "../../utils/axios"
 
 export default function useSocketHub(token) {
 
+    const [interval, intervalSet] = useState(0);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            intervalSet(prev => prev + 1);
+        }, 3000);
+
+        return () => clearInterval(intervalId);
+    }, [])
+
     const [dbMessages, dbMessagesSet] = useState([])
 
     useEffect(() => {
@@ -12,7 +22,7 @@ export default function useSocketHub(token) {
         }
 
         getMessages()
-    }, [])
+    }, [interval])
 
     return { dbMessages, dbMessagesSet }
 }

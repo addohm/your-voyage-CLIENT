@@ -27,7 +27,7 @@ export default function MessageEdit({ isVisible, isContentEditableSet, isContent
                 ?
                 <Edit onClick={editMessage} />
                 :
-                <div onClick={saveMessage} className="dib">
+                <div onClick={saveMessage} className="dib mla">
                     <SaveIcon />
                 </div>
             }

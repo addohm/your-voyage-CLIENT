@@ -6,10 +6,11 @@ import MessageTime from "./MessageTime"
 import MessageDate from "./MessageDate"
 import MessageEdit from "./MessageEdit"
 import { Send } from "@mui/icons-material"
+import MessageIsRead from "./MessageIsRead"
 
 export default function Message(props) {
 
-    const { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate, messageDateTopCopySet, img } = props
+    const { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate, messageDateTopCopySet, img, isRead } = props
     const [isContentEditable, isContentEditableSet] = useState(null)
 
     useEffect(() => { window.scrollTo(0, document.body.scrollHeight) }, []) // gotoBottom onLoad
@@ -25,7 +26,10 @@ export default function Message(props) {
                         <MessageMenu isMyMsg={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} isDeleted={isDeleted} createdAt={createdAt} />
                     </div>
                     <MessageEdit SaveIcon={() => <Send />} isVisible={isContentEditable} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} />
-                    <MessageTime isVisible={!isContentEditable} isUpdated={isUpdated} updatedAt={updatedAt} createdAt={createdAt} isDeleted={isDeleted} isRestored={isRestored} />
+                    <div className="fcc g8 mla">
+                        <MessageIsRead isVisible={!isContentEditable} isRead={isRead} isMyMsg={isMyMsg} />
+                        <MessageTime isVisible={!isContentEditable} isUpdated={isUpdated} updatedAt={updatedAt} createdAt={createdAt} isDeleted={isDeleted} isRestored={isRestored} />
+                    </div>
                 </div>
             </div>
         </>
