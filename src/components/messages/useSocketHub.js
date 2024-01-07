@@ -1,17 +1,10 @@
 import { useEffect, useState } from "react"
 import axios from "../../utils/axios"
+import useInterval from "../../hooks/useInterval"
 
 export default function useSocketHub(token) {
 
-    const [interval, intervalSet] = useState(0);
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            intervalSet(prev => prev + 1);
-        }, 3000);
-
-        return () => clearInterval(intervalId);
-    }, [])
+    const { interval } = useInterval()
 
     const [dbMessages, dbMessagesSet] = useState([])
 
