@@ -9,7 +9,7 @@ import { Send } from "@mui/icons-material"
 
 export default function Message(props) {
 
-    const { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate, messageDateTopCopySet } = props
+    const { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate, messageDateTopCopySet, img } = props
     const [isContentEditable, isContentEditableSet] = useState(null)
 
     useEffect(() => { window.scrollTo(0, document.body.scrollHeight) }, []) // gotoBottom onLoad
@@ -17,13 +17,16 @@ export default function Message(props) {
     return (
         <>
             <MessageDate msgDate={msgDate} messageDateTopCopySet={messageDateTopCopySet} />
-            <div className={`fcc g10 p15 mb10 brL ${isMyMsg ? "myMsg" : "otherMsg"} ${isUpdated ? "updatedMsg" : ""} ${isDeleted ? "deletedMsg" : ""} ${isRestored ? "restoredMsg" : ""} msg`}>
-                <div className="por f w100p pt25">
-                    <MessageText msg={msg} isContentEditable={isContentEditable} isDeleted={isDeleted} />
-                    <MessageMenu isMyMsg={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} isDeleted={isDeleted} createdAt={createdAt} />
+            <div className={`f g10 ${isMyMsg ? "mla" : "mra"}`}>
+                <img src={img} className="w40 h40 brL" />
+                <div className={`fcc g10 p15 mb10 brL ${isMyMsg ? "myMsg" : "otherMsg"} ${isUpdated ? "updatedMsg" : ""} ${isDeleted ? "deletedMsg" : ""} ${isRestored ? "restoredMsg" : ""} msg`}>
+                    <div className="por f w100p pt25">
+                        <MessageText msg={msg} isContentEditable={isContentEditable} isDeleted={isDeleted} />
+                        <MessageMenu isMyMsg={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} isDeleted={isDeleted} createdAt={createdAt} />
+                    </div>
+                    <MessageEdit SaveIcon={() => <Send />} isVisible={isContentEditable} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} />
+                    <MessageTime isVisible={!isContentEditable} isUpdated={isUpdated} updatedAt={updatedAt} createdAt={createdAt} isDeleted={isDeleted} isRestored={isRestored} />
                 </div>
-                <MessageEdit SaveIcon={() => <Send />} isVisible={isContentEditable} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} />
-                <MessageTime isVisible={!isContentEditable} isUpdated={isUpdated} updatedAt={updatedAt} createdAt={createdAt} isDeleted={isDeleted} isRestored={isRestored} />
             </div>
         </>
     )
