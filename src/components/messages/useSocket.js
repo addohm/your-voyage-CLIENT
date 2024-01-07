@@ -10,6 +10,15 @@ export default function useSocket(room, dbMessagesSet) {
     const { user, snackbarSet } = useContext(Context)
     const showSnackbar = (data) => snackbarSet({ show: true, text: <Room {...data} /> })
 
+    function notMyMsgActions({ data, useSnackbar = true }) {
+        const isReceivedMsgMyMsg = user?.email === data.email
+        if (!isReceivedMsgMyMsg) { // if I received NOT MINE message (msg TO ME)
+            useSnackbar && showSnackbar(data) // show snackbar
+            // ! there are 2 markAllMessagesAsRead: 1: enter the room (from outside the room) 2: received message (being inside the room)
+            axios("/markAllMessagesAsRead", { room, userEmail: user?.email })
+        }
+    }
+
     // ! socket send
     const [message, messageSet] = useState("") // input value
     const socket = io.connect(SERVER_URL)
@@ -27,12 +36,7 @@ export default function useSocket(room, dbMessagesSet) {
     // ! socket receive
     useEffect(() => {
         socket.on("receive_message", (data) => {
-            const isReceivedMsgMyMsg = user?.email === data.email
-            if (!isReceivedMsgMyMsg) { // if I received NOT MINE message (msg TO ME)
-                showSnackbar(data) // show snackbar
-                // ! there are 2 markAllMessagesAsRead: 1: enter the room (from outside the room) 2: received message (being inside the room)
-                axios("/markAllMessagesAsRead", { room, userEmail: user?.email })
-            }
+            notMyMsgActions({ data })
             dbMessagesSet(prev => [...prev, data])
         })
     }, [socket])
@@ -41,7 +45,7 @@ export default function useSocket(room, dbMessagesSet) {
     // ! update socket message
     useEffect(() => {
         socket.on("edit_message", (data) => {
-            showSnackbar(data)
+            notMyMsgActions({ data })
             dbMessagesSet(prev => {
                 const updatedMessages = prev.map(message => {
                     if (message._id === data._id) {
@@ -61,6 +65,7 @@ export default function useSocket(room, dbMessagesSet) {
     // ! delete socket message
     useEffect(() => {
         socket.on("delete_message", (data) => {
+            notMyMsgActions({ data, useSnackbar: false })
             dbMessagesSet(prev => {
                 const updatedMessages = prev.map(message => {
                     if (message._id === data._id) {
