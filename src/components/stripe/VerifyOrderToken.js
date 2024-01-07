@@ -16,7 +16,7 @@ export default function VerifyOrderToken() {
             // then client makes app.post("/applyForCoaching") from "/verifyOrderToken" page
             // then if token verified => create order in DB
             const form = JSON.parse(localStorage.getItem("coachCard"))
-            const res = await axios("/applyForCoaching", { ...form, token, type: "coaching", coachEmail: "sendtshop@gmail.com" }) // TODO !!!
+            const res = await axios("/applyForCoaching", { ...form, token, type: "coaching" })
 
             // ! error
             if (!res) {

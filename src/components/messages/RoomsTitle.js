@@ -7,7 +7,7 @@ export default function RoomsTitle() {
     const className = "title tac mb mt-20"
 
     return (
-        user?.role === "admin" ?
+        user?.role === "admin" || user?.role === "coach" ?
             <div className={className}>Subscribers:</div>
             :
             <div className={className}>Coaches:</div>

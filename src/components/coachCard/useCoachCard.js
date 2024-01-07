@@ -6,7 +6,7 @@ export default function useCoachCard() {
     const { stripeLink } = useStripe()
 
     function goToStripe(e) {
-        e.preventDefault()
+        // e.preventDefault()
         window.location.href = stripeLink
     }
 

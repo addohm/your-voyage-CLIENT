@@ -6,10 +6,10 @@ import useDefaultCoachValues from "./useDefaultCoachValues";
 export default function CoachCard({ img, title, radio, rating, ind, className, children, isCoach }) {
 
     useDefaultCoachValues()
-    const { memoCoachCard, goToStripe } = useCoachCard()
+    const { memoCoachCard } = useCoachCard()
 
     return (
-        <form className={`maw445 bg_white brL ${className} p15`} onSubmit={goToStripe} onChange={memoCoachCard} >
+        <form className={`maw445 bg_white brL ${className} p15`} onChange={memoCoachCard} >
             <div className='fcc'>
                 <img src={img} />
                 <div className="pl15 ttu">{title}</div>
