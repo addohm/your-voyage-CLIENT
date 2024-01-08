@@ -3,7 +3,7 @@ import Markdown from "marked-react"
 import "./index.scss"
 import { Context } from "../../Context"
 
-export default function Markdown_({ children }) {
+export default function Markdown_({ children, className }) {
 
 	const { dialogSet } = useContext(Context)
 
@@ -20,7 +20,7 @@ export default function Markdown_({ children }) {
 	}
 
 	return (
-		<pre className="innerImgW100p" onClick={zoomImg}>
+		<pre className={`innerImgW100p ${className}`} onClick={zoomImg}>
 			<Markdown>{children}</Markdown>
 		</pre>
 	)

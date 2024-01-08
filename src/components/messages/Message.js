@@ -13,7 +13,7 @@ import MessageReplyingToTop from "./MessageReplyingToTop"
 
 export default function Message(props) {
 
-    let { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate, messageDateTopCopySet, img, isRead, name, className, isReplyMode, msgReplyingTo } = props
+    let { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate, messageDateTopCopySet, img, isRead, name, className, isReplyMode, msgReplyingTo, goToReplyingToMsg } = props
     const [isContentEditable, isContentEditableSet] = useState(null)
     msg = !isReplyMode ? msg : msg?.slice(0, 90) + " ..." // shorten msg text for reply mode
 
@@ -22,7 +22,7 @@ export default function Message(props) {
     return (
         <>
             <MessageDate msgDate={msgDate} messageDateTopCopySet={messageDateTopCopySet} />
-            <div className={`por f g10 ${className}`}>
+            <div className={`por f g10 ${className}`} onClick={goToReplyingToMsg}>
                 <img src={img} className="w40 h40 brL" />
                 <div className={`fcc g10 p15 mb10 brL ${isMyMsg ? "myMsg" : "otherMsg"} ${isUpdated ? "updatedMsg" : ""} ${isDeleted ? "deletedMsg" : ""} ${isRestored ? "restoredMsg" : ""} msg`}>
                     <div className="fw500 mra">{name}</div>

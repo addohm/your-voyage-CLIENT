@@ -11,7 +11,7 @@ export default function MessageText({ msg, isContentEditable, isDeleted }) {
         !isContentEditable
             ?
             <div className="">
-                {!isDeleted ? <Markdown>{msg}</Markdown> : "This message has been deleted"}
+                {!isDeleted ? <Markdown className="msgText">{msg}</Markdown> : "This message has been deleted"}
             </div>
             :
             <TextEditor
