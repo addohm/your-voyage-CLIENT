@@ -10,6 +10,7 @@ import MessageIsRead from "./MessageIsRead"
 import MessageReply from "./MessageReply"
 import MessageReplyingTo from "./MessageReplyingTo"
 import MessageReplyingToTop from "./MessageReplyingToTop"
+import goToBottom from "../../utils/goToBottom"
 
 export default function Message(props) {
 
@@ -17,7 +18,7 @@ export default function Message(props) {
     const [isContentEditable, isContentEditableSet] = useState(null)
     msg = !isReplyMode ? msg : msg?.slice(0, 90) + " ..." // shorten msg text for reply mode
 
-    useEffect(() => { window.scrollTo(0, document.body.scrollHeight) }, []) // gotoBottom onLoad
+    useEffect(() => goToBottom(), [])
 
     return (
         <>
