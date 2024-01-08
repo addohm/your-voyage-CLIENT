@@ -3,10 +3,12 @@ import TextEditor from '../textEditor/TextEditor';
 import useAddFile from '../pages/addPosts/useAddFile';
 import { useContext } from 'react';
 import { Context } from '../../Context';
+import MessageReplyingTo from './MessageReplyingTo';
+import MessageReplyingToTop from './MessageReplyingToTop';
 
 export default function SendMessage({ message, messageSet, sendMessage }) {
 
-    const { pastedOrDroppedImg } = useContext(Context)
+    const { pastedOrDroppedImg, messageReplyingTo, user } = useContext(Context)
     const { fileArr } = useAddFile()
 
     async function _sendMessage() {
@@ -17,6 +19,12 @@ export default function SendMessage({ message, messageSet, sendMessage }) {
 
     return (
         <div className="fcc mb20">
+            <MessageReplyingTo
+                isVisible={messageReplyingTo?.msg}
+                messageReplyingTo={messageReplyingTo}
+                top={<MessageReplyingToTop text="Replying to message" />}
+                isMyMsg={messageReplyingTo?.name === user?.name}
+            />
             <TextEditor
                 name="msg"
                 className="maw600"

@@ -7,7 +7,7 @@ import axios from "../../utils/axios"
 
 export default function useSocket(room, dbMessagesSet) {
 
-    const { user, snackbarSet } = useContext(Context)
+    const { user, snackbarSet, messageReplyingTo, messageReplyingToSet } = useContext(Context)
     const showSnackbar = (data) => snackbarSet({ show: true, text: <Room {...data} /> })
 
     function notMyMsgActions({ data, useSnackbar = true }) {
@@ -25,7 +25,8 @@ export default function useSocket(room, dbMessagesSet) {
 
     function sendMessage() {
         if (!message) return
-        socket.emit("send_message", { msg: message, room, email: user.email, name: user.name, img: user.img })
+        messageReplyingToSet(null)
+        socket.emit("send_message", { msg: message, msgReplyingTo: messageReplyingTo, room, email: user.email, name: user.name, img: user.img })
     }
 
     useEffect(() => {

@@ -28,7 +28,7 @@ export default function MessageDate({ msgDate, messageDateTopCopySet }) {
 
     useEffect(() => {
         if (position.top <= 0) { // this msgDate passed => set msgDateTopCopy this msgDate
-            messageDateTopCopySet(msgDate)
+            messageDateTopCopySet?.(msgDate)
         }
     }, [position])
 

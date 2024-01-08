@@ -9,6 +9,7 @@ function ContextProvider({ children }) {
     const [pastedOrDroppedImg, pastedOrDroppedImgSet] = useState([])
     const [dialog, dialogSet] = useState({ show: false, title: "", children: "" })
     const [snackbar, snackbarSet] = useState({ show: false, text: "", link: "", linkText: "", linkType: "" })
+    const [messageReplyingTo, messageReplyingToSet] = useState(null) // { img: "", name: "", msg: "" }
 
     // ! RETURN
     return (
@@ -20,7 +21,9 @@ function ContextProvider({ children }) {
             // dialog
             dialog, dialogSet,
             // snackbar
-            snackbar, snackbarSet
+            snackbar, snackbarSet,
+            // messageReplyingTo
+            messageReplyingTo, messageReplyingToSet
         }}>
 
             {children}

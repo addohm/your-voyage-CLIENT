@@ -7,30 +7,51 @@ import MessageDate from "./MessageDate"
 import MessageEdit from "./MessageEdit"
 import { Send } from "@mui/icons-material"
 import MessageIsRead from "./MessageIsRead"
+import MessageReply from "./MessageReply"
+import MessageReplyingTo from "./MessageReplyingTo"
+import MessageReplyingToTop from "./MessageReplyingToTop"
 
 export default function Message(props) {
 
-    const { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate, messageDateTopCopySet, img, isRead } = props
+    let { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate, messageDateTopCopySet, img, isRead, name, className, isReplyMode, msgReplyingTo } = props
     const [isContentEditable, isContentEditableSet] = useState(null)
+    msg = !isReplyMode ? msg : msg?.slice(0, 90) + " ..." // shorten msg text for reply mode
 
     useEffect(() => { window.scrollTo(0, document.body.scrollHeight) }, []) // gotoBottom onLoad
 
     return (
         <>
             <MessageDate msgDate={msgDate} messageDateTopCopySet={messageDateTopCopySet} />
-            <div className={`f g10 ${isMyMsg ? "mla" : "mra"}`}>
+            <div className={`por f g10 ${className}`}>
                 <img src={img} className="w40 h40 brL" />
                 <div className={`fcc g10 p15 mb10 brL ${isMyMsg ? "myMsg" : "otherMsg"} ${isUpdated ? "updatedMsg" : ""} ${isDeleted ? "deletedMsg" : ""} ${isRestored ? "restoredMsg" : ""} msg`}>
-                    <div className="por f w100p pt25">
+                    <div className="fw500 mra">{name}</div>
+
+                    {/* ! MessageReplyingTo */}
+                    <MessageReplyingTo
+                        isVisible={msgReplyingTo}
+                        messageReplyingTo={msgReplyingTo}
+                        top={<MessageReplyingToTop text="Replies to message" />}
+                        isMyMsg={isMyMsg}
+                        isVisibleClose={false}
+                    />
+                    {/* ? MessageReplyingTo */}
+
+                    <div className="por f w100p">
                         <MessageText msg={msg} isContentEditable={isContentEditable} isDeleted={isDeleted} />
-                        <MessageMenu isMyMsg={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} isDeleted={isDeleted} createdAt={createdAt} />
+                        <MessageMenu isVisible={!isReplyMode} isMyMsg={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} isDeleted={isDeleted} createdAt={createdAt} />
                     </div>
                     <MessageEdit SaveIcon={() => <Send />} isVisible={isContentEditable} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} />
-                    <div className="fcc g8 mla">
-                        <MessageIsRead isVisible={!isContentEditable} isRead={isRead} isMyMsg={isMyMsg} />
-                        <MessageTime isVisible={!isContentEditable} isUpdated={isUpdated} updatedAt={updatedAt} createdAt={createdAt} isDeleted={isDeleted} isRestored={isRestored} />
-                    </div>
+                    {!isReplyMode &&
+                        <div className="fcc g8 mla">
+                            <MessageIsRead isVisible={!isContentEditable} isRead={isRead} isMyMsg={isMyMsg} />
+                            <MessageTime isVisible={!isContentEditable} isUpdated={isUpdated} updatedAt={updatedAt} createdAt={createdAt} isDeleted={isDeleted} isRestored={isRestored} />
+                        </div>
+                    }
                 </div>
+                {!isReplyMode &&
+                    <MessageReply img={img} name={name} msg={msg} />
+                }
             </div>
         </>
     )
