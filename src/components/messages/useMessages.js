@@ -6,7 +6,7 @@ import useInterval from "../../hooks/useInterval"
 
 export default function useMessages(dialogSet) {
 
-    const [messages, messagesSet] = useState([]) // [{ msg: "", file: File }, {...}]
+    const [messages, messagesSet] = useState([{ msg: "", file: "" }]) // [{ msg: "", file: File }, {...}]
     const [messagePreviewClicked, messagePreviewClickedSet] = useState(0) // in Dialog
     const { interval } = useInterval(700)
 
@@ -24,7 +24,7 @@ export default function useMessages(dialogSet) {
         dialogSet({
             show: true,
             title: "",
-            closeIcon: <Close onClick={() => (dialogSet({ show: false }), messagesSet([]))} />,
+            closeIcon: <Close onClick={() => (dialogSet({ show: false }), messagesSet([{ msg: "", file: "" }]))} />,
             children:
                 <div className="fc w100vw h100vh">
 
@@ -36,7 +36,7 @@ export default function useMessages(dialogSet) {
                             className="maw600"
                             value={messages?.[messagePreviewClicked]?.msg}
                             // valueSet uses localStorage's messagePreviewClicked cause state's messagePreviewClicked is always frozen to 0 inside messagesSet
-                            valueSet={(value) => messagesSet(prev => prev.map((message, ind) => ind === Number(localStorage.getItem("messagePreviewClicked")) ? ({ ...message, msg: value }) : message))}
+                            valueSet={(value) => messagesSet(prev => prev.map((message, ind) => ind === Number(localStorage.getItem("messagePreviewClicked") ? localStorage.getItem("messagePreviewClicked") : 0) ? ({ ...message, msg: value }) : message))}
                         />
 
                         <Send onClick={clickSendIcon} className="ml10" />

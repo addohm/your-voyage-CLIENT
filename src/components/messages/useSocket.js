@@ -31,7 +31,7 @@ export default function useSocket(room, dbMessagesSet) {
             socket.emit("send_message", { msg: message.msg, msgReplyingTo: messageReplyingTo, room, email: user.email, name: user.name, img: user.img, file: file[0] })
         })
         messageReplyingToSet(null)
-        messagesSet([]) // null Context messages
+        messagesSet([{ msg: "", file: "" }]) // null Context messages
         dialogSet({ show: false }) // close dialog with pasted/dropped images
     }
 

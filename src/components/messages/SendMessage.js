@@ -25,7 +25,7 @@ export default function SendMessage({ sendMessage }) {
                 name="msg"
                 className="maw600"
                 value={messages?.[0]?.msg}
-                valueSet={(value) => messagesSet([...messages, { msg: value }])} // ???
+                valueSet={(value) => messagesSet([{ msg: value, file: "" }])}
                 onPaste={savePastedOnServer}
                 onDrop={saveDroppedOnServer}
                 defaultValue={""} // ! vital for SendMessagePreviews
