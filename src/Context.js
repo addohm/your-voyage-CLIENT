@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import useAutoAuth from "./components/AutoAuth/useAutoAuth"
+import useMessages from "./components/messages/useMessages"
 
 const Context = React.createContext()
 
@@ -10,20 +11,17 @@ function ContextProvider({ children }) {
     const [dialog, dialogSet] = useState({ show: false, title: "", children: "" })
     const [snackbar, snackbarSet] = useState({ show: false, text: "", link: "", linkText: "", linkType: "" })
     const [messageReplyingTo, messageReplyingToSet] = useState(null) // { img: "", name: "", msg: "" }
+    const { messages, messagesSet } = useMessages(dialogSet)
 
     // ! RETURN
     return (
         <Context.Provider value={{
-            // user
             user, userSet,
-            // pastedOrDroppedImg
             pastedOrDroppedImg, pastedOrDroppedImgSet,
-            // dialog
             dialog, dialogSet,
-            // snackbar
             snackbar, snackbarSet,
-            // messageReplyingTo
-            messageReplyingTo, messageReplyingToSet
+            messageReplyingTo, messageReplyingToSet,
+            messages, messagesSet
         }}>
 
             {children}

@@ -4,11 +4,13 @@ import { Context } from "../../Context"
 import Room from "./Room"
 import { SERVER_URL } from "../../utils/consts"
 import axios from "../../utils/axios"
+import useAddFile from "../pages/addPosts/useAddFile"
 
 export default function useSocket(room, dbMessagesSet) {
 
-    const { user, snackbarSet, messageReplyingTo, messageReplyingToSet } = useContext(Context)
+    const { user, snackbarSet, messageReplyingTo, messageReplyingToSet, messages, messagesSet, dialogSet } = useContext(Context)
     const showSnackbar = (data) => snackbarSet({ show: true, text: <Room {...data} /> })
+    const { fileArr } = useAddFile()
 
     function notMyMsgActions({ data, useSnackbar = true }) {
         const isReceivedMsgMyMsg = user?.email === data.email
@@ -20,13 +22,17 @@ export default function useSocket(room, dbMessagesSet) {
     }
 
     // ! socket send
-    const [message, messageSet] = useState("") // input value
     const socket = io.connect(SERVER_URL)
 
-    function sendMessage() {
-        if (!message) return
+    async function sendMessage() {
+        if (!messages?.[0]?.msg) return // no message
+        messages?.map(async (message) => {
+            const file = await fileArr("/upload/msgContent", [message.file])
+            socket.emit("send_message", { msg: message.msg, msgReplyingTo: messageReplyingTo, room, email: user.email, name: user.name, img: user.img, file: file[0] })
+        })
         messageReplyingToSet(null)
-        socket.emit("send_message", { msg: message, msgReplyingTo: messageReplyingTo, room, email: user.email, name: user.name, img: user.img })
+        messagesSet([]) // null Context messages
+        dialogSet({ show: false }) // close dialog with pasted/dropped images
     }
 
     useEffect(() => {
@@ -82,5 +88,5 @@ export default function useSocket(room, dbMessagesSet) {
     }, [socket])
     // ? delete socket message
 
-    return { message, messageSet, sendMessage }
+    return { sendMessage }
 }

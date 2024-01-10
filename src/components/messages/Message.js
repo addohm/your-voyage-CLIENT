@@ -11,10 +11,11 @@ import MessageReply from "./MessageReply"
 import MessageReplyingTo from "./MessageReplyingTo"
 import MessageReplyingToTop from "./MessageReplyingToTop"
 import goToBottom from "../../utils/goToBottom"
+import MessageFiles from "./MessageFiles"
 
 export default function Message(props) {
 
-    let { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate, messageDateTopCopySet, img, isRead, name, className, isReplyMode, msgReplyingTo, goToReplyingToMsg } = props
+    let { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate, messageDateTopCopySet, img, isRead, name, className, isReplyMode, msgReplyingTo, goToReplyingToMsg, file } = props
     const [isContentEditable, isContentEditableSet] = useState(null)
     msg = !isReplyMode ? msg : msg?.slice(0, 90) + " ..." // shorten msg text for reply mode
 
@@ -37,6 +38,8 @@ export default function Message(props) {
                         isVisibleClose={false}
                     />
                     {/* ? MessageReplyingTo */}
+
+                    <MessageFiles file={file} />
 
                     <div className="por f w100p">
                         <MessageText msg={msg} isContentEditable={isContentEditable} isDeleted={isDeleted} />

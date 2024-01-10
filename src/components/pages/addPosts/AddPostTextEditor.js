@@ -1,9 +1,11 @@
 import { useState } from "react"
 import TextEditor from "../../textEditor/TextEditor"
+import usePastedOrDroppedFile from "../../textEditor/usePastedOrDroppedFile"
 
 export default function AddPostTextEditor({ defaultValue, className }) {
 
     const [value, valueSet] = useState("")
+    const { savePastedImgOnServer, saveDroppedImgOnServer } = usePastedOrDroppedFile(valueSet, "/upload/siteContent")
 
     return (
         <TextEditor
@@ -12,7 +14,8 @@ export default function AddPostTextEditor({ defaultValue, className }) {
             className={className}
             value={value}
             valueSet={valueSet}
-            uploadPath="/upload/siteContent"
+            onPaste={savePastedImgOnServer}
+            onDrop={saveDroppedImgOnServer}
         />
     )
 }

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
-export default function useInterval() {
+export default function useInterval(int = 3000) {
 
     const [interval, intervalSet] = useState(0);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
             intervalSet(prev => prev + 1);
-        }, 3000);
+        }, int);
 
         return () => clearInterval(intervalId);
     }, [])

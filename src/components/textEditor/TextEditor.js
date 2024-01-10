@@ -2,23 +2,21 @@ import React, { useCallback, useEffect, useState } from "react";
 import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
 import "./index.scss"
-import usePastedOrDroppedFile from "./usePastedOrDroppedFile";
 import TextEditorLabel from "./TextEditorLabel";
 import InputRequiredNativeTooltip from "../form/InputRequiredNativeTooltip";
 
 export default function TextEditor(props) { // type: product/article
 
-	const { defaultValue, className, label, type, isVisible, name, value, valueSet, uploadPath } = props
+	const { defaultValue, className, label, type, isVisible, name, value, valueSet, onPaste, onDrop } = props
 
 	useEffect(() => {
 		defaultValue && valueSet(defaultValue?.replace(/•/g, ""))
 	}, [defaultValue])
 
 	const onChange = useCallback((value) => {
-		valueSet(value?.replace(/•/g, ""));
+		valueSet(value);
 	}, [])
 
-	const { savePastedImgOnServer, saveDroppedImgOnServer } = usePastedOrDroppedFile(valueSet, uploadPath)
 	const noValue = value?.length === 0
 
 	return (
@@ -28,8 +26,8 @@ export default function TextEditor(props) { // type: product/article
 			<SimpleMDE
 				value={value}
 				onChange={onChange}
-				onPaste={savePastedImgOnServer}
-				onDrop={saveDroppedImgOnServer}
+				onPaste={onPaste}
+				onDrop={onDrop}
 				onDragOver={(e) => e.preventDefault()}
 				placeholder="...paste or drop image here"
 			/>

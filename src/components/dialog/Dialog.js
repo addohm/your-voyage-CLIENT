@@ -16,6 +16,7 @@ export default function Dialog_() {
             onClose={() => dialogSet({ show: false })}
             className={`fcc`}
         >
+            <div className="mla">{dialog?.closeIcon}</div>
             <DialogTitle className="fcc">
                 {dialog?.title}
             </DialogTitle>

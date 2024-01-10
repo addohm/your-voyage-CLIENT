@@ -1,0 +1,5 @@
+// Dialog: unbind mui's setting, so I can set any width and height
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper{
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+}
