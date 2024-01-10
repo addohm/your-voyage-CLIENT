@@ -5,6 +5,7 @@ import { Context } from '../../Context';
 import MessageReplyingTo from './MessageReplyingTo';
 import MessageReplyingToTop from './MessageReplyingToTop';
 import useMessagePastedOrDroppedFile from './useMessagePastedOrDroppedFile';
+import AddMessageFiles from './AddMessageFiles';
 
 export default function SendMessage({ sendMessage }) {
 
@@ -19,6 +20,7 @@ export default function SendMessage({ sendMessage }) {
                 top={<MessageReplyingToTop text="Replying to message" />}
                 isMyMsg={messageReplyingTo?.name === user?.name}
             />
+            <AddMessageFiles />
             <TextEditor
                 name="msg"
                 className="maw600"

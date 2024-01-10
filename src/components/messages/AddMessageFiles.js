@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import { Context } from "../../Context";
 import InputFile from "../form/InputFile";
+import useUploadedPastedDroppedFilesToMsgFiles from "./useUploadedPastedDroppedFilesToMsgFiles";
 
 export default function AddMessageFiles() {
 
-    const { msgFilesSet } = useContext(Context)
+    const { uploadedPastedDroppedFilesToMsgFiles } = useUploadedPastedDroppedFilesToMsgFiles()
 
     return (
-        <InputFile setter={msgFilesSet} />
+        <InputFile onChange={(e) => uploadedPastedDroppedFilesToMsgFiles(e.target.files)} />
     )
 }
