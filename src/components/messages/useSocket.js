@@ -34,7 +34,7 @@ export default function useSocket(room, dbMessagesSet) {
         messageReplyingToSet(null)
         messagesSet([{ msg: "", file: "" }]) // null Context messages
         dialogSet({ show: false }) // close dialog with pasted/dropped images
-        localStorage.setItem("messagePreviewClicked", 0) // null localStorage messagePreviewClicked
+        localStorage.setItem("messagePreviewClicked", 0) // null localStorage messagePreviewClicked; fixes: 1: user sent 2 imgs (messagePreviewClicked was 1) 2: trying to send 1 img (but messagePreviewClicked is 1, and you can not update text in messages[0], cause you're trying to update messages[1])
         isSendMessageLoadingSet(true)
     }
 
