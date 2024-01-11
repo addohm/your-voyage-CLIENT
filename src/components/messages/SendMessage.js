@@ -1,4 +1,3 @@
-import { Send } from '@mui/icons-material';
 import TextEditor from '../textEditor/TextEditor';
 import { useContext } from 'react';
 import { Context } from '../../Context';
@@ -6,8 +5,9 @@ import MessageReplyingTo from './MessageReplyingTo';
 import MessageReplyingToTop from './MessageReplyingToTop';
 import useMessagePastedOrDroppedFile from './useMessagePastedOrDroppedFile';
 import AddMessageFiles from './AddMessageFiles';
+import SendMessageIcon from './SendMessageIcon';
 
-export default function SendMessage({ sendMessage }) {
+export default function SendMessage({ sendMessage, isSendMessageLoading }) {
 
     const { messageReplyingTo, user, messagesSet, messages } = useContext(Context)
     const { savePastedOnServer, saveDroppedOnServer } = useMessagePastedOrDroppedFile(messagesSet)
@@ -30,7 +30,7 @@ export default function SendMessage({ sendMessage }) {
                 onDrop={saveDroppedOnServer}
                 defaultValue={""} // ! vital for SendMessagePreviews
             />
-            <Send onClick={sendMessage} className="ml10 sendMsgIcon" />
+            <SendMessageIcon sendMessage={sendMessage} isSendMessageLoading={isSendMessageLoading} />
         </div>
     )
 }

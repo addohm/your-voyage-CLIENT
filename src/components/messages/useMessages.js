@@ -18,6 +18,9 @@ export default function useMessages(dialogSet) {
         icon.dispatchEvent(clickEvent)
     }
 
+    // ! null localStorage's messagePreviewClicked on every reload so uploadedPastedDroppedFilesToMsgFiles can work
+    useEffect(() => { localStorage.setItem("messagePreviewClicked", 0) }, [])
+
     useEffect(() => {
         if (!messages?.[0]?.file) return
 

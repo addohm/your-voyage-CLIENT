@@ -11,6 +11,7 @@ export default function useSocket(room, dbMessagesSet) {
     const { user, snackbarSet, messageReplyingTo, messageReplyingToSet, messages, messagesSet, dialogSet } = useContext(Context)
     const showSnackbar = (data) => snackbarSet({ show: true, text: <Room {...data} /> })
     const { fileArr } = useAddFile()
+    const [isSendMessageLoading, isSendMessageLoadingSet] = useState(false)
 
     function notMyMsgActions({ data, useSnackbar = true }) {
         const isReceivedMsgMyMsg = user?.email === data.email
@@ -33,6 +34,8 @@ export default function useSocket(room, dbMessagesSet) {
         messageReplyingToSet(null)
         messagesSet([{ msg: "", file: "" }]) // null Context messages
         dialogSet({ show: false }) // close dialog with pasted/dropped images
+        localStorage.setItem("messagePreviewClicked", 0) // null localStorage messagePreviewClicked
+        isSendMessageLoadingSet(true)
     }
 
     useEffect(() => {
@@ -45,6 +48,7 @@ export default function useSocket(room, dbMessagesSet) {
         socket.on("receive_message", (data) => {
             notMyMsgActions({ data })
             dbMessagesSet(prev => [...prev, data])
+            isSendMessageLoadingSet(false)
         })
     }, [socket])
     // ? socket receive
@@ -88,5 +92,5 @@ export default function useSocket(room, dbMessagesSet) {
     }, [socket])
     // ? delete socket message
 
-    return { sendMessage }
+    return { sendMessage, isSendMessageLoading }
 }
