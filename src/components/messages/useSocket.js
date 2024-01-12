@@ -5,6 +5,7 @@ import Room from "./Room"
 import { SERVER_URL } from "../../utils/consts"
 import axios from "../../utils/axios"
 import useAddFile from "../pages/addPosts/useAddFile"
+import delay from "../../utils/delay"
 
 export default function useSocket(room, dbMessagesSet) {
 
@@ -27,8 +28,9 @@ export default function useSocket(room, dbMessagesSet) {
 
     async function sendMessage() {
         if (!messages?.[0]?.msg) return // no message
-        messages?.map(async (message) => {
+        messages?.map(async (message, ind) => {
             const file = await fileArr("/upload/msgContent", [message.file])
+            await delay(2000 * ind)
             socket.emit("send_message", { msg: message.msg, msgReplyingTo: messageReplyingTo, room, email: user.email, name: user.name, img: user.img, file: file[0] })
         })
         messageReplyingToSet(null)
