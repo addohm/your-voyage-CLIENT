@@ -12,39 +12,45 @@ export default function SendMessagePreviews({ messages, messagePreviewClickedSet
     }
 
     return (
-        <div className="tac">
-            {/* small previews */}
-            {messages.length > 1 &&
-                messages?.map((message, ind) => {
+        <>
+            <div className="tac fcc">
+                {/* small previews */}
+                {messages.length > 1 &&
+                    messages?.map((message, ind) => {
 
-                    const fileName = message?.file?.name
+                        const fileName = message?.file?.name
 
-                    return (
-                        isFileImg(fileName)
-                            ?
-                            <SendMessagePreviewImg
-                                file={message?.file}
-                                className="w150 h150"
-                                onClick={() => switchMessagePreviewClicked(ind)}
-                            />
-                            :
-                            <MessageFileUploaded
-                                onClick={() => switchMessagePreviewClicked(ind)}
-                                fileName={fileName}
-                            />
-                    )
-                })}
+                        return (
+                            isFileImg(fileName)
+                                ?
+                                <SendMessagePreviewImg
+                                    file={message?.file}
+                                    className="w150 h150"
+                                    onClick={() => switchMessagePreviewClicked(ind)}
+                                    key={fileName}
+                                />
+                                :
+                                <MessageFileUploaded
+                                    onClick={() => switchMessagePreviewClicked(ind)}
+                                    fileName={fileName}
+                                    key={fileName}
+                                />
+                        )
+                    })}
+            </div>
             {/* big main preview */}
-            {isFileImg(messages?.[0]?.file.name)
-                ?
-                <SendMessagePreviewImg
-                    file={mainPreview}
-                    className="db w300 h300 m0a"
-                />
-                :
-                messages?.length === 1 &&
-                <MessageFileUploaded fileName={messages?.[0]?.file.name} />
-            }
-        </div>
+            <div className="fcc">
+                {isFileImg(messages?.[0]?.file.name)
+                    ?
+                    <SendMessagePreviewImg
+                        file={mainPreview}
+                        className="db w300 h300 m0a"
+                    />
+                    :
+                    messages?.length === 1 &&
+                    <MessageFileUploaded fileName={messages?.[0]?.file.name} />
+                }
+            </div>
+        </>
     )
 }

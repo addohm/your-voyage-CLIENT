@@ -15,6 +15,7 @@ export default function MessageFiles({ file }) {
                 downloadFile={file}
                 fileName={fileNameOnServer}
                 className="f fwn aic"
+                iconSize={30}
             />
     )
 }

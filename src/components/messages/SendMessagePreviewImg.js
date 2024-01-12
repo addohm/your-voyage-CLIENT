@@ -4,6 +4,7 @@ export default function SendMessagePreviewImg({ file, className, onClick }) {
             src={URL.createObjectURL(file)}
             className={className}
             onClick={onClick}
+            alt={`${file.name} has no preview`}
         />
     )
 }
