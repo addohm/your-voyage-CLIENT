@@ -16,6 +16,7 @@ export default function AddPostTextEditor({ defaultValue, className }) {
             valueSet={valueSet}
             onPaste={savePastedImgOnServer}
             onDrop={saveDroppedImgOnServer}
+            placeholder="...paste or drop image here"
         />
     )
 }

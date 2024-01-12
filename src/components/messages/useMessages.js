@@ -39,6 +39,7 @@ export default function useMessages(dialogSet) {
                             value={messages?.[messagePreviewClicked2StateWithDelay]?.msg}
                             // valueSet uses localStorage's messagePreviewClicked cause state's messagePreviewClicked is always frozen to 0 inside messagesSet
                             valueSet={(value) => messagesSet(prev => prev.map((message, ind) => ind === Number(localStorage.getItem("messagePreviewClicked") ? localStorage.getItem("messagePreviewClicked") : 0) ? ({ ...message, msg: value }) : message))}
+                            placeholder="...add your message"
                         />
 
                         <Send onClick={clickSendIcon} className="ml10" />

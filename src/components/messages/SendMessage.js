@@ -29,6 +29,7 @@ export default function SendMessage({ sendMessage, isSendMessageLoading }) {
                 onPaste={savePastedOnServer}
                 onDrop={saveDroppedOnServer}
                 defaultValue={""} // ! vital for SendMessagePreviews
+                placeholder="...paste or drop image here"
             />
             <SendMessageIcon sendMessage={sendMessage} isSendMessageLoading={isSendMessageLoading} />
         </div>

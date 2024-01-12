@@ -7,7 +7,7 @@ import InputRequiredNativeTooltip from "../form/InputRequiredNativeTooltip";
 
 export default function TextEditor(props) { // type: product/article
 
-	const { defaultValue, className, label, type, isVisible, name, value, valueSet, onPaste, onDrop } = props
+	const { defaultValue, className, label, type, isVisible, name, value, valueSet, onPaste, onDrop, placeholder } = props
 
 	useEffect(() => {
 		defaultValue && valueSet(defaultValue?.replace(/•/g, ""))
@@ -29,7 +29,7 @@ export default function TextEditor(props) { // type: product/article
 				onPaste={onPaste}
 				onDrop={onDrop}
 				onDragOver={(e) => e.preventDefault()}
-				placeholder="...paste or drop image here"
+				placeholder={placeholder}
 			/>
 			<input hidden name={name} value={value} />
 			<InputRequiredNativeTooltip required={noValue} className="ca" />

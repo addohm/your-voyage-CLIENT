@@ -20,6 +20,7 @@ export default function MessageText({ msg, isContentEditable, isDeleted }) {
                 value={value}
                 valueSet={valueSet}
                 uploadPath="/upload/msgContent"
+                placeholder="...updating message"
             />
     )
 }
