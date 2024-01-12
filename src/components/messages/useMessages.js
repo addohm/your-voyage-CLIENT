@@ -2,13 +2,12 @@ import { Close, Send } from "@mui/icons-material"
 import { useEffect, useState } from "react"
 import TextEditor from "../textEditor/TextEditor"
 import SendMessagePreviews from "./SendMessagePreviews"
-import useInterval from "../../hooks/useInterval"
 
 export default function useMessages(dialogSet) {
 
     const [messages, messagesSet] = useState([{ msg: "", file: "" }]) // [{ msg: "", file: File }, {...}]
     const [messagePreviewClicked, messagePreviewClickedSet] = useState(0) // in Dialog
-    const { interval } = useInterval(700)
+    const [messagePreviewClicked2StateWithDelay, messagePreviewClicked2StateWithDelaySet] = useState(0) // in Dialog
 
     function clickSendIcon() {
         // clicks real send icon; this icon is fake
@@ -26,18 +25,18 @@ export default function useMessages(dialogSet) {
 
         dialogSet({
             show: true,
-            title: "",
+            // title: `for debug: messagePreviewClicked: ${messagePreviewClicked}, messagePreviewClicked2StateWithDelay: ${messagePreviewClicked2StateWithDelay} "localStorage.getItem("messagePreviewClicked")": ${localStorage.getItem("messagePreviewClicked")}`,
             closeIcon: <Close onClick={() => (dialogSet({ show: false }), messagesSet([{ msg: "", file: "" }]))} />,
             children:
                 <div className="fc w100vw h100vh">
 
-                    <SendMessagePreviews messages={messages} messagePreviewClickedSet={messagePreviewClickedSet} messagePreviewClicked={messagePreviewClicked} />
+                    <SendMessagePreviews messages={messages} messagePreviewClickedSet={messagePreviewClickedSet} messagePreviewClicked={messagePreviewClicked} messagePreviewClicked2StateWithDelaySet={messagePreviewClicked2StateWithDelaySet} />
 
                     <div className="fcc">
                         <TextEditor
                             name="msg"
                             className="maw600"
-                            value={messages?.[messagePreviewClicked]?.msg}
+                            value={messages?.[messagePreviewClicked2StateWithDelay]?.msg}
                             // valueSet uses localStorage's messagePreviewClicked cause state's messagePreviewClicked is always frozen to 0 inside messagesSet
                             valueSet={(value) => messagesSet(prev => prev.map((message, ind) => ind === Number(localStorage.getItem("messagePreviewClicked") ? localStorage.getItem("messagePreviewClicked") : 0) ? ({ ...message, msg: value }) : message))}
                         />
@@ -46,7 +45,13 @@ export default function useMessages(dialogSet) {
                     </div>
                 </div>
         })
-    }, [interval, messages?.[0]?.file])
+    }, [messages?.[0]?.file, messagePreviewClicked, messagePreviewClicked2StateWithDelay])
+
+    // ! sync messagePreviewClicked with localStorage, so "add Messages With Many Files Round 2,3,4,5" can work
+    useEffect(() => {
+        messagePreviewClickedSet(Number(localStorage.getItem("messagePreviewClicked")))
+        messagePreviewClicked2StateWithDelaySet(Number(localStorage.getItem("messagePreviewClicked")))
+    }, [localStorage.getItem("messagePreviewClicked")])
 
     return { messages, messagesSet }
 }

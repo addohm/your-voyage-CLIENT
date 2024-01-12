@@ -2,13 +2,14 @@ import isFileImg from "../../utils/isFileImg"
 import MessageFileUploaded from "./MessageFileUploaded"
 import SendMessagePreviewImg from "./SendMessagePreviewImg"
 
-export default function SendMessagePreviews({ messages, messagePreviewClickedSet, messagePreviewClicked }) {
+export default function SendMessagePreviews({ messages, messagePreviewClickedSet, messagePreviewClicked, messagePreviewClicked2StateWithDelaySet }) {
 
-    const mainPreview = messages?.[messagePreviewClicked]?.file
+    const mainPreview = messages?.[localStorage.getItem("messagePreviewClicked")]?.file
 
     function switchMessagePreviewClicked(ind) {
         messagePreviewClickedSet(ind)
         localStorage.setItem("messagePreviewClicked", ind)
+        setTimeout(() => messagePreviewClicked2StateWithDelaySet(ind), 1); // so TextEditor in useMessages can get correct updated index
     }
 
     return (
@@ -27,13 +28,11 @@ export default function SendMessagePreviews({ messages, messagePreviewClickedSet
                                     file={message?.file}
                                     className="w150 h150"
                                     onClick={() => switchMessagePreviewClicked(ind)}
-                                    key={fileName}
                                 />
                                 :
                                 <MessageFileUploaded
                                     onClick={() => switchMessagePreviewClicked(ind)}
                                     fileName={fileName}
-                                    key={fileName}
                                 />
                         )
                     })}
