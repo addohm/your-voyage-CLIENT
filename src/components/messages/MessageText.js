@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Markdown from "../textEditor/Markdown";
 import TextEditor from "../textEditor/TextEditor";
-import "./index.scss"
+import "./msgStyle2.scss"
 
 export default function MessageText({ msg, isContentEditable, isDeleted }) {
 
@@ -11,11 +11,11 @@ export default function MessageText({ msg, isContentEditable, isDeleted }) {
         !isContentEditable
             ?
             <div className="">
-                {!isDeleted 
-                ? 
-                <Markdown className="msgText">{msg}</Markdown> 
-                : 
-                <div className="fsi gray">This message has been deleted</div>
+                {!isDeleted
+                    ?
+                    <Markdown className="msgText">{msg}</Markdown>
+                    :
+                    <div className="fsi gray">This message has been deleted</div>
                 }
             </div>
             :

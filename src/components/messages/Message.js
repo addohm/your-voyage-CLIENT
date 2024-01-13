@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import "./index.scss"
+import "./msgStyle2.scss"
 import MessageMenu from "./MessageMenu"
 import MessageText from "./MessageText"
 import MessageTime from "./MessageTime"

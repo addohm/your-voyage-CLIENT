@@ -1,0 +1,57 @@
+.rooms{
+    a{  // !! make rooms width 100%
+        width: 100%;
+    }
+}
+
+.myMsg{
+    background: #bdffe9;
+    // right shadow
+    box-shadow:  -10px 10px 21px #9dd4c1,
+             10px -10px 21px #ddffff;
+}
+
+.otherMsg{
+    background: #bde9ff;
+    // left shadow
+    box-shadow:  10px 10px 21px #9dc1d4,
+                 -10px -10px 21px #ddffff;
+}
+
+.updatedMsg{
+    box-shadow: -10px 0px 10px -5px lightgreen;
+}
+
+.deletedMsg{
+    background: #e0e0e0;
+    box-shadow:  10px 10px 20px #bebebe,
+                 -10px -10px 20px #ffffff;
+}
+
+.restoredMsg{
+    box-shadow: -10px 0px 10px -5px lighten(orange, 20%);
+}
+
+.replyMsg{
+    border-left: 5px solid #87CEEB;
+    padding-left: 10px;
+    background: transparent !important;
+    box-shadow: -10px 0px 10px -5px #87CEEB;
+    // second msg inside replyMsg
+    .myMsg{
+        box-shadow:none;
+    }
+}
+
+.msg{
+    max-width: 500px;
+    hyphens: auto;
+    white-space: pre-line;
+    word-break: break-all;
+}
+
+// change perspective
+// &:hover{
+//     transition: 0.5s;
+//     transform: perspective(75em) rotateY(-5deg);
+// }

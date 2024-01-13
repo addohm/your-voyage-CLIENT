@@ -1,6 +1,6 @@
 import Room from "./Room"
 import useRooms from "./useRooms"
-import "./index.scss"
+import "./msgStyle2.scss"
 
 export default function Rooms() {
 
