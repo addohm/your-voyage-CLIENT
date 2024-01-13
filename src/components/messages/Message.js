@@ -31,7 +31,7 @@ export default function Message(props) {
 
                     {/* ! MessageReplyingTo */}
                     <MessageReplyingTo
-                        isVisible={msgReplyingTo}
+                        isVisible={msgReplyingTo && !isDeleted}
                         messageReplyingTo={msgReplyingTo}
                         top={<MessageReplyingToTop text="Replies to message" />}
                         isMyMsg={isMyMsg}
