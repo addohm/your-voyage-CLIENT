@@ -2,20 +2,23 @@ import { useContext, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { Context } from "../../Context"
 import axios from "../../utils/axios"
-import { MAIN_ROUTE, MESSAGES_ROUTE } from "../../utils/consts"
+import { MESSAGES_ROUTE } from "../../utils/consts"
 
 export default function VerifyOrderToken() {
 
     const { token } = useParams()
     const navigate = useNavigate()
-    const { dialogSet } = useContext(Context)
+    const { dialogSet, user } = useContext(Context)
 
     useEffect(() => {
         async function verifyOrderToken() {
             // if user is redirected to "/verifyOrderToken" page, he gets orderToken, 
             // then client makes app.post("/applyForCoaching") from "/verifyOrderToken" page
             // then if token verified => create order in DB
-            const form = JSON.parse(localStorage.getItem("coachCard"))
+            let form = JSON.parse(localStorage.getItem("coachCard"))
+            // TODO !!! now hardcoded email, make form validation
+            form.email = user?.email
+            if (!user) return
             const res = await axios("/applyForCoaching", { ...form, token, type: "coaching" })
 
             // ! error
@@ -38,7 +41,7 @@ export default function VerifyOrderToken() {
         }
 
         verifyOrderToken()
-    }, [token])
+    }, [user])
 
     return (
         ""

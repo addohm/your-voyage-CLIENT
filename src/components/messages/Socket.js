@@ -1,7 +1,7 @@
 import SendMessage from "./SendMessage"
 import useSocket from "./useSocket"
 
-export default function Socket({ room, dbMessagesSet }) { // TODO !!! rename dbMessages
+export default function Socket({ room, dbMessagesSet }) {
 
     const { sendMessage, isSendMessageLoading } = useSocket(room, dbMessagesSet)
 

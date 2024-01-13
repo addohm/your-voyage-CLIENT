@@ -19,6 +19,9 @@ export default function CoachCardApplierEmail() {
             placeholder="email"
             onClick={clickLoginBtn}
             defaultValue={user?.email}
+            // if there's user hardcode his email to input and disable input
+            value={user?.email}
+            disabled={user?.email}
         />
     )
 }

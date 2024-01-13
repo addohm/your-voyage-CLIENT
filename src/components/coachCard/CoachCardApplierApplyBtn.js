@@ -5,12 +5,13 @@ import CoachCardApplierCoachList from "./CoachCardApplierCoachList";
 
 export default function CoachCardApplierApplyBtn() {
 
-    const { dialogSet } = useContext(Context)
+    const { dialogSet, user } = useContext(Context)
 
     return (
         <Button
             type="submit"
             variant="contained"
+            disabled={!user}
             onClick={() => dialogSet({
                 show: true,
                 title: "Please choose your coach",

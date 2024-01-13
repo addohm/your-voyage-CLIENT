@@ -3,6 +3,7 @@ import Message from "./Message"
 import { Context } from "../../Context"
 import timestampToDate from "../../utils/timestampToDate"
 import MessageDateTopCopy from "./MessageDateTopCopy"
+import NoMessagesYet from "./NoMessagesYet"
 
 export default function Messages({ messageReceived }) {
 
@@ -21,7 +22,7 @@ export default function Messages({ messageReceived }) {
                     <Message key={message._id} {...message} className={isMyMsg ? "mla" : "mra"} isMyMsg={isMyMsg} msgDate={msgDate} messageDateTopCopySet={messageDateTopCopySet} />
                 </>
             })}
-            {messageReceived?.length === 0 && <div className="fcc aic">No messages yet ...</div>}
+            <NoMessagesYet isVisible={messageReceived?.length === 0} className="fcc aic" />
         </div>
     )
 }
