@@ -1,9 +1,11 @@
 import isFileImg from "../../utils/isFileImg"
 import MessageFileUploaded from "./MessageFileUploaded"
 
-export default function MessageFiles({ file }) {
+export default function MessageFiles({ file, isVisible }) {
 
     const fileNameOnServer = file?.match(/(.*)\/([^/]*)$/)[2] // text after last slash
+
+    if (isVisible === false) return null // show true & undefined
 
     return (
         isFileImg(fileNameOnServer)

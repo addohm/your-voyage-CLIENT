@@ -39,7 +39,7 @@ export default function Message(props) {
                     />
                     {/* ? MessageReplyingTo */}
 
-                    <MessageFiles file={file} />
+                    <MessageFiles file={file} isVisible={!isDeleted} />
 
                     <div className="por f w100p">
                         <MessageText msg={msg} isContentEditable={isContentEditable} isDeleted={isDeleted} />
@@ -47,13 +47,13 @@ export default function Message(props) {
                     </div>
                     <MessageEdit SaveIcon={() => <Send />} isVisible={isContentEditable} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} />
                     {!isReplyMode &&
-                        <div className="fcc g8 mla">
+                        <div className="fcc g8 mla fz14 por t10">
                             <MessageIsRead isVisible={!isContentEditable} isRead={isRead} isMyMsg={isMyMsg} />
                             <MessageTime isVisible={!isContentEditable} isUpdated={isUpdated} updatedAt={updatedAt} createdAt={createdAt} isDeleted={isDeleted} isRestored={isRestored} />
                         </div>
                     }
                 </div>
-                {!isReplyMode &&
+                {!isReplyMode && !isDeleted &&
                     <MessageReply img={img} name={name} msg={msg} />
                 }
             </div>
