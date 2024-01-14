@@ -17,9 +17,15 @@
 	display: none;
 }
 .editor-toolbar{
-	display: none !important; // ! hide all tools
-	.separator, .preview, .side-by-side, .fullscreen {
+	display: none !important; // ! hide all tools without showTextEditorOptions in TextEditor className
+	.separator, .preview, .side-by-side, .fullscreen, .image {
 		display: none !important;
+	}
+}
+
+.showTextEditorOptions{
+	.editor-toolbar{ // ! show all tools with showTextEditorOptions in TextEditor className
+		display: block !important;
 	}
 }
 

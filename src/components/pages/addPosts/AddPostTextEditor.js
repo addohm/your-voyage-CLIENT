@@ -9,7 +9,7 @@ export default function AddPostTextEditor({ defaultValue, className, value, valu
         <TextEditor
             name="textEditorValue"
             defaultValue={defaultValue}
-            className={className}
+            className={`showTextEditorOptions ${className}`}
             value={value}
             valueSet={valueSet}
             onPaste={savePastedImgOnServer}
