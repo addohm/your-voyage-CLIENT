@@ -6,15 +6,17 @@ export default function useRooms() {
 
     const { interval } = useInterval()
     const [rooms, roomsSet] = useState([])
+    const [totalNotReadNum, totalNotReadNumSet] = useState([])
 
     useEffect(() => {
         async function getRooms() {
             const res = await axios("/getRooms")
+            totalNotReadNumSet(res?.reduce((acc, room) => room.notReadNum))
             res && roomsSet(res)
         }
 
         getRooms()
     }, [interval])
 
-    return { rooms }
+    return { rooms, totalNotReadNum }
 }

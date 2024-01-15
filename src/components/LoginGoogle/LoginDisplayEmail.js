@@ -4,8 +4,9 @@ import { KeyboardArrowDown as Arrow } from '@mui/icons-material';
 import AdminAddContent from "../admin/AdminAddContent";
 import Menu from "./Menu";
 import UserContent from "../user/UserContent";
+import UserImgWithNotReadNum from "../other/UserImgWithNotReadNum";
 
-export default function LoginDisplayEmail({ user }) {
+export default function LoginDisplayEmail({ user, totalNotReadNum }) {
 
     const [isUserEmailHovered, isUserEmailHoveredSet] = useState(false)
 
@@ -19,9 +20,9 @@ export default function LoginDisplayEmail({ user }) {
                 onMouseLeave={() => isUserEmailHoveredSet(false)}
             >
                 <div className="f g5 aic maw200">
-                    <img src={user?.img} className="w30 h30 br50" />
+                    <UserImgWithNotReadNum img={user?.img} notReadNum={totalNotReadNum} imgClassName="w40 h40" numClassName="w20 h20 l-4 t-2 fz13" />
                     <div className="oh wsn toe">{user?.email?.replace(/@.*/, '')}</div>
-                <Arrow className={`${isUserEmailHovered ? "tr180" : ""}`} />
+                    <Arrow className={`${isUserEmailHovered ? "tr180" : ""}`} />
                 </div>
                 <Menu isVisible={user && isUserEmailHovered} className="poa w100p bg_white py15 brL">
                     <AdminAddContent />

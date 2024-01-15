@@ -7,7 +7,7 @@ import Or from "../other/Or"
 
 export default function HeaderLoginBtn() {
 
-    const { dialogSet, user } = useContext(Context)
+    const { dialogSet, user, totalNotReadNum } = useContext(Context)
 
     return (
         !user
@@ -27,6 +27,6 @@ export default function HeaderLoginBtn() {
                 Login
             </div>
             :
-            <LoginDisplayEmail user={user} />
+            <LoginDisplayEmail user={user} totalNotReadNum={totalNotReadNum} />
     )
 }

@@ -1,10 +1,12 @@
 import Room from "./Room"
 import useRooms from "./useRooms"
 import "./msgStyle2.scss"
+import { useContext } from "react"
+import { Context } from "../../Context"
 
 export default function Rooms() {
 
-    const { rooms } = useRooms()
+    const { rooms } = useContext(Context)
 
     return (
         <div className="fc aic rooms">
