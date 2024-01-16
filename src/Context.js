@@ -14,7 +14,7 @@ function ContextProvider({ children }) {
     const [snackbar, snackbarSet] = useState({ show: false, text: "", link: "", linkText: "", linkType: "" })
     const [messageReplyingTo, messageReplyingToSet] = useState(null) // { img: "", name: "", msg: "" }
     const { messages, messagesSet } = useMessages(dialogSet)
-    const { rooms, roomsSet, totalNotReadNum } = useRooms()
+    const { rooms, roomsSet, totalNotReadNum } = useRooms(snackbarSet, user)
     const { dbMessages, dbMessagesSet } = useDbMessages(snackbarSet, user)
 
     // ! RETURN
