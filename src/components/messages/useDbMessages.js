@@ -4,7 +4,7 @@ import useInterval from "../../hooks/useInterval"
 import { useLocation } from "react-router-dom"
 import Room from "./Room"
 
-export default function useSocketHub(snackbarSet, user) { // !!! TODO rename to useDbMessages
+export default function useDbMessages(snackbarSet, user) { 
 
     const token = useLocation().pathname.split("/")[2] // !!!
     const { interval } = useInterval()

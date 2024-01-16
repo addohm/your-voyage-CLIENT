@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import useAutoAuth from "./components/AutoAuth/useAutoAuth"
 import useMessages from "./components/messages/useMessages"
 import useRooms from "./components/messages/useRooms"
-import useSocketHub from "./components/messages/useSocketHub"
+import useDbMessages from "./components/messages/useDbMessages"
 
 const Context = React.createContext()
 
@@ -15,7 +15,7 @@ function ContextProvider({ children }) {
     const [messageReplyingTo, messageReplyingToSet] = useState(null) // { img: "", name: "", msg: "" }
     const { messages, messagesSet } = useMessages(dialogSet)
     const { rooms, roomsSet, totalNotReadNum } = useRooms()
-    const { dbMessages, dbMessagesSet } = useSocketHub(snackbarSet, user)
+    const { dbMessages, dbMessagesSet } = useDbMessages(snackbarSet, user)
 
     // ! RETURN
     return (
