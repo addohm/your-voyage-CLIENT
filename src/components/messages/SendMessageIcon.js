@@ -2,8 +2,8 @@ import { Send } from '@mui/icons-material';
 import { CircularProgress } from '@mui/material';
 
 export default function SendMessageIcon({ sendMessage, isSendMessageLoading }) {
-    return (
-        isSendMessageLoading
+    return ( // TODO !!!
+        false
             ?
             <CircularProgress className="ml10 brandi" size={25} />
             :
