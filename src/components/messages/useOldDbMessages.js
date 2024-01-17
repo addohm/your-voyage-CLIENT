@@ -22,5 +22,8 @@ export default function useOldDbMessages() {
         getMessages()
     }, [skipOldDbMessages])
 
+    // clean messages when changing the room
+    useEffect(() => oldDbMessagesSet([]), [token])
+
     return { oldDbMessages, oldDbMessagesSet, skipOldDbMessages, skipOldDbMessagesSet }
 }

@@ -21,7 +21,10 @@ export default function useDbMessages(snackbarSet, user) {
         }
 
         getMessages()
-    }, [interval, token]) // ???
+    }, [interval])
+
+    // clean messages when changing the room
+    useEffect(() => dbMessagesSet([]), [token])
 
     return { dbMessages, dbMessagesSet }
 }

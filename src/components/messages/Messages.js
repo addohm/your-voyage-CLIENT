@@ -10,7 +10,7 @@ export default function Messages({ messageReceived, msgCurTopDateSet }) {
     useEffect(() => goToBottom(), [])
 
     return (
-        <div className="por fc aic w100p maw600 p15 mla mra mt-55">
+        <div className="por fc aic w100p maw600 mla mra mt-55 pt40 pl15 pr15 pb15">
             {messageReceived?.map((message, ind) => {
                 const isMyMsg = message?.email === user?.email ? true : false
                 let msgDate = timestampToDate(message.createdAt)
