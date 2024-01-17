@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import "./msgStyle2.scss"
 import MessageMenu from "./MessageMenu"
 import MessageText from "./MessageText"
@@ -10,21 +10,20 @@ import MessageIsRead from "./MessageIsRead"
 import MessageReply from "./MessageReply"
 import MessageReplyingTo from "./MessageReplyingTo"
 import MessageReplyingToTop from "./MessageReplyingToTop"
-import goToBottom from "../../utils/goToBottom"
 import MessageFiles from "./MessageFiles"
+import useMsgCurTopDate from "./useMsgCurTopDate"
 
 export default function Message(props) {
 
-    let { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate, messageDateTopCopySet, img, isRead, name, className, isReplyMode, msgReplyingTo, goToReplyingToMsg, file } = props
+    let { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate, messageDateTopCopySet, img, isRead, name, className, isReplyMode, msgReplyingTo, goToReplyingToMsg, file, msgCurTopDateSet } = props
     const [isContentEditable, isContentEditableSet] = useState(null)
     msg = !isReplyMode ? msg : msg?.slice(0, 90) + " ..." // shorten msg text for reply mode
 
-    useEffect(() => goToBottom(), [])
+    const { msgCurTopDateRef } = useMsgCurTopDate(msgCurTopDateSet, msgDate)
 
     return (
         <>
-            <MessageDate msgDate={msgDate} messageDateTopCopySet={messageDateTopCopySet} />
-            <div className={`por f g10 ${className}`} onClick={goToReplyingToMsg}>
+            <div ref={msgCurTopDateRef} className={`por f g10 cardAnim ${className}`} onClick={goToReplyingToMsg}>
                 <img src={img} className="w40 h40 brL" />
                 <div className={`fcc g10 p15 mb10 brL ${isMyMsg ? "myMsg" : "otherMsg"} ${isUpdated ? "updatedMsg" : ""} ${isDeleted ? "deletedMsg" : ""} ${isRestored ? "restoredMsg" : ""} msg`}>
                     <div className="fw500 mra w100p">{name}</div>

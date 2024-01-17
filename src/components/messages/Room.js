@@ -3,10 +3,11 @@ import timestampToTime from "../../utils/timestampToTime";
 import Markdown from "../textEditor/Markdown";
 import NoMessagesYet from "./NoMessagesYet";
 import UserImgWithNotReadNum from "../other/UserImgWithNotReadNum";
+import goToBottom from "../../utils/goToBottom";
 
 export default function Room({ img, name, room, msg, createdAt, notReadNum, msgImg }) {
     return (
-        <Link to={`/message/${room}`} className="f fwn g15 maw500 mb bg_white p brL">
+        <Link to={`/message/${room}`} className="f fwn g15 maw500 mb bg_white p brL" onClick={() => setTimeout(() => goToBottom(), 100)}>
             <div className="por">
                 <UserImgWithNotReadNum img={img} notReadNum={notReadNum} imgClassName="h60 w60" numClassName="h22 w22" />
             </div>

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import axios from "../../utils/axios"
 import useInterval from "../../hooks/useInterval"
 import { useLocation } from "react-router-dom"
-import Room from "./Room"
 import useMessageSnackbar from "./useMessageSnackbar"
 
 export default function useDbMessages(snackbarSet, user) {
@@ -22,7 +21,7 @@ export default function useDbMessages(snackbarSet, user) {
         }
 
         getMessages()
-    }, [interval])
+    }, [interval, token]) // ???
 
     return { dbMessages, dbMessagesSet }
 }

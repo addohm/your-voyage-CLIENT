@@ -15,9 +15,11 @@ export default function _Snackbar() {
 		<div>
 			<Snackbar
 				open={show}
+				// onClose = close on click outside
+				// onClose={() => snackbarSet({ show: false })}
 				// autoHideDuration={6000}
 				message={<SnackbarMessage {...snackbar} />}
-				action={<SnackbarAction snackbarSet={snackbarSet} onClose={onClose}  />}
+				action={<SnackbarAction snackbarSet={snackbarSet} onClose={onClose} />}
 			/>
 		</div>
 	);
