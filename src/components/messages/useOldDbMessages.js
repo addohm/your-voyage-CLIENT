@@ -11,7 +11,7 @@ export default function useOldDbMessages() {
     useEffect(() => {
         if (!token) return
         async function getMessages() {
-            const res = await axios("/getOldMessages", { token, limit: skipOldDbMessages }) // each time user hits window.scrollY=0 skipOldDbMessages will increase by 10
+            const res = await axios("/getMessages", { token, limit: skipOldDbMessages }) // each time user hits window.scrollY=0 skipOldDbMessages will increase by 10
             // delete the last 10 items, cause it's already displayed in new messages
             for (let i = 0; i < 10; i++) {
                 res.splice(res.length - 1, 1);
