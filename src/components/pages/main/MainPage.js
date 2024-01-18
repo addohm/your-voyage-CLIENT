@@ -14,6 +14,7 @@ import fullWidthImg1 from "../../fullWidthImg/img/img1.jpg"
 import fullWidthImg2 from "../../fullWidthImg/img/img2.jpg"
 import Animation from "../../animation/Animation";
 import AppBg from "../../appBg/AppBg";
+import t from "../../../hooks/useT";
 
 export default function MainPage() {
     return (
@@ -35,7 +36,7 @@ export default function MainPage() {
                 type="opacity"
             >
                 <div className="h50vh fcc">
-                    <Quote title="Steve Jobs" text="“Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do.“" />
+                    <Quote title="Steve Jobs" text={t("Your work")} />
                 </div>
             </Animation>
             <Animation
@@ -60,7 +61,7 @@ export default function MainPage() {
                 // type="scale151"
                 type="opacity"
             >
-                <Quote title="Confucius" text="“Choose a job you love, and you will never have to work a day in your life.“" />
+                <Quote title="Confucius" text={t("Choose a job")} />
             </Animation>
             <Animation
                 // type="scale091"
@@ -99,7 +100,7 @@ export default function MainPage() {
                 // type="scale151"
                 type="opacity"
             >
-                <Quote title="Albert Schweitzer" text="“Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.“" />
+                <Quote title="Albert Schweitzer" text={t("Success is not the key")} />
             </Animation>
 
             <Animation

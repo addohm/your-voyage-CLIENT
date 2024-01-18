@@ -1,5 +1,6 @@
 import Animation from "../animation/Animation";
 import TextSplit from "../animation/TextSplit";
+import t from "../../hooks/useT";
 
 export default function Exp({ img, position, company, ind, isExpHoveredSet, companyHoveredSet, companyHovered }) {
     return (
@@ -25,7 +26,7 @@ export default function Exp({ img, position, company, ind, isExpHoveredSet, comp
                     className={`poa t0 l0 zi2 ${companyHovered === company ? 'op1' : 'op0'} br50`}
                 />
                 <div className={`fc ml15 ${companyHovered ? "op0" : "op1"}`}>
-                    <div className='fz22'><TextSplit str={position} /></div>
+                    <div className='fz22'><TextSplit str={t(position)} /></div>
                     <div className='fz18 fw600'><TextSplit str={company} /></div>
                 </div>
             </div>

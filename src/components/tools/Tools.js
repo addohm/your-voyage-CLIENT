@@ -6,6 +6,7 @@ import Arrow from '../banner/Arrow.js'
 import ToolCardsHiddenTitles from './ToolCardsHiddenTitles.js'
 import ToolCards from './ToolCards.js'
 import goToCoach from '../../utils/goToCoach.js'
+import t from '../../hooks/useT.js'
 
 export default function Tools() {
 
@@ -30,7 +31,7 @@ export default function Tools() {
                 <div className='fcc g30'>
                     {tools.map(({ img, name }, ind) => {
                         return (
-                            <Tool key={ind} img={img} name={name} ind={ind} onClick={() => hideToolCardsShowExactCards(name)} toolCardsHidden={toolCardsHidden} />
+                            <Tool key={ind} img={img} name={t(name)} ind={ind} onClick={() => hideToolCardsShowExactCards(name)} toolCardsHidden={toolCardsHidden} />
                         )
                     })}
                 </div>

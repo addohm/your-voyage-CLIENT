@@ -5,6 +5,7 @@ import Animation from '../animation/Animation'
 import TextSplit from '../animation/TextSplit'
 import Arrow from './Arrow'
 import LeftTitle from '../other/LeftTitle'
+import t from '../../hooks/useT'
 
 export default function Banner() {
     return (
@@ -20,12 +21,12 @@ export default function Banner() {
                 <div className='fc'>
                     <Animation type="right">
                         <p className='font2 banner__textp1'>
-                            <TextSplit isColor={true} str="Let's embrace courage, creativity, and assurance in our pursuits." />
+                            <TextSplit isColor={true} str={t("Let's embrace")} />
                         </p>
                     </Animation>
                     <Animation type="right" delay={1}>
                         <p className='font2 banner__textp2'>
-                            <TextSplit isColor={false} str="Feeling lost or left behind in your social circle? Gain valuable career insights from an esteemed HR director. Find your ideal job and prioritize happiness and true passion. Unlock the secrets to professional success and personal fulfillment as you embark on a journey towards self-discovery and meaningful connections. Your path to a rewarding career starts here." />
+                            <TextSplit isColor={false} str={t("Feeling lost")} />
                         </p>
                     </Animation>
                 </div>

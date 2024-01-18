@@ -8,8 +8,8 @@ export default function PrintingText({ text, className, time = 10 }) {
         let i = -1
         const intervalId = setInterval(() => {
             i++
-            stateTextSet(prev => prev + text[i])
-            if (i === text.length - 1) {
+            stateTextSet(prev => prev + text?.[i])
+            if (i === text?.length - 1) {
                 clearInterval(intervalId);
             }
         }, time)

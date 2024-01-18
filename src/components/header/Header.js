@@ -5,6 +5,7 @@ import { MAIN_ROUTE } from '../../utils/consts';
 import HeaderFixedMargin from './HeaderFixedMargin';
 import delay from '../../utils/delay';
 import HeaderLoginBtn from './HeaderLoginBtn';
+import t from '../../hooks/useT';
 
 export default function Header() {
 
@@ -44,9 +45,9 @@ export default function Header() {
                     <div className='fz20 brand hoverScale hoverFont500'>XY Consulting</div>
                 </Link>
                 <div className="fcc g15">
-                    <div className='header__btn' onClick={() => goTo("about")}>About</div>
-                    <div className='header__btn' onClick={() => goTo("coaching")}>Coaching</div>
-                    <div className='header__btn' onClick={() => goTo("tools")}>Tools</div>
+                    <div className='header__btn' onClick={() => goTo("about")}>{t("About")}</div>
+                    <div className='header__btn' onClick={() => goTo("coaching")}>{t("Coaching")}</div>
+                    <div className='header__btn' onClick={() => goTo("tools")}>{t("Tools")}</div>
                     <HeaderLoginBtn />
                 </div>
             </div>

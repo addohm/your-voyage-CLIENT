@@ -3,6 +3,7 @@ import ReviewImg from './ReviewImg';
 import ReviewArrow from './ReviewArrow';
 import PrintingText from '../animation/PrintingText';
 import ReviewType from './ReviewType';
+import t from '../../hooks/useT';
 
 export default function Review({ list }) {
 
@@ -18,10 +19,10 @@ export default function Review({ list }) {
                         if (postNum !== ind) return
                         return (
                             <div className='por w700'>
-                                <ReviewType type={type} />
+                                <ReviewType type={t(type)} />
                                 <ReviewImg img={item.img} />
-                                <div className='fz20 fw600 ls3 w100p tac por b30 blurAnim'>{name}</div>
-                                <PrintingText text={text} />
+                                <div className='fz20 fw600 ls3 w100p tac por b30 blurAnim'>{t(name)}</div>
+                                <PrintingText text={t(text)} />
                             </div>
                         )
                     })}

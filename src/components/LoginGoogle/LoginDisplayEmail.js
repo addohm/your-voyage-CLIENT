@@ -25,8 +25,8 @@ export default function LoginDisplayEmail({ user, totalNotReadNum }) {
                     <Arrow className={`${isUserEmailHovered ? "tr180" : ""}`} />
                 </div>
                 <Menu isVisible={user && isUserEmailHovered} className="poa w100p bg_white py15 brL">
-                    <AdminAddContent />
                     <UserContent />
+                    <AdminAddContent />
                     <LogoutButton />
                 </Menu>
             </div>

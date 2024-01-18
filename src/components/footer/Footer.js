@@ -5,6 +5,7 @@ import youtube from "./img/youtube.svg"
 import FooterLink from './FooterLink'
 import { useLocation } from 'react-router-dom'
 import { MAIN_ROUTE } from '../../utils/consts'
+import t from '../../hooks/useT'
 
 export default function Footer() {
 
@@ -14,8 +15,8 @@ export default function Footer() {
     return (
         <footer className={`fcc jcsb pb px100 w100p ${location === MAIN_ROUTE ? mainRouteStyle : ""}`}>
             <div>
-                <div className='fw600'>Career Coach & hr director</div>
-                <div className='fw600 brand tac'>Xiaoyang Li</div>
+                <div className='fw600'>{t("Career Coach & HR director")}</div>
+                <div className='fw600 brand tac'>{t("Xiaoyang Li")}</div>
             </div>
             <div className='f jcsb w100'>
                 <img src={instagram} />
@@ -23,9 +24,9 @@ export default function Footer() {
                 <img src={youtube} />
             </div>
             <div className='f fwn jcsb w140'>
-                <FooterLink text="Terms" type="terms" />
+                <FooterLink text={t("Terms")} type="terms" />
                 <div>/</div>
-                <FooterLink text="Privacy" type="privacy" />
+                <FooterLink text={t("Privacy")} type="privacy" />
             </div>
         </footer>
     )

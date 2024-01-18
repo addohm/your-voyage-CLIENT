@@ -3,6 +3,7 @@ import "./index.scss"
 import arrow2 from "./img/arrow2.svg"
 import InputRequiredNativeTooltip from '../form/InputRequiredNativeTooltip';
 import Input from '../form/Input';
+import t from "../../hooks/useT";
 
 export default function CoachCardRadio({ options, outerInd }) {
 
@@ -16,7 +17,7 @@ export default function CoachCardRadio({ options, outerInd }) {
                     className={`por radio-container hoverBrandColor ${selectedOption === option ? 'brand fw600' : ''} ${ind === 0 ? "tar" : "tal"}`}
                     onClick={() => clickedOptionIndSet(ind)}
                 >
-                    {option}
+                    {t(option)}
                     <Input
                         type="radio"
                         name={"radio" + outerInd}

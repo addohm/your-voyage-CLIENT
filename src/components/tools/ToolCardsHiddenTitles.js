@@ -1,5 +1,6 @@
 import goToCoach from "../../utils/goToCoach"
 import ToolCardTitle from "./ToolCardTitle"
+import t from "../../hooks/useT"
 
 export default function ToolCardsHiddenTitles({ tools, toolCardsHidden, toolCardsHiddenSet, toolNameClicked, toolNameClickedSet }) {
 
@@ -15,7 +16,7 @@ export default function ToolCardsHiddenTitles({ tools, toolCardsHidden, toolCard
                 return (
                     <>
                         <div className='fcc w100p' onClick={() => onClick(name)}>
-                            <ToolCardTitle name={name} animationType="bottom" toolNameClicked={toolNameClicked} toolCardsHiddenSet={toolCardsHiddenSet} />
+                            <ToolCardTitle name={name} translatedName={t(name)} animationType="bottom" toolNameClicked={toolNameClicked} toolCardsHiddenSet={toolCardsHiddenSet} />
                         </div>
                     </>
                 )

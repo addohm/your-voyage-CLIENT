@@ -1,5 +1,6 @@
 import diamond from "../diamond/img/diamondColor.svg"
 import list from "./list"
+import t from '../../hooks/useT'
 
 export default function JustImagineList() {
     return (
@@ -10,7 +11,7 @@ export default function JustImagineList() {
                     {/* second diamond is for glow animation */}
                     <img src={diamond} className="poa l0 t0" />
                 </div>
-                <div className="maw800">{text}</div>
+                <div className="maw800">{t(text)}</div>
             </div>
         ))
     )

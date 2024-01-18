@@ -2,6 +2,7 @@ import CoachCardRadio from "./CoachCardRadio";
 import CoachCardRatings from "./CoachCardRatings";
 import useCoachCard from "./useCoachCard";
 import useDefaultCoachValues from "./useDefaultCoachValues";
+import t from "../../hooks/useT";
 
 export default function CoachCard({ img, title, radio, rating, ind, className, children, isCoach }) {
 
@@ -12,7 +13,7 @@ export default function CoachCard({ img, title, radio, rating, ind, className, c
         <form className={`maw445 bg_white brL ${className} p15`} onChange={memoCoachCard} >
             <div className='fcc'>
                 <img src={img} />
-                <div className="pl15 ttu">{title}</div>
+                <div className="pl15 ttu">{t(title)}</div>
             </div>
             <CoachCardRatings rating={rating} isReadOnly={isCoach} />
             {radio.map((options, outerInd) => (

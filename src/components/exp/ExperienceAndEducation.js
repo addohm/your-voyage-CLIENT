@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Exps from './Exps'
 import { experience, education } from './list'
+import t from '../../hooks/useT'
 
 export default function ExperienceAndEducation() {
 
@@ -9,8 +10,8 @@ export default function ExperienceAndEducation() {
 
     return (
         <div className='fcc h100vh por' style={{ gap: 300 }} >
-            <Exps arr={experience} title="Experience" companyHoveredSet={companyHoveredSet} companyHovered={companyHovered} />
-            <Exps arr={education} title="Education" companyHoveredSet={companyHoveredSet} companyHovered={companyHovered} />
+            <Exps arr={experience} title={t("Experience")} companyHoveredSet={companyHoveredSet} companyHovered={companyHovered} />
+            <Exps arr={education} title={t("Education")} companyHoveredSet={companyHoveredSet} companyHovered={companyHovered} />
 
             {/* bg fullscreen company img */}
             {companyHovered &&

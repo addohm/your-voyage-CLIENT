@@ -2,7 +2,7 @@ import Animation from "../animation/Animation";
 import ReviewArrow from "../review/ReviewArrow"
 import ToolCardTitleAddTool from "./ToolCardTitleAddTool";
 
-export default function ToolCardTitle({ name, animationType, toolNameClicked, toolCardsHiddenSet }) {
+export default function ToolCardTitle({ name, translatedName, animationType, toolNameClicked, toolCardsHiddenSet }) {
 
     const thisTitleClicked = name === toolNameClicked
     const iconSize = 40
@@ -19,7 +19,7 @@ export default function ToolCardTitle({ name, animationType, toolNameClicked, to
                 />
             }
 
-            {name.split("").map((char, ind) => {
+            {(translatedName || name).split("").map((char, ind) => {
 
                 const delayType1 = ind / 20 // ALL chars float with delay
                 const delayType2 = thisTitleClicked ? ind / 20 : 0 // ONE char float with delay
