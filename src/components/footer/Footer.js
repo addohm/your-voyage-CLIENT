@@ -1,11 +1,9 @@
 import React from 'react'
-import instagram from "./img/instagram.svg"
-import linkedin from "./img/linkedin.svg"
-import youtube from "./img/youtube.svg"
 import FooterLink from './FooterLink'
 import { useLocation } from 'react-router-dom'
 import { MAIN_ROUTE } from '../../utils/consts'
 import t from '../../hooks/useT'
+import { Instagram, LinkedIn, YouTube } from '@mui/icons-material'
 
 export default function Footer() {
 
@@ -19,9 +17,9 @@ export default function Footer() {
                 <div className='fw600 brand tac'>{t("Xiaoyang Li")}</div>
             </div>
             <div className='f jcsb w100'>
-                <img src={instagram} />
-                <img src={linkedin} />
-                <img src={youtube} />
+                <Instagram />
+                <YouTube />
+                <LinkedIn />
             </div>
             <div className='f fwn jcsb w140'>
                 <FooterLink text={t("Terms")} type="terms" />

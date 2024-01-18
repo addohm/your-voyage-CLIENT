@@ -9,6 +9,6 @@ export default function HeaderFixedMargin() {
     // all pages not main
     return (
         location !== MAIN_ROUTE &&
-        <div className='mt120'></div>
+        <div className='h120 w100p'></div>
     )
 }

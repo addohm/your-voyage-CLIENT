@@ -1,9 +1,11 @@
 // ! BACKGROUND & COLOR
 .brand{
 	color: $brand;
+	fill: $brand;
 }
 .brandi{
 	color: $brand !important;
+	fill: $brand !important;
 }
 .danger{
 	color: $danger !important;

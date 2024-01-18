@@ -1,8 +1,12 @@
 @import "vars.scss";
 
+// ! dark mode
 .dark{
-    *{
+    *:not(svg,.brand,.brandi){
         color: $white;
+     }
+     svg:not(.brand,.brandi){
+        fill: $white !important; // ???
      }
 .bg_white{
     background: $dark300 !important;

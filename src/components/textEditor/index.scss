@@ -2,10 +2,16 @@
 
 // ! SimpleMDE
 .CodeMirror{
-	// background: $white;
-	// color: $white;
 	border-radius: $borderRadiusSmall !important;
 	margin: 0 auto;
+}
+
+// ! dark mode
+.dark,.darkDialog{
+	.CodeMirror{
+		background: $dark200;
+		color: $white;
+	}
 }
 
 // ! change the minimum height (before it starts auto-growing):

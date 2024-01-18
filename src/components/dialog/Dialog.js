@@ -8,13 +8,13 @@ import { Context } from '../../Context';
 
 export default function Dialog_() {
 
-    const { dialog, dialogSet } = useContext(Context)
+    const { dialog, dialogSet, theme } = useContext(Context)
 
     return (
         <Dialog
             open={dialog?.show}
             onClose={() => dialogSet({ show: false })}
-            className={`fcc`}
+            className={`fcc ${theme === "dark" ? "darkDialog" : ""}`}
         >
             <div className="mla">{dialog?.closeIcon}</div>
             <DialogTitle className="fcc">
