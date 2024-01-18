@@ -1,5 +1,4 @@
 import Room from "./Room"
-import useRooms from "./useRooms"
 import "./msgStyle2.scss"
 import { useContext } from "react"
 import { Context } from "../../Context"

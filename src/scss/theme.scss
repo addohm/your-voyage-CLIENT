@@ -1,5 +1,24 @@
 @import "vars.scss";
 
-.header{
-    background: $white;
+.dark{
+    *{
+        color: $white;
+     }
+.bg_white{
+    background: $dark300 !important;
+}
+.bg_white.zi1{
+    background: $dark300 !important;
+}
+.bg_white.zi2{
+    background: $dark200 !important;
+}
+.bg_white.zi3{
+    background: $dark100 !important;
+}
+}
+
+// for App
+.dark.bg_white{
+    background: $dark300 !important;
 }

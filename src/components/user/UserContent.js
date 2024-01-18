@@ -8,7 +8,7 @@ import { Context } from "../../Context";
 
 export default function UserContent() {
 
-    const { langSet, lang } = useContext(Context)
+    const { langSet, lang, themeSet, theme } = useContext(Context)
 
     return (
         <>
@@ -23,13 +23,15 @@ export default function UserContent() {
                     stateSetter={langSet}
                     defaultValue={lang}
                 />
-                {/* <Toggle
+                <Toggle
                     name="theme"
                     on={<LightMode className="poa r4 t4" />}
                     onValue="light"
                     off={<DarkMode className="poa l4 t4" />}
                     offValue="dark"
-                /> */}
+                    stateSetter={themeSet}
+                    defaultValue={theme}
+                />
             </Link>
             <Link to={MESSAGES_ROUTE}>
                 <Button style={{ marginBottom: 10 }} variant='outlined'>coaching</Button>

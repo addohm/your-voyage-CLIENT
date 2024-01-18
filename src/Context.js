@@ -5,6 +5,7 @@ import useRooms from "./components/messages/useRooms"
 import useDbMessages from "./components/messages/useDbMessages"
 import useOldDbMessages from "./components/messages/useOldDbMessages"
 import useLang from "./components/user/useLang"
+import useTheme from "./components/user/useTheme"
 
 const Context = React.createContext()
 
@@ -20,6 +21,7 @@ function ContextProvider({ children }) {
     const { dbMessages, dbMessagesSet } = useDbMessages(snackbarSet, user)
     const { oldDbMessages, oldDbMessagesSet, skipOldDbMessages, skipOldDbMessagesSet } = useOldDbMessages() // for skip: to load old messages on top of new messages (2 separate messages)
     const { lang, langSet } = useLang()
+    const { theme, themeSet } = useTheme()
 
     // ! RETURN
     return (
@@ -33,7 +35,8 @@ function ContextProvider({ children }) {
             rooms, roomsSet, totalNotReadNum,
             dbMessages, dbMessagesSet,
             oldDbMessages, oldDbMessagesSet, skipOldDbMessages, skipOldDbMessagesSet,
-            lang, langSet
+            lang, langSet,
+            theme, themeSet
         }}>
 
             {children}

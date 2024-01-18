@@ -10,7 +10,7 @@ export default function CoachCard({ img, title, radio, rating, ind, className, c
     const { memoCoachCard } = useCoachCard()
 
     return (
-        <form className={`maw445 bg_white brL ${className} p15`} onChange={memoCoachCard} >
+        <form className={`maw445 bg_white zi2 brL ${className} p15`} onChange={memoCoachCard} >
             <div className='fcc'>
                 <img src={img} />
                 <div className="pl15 ttu">{t(title)}</div>

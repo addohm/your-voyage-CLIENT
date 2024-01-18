@@ -11,7 +11,7 @@ export default function Review({ list }) {
     const { type, name, text } = list[postNum]
 
     return (
-        <div className='por maw800 mih256 pb30 bg_white brL pl50 pr50'>
+        <div className='por maw800 mih256 pb30 bg_white zi2 brL pl50 pr50'>
             <div className='f fwn aic'>
                 <ReviewArrow className='mx15 poa t110 l0' onClick={() => postNum === 0 ? postNumSet(list.length - 1) : postNumSet(prev => prev - 1)} />
                 <div className='fcc'>

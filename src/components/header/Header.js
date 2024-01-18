@@ -40,7 +40,7 @@ export default function Header() {
 
     return (
         <>
-            <div className={`header pof t0 l0 w100p zi9 fcc jcsb p15 ${isHovered || isVisible ? "op1 transition05" : "op0 transition05"}`} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
+            <div className={`header pof t0 l0 w100p zi9 fcc jcsb p15 bg_white zi2 ${isHovered || isVisible ? "op1 transition05" : "op0 transition05"}`} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
                 <Link to={MAIN_ROUTE} onClick={() => window.scrollTo(0, 0)}>
                     <div className='fz20 brand hoverScale hoverFont500'>XY Consulting</div>
                 </Link>

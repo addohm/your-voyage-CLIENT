@@ -1,11 +1,15 @@
 import Animation from "../animation/Animation";
 import ReviewArrow from "../review/ReviewArrow"
 import ToolCardTitleAddTool from "./ToolCardTitleAddTool";
+import { useContext } from "react";
+import { Context } from "../../Context";
 
 export default function ToolCardTitle({ name, translatedName, animationType, toolNameClicked, toolCardsHiddenSet }) {
 
     const thisTitleClicked = name === toolNameClicked
     const iconSize = 40
+
+    const { theme } = useContext(Context)
 
     return (
         <div className="f por" onClick={() => thisTitleClicked && toolCardsHiddenSet(false)}>
@@ -26,7 +30,12 @@ export default function ToolCardTitle({ name, translatedName, animationType, too
 
                 return (
                     <Animation type={animationType} delay={delayType1}>
-                        <span className={`fz37 ts p4 ${thisTitleClicked ? "font3 hoverFont3" : "font4 hoverFont4"}`}>{char}</span>
+                        <span
+                            style={{ WebkitTextStroke: `1px ${theme === "light" ? "black" : "white"}` }}
+                            className={`fz37 p4 ${thisTitleClicked ? "font3 hoverFont3" : "font4 hoverFont4"}`}
+                        >
+                            {char}
+                        </span>
                     </Animation>
                 )
             })}

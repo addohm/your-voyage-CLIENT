@@ -8,7 +8,7 @@ body::-webkit-scrollbar {
 	height: 10px;
 }
 ::-webkit-scrollbar-thumb {
-	background: lighten($dark800, 10%);
+	background: lighten(#222, 10%);
 	border-radius: 20px;
 }
 ::-webkit-scrollbar-track {
