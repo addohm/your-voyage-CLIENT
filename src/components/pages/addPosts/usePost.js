@@ -3,27 +3,24 @@ import parseForm from "../../../utils/parseForm"
 import useAddFile from "./useAddFile"
 import { useContext } from "react"
 import { Context } from "../../../Context"
-import usePostRequires from "./usePostRequires"
 import axios from "../../../utils/axios"
 
-export default function usePost({ type, id }) {
+export default function usePost({ type, id, onDoneNavigateToPost = true, onDone }) {
 
     const navigate = useNavigate()
     const { pastedOrDroppedImg } = useContext(Context)
     const { fileArr } = useAddFile()
-    const { isAddImgRequired, isInputVisible } = usePostRequires(type)
 
-    async function addOrEditPost(e) {
+    async function addOrEditPost(e, id) {
         e.preventDefault()
         // add file: pasted/dropped
         await fileArr("/upload/siteContent", pastedOrDroppedImg)
         // add/edit post
         const form = parseForm(e)
-        // alert: add image
-        if (isAddImgRequired && !form.textEditorValue.match(/!\[[^\]]+\]/g)) { alert("paste or drop at least one image"); return }
         // no id = no post => create post; has id => edit post
         const res = !id ? await axios("/addPost", { ...form, type }) : await axios("/editPost", { ...form, type, id })
-        navigate(`/post/${type}/${res._id}`)
+        onDoneNavigateToPost && navigate(`/post/${type}/${res._id}`)
+        onDone?.()
     }
 
     async function deletePost(e) {
@@ -36,6 +33,6 @@ export default function usePost({ type, id }) {
     }
 
     return (
-        { addOrEditPost, deletePost, isInputVisible }
+        { addOrEditPost, deletePost }
     )
 }

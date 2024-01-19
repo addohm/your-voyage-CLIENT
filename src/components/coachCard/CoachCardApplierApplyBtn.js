@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import { useContext } from "react";
 import { Context } from "../../Context";
-import CoachCardApplierCoachList from "./CoachCardApplierCoachList";
+import CoachCardApplierCourseList from "./CoachCardApplierCourseList";
 
 export default function CoachCardApplierApplyBtn() {
 
@@ -15,7 +15,7 @@ export default function CoachCardApplierApplyBtn() {
             onClick={() => dialogSet({
                 show: true,
                 title: "Please choose your coach",
-                children: <CoachCardApplierCoachList />
+                children: <CoachCardApplierCourseList />
             })}
         >
             APPLY

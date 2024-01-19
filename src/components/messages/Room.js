@@ -5,14 +5,14 @@ import NoMessagesYet from "./NoMessagesYet";
 import UserImgWithNotReadNum from "../other/UserImgWithNotReadNum";
 import goToBottom from "../../utils/goToBottom";
 
-export default function Room({ img, name, room, msg, createdAt, notReadNum, msgImg }) {
+export default function Room({ img, name, room, msg, createdAt, notReadNum, msgImg, courseName }) {
     return (
         <Link to={`/message/${room}`} className="f fwn g15 maw500 mb bg_white zi2 p brL" onClick={() => setTimeout(() => goToBottom(), 100)}>
             <div className="por">
                 <UserImgWithNotReadNum img={img} notReadNum={notReadNum} imgClassName="h60 w60" numClassName="h22 w22" />
             </div>
             <div className="fc black">
-                <div className="fw600 mt3">{name}</div>
+                <div className="fw600 mt3">{name} {courseName}</div>
                 <div className="f fwn g10 mt10">
                     {msgImg && <img className="w40 h40 brL" src={msgImg} />}
                     <div className="textLines2 mt10"><Markdown>{msg}</Markdown></div>
