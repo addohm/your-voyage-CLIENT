@@ -12,7 +12,7 @@ const App = () => {
   const { theme } = useContext(Context)
 
   return (
-    <div className={`por bg_white ${theme}`}>
+    <div className={`por bg_app ${theme}`}>
       <div className="por mih100vh">
         <Header />
         <AppRouter />

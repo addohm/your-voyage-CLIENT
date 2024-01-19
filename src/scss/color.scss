@@ -19,11 +19,8 @@
 .gray{
 	color: $gray;
 }
-.green{
-	color: #46B7A7;
-	&_d10{
-		color: darken(#46B7A7, 10%);
-	}
+.redDiamond{
+	color: #FC3952;
 }
 .bg{
 	&_gray{

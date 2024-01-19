@@ -1,8 +1,8 @@
 @import "vars.scss";
 
-// ! dark mode
+// ! main dark mode
 .dark{
-    *:not(svg,.brand,.brandi){
+    *:not(svg,.brand,.brandi,.redDiamond){
         color: $white;
      }
      svg:not(.brand,.brandi){
@@ -20,9 +20,13 @@
 .bg_white.zi3{
     background: $dark100 !important;
 }
+// !
+.bg_black{
+    background: $white !important;
+}
 }
 
 // for App
-.dark.bg_white{
+.dark.bg_app{
     background: $dark300 !important;
 }

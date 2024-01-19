@@ -22,6 +22,10 @@ export default function useT(key) {
             "en": "I'm",
             "ch": "我是",
         },
+        "you": {
+            "en": "You",
+            "ch": "你",
+        },
         "Xiaoyang Li": {
             "en": " Xiaoyang Li",
             "ch": "李晓阳",
@@ -175,7 +179,7 @@ export default function useT(key) {
             "ch": "试想",
         },
         "Well, today": {
-            "en": "Well, today is your lucky day",
+            "en": "Well, today is your lucky day!",
             "ch": "今天是你的幸运日",
         },
         "You possess a strong grasp of your skills and strengths and understand how they contribute value to individuals, teams, organizations": {
@@ -193,6 +197,10 @@ export default function useT(key) {
         "let's get acquainted": {
             "en": "let's get acquainted",
             "ch": "认识一下",
+        },
+        "now is your turn": {
+            "en": "now is your turn",
+            "ch": "现在轮到你了",
         },
         "TECH INNOVATIONS": {
             "en": "TECH INNOVATIONS",

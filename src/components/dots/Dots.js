@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Dots = () => {
+const Dots = ({ className }) => {
     const [dots, setDots] = useState('');
 
     useEffect(() => {
@@ -12,7 +12,7 @@ const Dots = () => {
     }, []);
 
     return (
-        <span className='poa pl5'>{dots}</span>
+        <span className={`poa pl5 ${className}`}>{dots}</span>
     );
 };
 

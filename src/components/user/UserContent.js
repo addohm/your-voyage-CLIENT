@@ -34,7 +34,7 @@ export default function UserContent() {
                 />
             </Link>
             <Link to={MESSAGES_ROUTE}>
-                <Button style={{ marginBottom: 10 }} variant='outlined'>coaching</Button>
+                <Button style={{ marginBottom: 10 }} variant='outlined'>messages</Button>
             </Link>
         </>
     )

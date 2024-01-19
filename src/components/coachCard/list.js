@@ -15,6 +15,7 @@ export const info = [
     {
         img: img1,
         title: "let's get acquainted",
+        name: "Xiaoyang Li",
         radio,
         rating: [
             { name: "TECH INNOVATIONS", rating: 5 },
@@ -25,7 +26,8 @@ export const info = [
     },
     {
         img: img2,
-        title: <>now is your turn<Dots /></>,
+        title: "now is your turn",
+        name: "you",
         radio,
         rating: [
             { name: "TECH INNOVATIONS", rating: 0 },

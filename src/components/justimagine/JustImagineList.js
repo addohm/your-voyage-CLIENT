@@ -5,7 +5,7 @@ import t from '../../hooks/useT'
 export default function JustImagineList() {
     return (
         list.map(({ text }) => (
-            <div className="white fcc g10 mb15">
+            <div className="fcc g10 mb15">
                 <div className="por">
                     <img src={diamond} className="diamond" />
                     {/* second diamond is for glow animation */}
