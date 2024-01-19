@@ -7,7 +7,9 @@ export default function useLang() {
     useEffect(() => {
         // set default lang from browser
         if (!localStorage.getItem("lang")) {
-            const preferredLang = (navigator.language || navigator.userLanguage).replace(/-.*/, '')
+            let preferredLang = (navigator.language || navigator.userLanguage).replace(/-.*/, '')
+            const availableLangs = ["en", "ch"]
+            preferredLang = availableLangs.includes(preferredLang) ? preferredLang : "en"
             localStorage.setItem("lang", preferredLang);
         }
 

@@ -12,8 +12,9 @@ const MegaphoneText = ({ text }) => {
     }, []);
 
     return (
+        text &&
         <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
-            {Array.from(text).map((char, index) => (
+            {Array?.from(text)?.map((char, index) => (
                 <span key={index} style={{ display: 'inline-block' }} className="animated-letter">
                     {char}
                     {char === " " && "\u00A0"}

@@ -23,7 +23,7 @@ export default function ToolCardTitle({ name, translatedName, animationType, too
                 />
             }
 
-            {(translatedName || name).split("").map((char, ind) => {
+            {(translatedName || name)?.split("").map((char, ind) => {
 
                 const delayType1 = ind / 20 // ALL chars float with delay
                 const delayType2 = thisTitleClicked ? ind / 20 : 0 // ONE char float with delay
