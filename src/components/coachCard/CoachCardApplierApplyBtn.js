@@ -14,7 +14,7 @@ export default function CoachCardApplierApplyBtn() {
             disabled={!user}
             onClick={() => dialogSet({
                 show: true,
-                title: "Please choose your coach",
+                title: "Choose your course",
                 children: <CoachCardApplierCourseList />
             })}
         >

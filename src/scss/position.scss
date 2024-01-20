@@ -29,6 +29,10 @@
 	left: 50%;
 	top: 50%;
 }
+.cax{
+	transform: translate(-50%);
+	left: 50%;
+}
 // gen top
 @for $i from 0 through 500 {
 	.t#{$i} {
