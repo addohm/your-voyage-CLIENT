@@ -4,7 +4,7 @@ import parseTextEditorImg from "../textEditor/parseTextEditorImg"
 
 export default function ToolCards({ toolNameClicked, toolCardsHidden }) {
 
-    const [posts, postsSet] = usePosts(toolNameClicked)
+    const [posts] = usePosts(toolNameClicked)
 
     return (
         toolCardsHidden &&
@@ -15,7 +15,7 @@ export default function ToolCards({ toolNameClicked, toolCardsHidden }) {
                     const img = parseTextEditorImg(post.textEditorValue)
 
                     return (
-                        <ToolCard {...post} img={img} />
+                        <ToolCard key={post._id} {...post} img={img} />
                     )
                 })}
             </div>

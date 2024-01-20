@@ -9,7 +9,9 @@ export default function Tool({ img, name, ind, toolCardsHidden, onClick }) {
     return (
         // uncomment for animation
         // !toolCardsHidden &&
-        <Animation type="left" delay={ind / 2}>
+        <Animation
+        // type="left" delay={ind / 2}
+        >
             <div className={`w391 brL por ${toolCardsHidden ? "fadeAway" : "db"}`} onClick={onClick}>
                 <img className={`w100p ofCover ${varHeight}`} src={img} />
                 <div className="fcc">

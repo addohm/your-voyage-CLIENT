@@ -21,7 +21,7 @@ export default function Review({ list }) {
                             <div className='por w700'>
                                 <ReviewType type={t(type)} />
                                 <ReviewImg img={item.img} />
-                                <div className='fz20 fw600 ls3 w100p tac por b30 blurAnim'>{t(name)}</div>
+                                <div className='fz20 fw600 ls3 w100p tac por b30 removedblurAnim'>{t(name)}</div>
                                 <PrintingText text={t(text)} />
                             </div>
                         )

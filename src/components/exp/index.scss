@@ -8,16 +8,17 @@
     @include transition;
 }
 
-.expTitleActive{
-    div:nth-child(1){
-        @include transition;
-        animation: expDiv1Active 1s forwards;
-    }
-    div:nth-child(2){
-        @include transition;
-        animation: expDiv2Active 1s forwards;
-    }
-}
+// UNCOMMENT TO WORK
+// .expTitleActive{
+//     div:nth-child(1){
+//         @include transition;
+//         animation: expDiv1Active 1s forwards;
+//     }
+//     div:nth-child(2){
+//         @include transition;
+//         animation: expDiv2Active 1s forwards;
+//     }
+// }
 
 @keyframes expDiv1Active {
     from{
@@ -36,16 +37,17 @@
     }
 }
 // !
-.expTitleNotActive{
-    div:nth-child(1){
-        @include transition;
-        animation: expDiv1NotActive 1s forwards;
-    }
-    div:nth-child(2){
-        @include transition;
-        animation: expDiv2NotActive 1s forwards;
-    }
-}
+// UNCOMMENT TO WORK
+// .expTitleNotActive{
+//     div:nth-child(1){
+//         @include transition;
+//         animation: expDiv1NotActive 1s forwards;
+//     }
+//     div:nth-child(2){
+//         @include transition;
+//         animation: expDiv2NotActive 1s forwards;
+//     }
+// }
 
 @keyframes expDiv1NotActive {
     from{

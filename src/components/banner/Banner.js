@@ -12,20 +12,26 @@ export default function Banner() {
         <div className='banner h100vh'>
             <div className='banner__imgWrap'>
                 <LeftTitle className="poa l-210 b10" text="Let's explore a fresh perspective" />
-                <Animation type="blur">
-                    <img src={img} className='banner__img hoverMainImg' />
+                <Animation
+                //  type="blur"
+                >
+                    <img src={img} className='banner__img removedhoverMainImg' />
                 </Animation>
             </div>
-            <div className='f fwn aic banner__text pl30 hoverImgRotateY'>
+            <div className='f fwn aic banner__text pl30 removedhoverImgRotateY'>
                 <Arrow className="mx30 banner__arrow transition15" />
                 <div className='fc'>
-                    <Animation type="right">
-                        <p className='font2 banner__textp1'>
+                    <Animation
+                    //  type="right"
+                    >
+                        <p className='banner__textp1'>
                             <TextSplit isColor={true} str={t("Let's embrace")} />
                         </p>
                     </Animation>
-                    <Animation type="right" delay={1}>
-                        <p className='font2 banner__textp2'>
+                    <Animation
+                    //  type="right" delay={1}
+                    >
+                        <p className='banner__textp2'>
                             <TextSplit isColor={false} str={t("Feeling lost")} />
                         </p>
                     </Animation>

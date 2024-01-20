@@ -10,7 +10,9 @@ export default function Arrow({ className, onClick }) {
     const arrowSrc = theme === "light" ? arrow : arrowWhite
 
     return (
-        <Animation type="rotateY">
+        <Animation
+            type="rotateY"
+        >
             <img src={arrowSrc} className={`${className}`} onClick={onClick} />
         </Animation>
     )

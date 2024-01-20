@@ -15,30 +15,40 @@ export default function Banner2() {
     <div className="fcc h100vh about">
       <Arrow className={`mx30 banner__arrow tr180 ${isContentHovered ? "op0 transition15" : "op1 transition15"}`} />
       <div className='maw465 mr30' onMouseEnter={() => isContentHoveredSet(true)} onMouseLeave={() => isContentHoveredSet(false)}>
-        <Animation type="left">
+        <Animation
+        // type="left"
+        >
           <div className='fz31 mb10'>
             <TextSplit str={t("Nice to meet")} />
           </div>
         </Animation>
-        <Animation type="left" delay={1}>
+        <Animation
+        // type="left" delay={1}
+        >
           <div className='fz34 fw600 brand mb15'>
             <TextSplit str={t("I'm") + t("Xiaoyang Li")} />
           </div>
         </Animation>
-        <Animation type="left" delay={2}>
+        <Animation
+        // type="left" delay={2}
+        >
           <div className='fz26 mb30'>
             <TextSplit isColor={true} str={t("I'm a director")} />
           </div>
         </Animation>
-        <Animation type="left" delay={3}>
+        <Animation
+        // type="left" delay={3}
+        >
           <div className='fz16 mb30'>
             <TextSplit str={t("I help individuals")} />
           </div>
         </Animation>
         <Button className='w70p' variant='contained' onClick={goToCoach}>{t("Apply for")}{t("1:1 Career Coaching")}</Button>
       </div>
-      <Animation type="opacity">
-        <img className='hoverMainImg2' src={img} />
+      <Animation
+      // type="opacity"
+      >
+        <img className='removedhoverMainImg2' src={img} />
       </Animation>
     </div>
   )

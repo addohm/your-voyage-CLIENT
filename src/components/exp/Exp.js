@@ -4,7 +4,9 @@ import t from "../../hooks/useT";
 
 export default function Exp({ img, position, company, ind, isExpHoveredSet, companyHoveredSet, companyHovered }) {
     return (
-        <Animation type="bottomRight" delay={ind / 10}>
+        <Animation
+        // type="bottomRight" delay={ind / 10}
+        >
             <div
                 className='fcc wfc'
                 style={{ position: 'relative', left: 0 + ind * 100 }}

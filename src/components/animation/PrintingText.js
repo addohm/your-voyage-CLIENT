@@ -18,6 +18,8 @@ export default function PrintingText({ text, className, time = 10 }) {
     }, [text])
 
     return (
-        <p className={`font2 ${className}`}>{stateText}</p>
+        // UNCOMMENT TO WORK
+        // <p className={`font2 ${className}`}>{stateText}</p>
+        text
     )
 }
