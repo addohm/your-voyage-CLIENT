@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import useCoachCard from "./useCoachCard"
 import { Button } from "@mui/material";
 import { useState } from "react";
+import CourseLabel from "./CourseLabel";
 
-export default function Course({ coachEmail, coachName, img, courseName, price, discountPrice }) {
+export default function Course({ coachEmail, coachName, img, courseName, price, discountPrice, courseLabel }) {
 
     const { stripeLink } = useCoachCard(courseName)
     const [isHovered, isHoveredSet] = useState(false)
@@ -18,6 +19,7 @@ export default function Course({ coachEmail, coachName, img, courseName, price, 
     return (
         <Link to={stripeLink}>
             <div className="por course" onClick={() => chooseCoach(coachEmail, courseName)} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
+                <CourseLabel courseLabel={courseLabel} isHovered={isHovered} />
                 <div className="fcc m15">
                     <img className="br50 w100 h100" src={img} />
                     <div className="mt10 w100p">

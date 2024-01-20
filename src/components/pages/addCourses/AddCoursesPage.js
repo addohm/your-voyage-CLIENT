@@ -12,7 +12,7 @@ export default function AddCoursesPage() {
     return (
         <div className="fcc g15 m0a">
             <div className="title mb w100p tac">Add Courses</div>
-            {Array.from(courses)?.map(({ courseName, coachEmail, coachName, price, discountPrice, _id }, ind) => {
+            {Array.from(courses)?.map(({ courseName, coachEmail, coachName, price, discountPrice, courseLabel, _id }, ind) => {
                 return (
                     <form key={_id} className="fcc g15" onSubmit={(e) => addOrEditPost(e, _id)}>
                         <Button type="submit"><Save className={`${_id ? "brand" : ""}`} /></Button>
@@ -21,6 +21,7 @@ export default function AddCoursesPage() {
                         <Input className="fz16" defaultValue={coachName} name="coachName" placeholder="coach name" />
                         <Input className="fz16" defaultValue={price} name="price" placeholder="price" />
                         <Input className="fz16" defaultValue={discountPrice} name="discountPrice" placeholder="discount price" />
+                        <Input className="fz16" defaultValue={courseLabel} name="courseLabel" placeholder="course label (eg: new)" />
                         {/* TODO !!! delete course */}
                         <Close onClick={() => coursesSet(prev => prev.filter((_, i) => i !== ind))} />
                     </form>

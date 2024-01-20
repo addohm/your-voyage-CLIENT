@@ -11,6 +11,18 @@
 .br50{
 	border-radius: 50%;
 }
+// gen border-top-right-radius
+@for $i from 0 through 30 {
+	.btrr#{$i} {
+		border-top-right-radius: #{$i}px;
+	}
+ }
+// gen border-top-left-radius
+@for $i from 0 through 30 {
+	.btlr#{$i} {
+		border-top-left-radius: #{$i}px;
+	}
+ }
 // gen border-radius
 @for $i from 0 through 30 {
 	.br#{$i} {
