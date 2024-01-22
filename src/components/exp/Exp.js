@@ -8,7 +8,7 @@ export default function Exp({ img, position, company, ind, isExpHoveredSet, comp
         // type="bottomRight" delay={ind / 10}
         >
             <div
-                className='fcc wfc'
+                className='fcc wfc exp'
                 style={{ position: 'relative', left: 0 + ind * 100 }}
                 onMouseEnter={() => isExpHoveredSet(true)}
                 onMouseLeave={() => isExpHoveredSet(false)}

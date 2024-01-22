@@ -12,9 +12,9 @@ export default function Banner2() {
   const [isContentHovered, isContentHoveredSet] = useState(false)
 
   return (
-    <div className="fcc h100vh about">
+    <div className="fcc h100vh about banner2">
       <Arrow className={`mx30 banner__arrow tr180 ${isContentHovered ? "op0 transition15" : "op1 transition15"}`} />
-      <div className='maw465 mr30' onMouseEnter={() => isContentHoveredSet(true)} onMouseLeave={() => isContentHoveredSet(false)}>
+      <div className='maw465 mr30 banner2AllText' onMouseEnter={() => isContentHoveredSet(true)} onMouseLeave={() => isContentHoveredSet(false)}>
         <Animation
         // type="left"
         >
@@ -47,6 +47,7 @@ export default function Banner2() {
       </div>
       <Animation
       // type="opacity"
+      className="banner2MainImg"
       >
         <img className='removedhoverMainImg2' src={img} />
       </Animation>

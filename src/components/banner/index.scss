@@ -1,3 +1,5 @@
+@import "../../scss/vars.scss";
+
 .banner{
     display: flex;
     align-items: center;
@@ -10,6 +12,10 @@
     }
     &__img{
         width: 100%;
+        @media (width<=457px){
+            width: 90%;
+            margin-left: 15px;
+           }
     }
     &__textp1{
         font-size: 34px;
@@ -22,12 +28,26 @@
         letter-spacing: 1px;
         line-height: 30px;
     }
+    &__imgLeftTitle{
+        white-space: nowrap;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
     // ! `mobile`
-    @media (width<=1551px){
-        align-items: flex-start;
-        justify-content: flex-start;
+    @media (width<=$tablet){
+        height: auto;
+        margin-bottom: 120px;
+        margin-top: 180px;
+        &__text{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap !important;
+            margin-top:0px !important;
+        }
+        &__textp1{
+        }
         &__textp1,&__textp2{
-            width: 330px;
+            max-width: 430px;
             padding: 15px;
         }
         flex-direction: column;
@@ -37,23 +57,64 @@
         &__arrow{
            transform: rotate(-90deg);
            margin-right: 45px;
+           max-width: 220px !important;
+           @media (width<=457px){
+            margin-top: -50px !important;
+            max-width: 150px !important;
+           }
         }
         &__arrow,&__text{
            margin-top: -100px;
         }
+        &__imgLeftTitle{
+            // works for 360p
+            // top: -179px;
+            // left: -320px;
+            // font-size: 11px;
+            display: none;
+        }
     }
     // ! pc
-    @media (width>=1551px){
+    @media (width>$tablet){
         &__textp1{
             width: 400px;
         }
         &__textp2{
             width: 415px;
         }
-        &__imgLeftTitle{
-            white-space: nowrap;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+    }
+}
+
+// ! banner2
+.banner2AllText{
+    order: 1;
+}
+.banner2MainImg{
+    order: 2;
+}
+
+@media (width<=$tablet){
+    .banner2AllText{
+        order: 2 !important;
+        text-align: center;
+        padding: 30px;
+        margin-right: 0;
+    }
+    .banner2MainImg{
+        order: 1 !important;
+        img{
+            width: 90%;
+            margin-left: 30px;
         }
+    }
+    .banner2{
+        height: auto;
+    }
+}
+
+// ! special media
+@media (width<=1316px){
+    .banner__arrow{
+        display: none;
     }
 }

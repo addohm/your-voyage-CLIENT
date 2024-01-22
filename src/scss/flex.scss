@@ -62,3 +62,9 @@
 	  gap: #{$i}px;
 	}
  }
+ // gen order
+@for $i from 1 through 10 {
+	.order#{$i} {
+	  order: #{$i};
+	}
+ }

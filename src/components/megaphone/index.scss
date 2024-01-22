@@ -1,13 +1,21 @@
+@import "../../scss/vars";
+
 .megaphoneWrap{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
     rotate: -25deg;
+    @media (width<=$mobile) {
+      right: 35px;
+    }
 }
 
 .megaphone{
     width: 200px;
+    @media (width<=$mobile) {
+      width: 120px;
+    }
 }
 
 @keyframes moveUpDown {

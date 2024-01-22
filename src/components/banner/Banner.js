@@ -10,7 +10,7 @@ import t from '../../hooks/useT'
 export default function Banner() {
     return (
         <div className='banner h100vh'>
-            <div className='banner__imgWrap'>
+            <div className='por banner__imgWrap'>
                 <LeftTitle className="poa l-210 b10" text="Let's explore a fresh perspective" />
                 <Animation
                 //  type="blur"

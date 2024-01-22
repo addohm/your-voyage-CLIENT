@@ -1,0 +1,11 @@
+.fullWidthImg{
+    @media (width<=649px){
+        width: 1300px !important;
+    }
+    @media (width<=550px){
+        width: 1000px !important;
+    }
+    @media (width<=450px){
+        width: 800px !important;
+    }
+}

@@ -86,3 +86,34 @@
         transform: rotate(360deg);
     }
 }
+
+// ! mobile
+.exps{
+    padding-left: 50px;
+    @media (width<=$tablet) {
+        padding-left: 0;
+    }
+}
+
+.exp{
+@media (width<=$tablet) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    left: 0 !important;
+    text-align: center;
+    padding: 15px;
+    img{
+        margin: 0 auto;
+    }
+    .rotatingBorder{ // hide company icons that show site preview img
+        display: none;
+    }
+}
+}
+
+.experienceAndEducation{
+    height: auto;
+    gap: 80px !important;
+}

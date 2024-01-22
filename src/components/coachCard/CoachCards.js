@@ -2,10 +2,11 @@ import React from 'react'
 import CoachCard from './CoachCard'
 import { info } from "./list.js"
 import CoachCardApplier from './CoachCardApplier.js'
+import "./index.scss"
 
 export default function CoachCards() {
     return (
-        <div className='fcc w925 m0a coaching'>
+        <div className='fcc maw925 m0a coaching'>
             <div className='w100p'>
                 {info.map((item, ind) => {
 

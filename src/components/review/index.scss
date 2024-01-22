@@ -1,0 +1,18 @@
+
+@import "../../scss/vars";
+
+.reviewType{
+    position: absolute;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    @media (width > $mobile){
+        right: -40px; 
+        top: 4px;
+    }
+    @media (width <= $mobile){
+        top: 54px !important;
+        left: 50%;
+        transform: translate(-50%);
+        font-size: 12px;
+    }
+}

@@ -6,18 +6,19 @@ import { Button } from "@mui/material"
 import Dots from '../dots/Dots'
 import goToCoach from '../../utils/goToCoach'
 import t from '../../hooks/useT'
+import './index.scss'
 
 export default function ApplyFor() {
     return (
-        <div className='h100vh fcc'>
+        <div className='h100vh fcc applyFor'>
             <div>
-                <div className='f maw820 m0a'>
-                    <div className='mb75'>
+                <div className='f maw820 m0a p15'>
+                    <div className='pb75 m0a'>
                         <div className='fz25 ttu ls3 mb10 tac'>{t("Apply for")}...</div>
                         <div className='title tac mb10'>{t("1:1 Career Coaching")}</div>
-                        <Quote className="por r200" title={t("with Xiaoyang Li")} titleClassName="brand" />
+                        <Quote className="por wsn" title={t("with Xiaoyang Li")} titleClassName="applyForQuote" />
                     </div>
-                    <div className='fcc mb20'>
+                    <div className='f fwn aifs mb20'>
                         <img src={dummy} />
                         <div className='bg_gray p30 ml15 brL maw700'>{t("Hi! I'm currently facing a roadblock")} :(</div>
                     </div>

@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import { tools } from "./list.js"
 import Tool from './Tool.js'
-import LeftTitle from '../other/LeftTitle.js'
-import Arrow from '../banner/Arrow.js'
 import ToolCardsHiddenTitles from './ToolCardsHiddenTitles.js'
 import ToolCards from './ToolCards.js'
 import goToCoach from '../../utils/goToCoach.js'
 import t from '../../hooks/useT.js'
+import ToolCardsArrowLabel from './ToolCardsArrowLabel.js'
 
 export default function Tools() {
 
@@ -24,10 +23,7 @@ export default function Tools() {
         <div className='mih100vh pt300 tools'>
             <ToolCardsHiddenTitles tools={tools} toolCardsHidden={toolCardsHidden} toolCardsHiddenSet={toolCardsHiddenSet} toolNameClicked={toolNameClicked} toolNameClickedSet={toolNameClickedSet} />
             <div className='fcc por'>
-                <div className="poa l-50 t150">
-                    <LeftTitle text="your success tools" isVisible={!toolCardsHidden} />
-                    <Arrow className="mx30 banner__arrow poa l110 t-35 w30 tr180" />
-                </div>
+                <ToolCardsArrowLabel toolCardsHidden={toolCardsHidden} />
                 <div className='fcc g30'>
                     {tools.map(({ img, name }, ind) => {
                         return (

@@ -1,0 +1,27 @@
+@import "../../scss/vars";
+
+.applyForQuote{
+    .title{
+        color: $brand;
+    }
+    .bg_black{
+        background: $brand;
+    }
+@media (width<=$mobile) {
+    // coach name title
+    .title{
+        font-size: 22px !important;
+    }
+    // line before coach name title
+    .bg_black{
+        width: 100px;
+    }
+}
+}
+
+.applyFor{
+    @media (width <=$mobile) {
+        height: auto;
+        margin-bottom: 100px;
+    }
+}

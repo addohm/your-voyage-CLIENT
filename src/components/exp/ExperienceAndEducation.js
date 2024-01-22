@@ -9,7 +9,7 @@ export default function ExperienceAndEducation() {
     const companySiteSrc = experience.find(({ company }) => company === companyHovered)?.site || education.find(({ company }) => company === companyHovered)?.site
 
     return (
-        <div className='fcc h100vh por' style={{ gap: 300 }} >
+        <div className='fcc h100vh por experienceAndEducation' style={{ gap: 300 }} >
             <Exps arr={experience} title={t("Experience")} companyHoveredSet={companyHoveredSet} companyHovered={companyHovered} />
             <Exps arr={education} title={t("Education")} companyHoveredSet={companyHoveredSet} companyHovered={companyHovered} />
 

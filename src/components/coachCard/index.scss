@@ -37,3 +37,16 @@
     box-shadow: inset 0px 10px 15px -3px rgba(0,0,0,0.1);
   }
 }
+
+// ! mobile
+.coaching{ // coaching has 2 cards
+  .radio-container,.coachCardRatingTitle{ // TRAVELING < STAYING AT HOME, TECH INNOVATIONS: does not fit into screen
+    font-size: 13px;
+  }
+  @media (width <=$mobile) {
+    margin: 15px;
+    .coach{ // coach card
+      margin-bottom: 30px;
+    }
+  }
+}

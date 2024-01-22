@@ -1,0 +1,9 @@
+@import "../../scss/vars";
+
+.justImagine{
+    @media (width<=$mobile) {
+        height: auto;
+        margin: 15px;
+        margin-bottom: 100px;
+    }
+}

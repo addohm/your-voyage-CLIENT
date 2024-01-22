@@ -6,7 +6,7 @@ import t from "../../hooks/useT"
 
 export default function Megaphone() {
     return (
-        <div className="megaphoneWrap h500 pt150">
+        <div className="por megaphoneWrap h500 pt150">
             <img src={megaphone} className="megaphone" />
             <div className="fc g15">
                 <MegaphoneText text={t("Start Your")} />

@@ -12,7 +12,7 @@ export default function ToolCardTitle({ name, translatedName, animationType, too
     const { theme } = useContext(Context)
 
     return (
-        <div className="f por" onClick={() => thisTitleClicked && toolCardsHiddenSet(false)}>
+        <div className="por f fwn" onClick={() => thisTitleClicked && toolCardsHiddenSet(false)}>
             {thisTitleClicked &&
                 <ReviewArrow
                     onClick={() => toolCardsHiddenSet(false)}

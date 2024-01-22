@@ -9,7 +9,7 @@ export default function ToolCards({ toolNameClicked, toolCardsHidden }) {
     return (
         toolCardsHidden &&
         <div className="fcc">
-            <div className="fcc jcfs g30 w1684">
+            <div className="fcc g30">
                 {posts?.map(post => {
 
                     const img = parseTextEditorImg(post.textEditorValue)

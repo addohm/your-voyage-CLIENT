@@ -4,7 +4,7 @@ import TextSplit from '../animation/TextSplit'
 
 export default function Title({ title, isExpHovered, className, lineClassName }) {
     return (
-        <div className={`f aic jcfs g15 fwn mb15 ${isExpHovered ? "expTitleActive" : "expTitleNotActive"} ${className}`}>
+        <div className={`f aic jcfs g15 fwn mb15 ml15 ${isExpHovered ? "expTitleActive" : "expTitleNotActive"} ${className}`}>
             <Animation
             // type="left"
             >

@@ -1,11 +1,12 @@
 import Animation from '../animation/Animation';
+import './index.scss'
 
 export default function ReviewType({ type }) {
     return (
         <Animation
         // type="right"
         >
-            <div className='poa r-40 t4 brand ttu ls3'>{type}</div>
+            <div className='brand reviewType'>{type}</div>
         </Animation>
     )
 }
