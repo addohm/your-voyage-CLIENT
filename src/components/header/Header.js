@@ -16,9 +16,10 @@ export default function Header() {
     const [isVisibleMobileNav, isVisibleMobileNavSet] = useState(false);
     const { isMobile } = useWindowSize()
 
-    // isVisible
+    // isVisible Header
     useEffect(() => {
-        scrollY === 0 ? isVisibleSet(true) : isVisibleSet(false)
+        !isMobile && scrollY === 0 ? isVisibleSet(true) : isVisibleSet(false) // pc visible on very top + if hovered Header's place on top
+        isMobile && isVisibleSet(true) // mobile always visible
     }, [scrollY])
 
     // handleScroll
@@ -34,9 +35,9 @@ export default function Header() {
                 <Link to={MAIN_ROUTE} onClick={() => window.scrollTo(0, 0)}>
                     <div className='fz20 brand hoverScale hoverFont500'>XY Consulting</div>
                 </Link>
-                <Burger isVisible={isMobile} isVisibleMobileNavSet={isVisibleMobileNavSet} />
+                <Burger isVisible={isMobile} isVisibleMobileNavSet={isVisibleMobileNavSet} isVisibleMobileNav={isVisibleMobileNav} />
                 <HeaderNav isVisible={!isMobile} />
-                <HeaderNavMobile isVisibleMobileNav={isVisibleMobileNav} isMobile={isMobile} />
+                <HeaderNavMobile isVisibleMobileNav={isVisibleMobileNav} isMobile={isMobile} isVisibleMobileNavSet={isVisibleMobileNavSet} />
             </div>
             <HeaderFixedMargin />
         </>

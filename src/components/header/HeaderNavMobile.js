@@ -1,6 +1,6 @@
 import HeaderNav from "./HeaderNav";
 
-export default function HeaderNavMobile({ isVisibleMobileNav, isMobile }) {
+export default function HeaderNavMobile({ isVisibleMobileNav, isMobile, isVisibleMobileNavSet }) {
     return (
         (isMobile && isVisibleMobileNav) &&
         <div className="h100vh w100vw">
@@ -8,6 +8,8 @@ export default function HeaderNavMobile({ isVisibleMobileNav, isMobile }) {
                 <HeaderNav
                     className="fcr"
                     isVisible={isMobile && isVisibleMobileNav}
+                    isVisibleMobileNavSet={isVisibleMobileNavSet}
+                    isMobile={isMobile}
                 />
             </div>
         </div>
