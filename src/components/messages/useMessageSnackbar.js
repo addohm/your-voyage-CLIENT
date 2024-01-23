@@ -17,7 +17,7 @@ export default function useMessageSnackbar(snackbarSet, user) {
 
             snackbarSet({
                 show: true,
-                text: <Room {...message} />,
+                text: <Room {...message} room={room} />,
                 onClose: () => isVisibleSnackbarSet(false)
             })
         })
