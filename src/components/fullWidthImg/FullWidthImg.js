@@ -10,7 +10,7 @@ export default function FullWidthImg({ img }) {
             <div className='h100vh por zi2 hoverScale transition15'>
                 <img
                     src={img}
-                    className="ofCover poa ca fullWidthImg"
+                    className="ofCover poa c fullWidthImg"
                 />
             </div>
         </Animation>

@@ -7,7 +7,7 @@ import PostFullLink from './PostFullLink'
 export default function PostFull({ post, type, id, value, title, link, isVisibleIcons = true }) {
     return (
         <>
-            <div className='postFull maw800 mla mra mb100'>
+            <div className='postFull maw800 mla mra mb100 px15'>
                 <ToolCardIcons isVisible={isVisibleIcons} type={type} _id={id} className="poa t-30" />
                 <div className='title tac mb'>{post?.title || title}</div>
                 <Markdown>{value}</Markdown>

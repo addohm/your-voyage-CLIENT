@@ -1,12 +1,15 @@
 @import "../../scss/vars.scss";
 
-.toolCard{
+.toolCard{ // posts when clicked 1 of 4 "tools"
     overflow: hidden;
     background: $white;
     img{
         height: 300px;
         width: 100%;
         object-fit: cover;
+    }
+    @media (width <=$mobile){
+        width: 330px;
     }
 }
 
@@ -19,6 +22,16 @@
         width: 560px;        
     }
     @media (width <= 813px){ // first time toolCards = 1 not 2 in row
+        width: 320px; 
         flex-wrap: wrap;      
+    }
+}
+
+.tool{ // 1 of 4 "tools"
+    img{
+        border-radius: $borderRadiusLarge;
+    }
+    @media (width<=$mobile){
+        width: 330px;
     }
 }

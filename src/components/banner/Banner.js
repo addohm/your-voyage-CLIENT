@@ -11,7 +11,7 @@ export default function Banner() {
     return (
         <div className='banner h100vh'>
             <div className='por banner__imgWrap'>
-                <LeftTitle className="poa l-210 b10" text="Let's explore a fresh perspective" />
+                <LeftTitle className="poa l-210 b10 banner__imgLeftTitle" text="Let's explore a fresh perspective" />
                 <Animation
                 //  type="blur"
                 >

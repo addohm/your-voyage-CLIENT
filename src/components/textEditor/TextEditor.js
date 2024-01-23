@@ -32,7 +32,7 @@ export default function TextEditor(props) { // type: product/article
 				placeholder={placeholder}
 			/>
 			<input hidden name={name} value={value} />
-			<InputRequiredNativeTooltip required={noValue} className="ca" />
+			<InputRequiredNativeTooltip required={noValue} className="c" />
 		</div>
 	)
 }

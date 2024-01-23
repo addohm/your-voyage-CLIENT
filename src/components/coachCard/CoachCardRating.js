@@ -35,7 +35,7 @@ const CoachCardRating = ({ name, rating, isReadOnly }) => {
                     rating={_rating}
                 />
             ))}
-            <InputRequiredNativeTooltip required={_rating === 0} className="ca" />
+            <InputRequiredNativeTooltip required={_rating === 0} className="c" />
         </div>
     );
 };

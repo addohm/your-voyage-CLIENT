@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import "./index.scss"
-import { Link } from 'react-router-dom';
-import { MAIN_ROUTE } from '../../utils/consts';
 import HeaderFixedMargin from './HeaderFixedMargin';
 import Burger from '../burger/Burger';
 import HeaderNav from './HeaderNav';
 import useWindowSize from '../../hooks/useWindowSize';
 import HeaderNavMobile from './HeaderNavMobile';
+import HeaderLogo from './HeaderLogo';
 
 export default function Header() {
 
@@ -32,9 +31,7 @@ export default function Header() {
     return (
         <>
             <div className={`header pof t0 l0 w100p zi9 fcc jcsb p15 bg_white zi2 ${isHovered || isVisible ? "op1 transition05" : "op0 transition05"}`} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
-                <Link to={MAIN_ROUTE} onClick={() => window.scrollTo(0, 0)}>
-                    <div className='fz20 brand hoverScale hoverFont500'>XY Consulting</div>
-                </Link>
+                <HeaderLogo isVisibleMobileNavSet={isVisibleMobileNavSet} />
                 <Burger isVisible={isMobile} isVisibleMobileNavSet={isVisibleMobileNavSet} isVisibleMobileNav={isVisibleMobileNav} />
                 <HeaderNav isVisible={!isMobile} />
                 <HeaderNavMobile isVisibleMobileNav={isVisibleMobileNav} isMobile={isMobile} isVisibleMobileNavSet={isVisibleMobileNavSet} />
