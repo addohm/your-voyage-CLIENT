@@ -14,6 +14,12 @@
 	flex-direction: column;
 	flex-wrap: wrap;
 }
+.fcr{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	flex-direction: column-reverse;
+}
 .fcc{
 	display: flex;
 	align-items: center;

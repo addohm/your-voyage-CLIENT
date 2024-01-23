@@ -1,4 +1,6 @@
 export const SERVER_URL = process.env.REACT_APP_API_URL || "http://localhost:5000"
+export const MOBILE_WIDTH = 768
+
 export const MAIN_ROUTE = "/"
 // 
 export const ADD_POSTS_PAGE_ROUTE = "/add/"

@@ -1,30 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import "./index.scss"
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { MAIN_ROUTE } from '../../utils/consts';
 import HeaderFixedMargin from './HeaderFixedMargin';
-import delay from '../../utils/delay';
-import HeaderLoginBtn from './HeaderLoginBtn';
-import t from '../../hooks/useT';
+import Burger from '../burger/Burger';
+import HeaderNav from './HeaderNav';
+import useWindowSize from '../../hooks/useWindowSize';
+import HeaderNavMobile from './HeaderNavMobile';
 
 export default function Header() {
-
-    const navigate = useNavigate()
-
-    async function goTo(className) {
-        navigate(MAIN_ROUTE)
-        await delay(100);
-
-        document.querySelector(`.${className}`).scrollIntoView({ behavior: "smooth" })
-        setTimeout(() => {
-            // when animation done go once again
-            document.querySelector(`.${className}`).scrollIntoView({ behavior: "smooth" })
-        }, 2000);
-    }
 
     const [isHovered, isHoveredSet] = useState(false);
     const [isVisible, isVisibleSet] = useState(true);
     const [scrollY, scrollYSet] = useState(true);
+    const [isVisibleMobileNav, isVisibleMobileNavSet] = useState(false);
+    const { isMobile } = useWindowSize()
 
     // isVisible
     useEffect(() => {
@@ -44,12 +34,9 @@ export default function Header() {
                 <Link to={MAIN_ROUTE} onClick={() => window.scrollTo(0, 0)}>
                     <div className='fz20 brand hoverScale hoverFont500'>XY Consulting</div>
                 </Link>
-                <div className="fcc g15">
-                    <div className='header__btn' onClick={() => goTo("about")}>{t("About")}</div>
-                    <div className='header__btn' onClick={() => goTo("coaching")}>{t("Coaching")}</div>
-                    <div className='header__btn' onClick={() => goTo("tools")}>{t("Tools")}</div>
-                    <HeaderLoginBtn />
-                </div>
+                <Burger isVisible={isMobile} isVisibleMobileNavSet={isVisibleMobileNavSet} />
+                <HeaderNav isVisible={!isMobile} />
+                <HeaderNavMobile isVisibleMobileNav={isVisibleMobileNav} isMobile={isMobile} />
             </div>
             <HeaderFixedMargin />
         </>

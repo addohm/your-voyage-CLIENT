@@ -34,6 +34,12 @@
         margin-left: #{$i}px;
     }
 }
+// gen - ml
+@for $i from 1 through 100 {
+	.ml-#{$i} {
+        margin-left: -#{$i}px;
+    }
+}
 // gen mx
 @for $i from 1 through 100 {
 	.mx#{$i} {

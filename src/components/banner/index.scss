@@ -37,7 +37,8 @@
     @media (width<=$tablet){
         height: auto;
         margin-bottom: 120px;
-        margin-top: 180px;
+        margin-top: 88px; // ???
+        padding-top: 25px;
         &__text{
             display: flex;
             flex-direction: column;

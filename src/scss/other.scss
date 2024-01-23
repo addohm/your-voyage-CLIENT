@@ -44,7 +44,7 @@
 .oa{
 	overflow: auto;
 }
-.pin{
+.pen{
 	pointer-events: none;
 }
 .lsn{
@@ -84,4 +84,7 @@
 	.scale#{$i} {
 		transform: scale(#{$i}/100) !important; // ???
 	}
+}
+.bsh{
+	box-shadow: 0 0 5px $gray;
 }
