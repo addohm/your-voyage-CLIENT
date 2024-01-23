@@ -22,6 +22,7 @@ function ContextProvider({ children }) {
     const { oldDbMessages, oldDbMessagesSet, skipOldDbMessages, skipOldDbMessagesSet } = useOldDbMessages() // for skip: to load old messages on top of new messages (2 separate messages)
     const { lang, langSet } = useLang()
     const { theme, themeSet } = useTheme()
+    const [isVisibleMobileNav, isVisibleMobileNavSet] = useState(false)
 
     // ! RETURN
     return (
@@ -36,7 +37,8 @@ function ContextProvider({ children }) {
             dbMessages, dbMessagesSet,
             oldDbMessages, oldDbMessagesSet, skipOldDbMessages, skipOldDbMessagesSet,
             lang, langSet,
-            theme, themeSet
+            theme, themeSet,
+            isVisibleMobileNav, isVisibleMobileNavSet
         }}>
 
             {children}

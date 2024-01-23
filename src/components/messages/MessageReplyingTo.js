@@ -10,12 +10,12 @@ export default function MessageReplyingTo({ messageReplyingTo, isVisible, top, i
 
     return (
         (messageReplyingTo?.msg && isVisible) &&
-        <div className="por w100p fcc">
+        <div className="por maw600 m0a fcc">
             {top}
             <Message
                 {...messageReplyingTo}
                 isReplyMode={true}
-                className="replyMsg w600"
+                className="replyMsg maw600" // ???
                 isMyMsg={isMyMsg}
                 goToReplyingToMsg={() => goToReplyingToMsg(messageReplyingTo?.msg)}
             />

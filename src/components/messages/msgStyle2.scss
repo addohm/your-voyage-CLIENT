@@ -39,6 +39,7 @@
     padding-left: 10px;
     background: transparent !important;
     box-shadow: -10px 0px 10px -5px #87CEEB;
+    margin-right: auto;
     // second msg inside replyMsg
     .myMsg{
         box-shadow:none;
@@ -50,6 +51,9 @@
     hyphens: auto;
     white-space: pre-line;
     word-break: break-all;
+    @media (width<=$mobile) { 
+        max-width: 280px; // ???        
+    }
 }
 
 // ! dark mode

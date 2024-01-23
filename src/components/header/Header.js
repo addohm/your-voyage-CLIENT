@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./index.scss"
 import HeaderFixedMargin from './HeaderFixedMargin';
 import Burger from '../burger/Burger';
@@ -6,13 +6,14 @@ import HeaderNav from './HeaderNav';
 import useWindowSize from '../../hooks/useWindowSize';
 import HeaderNavMobile from './HeaderNavMobile';
 import HeaderLogo from './HeaderLogo';
+import { Context } from '../../Context';
 
 export default function Header() {
 
-    const [isHovered, isHoveredSet] = useState(false);
-    const [isVisible, isVisibleSet] = useState(true);
-    const [scrollY, scrollYSet] = useState(true);
-    const [isVisibleMobileNav, isVisibleMobileNavSet] = useState(false);
+    const [isHovered, isHoveredSet] = useState(false)
+    const [isVisible, isVisibleSet] = useState(true)
+    const [scrollY, scrollYSet] = useState(true)
+    const { isVisibleMobileNav, isVisibleMobileNavSet } = useContext(Context)
     const { isMobile } = useWindowSize()
 
     // isVisible Header

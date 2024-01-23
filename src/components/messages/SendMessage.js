@@ -13,25 +13,27 @@ export default function SendMessage({ sendMessage, isSendMessageLoading }) {
     const { savePastedOnServer, saveDroppedOnServer } = useMessagePastedOrDroppedFile(messagesSet)
 
     return (
-        <div className="fcc mb20">
+        <>
             <MessageReplyingTo
                 isVisible={messageReplyingTo?.msg}
                 messageReplyingTo={messageReplyingTo}
                 top={<MessageReplyingToTop text="Replying to message" />}
                 isMyMsg={messageReplyingTo?.name === user?.name}
             />
-            <AddMessageFiles />
-            <TextEditor
-                name="msg"
-                className="maw600"
-                value={messages?.[0]?.msg}
-                valueSet={(value) => messagesSet([{ msg: value, file: "" }])}
-                onPaste={savePastedOnServer}
-                onDrop={saveDroppedOnServer}
-                defaultValue={""} // ! vital for SendMessagePreviews
-                placeholder="...paste or drop image here"
-            />
-            <SendMessageIcon sendMessage={sendMessage} isSendMessageLoading={isSendMessageLoading} />
-        </div>
+            <div className={`fcc fwn g10 mb20 p50`}>
+                <AddMessageFiles className="asfe pb10" />
+                <TextEditor
+                    name="msg"
+                    className="maw600 miw270"
+                    value={messages?.[0]?.msg}
+                    valueSet={(value) => messagesSet([{ msg: value, file: "" }])}
+                    onPaste={savePastedOnServer}
+                    onDrop={saveDroppedOnServer}
+                    defaultValue={""} // ! vital for SendMessagePreviews
+                    placeholder="...paste or drop image here"
+                />
+                <SendMessageIcon sendMessage={sendMessage} isSendMessageLoading={isSendMessageLoading} className="asfe mb15" />
+            </div>
+        </>
     )
 }

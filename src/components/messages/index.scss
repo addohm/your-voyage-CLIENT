@@ -1,0 +1,14 @@
+@import "../../scss/vars.scss";
+
+.addMessageFiles{
+    @media (width<=$mobile) {
+    }
+    @media (width>$mobile) {
+    }
+}
+
+.messages{
+    @media (width<=$mobile) {
+        padding-right: 15px;
+    }
+}

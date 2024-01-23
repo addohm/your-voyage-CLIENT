@@ -8,7 +8,7 @@ import { Context } from "../../Context";
 
 export default function UserContent() {
 
-    const { langSet, lang, themeSet, theme } = useContext(Context)
+    const { langSet, lang, themeSet, theme, isVisibleMobileNavSet } = useContext(Context)
 
     return (
         <>
@@ -33,7 +33,7 @@ export default function UserContent() {
                     defaultValue={theme}
                 />
             </Link>
-            <Link to={MESSAGES_ROUTE}>
+            <Link to={MESSAGES_ROUTE} onClick={() => isVisibleMobileNavSet(false)}>
                 <Button style={{ marginBottom: 10 }} variant='outlined'>messages</Button>
             </Link>
         </>

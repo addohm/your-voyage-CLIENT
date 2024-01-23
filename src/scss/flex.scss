@@ -7,7 +7,7 @@
 	flex-wrap: wrap;
 }
 .fwn{
-	flex-wrap: nowrap;
+	flex-wrap: nowrap !important; // !!!
 }
 .fc{
 	display: flex;
