@@ -3,7 +3,7 @@ import Course from "./Course"
 
 export default function CoachCardApplierCourseList() {
 
-    const { posts } = usePosts("courses")
+    const { posts } = usePosts({ type: "courses", sort: { order: 1 } })
 
     return (
         <div className="fcc">

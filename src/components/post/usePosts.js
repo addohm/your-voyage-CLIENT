@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from '../../utils/axios'
 import parseForms from '../../utils/parseForms'
 
-export default function usePosts(type) {
+export default function usePosts({ type, sort }) {
 
     const [posts, postsSet] = useState([])
 
@@ -10,7 +10,7 @@ export default function usePosts(type) {
         async function getPosts() {
             if (!type) return
             if (type === "coach") return
-            const res = await axios("/getPosts", { type })
+            const res = await axios("/getPosts", { type, sort })
             res && postsSet(res)
         }
 
