@@ -18,7 +18,7 @@ export default function CoachCard({ img, title, name, radio, rating, ind, classN
             </div>
             <CoachCardRatings rating={rating} isReadOnly={isCoach} />
             {radio.map((options, outerInd) => (
-                <CoachCardRadio options={options} outerInd={outerInd} />
+                <CoachCardRadio options={options} outerInd={outerInd} isReadOnly={isCoach} />
             ))}
             {children}
         </form>

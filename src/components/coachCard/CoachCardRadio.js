@@ -7,13 +7,19 @@ import Input from '../form/Input';
 import t from "../../hooks/useT";
 import { Context } from '../../Context';
 
-export default function CoachCardRadio({ options, outerInd }) {
+export default function CoachCardRadio({ options, outerInd, isReadOnly }) {
 
     const [selectedOption, selectedOptionSet] = useState(null)
     const [clickedOptionInd, clickedOptionIndSet] = useState(null)
 
-    const { theme } = useContext(Context)
+    const { theme, applierFormSet } = useContext(Context)
     const arrowSrc = theme === "light" ? arrow2 : arrow2White
+
+    function onChange(option) {
+        if (isReadOnly) return
+        selectedOptionSet(option)
+        applierFormSet(prev => ({ ...prev, ["radio" + outerInd]: option }))
+    }
 
     return (
         <div className='fcc fwn por'>
@@ -26,9 +32,9 @@ export default function CoachCardRadio({ options, outerInd }) {
                     <Input
                         type="radio"
                         name={"radio" + outerInd}
-                        value={option}
+                        value={selectedOption}
                         checked={selectedOption === option}
-                        onChange={() => selectedOptionSet(option)}
+                        onChange={() => onChange(option)}
                     />
                     <InputRequiredNativeTooltip required={!selectedOption} className="r0 b0" />
                 </label>

@@ -23,6 +23,7 @@ function ContextProvider({ children }) {
     const { lang, langSet } = useLang()
     const { theme, themeSet } = useTheme()
     const [isVisibleMobileNav, isVisibleMobileNavSet] = useState(false)
+    const [applierForm, applierFormSet] = useState({})
 
     // ! RETURN
     return (
@@ -38,7 +39,8 @@ function ContextProvider({ children }) {
             oldDbMessages, oldDbMessagesSet, skipOldDbMessages, skipOldDbMessagesSet,
             lang, langSet,
             theme, themeSet,
-            isVisibleMobileNav, isVisibleMobileNavSet
+            isVisibleMobileNav, isVisibleMobileNavSet,
+            applierForm, applierFormSet
         }}>
 
             {children}

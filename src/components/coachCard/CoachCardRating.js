@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import InputRequiredNativeTooltip from '../form/InputRequiredNativeTooltip';
+import { Context } from '../../Context';
 
 const CoachCardRating = ({ name, rating, isReadOnly }) => {
+
+    const { applierFormSet } = useContext(Context)
 
     const [_rating, _ratingSet] = useState(0);
     useEffect(() => {
@@ -12,6 +15,7 @@ const CoachCardRating = ({ name, rating, isReadOnly }) => {
     const handleHeartClick = (selectedRating) => {
         if (isReadOnly) return
         _ratingSet(selectedRating);
+        applierFormSet(prev => ({ ...prev, [name]: selectedRating }));
     };
 
     // ! hover
