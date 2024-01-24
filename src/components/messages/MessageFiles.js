@@ -1,16 +1,18 @@
+import useImgZoom from "../../hooks/useImgZoom"
 import isFileImg from "../../utils/isFileImg"
 import MessageFileUploaded from "./MessageFileUploaded"
 
-export default function MessageFiles({ file, isVisible }) {
+export default function MessageFiles({ file, isVisible = true }) {
 
     const fileNameOnServer = file?.match(/(.*)\/([^/]*)$/)[2] // text after last slash
+    const { imgZoom } = useImgZoom()
 
-    if (isVisible === false) return null // show true & undefined
+    if (!isVisible) return
 
     return (
         isFileImg(fileNameOnServer)
             ?
-            <img key={file} src={file} className="w100p p15" />
+            <img key={file} src={file} className="w100p p15" onClick={imgZoom} />
             :
             file &&
             <MessageFileUploaded

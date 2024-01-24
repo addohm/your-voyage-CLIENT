@@ -3,7 +3,7 @@ import usePost from '../pages/addPosts/usePost'
 
 export default function ToolCardIconDelete({ type, _id, isVisible }) {
 
-    const { deletePost } = usePost({ type, _id })
+    const { deletePost } = usePost({ type, id: _id })
 
     function _deletePost(e) {
         if (window.confirm('Are you sure you want to delete this post?')) deletePost(e)

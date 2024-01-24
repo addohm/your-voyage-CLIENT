@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { BgText } from "../bgText/BgText";
 import Diamonds from "../diamond/Diamonds";
 import windowScrolls from "../../utils/windowScrolls";
+import useWindowSize from "../../hooks/useWindowSize";
 
 export default function AppBg() {
 
@@ -10,18 +11,12 @@ export default function AppBg() {
 
     useEffect(() => {
         const handleScroll = () => {
-            // Increase font size by 0.1 pixels for every pixel scrolled            
+            // Increase rotate for every pixel scrolled            
             const newRotate = 16 + (window.scrollY * 0.05)
             rotateSet(newRotate)
-        };
-
-        // Attach the event listener when the component mounts
-        window.addEventListener('scroll', handleScroll);
-
-        // Clean up the event listener when the component unmounts
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
     }, []);
 
     // ! move BgText
@@ -52,16 +47,14 @@ export default function AppBg() {
             } else {
                 isScrolledToVeryBottomSet(false)
             }
-        };
-
-        // Attach the event listener when the component mounts
+        }
         window.addEventListener("scroll", handleScroll);
-
-        // Clean up the event listener when the component unmounts
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
+        return () => window.removeEventListener("scroll", handleScroll)
     }, [window.scrollY])
+
+    // ! show only for 1920p
+    const { windowWidth } = useWindowSize()
+    if (windowWidth < 1920 || windowWidth > 1920) return
 
     return (
         <div ref={ref} className={`por h300vh ${isDiamondsVisible ? "op1" : "op0 zi0"}`}>

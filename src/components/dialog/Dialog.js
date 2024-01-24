@@ -5,6 +5,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import './index.scss'
 import { Context } from '../../Context';
+import { Close } from '@mui/icons-material';
 
 export default function Dialog_() {
 
@@ -16,7 +17,7 @@ export default function Dialog_() {
             onClose={() => dialogSet({ show: false })}
             className={`fcc ${theme === "dark" ? "darkDialog" : ""}`}
         >
-            <div className="mla">{dialog?.closeIcon}</div>
+            <Close className="mla" onClick={() => dialog?.onClose?.() || dialogSet({ show: false })} />
             <DialogTitle className="fcc">
                 {dialog?.title}
             </DialogTitle>

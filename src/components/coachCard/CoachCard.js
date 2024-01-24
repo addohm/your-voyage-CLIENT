@@ -10,7 +10,7 @@ export default function CoachCard({ img, title, name, radio, rating, ind, classN
     const { memoCoachCard } = useCoachCard()
 
     return (
-        <form className={`maw445 bg_white zi2 brL ${className} p15`} onChange={memoCoachCard} >
+        <form className={`maw445 bg_white zi2 brL ${className} p15`} onChange={memoCoachCard} onSubmit={(e) => e.preventDefault()} >
             <div className="pl15 ttu tac ls1 fw500 mt15 mb25">- {t(title)} -</div>
             <div className='fc aic'>
                 <img src={img} className="w80 h80" />

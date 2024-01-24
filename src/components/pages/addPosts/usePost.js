@@ -26,10 +26,9 @@ export default function usePost({ type, id, onDoneNavigateToPost = true, onDone,
     async function deletePost(e) {
         e.preventDefault()
         e.stopPropagation()
-        e.target.closest(".toolCard").classList.add("delAnim")
-        setTimeout(() => e.target.closest(".toolCard").classList.add("dn"), 1500)
+        e.target.closest(".toolCard")?.classList.add("delAnim")
         // !! delete file
-        await axios("/deletePost", { type, id }) // TODO !!!
+        await axios("/deletePost", { type, id })
     }
 
     return (

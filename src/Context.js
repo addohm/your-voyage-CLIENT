@@ -13,7 +13,7 @@ function ContextProvider({ children }) {
 
     const { user, userSet } = useAutoAuth()
     const [pastedOrDroppedImg, pastedOrDroppedImgSet] = useState([])
-    const [dialog, dialogSet] = useState({ show: false, title: "", children: "" })
+    const [dialog, dialogSet] = useState({ show: false, title: "", children: "", onClose: "" })
     const [snackbar, snackbarSet] = useState({ show: false, text: "", link: "", linkText: "", linkType: "" })
     const [messageReplyingTo, messageReplyingToSet] = useState(null) // { img: "", name: "", msg: "" }
     const { messages, messagesSet } = useMessages(dialogSet) // add message

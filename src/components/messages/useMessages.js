@@ -26,7 +26,7 @@ export default function useMessages(dialogSet) {
         dialogSet({
             show: true,
             // title: `for debug: messagePreviewClicked: ${messagePreviewClicked}, messagePreviewClicked2StateWithDelay: ${messagePreviewClicked2StateWithDelay} "localStorage.getItem("messagePreviewClicked")": ${localStorage.getItem("messagePreviewClicked")}`,
-            closeIcon: <Close onClick={() => (dialogSet({ show: false }), messagesSet([{ msg: "", file: "" }]))} />,
+            onClose: () => messagesSet([{ msg: "", file: "" }]),
             children:
                 <div className="fc w100vw h100vh">
 

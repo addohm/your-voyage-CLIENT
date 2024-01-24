@@ -7,16 +7,20 @@ export default function CoachCardApplierApplyBtn() {
 
     const { dialogSet, user } = useContext(Context)
 
+    function showCourseList() {
+        dialogSet({
+            show: true,
+            title: <div className="title">Choose your course</div>,
+            children: <CoachCardApplierCourseList />
+        })
+    }
+
     return (
         <Button
             type="submit"
             variant="contained"
             disabled={!user}
-            onClick={() => dialogSet({
-                show: true,
-                title: <div className="title">Choose your course</div>,
-                children: <CoachCardApplierCourseList />
-            })}
+            onClick={showCourseList}
         >
             APPLY
         </Button>
