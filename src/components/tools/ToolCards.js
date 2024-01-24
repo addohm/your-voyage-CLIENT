@@ -4,7 +4,7 @@ import parseTextEditorImg from "../textEditor/parseTextEditorImg"
 
 export default function ToolCards({ toolNameClicked, toolCardsHidden }) {
 
-    const [posts] = usePosts(toolNameClicked)
+    const { posts } = usePosts(toolNameClicked)
 
     return (
         toolCardsHidden &&

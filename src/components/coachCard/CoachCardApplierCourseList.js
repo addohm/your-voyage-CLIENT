@@ -3,11 +3,11 @@ import Course from "./Course"
 
 export default function CoachCardApplierCourseList() {
 
-    const [courses] = usePosts("courses")
+    const { posts } = usePosts("courses")
 
     return (
         <div className="fcc">
-            {courses?.map((course, ind) => {
+            {posts?.map((course, ind) => {
                 return (
                     <Course key={ind} {...course} />
                 )
