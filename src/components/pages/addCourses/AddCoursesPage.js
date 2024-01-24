@@ -2,10 +2,17 @@ import Input from "../../form/Input"
 import { Add, Close, Save } from "@mui/icons-material"
 import { Button } from "@mui/material"
 import usePosts from "../../post/usePosts"
+import usePost from "../addPosts/usePost"
 
 export default function AddCoursesPage() {
 
-    const { posts, postsSet, addOrEditPosts } = usePosts({ type: "courses" })
+    const { posts, postsSet, addOrEditPosts } = usePosts({ type: "courses", sort: { order: 1 } })
+    const { deletePost } = usePost({ type: "courses" })
+
+    function deleteCourse(ind, _id) {
+        postsSet(prev => prev.filter((_, i) => i !== ind))
+        deletePost({ id: _id })
+    }
 
     return (
         <form className="fcc g15 m0a" onSubmit={(e) => addOrEditPosts({ e, addPath: "/addCourse" })}>
@@ -25,7 +32,7 @@ export default function AddCoursesPage() {
                         {/* ! add new fields BEFORE last input  */}
                         <Input className="fz16 w80" defaultValue={courseLabel} name="courseLabel" placeholder="label" />
                         {/* TODO !!! delete course */}
-                        <Close onClick={() => postsSet(prev => prev.filter((_, i) => i !== ind))} />
+                        <Close onClick={() => deleteCourse(ind, _id)} />
                     </div>
                 )
             })}
