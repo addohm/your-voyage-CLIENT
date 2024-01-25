@@ -16,7 +16,6 @@ export default function VerifyOrderToken() {
             // then client makes app.post("/applyForCoaching") from "/verifyOrderToken" page
             // then if token verified => create order in DB
             let form = JSON.parse(localStorage.getItem("coachCard"))
-            // TODO !!! now hardcoded email, make form validation
             form.email = user?.email
             if (!user) return
             const res = await axios("/applyForCoaching", { ...form, token, type: "coaching" })
@@ -35,7 +34,7 @@ export default function VerifyOrderToken() {
             navigate(MESSAGES_ROUTE)
             dialogSet({
                 show: true,
-                title: "Order created!",
+                title: "Subscription activated!",
                 children: res.msg
             })
         }
