@@ -4,7 +4,7 @@ import { Context } from "../../Context"
 export default function RoomsTitle() {
 
     const { user } = useContext(Context)
-    const className = "title tac mb mt-20"
+    const className = "title tac mb"
 
     return (
         user?.role === "admin" || user?.role === "coach" ?

@@ -22,6 +22,9 @@
         margin-bottom: 15px;
         letter-spacing: 1px;
         line-height: 55px;
+        @media (width<=$mobile){
+            font-size: 28px;
+        }
     }
     &__textp2{
         font-size: 18px;

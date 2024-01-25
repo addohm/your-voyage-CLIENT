@@ -13,7 +13,7 @@ export default function Review({ list }) {
     return (
         <div className='por maw800 mih256 pb30 bg_white zi2 brL pl50 pr50 m15'>
             <div className='f fwn aic'>
-                <ReviewArrow className='mx15 poa t110 l0' onClick={() => postNum === 0 ? postNumSet(list.length - 1) : postNumSet(prev => prev - 1)} />
+                <ReviewArrow isVisible={list.length > 1} className='mx15 poa t110 l0' onClick={() => postNum === 0 ? postNumSet(list.length - 1) : postNumSet(prev => prev - 1)} />
                 <div className='fcc'>
                     {list.map((item, ind) => {
                         if (postNum !== ind) return
@@ -27,7 +27,7 @@ export default function Review({ list }) {
                         )
                     })}
                 </div>
-                <ReviewArrow className='tr180 mx15 poa t110 r0' onClick={() => postNum === list.length - 1 ? postNumSet(0) : postNumSet(prev => prev + 1)} />
+                <ReviewArrow isVisible={list.length > 1} className='tr180 mx15 poa t110 r0' onClick={() => postNum === list.length - 1 ? postNumSet(0) : postNumSet(prev => prev + 1)} />
             </div>
         </div>
     )

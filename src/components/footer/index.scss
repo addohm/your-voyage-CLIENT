@@ -1,0 +1,11 @@
+@import "../../scss/vars";
+
+.footer{
+    @media (width<=$mobile) {
+        width: fit-content;
+        flex-direction: column;
+        gap: 15px;
+        left: 50%; // only centers this way
+        transform: translate(-50%);
+    }
+}

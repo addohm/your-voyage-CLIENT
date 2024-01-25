@@ -1,6 +1,5 @@
 import React from 'react'
 import Quote from '../quote/Quote'
-import dummy from "./img/dummy.png"
 import coach from "./img/coach.png"
 import { Button } from "@mui/material"
 import Dots from '../dots/Dots'
@@ -19,8 +18,10 @@ export default function ApplyFor() {
                         <Quote className="por wsn" title={t("with Xiaoyang Li")} titleClassName="applyForQuote" />
                     </div>
                     <div className='f fwn aifs mb20'>
-                        <img src={dummy} />
-                        <div className='bg_gray p30 ml15 brL maw700'>{t("Hi! I'm currently facing a roadblock")} :(</div>
+                        <div>
+                            <div className='fcc bg_gray br50 w100 h100 fz50'>U</div>
+                        </div>
+                        <div className='bg_gray p30 ml15 brL'>{t("Hi! I'm currently facing a roadblock")} :(</div>
                     </div>
                     <div className='fcc'>
                         <img src={coach} />

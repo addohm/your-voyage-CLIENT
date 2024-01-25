@@ -5,10 +5,11 @@ import Toggle from "../toggle/Toggle";
 import { LightMode, DarkMode } from "@mui/icons-material";
 import { useContext } from "react";
 import { Context } from "../../Context";
+import Link2 from "../other/Link2";
 
 export default function UserContent() {
 
-    const { langSet, lang, themeSet, theme, isVisibleMobileNavSet } = useContext(Context)
+    const { langSet, lang, themeSet, theme } = useContext(Context)
 
     return (
         <>
@@ -33,9 +34,9 @@ export default function UserContent() {
                     defaultValue={theme}
                 />
             </Link>
-            <Link to={MESSAGES_ROUTE} onClick={() => isVisibleMobileNavSet(false)}>
+            <Link2 to={MESSAGES_ROUTE}>
                 <Button style={{ marginBottom: 10 }} variant='outlined'>messages</Button>
-            </Link>
+            </Link2>
         </>
     )
 }

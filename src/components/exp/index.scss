@@ -116,4 +116,8 @@
 .experienceAndEducation{
     height: auto;
     gap: 80px !important;
+    // each Exp Comp is moved + 100px right, so we need to compensate it
+    @media (width <= calc($tablet + 300px)) {
+        flex-direction: column;        
+    }
 }

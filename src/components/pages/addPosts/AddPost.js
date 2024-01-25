@@ -48,10 +48,10 @@ export default function AddPost(props) {
 
 
     return (
-        <div className="f g50 wfc m0a">
-            <form className="w600 m0a mt" onSubmit={_addOrEditPost}>
-                {isInputVisible && <Input required defaultValue={post?.title} className="db h50 w300 fz18 mb" name="title" value={titleValue} onChange={(e) => titleValueSet(e.target.value)} placeholder="title" />}
-                {isInputVisible && <Input defaultValue={post?.link} className="db h50 w300 fz18 mb" name="link" value={linkValue} onChange={(e) => linkValueSet(e.target.value)} placeholder="link / affiliate link" type="url" />}
+        <div className="f g50 m0a">
+            <form className="w600 m0a mt p" onSubmit={_addOrEditPost}>
+                {isInputVisible && <Input required defaultValue={post?.title} className="db h50 w100p fz18 mb" name="title" value={titleValue} onChange={(e) => titleValueSet(e.target.value)} placeholder="title" />}
+                {isInputVisible && <Input defaultValue={post?.link} className="db h50 w100p fz18 mb" name="link" value={linkValue} onChange={(e) => linkValueSet(e.target.value)} placeholder="link / affiliate link" type="url" />}
                 <AddPostTextEditor defaultValue={post?.textEditorValue} className="mb" value={textEditorValue} valueSet={textEditorValueSet} />
                 <Button type="submit" variant="contained">add to {type}</Button>
             </form>

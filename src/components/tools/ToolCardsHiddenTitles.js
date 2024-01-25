@@ -11,7 +11,7 @@ export default function ToolCardsHiddenTitles({ tools, toolCardsHidden, toolCard
 
     return (
         toolCardsHidden &&
-        <div className='f fwn g30 jcsb w1655 m0a toolCardsHiddenTitles'>
+        <div className='f fwn g30 jcsb m0a toolCardsHiddenTitles'>
             {tools.map(({ name }, ind) => {
                 return (
                     <>

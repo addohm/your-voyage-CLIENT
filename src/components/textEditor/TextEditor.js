@@ -21,7 +21,7 @@ export default function TextEditor(props) { // type: product/article
 
 	return (
 		(isVisible === undefined || isVisible) &&
-		<div className={`por w100p ${className}`}>
+		<div className={`por w100p wbba hya ${className}`}>
 			<TextEditorLabel label={label} valueLength={value?.length} className="mb05" />
 			<SimpleMDE
 				value={value}

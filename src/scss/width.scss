@@ -38,6 +38,9 @@
 .wfc{
 	width: fit-content;
 }
+.maw100p{
+	max-width: 100%;
+}
 // gen min-width
 @for $i from 0 through 500 {
 	.miw#{$i} {

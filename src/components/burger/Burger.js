@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import "./index.scss";
 import UserImgWithNotReadNum from '../other/UserImgWithNotReadNum';
 import { Context } from '../../Context';
-import { Link } from 'react-router-dom';
 import { MESSAGES_ROUTE } from '../../utils/consts';
+import Link2 from '../other/Link2';
 
 export default function Burger({ isVisible, isVisibleMobileNavSet, isVisibleMobileNav }) {
 
@@ -31,8 +31,8 @@ export default function Burger({ isVisible, isVisibleMobileNavSet, isVisibleMobi
                 </div>
             </>
             :
-            <Link to={MESSAGES_ROUTE} onClick={() => isVisibleMobileNavSet(false)}>
+            <Link2 to={MESSAGES_ROUTE}>
                 <UserImgWithNotReadNum img={user?.img} notReadNum={totalNotReadNum} imgClassName="w40 h40" numClassName="w20 h20 l-4 t-2 fz13" />
-            </Link>
+            </Link2>
     );
 };

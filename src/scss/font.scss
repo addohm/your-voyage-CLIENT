@@ -80,6 +80,15 @@
 .ts{
 	-webkit-text-stroke: 1px $black;
 }
+.wbba{
+	word-break: break-all;
+}
+.hya{
+	hyphens: auto;
+}
+.wspl{
+	white-space: pre-line !important;
+}
   // gen lines of text to show
   @for $i from 0 through 10 {
 	.textLines#{$i} {
