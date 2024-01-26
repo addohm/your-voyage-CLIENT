@@ -3,15 +3,21 @@ import Markdown from '../textEditor/Markdown'
 import "./index.scss"
 import ToolCardIcons from '../tools/ToolCardIcons'
 import PostFullLink from './PostFullLink'
+import TimeToReadText from '../other/TimeToReadText'
+import timestampToDate from '../../utils/timestampToDate'
 
-export default function PostFull({ post, type, id, value, title, link, isVisibleIcons = true }) {
+export default function PostFull({ type, id, value, title, link, isVisibleIcons = true, updatedAt }) {
     return (
         <>
             <div className='postFull maw800 mla mra mb100 px15'>
-                <ToolCardIcons isVisible={isVisibleIcons} type={type} _id={id} className="" />
-                <div className='title tac mb'>{post?.title || title}</div>
+                <div className="f jcsb aic mb">
+                    <ToolCardIcons isVisible={isVisibleIcons} type={type} _id={id} className="" />
+                    <div className="mla ls1">{timestampToDate(updatedAt)}</div>
+                    <TimeToReadText value={value} />
+                </div>
+                <div className='title tac mb'>{title}</div>
                 <Markdown>{value}</Markdown>
-                <PostFullLink link={post?.link || link} />
+                <PostFullLink link={link} />
             </div>
         </>
     )

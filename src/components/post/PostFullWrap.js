@@ -8,6 +8,6 @@ export default function PostFullWrap() {
     const { post } = usePostFull(type, id)
 
     return (
-        <PostFull post={post} type={type} id={id} value={post?.textEditorValue} />
+        <PostFull {...post} type={type} id={id} value={post?.textEditorValue} />
     )
 }
