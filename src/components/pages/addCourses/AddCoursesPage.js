@@ -19,7 +19,7 @@ export default function AddCoursesPage() {
             <div className="title mb w100p tac">Add Courses</div>
             {Array.from(posts)?.map(({ courseName, coachEmail, coachName, price, discountPrice, order, courseLabel, _id }, ind) => {
                 return (
-                    <div key={_id} className="fc g15 bsh brL pl15 pr15 pt15 pb30">
+                    <div key={_id} className="fc g15 bsh brL pl15 pr15 pt15 pb30 bg_white zi2 cardAnim">
                         {/* ! _id must be before last input */}
                         <input hidden value={_id} name="_id" />
                         <div className="f jcsb">

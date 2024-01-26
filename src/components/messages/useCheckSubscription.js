@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import axios from "../../utils/axios"
+import { Context } from "../../Context"
 
 // type: all/one
 // all checks if user has active subscription at all for at least one coaching
@@ -20,6 +21,14 @@ export default function useCheckSubscription({ type, room }) {
         }
 
         checkSubscriptionForCoaching()
+    }, [])
+
+    // admin or coach don't need subscription
+    const { user } = useContext(Context)
+    useEffect(() => {
+        if (user?.role === "admin" || user?.role === "coach") {
+            subscriptionSet({ ok: true })
+        }
     }, [])
 
     return { subscription }
