@@ -1,7 +1,16 @@
 import { Button } from "@mui/material"
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import { Context } from "../../Context"
 
 export default function RenewSubscription({ link, btnText, ok, msg, error, onClick }) {
+
+    // admin or coach don't need subscription
+    const { user } = useContext(Context)
+    if (user?.role === "admin" || user?.role === "coach") {
+        ok = true
+    }
+
     return (
         ok === false &&
         <Link to={link}>
