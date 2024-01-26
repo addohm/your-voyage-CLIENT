@@ -4,7 +4,7 @@ import { Context } from "../../Context"
 import axios from "../../utils/axios"
 import { MESSAGES_ROUTE } from "../../utils/consts"
 
-export default function VerifyOrderToken() {
+export default function VerifyOrderToken() { // came from Stripe successful payment
 
     const { token } = useParams()
     const navigate = useNavigate()

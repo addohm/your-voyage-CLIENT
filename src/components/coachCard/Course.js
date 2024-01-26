@@ -5,22 +5,23 @@ import { useContext, useState } from "react";
 import CourseLabel from "./CourseLabel";
 import { Context } from "../../Context";
 
-export default function Course({ coachEmail, coachName, img, courseName, price, discountPrice, courseLabel }) {
+export default function Course({ coachEmail, coachName, img, courseName, price, discountPrice, courseLabel, _id: courseId }) {
 
-    const { stripeLink } = useCoachCard(courseName)
+    const { stripeLink } = useCoachCard(courseId)
     const [isHovered, isHoveredSet] = useState(false)
     const { applierForm } = useContext(Context)
 
-    function chooseCourse(coachEmail, courseName) {
+    function chooseCourse() {
         let newCoachCard = applierForm
-        newCoachCard.coachEmail = coachEmail
+        newCoachCard.courseId = courseId
         newCoachCard.courseName = courseName
-        localStorage.setItem("coachCard", JSON.stringify(newCoachCard)) // for VerifyOrderToken (comes there after Stripe payment)
+        // for VerifyOrderToken (comes there after Stripe payment) to create coaching (DB) using axios "/applyForCoaching": only localStorage will work, cause VerifyOrderToken page loads after Stripe payment page (full reload)
+        localStorage.setItem("coachCard", JSON.stringify(newCoachCard))
     }
 
     return (
         <Link to={stripeLink}>
-            <div className="por course" onClick={() => chooseCourse(coachEmail, courseName)} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
+            <div className="por course" onClick={chooseCourse} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
                 <CourseLabel courseLabel={courseLabel} isHovered={isHovered} />
                 <div className="fcc m15">
                     <img className="br50 w100 h100" src={img} />

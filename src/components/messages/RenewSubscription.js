@@ -1,18 +1,20 @@
 import { Button } from "@mui/material"
-import goToCoach from "../../utils/goToCoach"
 import { Link } from "react-router-dom"
-import { MAIN_ROUTE } from "../../utils/consts"
 
-export default function RenewSubscription({ ok }) {
+export default function RenewSubscription({ link, btnText, ok, msg, error, onClick }) {
     return (
         ok === false &&
-        <Link to={MAIN_ROUTE}>
+        <Link to={link}>
+            {error && <div className="tac mb danger">{error}</div>}
+            <div className="tac mb">{msg}</div>
             <Button
                 variant="contained"
-                onClick={() => setTimeout(() => goToCoach(), 1000)}
+                onClick={onClick}
             >
-                SUBSCRIBE
+                {btnText}
             </Button>
+            {/* margin only works this way */}
+            <div className="mb15"></div>
         </Link>
     )
 }
