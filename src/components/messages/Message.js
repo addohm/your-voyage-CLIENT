@@ -15,7 +15,7 @@ import t from "../../hooks/useT"
 
 export default function Message(props) {
 
-    let { msg, isMyMsg, _id, email, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate, messageDateTopCopySet, img, isRead, name, className, isReplyMode, msgReplyingTo, goToReplyingToMsg, file, msgCurTopDateSet } = props
+    let { msg, isMyMsg, _id, userId, room, isUpdated, updatedAt, createdAt, isDeleted, isRestored, msgDate, messageDateTopCopySet, img, isRead, name, className, isReplyMode, msgReplyingTo, goToReplyingToMsg, file, msgCurTopDateSet } = props
     const [isContentEditable, isContentEditableSet] = useState(null)
     msg = !isReplyMode ? msg : msg?.slice(0, 90) + " ..." // shorten msg text for reply mode
 
@@ -42,9 +42,9 @@ export default function Message(props) {
 
                     <div className="por f w100p">
                         <MessageText msg={msg} isContentEditable={isContentEditable} isDeleted={isDeleted} />
-                        <MessageMenu isVisible={!isReplyMode} isMyMsg={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} isDeleted={isDeleted} createdAt={createdAt} />
+                        <MessageMenu isVisible={!isReplyMode} isMyMsg={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} userId={userId} room={room} isDeleted={isDeleted} createdAt={createdAt} />
                     </div>
-                    <MessageEdit SaveIcon={() => <Send />} isVisible={isContentEditable} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} email={email} room={room} />
+                    <MessageEdit SaveIcon={() => <Send />} isVisible={isContentEditable} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} userId={userId} room={room} />
                     {!isReplyMode &&
                         <div className="fcc g8 mla fz14 por t10">
                             <MessageIsRead isVisible={!isContentEditable} isRead={isRead} isMyMsg={isMyMsg} />

@@ -18,7 +18,7 @@ export default function SocketHub() {
     const [msgCurTopDate, msgCurTopDateSet] = useState(null)
 
     useEffect(() => { // mark all messages as read when enter the room
-        axios("/markAllMessagesAsRead", { room: token, userEmail: user?.email })
+        axios("/markAllMessagesAsRead", { room: token, userId: user?._id })
     }, [])
 
     const { subscription } = useCheckSubscription({ type: "one", room: token })

@@ -12,7 +12,7 @@ export default function Messages({ messageReceived, msgCurTopDateSet }) {
     return (
         <div className="por fc aic w100p maw600 mla mra mt-55 pt40 pl15 pb15 messages">
             {messageReceived?.map((message, ind) => {
-                const isMyMsg = message?.email === user?.email ? true : false
+                const isMyMsg = message?.userId === user?._id ? true : false
                 let msgDate = timestampToDate(message.createdAt)
                 return <>
                     <Message key={message._id} {...message} className={isMyMsg ? "mla" : "mra"} isMyMsg={isMyMsg} msgDate={msgDate} msgCurTopDateSet={msgCurTopDateSet} />

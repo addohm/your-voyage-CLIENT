@@ -16,7 +16,7 @@ export default function VerifyOrderToken() { // came from Stripe successful paym
             // then client makes app.post("/applyForCoaching") from "/verifyOrderToken" page
             // then if token verified => create order in DB
             let form = JSON.parse(localStorage.getItem("coachCard"))
-            form.email = user?.email
+            form.userId = user?._id
             if (!user) return
             const res = await axios("/applyForCoaching", { ...form, token, type: "coaching" })
 

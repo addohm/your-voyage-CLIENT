@@ -64,7 +64,7 @@ export default function useSocket(room, dbMessagesSet) {
         if (!messages?.[0]?.msg) return // no message
         messages?.map(async (message, ind) => {
             const file = await fileArr("/upload/msgContent", [message.file])
-            socket.emit("send_message", { msg: message.msg, msgReplyingTo: messageReplyingTo, room, email: user.email, name: user.name, img: user.img, file: file[0] })
+            socket.emit("send_message", { msg: message.msg, msgReplyingTo: messageReplyingTo, room, userId: user._id, name: user.name, img: user.img, file: file[0] })
         })
         messageReplyingToSet(null)
         messagesSet([{ msg: "", file: "" }]) // null Context messages
@@ -77,7 +77,7 @@ export default function useSocket(room, dbMessagesSet) {
     // ! join room
     useEffect(() => {
         if (!socket) return
-        socket.emit("join_room", { room, userEmail: user?.email })
+        socket.emit("join_room", { room, userId: user?._id })
     }, [])
 
     return { sendMessage, isSendMessageLoading }

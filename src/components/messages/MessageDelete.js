@@ -3,12 +3,12 @@ import { useContext } from 'react';
 import { Context } from '../../Context';
 import { Button } from '@mui/material';
 
-export default function MessageDelete({ isVisible, _id, email, room, Icon, isRestoring = false }) {
+export default function MessageDelete({ isVisible, _id, userId, room, Icon, isRestoring = false }) {
 
     const { dialogSet } = useContext(Context)
 
     function confirmDeleteMessage() {
-        axios("/deleteMessage", { _id, email, room, isRestoring, type: "messages" })
+        axios("/deleteMessage", { _id, userId, room, isRestoring, type: "messages" })
         dialogSet({ show: false })
     }
 

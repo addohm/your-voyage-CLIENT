@@ -5,8 +5,8 @@ export default function useMessageSnackbar(snackbarSet, user) {
 
     const [isVisibleSnackbar, isVisibleSnackbarSet] = useState(true)
 
-    function showSnackbar(res) {
-        res?.map(({ isRead, room, email, isDeleted, userId, ...message }) => {
+    function showSnackbar(res) { // TODO !!! ???
+        res?.map(({ isRead, room, isDeleted, userId, ...message }) => {
             if (isDeleted) return // don't show deleted messages in snackbar
             if (isRead) return // don't show read messages in snackbar
 
