@@ -1,5 +1,6 @@
 import TextEditor from "../../textEditor/TextEditor"
 import usePastedOrDroppedFile from "../../textEditor/usePastedOrDroppedFile"
+import t from "../../../hooks/useT"
 
 export default function AddPostTextEditor({ defaultValue, className, value, valueSet }) {
 
@@ -14,7 +15,7 @@ export default function AddPostTextEditor({ defaultValue, className, value, valu
             valueSet={valueSet}
             onPaste={savePastedImgOnServer}
             onDrop={saveDroppedImgOnServer}
-            placeholder="...paste or drop image here"
+            placeholder={`...${t("paste or drop image here")}`}
         />
     )
 }

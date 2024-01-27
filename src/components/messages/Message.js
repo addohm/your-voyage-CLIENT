@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import "./msgStyle2.scss"
 import MessageMenu from "./MessageMenu"
 import MessageText from "./MessageText"
 import MessageTime from "./MessageTime"
-import MessageDate from "./MessageDate"
 import MessageEdit from "./MessageEdit"
 import { Send } from "@mui/icons-material"
 import MessageIsRead from "./MessageIsRead"
@@ -12,6 +11,7 @@ import MessageReplyingTo from "./MessageReplyingTo"
 import MessageReplyingToTop from "./MessageReplyingToTop"
 import MessageFiles from "./MessageFiles"
 import useMsgCurTopDate from "./useMsgCurTopDate"
+import t from "../../hooks/useT"
 
 export default function Message(props) {
 
@@ -32,7 +32,7 @@ export default function Message(props) {
                     <MessageReplyingTo
                         isVisible={msgReplyingTo && !isDeleted}
                         messageReplyingTo={msgReplyingTo}
-                        top={<MessageReplyingToTop text="Replies to message" />}
+                        top={<MessageReplyingToTop text={t("Reply to a message")} />}
                         isMyMsg={isMyMsg}
                         isVisibleClose={false}
                     />

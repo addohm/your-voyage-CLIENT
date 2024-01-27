@@ -6,6 +6,7 @@ import { LightMode, DarkMode } from "@mui/icons-material";
 import { useContext } from "react";
 import { Context } from "../../Context";
 import Link2 from "../other/Link2";
+import t from "../../hooks/useT";
 
 export default function UserContent() {
 
@@ -19,8 +20,8 @@ export default function UserContent() {
                     name="lang"
                     on={<span className="poa r4 t4">EN</span>}
                     onValue="en"
-                    off={<span className="poa l4 t4">CH</span>}
-                    offValue="ch"
+                    off={<span className="poa l4 t4">ZH</span>}
+                    offValue="zh"
                     stateSetter={langSet}
                     defaultValue={lang}
                 />
@@ -35,7 +36,7 @@ export default function UserContent() {
                 />
             </Link>
             <Link2 to={MESSAGES_ROUTE}>
-                <Button style={{ marginBottom: 10 }} variant='outlined'>messages</Button>
+                <Button style={{ marginBottom: 10 }} variant='outlined'>{t("messages")}</Button>
             </Link2>
         </>
     )

@@ -1,4 +1,5 @@
 import timestampToTime from "../../utils/timestampToTime";
+import t from "../../hooks/useT"
 
 export default function MessageTime({ isVisible, isUpdated, updatedAt, createdAt, isDeleted, isRestored }) {
 
@@ -7,9 +8,9 @@ export default function MessageTime({ isVisible, isUpdated, updatedAt, createdAt
     return (
         isVisible &&
         <>
-            {(isUpdated && !isDeleted && !isRestored) && <div className={className}>updated: {timestampToTime(updatedAt)}</div>}
-            {isDeleted && <div className={className}>deleted: {timestampToTime(updatedAt)}</div>}
-            {isRestored && <div className={className}>restored: {timestampToTime(updatedAt)}</div>}
+            {(isUpdated && !isDeleted && !isRestored) && <div className={className}>{t("updated")}: {timestampToTime(updatedAt)}</div>}
+            {isDeleted && <div className={className}>{t("deleted")} : {timestampToTime(updatedAt)}</div>}
+            {isRestored && <div className={className}>{t("restored")}: {timestampToTime(updatedAt)}</div>}
             {(!isUpdated && !isDeleted && !isRestored) && <div className={className}>{timestampToTime(createdAt)}</div>}
         </>
     )

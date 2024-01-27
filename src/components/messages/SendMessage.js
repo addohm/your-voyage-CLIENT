@@ -6,6 +6,7 @@ import MessageReplyingToTop from './MessageReplyingToTop';
 import useMessagePastedOrDroppedFile from './useMessagePastedOrDroppedFile';
 import AddMessageFiles from './AddMessageFiles';
 import SendMessageIcon from './SendMessageIcon';
+import t from "../../hooks/useT";
 
 export default function SendMessage({ sendMessage, isSendMessageLoading }) {
 
@@ -17,7 +18,7 @@ export default function SendMessage({ sendMessage, isSendMessageLoading }) {
             <MessageReplyingTo
                 isVisible={messageReplyingTo?.msg}
                 messageReplyingTo={messageReplyingTo}
-                top={<MessageReplyingToTop text="Replying to message" />}
+                top={<MessageReplyingToTop text={t("Reply to a message")} />}
                 isMyMsg={messageReplyingTo?.name === user?.name}
             />
             <div className={`fcc fwn g10 mb20 p50`}>
@@ -30,7 +31,7 @@ export default function SendMessage({ sendMessage, isSendMessageLoading }) {
                     onPaste={savePastedOnServer}
                     onDrop={saveDroppedOnServer}
                     defaultValue={""} // ! vital for SendMessagePreviews
-                    placeholder="...paste or drop image here"
+                    placeholder={`...${t("paste or drop image here")}`}
                 />
                 <SendMessageIcon sendMessage={sendMessage} isSendMessageLoading={isSendMessageLoading} className="asfe mb15" />
             </div>

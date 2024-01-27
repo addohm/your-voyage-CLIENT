@@ -1,9 +1,9 @@
 import { Button } from '@mui/material'
-import { Link } from 'react-router-dom'
 import { ADD_COURSES, ADD_POSTS_PAGE_ROUTE, ADD_PRIVACY_ROUTE, ADD_TERMS_ROUTE } from '../../utils/consts'
 import useGetLastTermsOrPrivacyId from '../footer/useGetLastTermsOrPrivacyId'
 import For from '../other/For'
 import Link2 from '../other/Link2'
+import t from '../../hooks/useT'
 
 export default function AdminAddContent() {
 
@@ -15,19 +15,19 @@ export default function AdminAddContent() {
     const list = [
         {
             route: ADD_COURSES,
-            title: "+ COURSES",
+            title: `+ ${t("courses")} `,
         },
         {
             route: ADD_POSTS_PAGE_ROUTE,
-            title: "+ POSTS",
+            title: `+ ${t("posts")} `,
         },
         {
             route: termsRoute,
-            title: "+ TERMS",
+            title: `+ ${t("terms")} `,
         },
         {
             route: privacyRoute,
-            title: "+ PRIVACY",
+            title: `+ ${t("privacy")} `,
         }
     ]
 

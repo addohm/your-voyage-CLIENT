@@ -5,7 +5,7 @@ export default function useLang() {
     const [lang, langSet] = useState([])
 
     useEffect(() => {
-        const availableLangs = ["en", "ch"]
+        const availableLangs = ["en", "zh"]
         // NO LANG SELECTED AT ALL => set default lang from browser
         if (!localStorage.getItem("lang")) {
             let preferredLang = (navigator.language || navigator.userLanguage).replace(/-.*/, '')

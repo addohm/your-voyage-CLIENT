@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { Context } from "../../Context"
+import t from "../../hooks/useT"
 
 export default function RoomsTitle() {
 
@@ -8,8 +9,8 @@ export default function RoomsTitle() {
 
     return (
         user?.role === "admin" || user?.role === "coach" ?
-            <div className={className}>Subscribers:</div>
+            <div className={className}>{t("Subscribers")}:</div>
             :
-            <div className={className}>Coaches:</div>
+            <div className={className}>{t("Courses")}:</div>
     )
 }
