@@ -11,7 +11,7 @@ import PostFullWrap from "../post/PostFullWrap";
 import VerifyOrderToken from "../stripe/VerifyOrderToken";
 
 export default [
-	// VISITOR ROUTES
+	// ! VISITOR ROUTES
 	{
 		path: MAIN_ROUTE,
 		element: <MainPage />,
@@ -60,29 +60,29 @@ export default [
 	{
 		path: ADD_POSTS_PAGE_ROUTE,
 		element: <AddPostsPage postTypes={["tools", "books", "news"]} title="" />,
-		isPublic: true, // TODO !!! false
-		isForUser: true, // TODO !!! false
+		isPublic: false,
+		isForUser: false,
 		isForAdmin: true,
 	},
 	{
 		path: ADD_POST_ROUTE,
 		element: <AddPost />,
-		isPublic: true, // TODO !!! false
-		isForUser: true, // TODO !!! false
+		isPublic: false,
+		isForUser: false,
 		isForAdmin: true,
 	},
 	{
 		path: EDIT_POST_ROUTE,
 		element: <AddPost />,
-		isPublic: true, // TODO !!! false
-		isForUser: true, // TODO !!! false
+		isPublic: false,
+		isForUser: false,
 		isForAdmin: true,
 	},
 	{
 		path: ADD_COURSES,
 		element: <AddCoursesPage />,
-		isPublic: true, // TODO !!! false
-		isForUser: true, // TODO !!! false
+		isPublic: false,
+		isForUser: false,
 		isForAdmin: true,
 	},
 	// ? POST

@@ -6,7 +6,7 @@ export default function ToolCardBtn({ isCardHovered }) {
     return (
         isCardHovered &&
         <Animation type="left">
-            <Button className="poa b10 l140" variant="outlined">{t("read more")}</Button>
+            <Button className="poa b10 l135" variant="outlined">{t("read more")}</Button>
         </Animation>
     )
 }

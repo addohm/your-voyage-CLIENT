@@ -1,7 +1,7 @@
 @import "vars.scss";
 
 // ! main dark mode
-.dark{
+.dark,.darkDialog{
     *:not(svg,.brand,.brandi,.redDiamond){
         color: $white;
      }

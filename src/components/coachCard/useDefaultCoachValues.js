@@ -5,7 +5,8 @@ export default function useDefaultCoachValues() {
         document.querySelector(".coach").querySelectorAll(".radio-container").forEach(each => {
             const defaultCoachValues = ["TRAVELING", "FULL-TIME", "ONSITE", "CONTRACT"]
             if (defaultCoachValues.includes(each.innerText)) {
-                each.click()
+                each.classList.add("brand")
+                each.classList.add("fw600")
             }
         })
     }, [])

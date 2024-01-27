@@ -35,7 +35,7 @@ export default function MainPage() {
                 // type="scale151"
                 type="opacity"
             >
-                <div className="h50vh fcc">
+                <div className="h50vh fcc mt200">
                     <Quote title="Steve Jobs" text={t("Your work")} />
                 </div>
             </Animation>

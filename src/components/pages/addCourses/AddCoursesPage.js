@@ -23,7 +23,7 @@ export default function AddCoursesPage() {
                         {/* ! _id must be before last input */}
                         <input hidden value={_id} name="_id" />
                         <div className="f jcsb">
-                            <Button style={{ margin: 0, padding: 0, minWidth: 0, marginBottom: 5 }} type="submit"><Save className={`${_id ? "brand" : ""}`} /></Button>
+                            <Button style={{ margin: 0, padding: 0, minWidth: 0, marginBottom: 5 }} type="submit"><Save className={`${_id ? "brandi" : ""}`} /></Button>
                             <Close onClick={() => deleteCourse(ind, _id)} />
                         </div>
                         <Input className="fz16" defaultValue={courseName} name="courseName" placeholder="course name" />

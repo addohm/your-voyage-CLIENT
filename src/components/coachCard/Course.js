@@ -21,7 +21,7 @@ export default function Course({ coachEmail, coachName, img, courseName, price, 
 
     return (
         <Link to={stripeLink}>
-            <div className="por course" onClick={chooseCourse} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
+            <div className="por course bg_white zi3" onClick={chooseCourse} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
                 <CourseLabel courseLabel={courseLabel} isHovered={isHovered} />
                 <div className="fcc m15">
                     <img className="br50 w100 h100" src={img} />

@@ -1,8 +1,12 @@
 import Animation from "../animation/Animation";
 import TextSplit from "../animation/TextSplit";
 import t from "../../hooks/useT";
+import useWindowSize from "../../hooks/useWindowSize";
 
 export default function Exp({ img, position, company, ind, isExpHoveredSet, companyHoveredSet, companyHovered }) {
+
+    const { is1920 } = useWindowSize() // to add PointerEventsNone on non-1920 screens to prevent showing ExperienceAndEducationBigImg
+
     return (
         <Animation
         // type="bottomRight" delay={ind / 10}
@@ -25,7 +29,7 @@ export default function Exp({ img, position, company, ind, isExpHoveredSet, comp
                     // fake img for mouseLeave
                     onMouseEnter={() => companyHoveredSet(company)}
                     onMouseLeave={() => companyHoveredSet("")}
-                    className={`poa t0 l0 zi2 ${companyHovered === company ? 'op1' : 'op0'} br50`}
+                    className={`poa t0 l0 zi2 ${companyHovered === company ? 'op1' : 'op0'} br50 ${is1920 ? '' : 'pen'}`}
                 />
                 <div className={`fc ml15 ${companyHovered ? "op0" : "op1"} maw350`}>
                     <div className='fz22'><TextSplit str={t(position)} /></div>

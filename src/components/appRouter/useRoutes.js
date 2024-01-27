@@ -19,7 +19,7 @@ export default function useRoutes() {
 				if (isForUser && user) {
 					routesSet(prev => [...prev, <Route exact path={path} element={element} />])
 				}
-				if (isForAdmin && (user?.role === "admin" || user?.role === "coach")) { // TODO !!! ?
+				if (isForAdmin && (user?.role === "admin")) { // maybe: || user?.role === "coach"
 					routesSet(prev => [...prev, <Route exact path={path} element={element} />])
 				}
 			})

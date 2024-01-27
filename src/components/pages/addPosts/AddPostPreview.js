@@ -18,8 +18,11 @@ export default function AddPostPreview({ type, id, value, title, link, className
     }, [pastedOrDroppedImg, value])
 
     return (
-        <div className={className}>
-            <PostFull type={type} id={id} value={value} title={title} link={link} isVisibleIcons={false} />
+        <div className={`${className}`}>
+            <div className="title tac mb">Post Preview</div>
+            <div className={`bd brL p`}>
+                <PostFull type={type} id={id} value={value} title={title} link={link} isVisibleIcons={false} />
+            </div>
         </div>
     )
 }

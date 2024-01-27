@@ -15,7 +15,7 @@ export default function ToolCard({ img, title, textEditorValue, type, _id }) {
         <Animation type="opacity">
             <Link to={`post/${type}/${_id}`}>
                 <div className="toolCard por w391 h550 brL bg_white zi2" onMouseEnter={() => setIsCardHovered(true)} onMouseLeave={() => setIsCardHovered(false)}>
-                    <img className={`${isCardHovered ? "p15 transition15" : "p0 transition15"}`} src={img} />
+                    <img className={`brL ${isCardHovered ? "p15 transition15" : "p0 transition15"}`} src={img} />
                     <div className="p15">
                         <div className="title2 my5 ttu brand">{t(type)}</div>
                         <div className="title2 my5">{title}</div>
