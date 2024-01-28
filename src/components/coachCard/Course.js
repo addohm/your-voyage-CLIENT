@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import CourseLabel from "./CourseLabel";
 import { Context } from "../../Context";
 
-export default function Course({ coachEmail, coachName, img, courseName, price, discountPrice, courseLabel, _id: courseId }) {
+export default function Course({ coachEmail, coachName, img, courseName, price, discountPrice, courseLabel, courseLabelColor, _id: courseId }) {
 
     const { stripeLink } = useCoachCard(courseId)
     const [isHovered, isHoveredSet] = useState(false)
@@ -22,7 +22,7 @@ export default function Course({ coachEmail, coachName, img, courseName, price, 
     return (
         <Link to={stripeLink}>
             <div className="por course bg_white zi3" onClick={chooseCourse} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
-                <CourseLabel courseLabel={courseLabel} isHovered={isHovered} />
+                <CourseLabel courseLabel={courseLabel} courseLabelColor={courseLabelColor} isHovered={isHovered} />
                 <div className="fcc m15">
                     <img className="br50 w100 h100" src={img} />
                     <div className="mt10 w100p">

@@ -1,9 +1,10 @@
 import genFirstCharColor from "../../utils/genFirstCharColor"
 
-export default function CourseLabel({ courseLabel, isHovered }) {
+export default function CourseLabel({ courseLabel, courseLabelColor, isHovered }) {
 
-    !courseLabel && (courseLabel = "NEW");
-    const color = genFirstCharColor(courseLabel)
+    !courseLabel && (courseLabel = "NEW")
+    // if no color provided, use genFirstCharColor
+    const color = (courseLabelColor && courseLabelColor !== "#000000") ? courseLabelColor : genFirstCharColor(courseLabel)
 
     return (
         <div

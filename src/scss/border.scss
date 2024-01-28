@@ -11,6 +11,9 @@
 .br50{
 	border-radius: 50%;
 }
+.bn{
+	border: none !important;
+}
 // gen border-top-right-radius
 @for $i from 0 through 30 {
 	.btrr#{$i} {

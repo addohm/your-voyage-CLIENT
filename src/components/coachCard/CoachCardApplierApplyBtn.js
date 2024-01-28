@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import { useContext } from "react";
 import { Context } from "../../Context";
-import CoachCardApplierCourseList from "./CoachCardApplierCourseList";
+import Courses from "./Courses";
 import t from "../../hooks/useT";
 
 export default function CoachCardApplierApplyBtn() {
@@ -14,7 +14,7 @@ export default function CoachCardApplierApplyBtn() {
         dialogSet({
             show: true,
             title: <div className="title">{dialogTitle}</div>,
-            children: <CoachCardApplierCourseList />
+            children: <Courses />
         })
     }
 
