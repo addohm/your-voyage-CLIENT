@@ -4,7 +4,7 @@ export default function MessageFileUploaded({
     onClick,
     fileName,
     downloadFile,
-    className = "fc aic wfc bd brL m5 p10",
+    className,
     iconSize = 120
 }) {
     return (

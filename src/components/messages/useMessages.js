@@ -12,8 +12,9 @@ export default function useMessages(dialogSet) {
     function clickSendIcon() {
         // clicks real send icon; this icon is fake
         const icon = document.querySelector(".sendMsgIcon")
-        const clickEvent = new Event('click', { bubbles: true })
         if (!icon) return
+        if (!messages[0]?.msg) alert("The first file should have text!")
+        const clickEvent = new Event('click', { bubbles: true })
         icon.dispatchEvent(clickEvent)
     }
 
@@ -28,7 +29,7 @@ export default function useMessages(dialogSet) {
             // title: `for debug: messagePreviewClicked: ${messagePreviewClicked}, messagePreviewClicked2StateWithDelay: ${messagePreviewClicked2StateWithDelay} "localStorage.getItem("messagePreviewClicked")": ${localStorage.getItem("messagePreviewClicked")}`,
             onClose: () => messagesSet([{ msg: "", file: "" }]),
             children:
-                <div className="fc w100vw h100vh">
+                <div className="fc miw100vw mih100vh">
 
                     <SendMessagePreviews messages={messages} messagePreviewClickedSet={messagePreviewClickedSet} messagePreviewClicked={messagePreviewClicked} messagePreviewClicked2StateWithDelaySet={messagePreviewClicked2StateWithDelaySet} />
 

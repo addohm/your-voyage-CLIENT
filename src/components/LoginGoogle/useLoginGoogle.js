@@ -6,6 +6,7 @@ import axios from "../../utils/axios";
 // firebase
 import { auth, googleProvider } from "./firebaseConfig"
 import { signInWithPopup, signOut } from "firebase/auth"
+import { MAIN_ROUTE } from "../../utils/consts";
 
 export default function useLoginGoogle() {
 
@@ -32,7 +33,7 @@ export default function useLoginGoogle() {
         e.preventDefault()
         await signOut(auth) // logout from google
         localStorage.removeItem("token") // delete token from localStorage
-        window.location.reload()
+        window.location.href = MAIN_ROUTE
     }
 
 

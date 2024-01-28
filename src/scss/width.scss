@@ -41,6 +41,9 @@
 .maw100p{
 	max-width: 100%;
 }
+.miw100vw{
+	min-width: 100vw;
+}
 // gen min-width
 @for $i from 0 through 500 {
 	.miw#{$i} {

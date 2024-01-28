@@ -8,13 +8,14 @@ export default function SendMessagePreviews({ messages, messagePreviewClickedSet
 
     function switchMessagePreviewClicked(ind) {
         messagePreviewClickedSet(ind)
+        document.querySelector(".sendMessageBigMainPreview").scrollIntoView({ behavior: "smooth" })
         localStorage.setItem("messagePreviewClicked", ind)
         setTimeout(() => messagePreviewClicked2StateWithDelaySet(ind), 1); // so TextEditor in useMessages can get correct updated index
     }
 
     return (
         <>
-            <div className="tac fcc">
+            <div className="tac fcc mb">
                 {/* small previews */}
                 {messages.length > 1 &&
                     messages?.map((message, ind) => {
@@ -25,12 +26,13 @@ export default function SendMessagePreviews({ messages, messagePreviewClickedSet
                             isFileImg(fileName)
                                 ?
                                 <SendMessagePreviewImg
+                                    className="uploadedFilePreview"
                                     file={message?.file}
-                                    className="w150 h150"
                                     onClick={() => switchMessagePreviewClicked(ind)}
                                 />
                                 :
                                 <MessageFileUploaded
+                                    className="uploadedFilePreview"
                                     onClick={() => switchMessagePreviewClicked(ind)}
                                     fileName={fileName}
                                 />
@@ -38,7 +40,7 @@ export default function SendMessagePreviews({ messages, messagePreviewClickedSet
                     })}
             </div>
             {/* big main preview */}
-            <div className="fcc">
+            <div className="fcc mb10 sendMessageBigMainPreview">
                 {isFileImg(messages?.[0]?.file.name)
                     ?
                     <SendMessagePreviewImg

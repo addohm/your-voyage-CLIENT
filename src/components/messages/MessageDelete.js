@@ -20,7 +20,7 @@ export default function MessageDelete({ isVisible, _id, userId, room, Icon, isRe
                 <Button
                     onClick={confirmDeleteMessage}
                     variant="contained"
-                    className='bg_danger danger border_danger'
+                    className={`${isRestoring ? "bg_orange white border_orange" : "bg_danger2 danger2 border_danger2"}`}
                 >
                     {isRestoring ? "RESTORE" : "DELETE"}
                 </Button>

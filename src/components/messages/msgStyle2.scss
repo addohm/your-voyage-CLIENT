@@ -1,5 +1,8 @@
 @import "../../scss/vars.scss";
 
+$myMsgColor: #bdffe9;
+$otherMsgColor: #bde9ff;
+
 .rooms{
     a{  // !! make rooms width 100%
         width: 100%;
@@ -7,14 +10,14 @@
 }
 
 .myMsg{
-    background: #bdffe9;
+    background: $myMsgColor;
     // right shadow
     box-shadow:  -10px 10px 21px #9dd4c1,
              10px -10px 21px #ddffff;
 }
 
 .otherMsg{
-    background: #bde9ff;
+    background: $otherMsgColor;
     // left shadow
     box-shadow:  10px 10px 21px #9dc1d4,
                  -10px -10px 21px #ddffff;
@@ -61,10 +64,13 @@
     .myMsg,.otherMsg,.updatedMsg,.deletedMsg,.restoredMsg,.replyMsg,.msg{
         box-shadow:none;
         *:not(svg,.brand,.brandi){
-            color: $black !important;
+            // color: $black !important;
         }
     }
     .myMsg{
-        background: #5ef1c0;
+        background: darken($myMsgColor, 50%);
+    }
+    .otherMsg{
+        background: darken($otherMsgColor, 50%);
     }
 }
