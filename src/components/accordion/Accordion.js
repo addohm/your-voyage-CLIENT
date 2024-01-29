@@ -5,7 +5,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-export default function _Accordion({ title, text, className }) {
+export default function _Accordion({ title, text, className, posts }) {
     const [expanded, setExpanded] = React.useState(false);
 
     const handleChange = (panel) => (event, isExpanded) => {
@@ -13,23 +13,48 @@ export default function _Accordion({ title, text, className }) {
     };
 
     return (
-        <div>
-            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} className={className}>
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1bh-content"
-                    id="panel1bh-header"
-                >
-                    <Typography sx={{ width: '33%', flexShrink: 0 }}>
-                        {title}
-                    </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                    <Typography>
-                        {text}
-                    </Typography>
-                </AccordionDetails>
-            </Accordion>
-        </div>
+        // "non-closing" FAQs
+        !posts
+            ?
+            <div>
+                <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} className={className}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1bh-content"
+                        id="panel1bh-header"
+                    >
+                        <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                            {title}
+                        </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Typography>
+                            {text}
+                        </Typography>
+                    </AccordionDetails>
+                </Accordion>
+            </div>
+            :
+            // "closing" FAQs: after each FAQ clicked, previous FAQ will be closed
+            posts.map(({ title, text }, ind) => (
+                <div>
+                    <Accordion expanded={expanded === ind} onChange={handleChange(ind)} className={className}>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1bh-content"
+                            id="panel1bh-header"
+                        >
+                            <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                                {title}
+                            </Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                {text}
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+                </div>
+            ))
     );
 }
