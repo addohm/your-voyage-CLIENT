@@ -9,7 +9,7 @@ export default function AddFAQpage() {
             addPath="addPosts"
             lastInputName="text"
             addTitle="Add FAQ"
-            previewTitle="Preview FAQs"
+            previewTitle=""
             AddPosts={AddFAQ}
             PreviewPosts={FAQs}
         />
