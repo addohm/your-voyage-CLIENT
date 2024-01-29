@@ -10,6 +10,7 @@ import NoMessagesYet from "./NoMessagesYet";
 import useCheckSubscription from "./useCheckSubscription";
 import RenewSubscription from "./RenewSubscription";
 import useStripe from "../stripe/useStripe";
+import MessagesSubscriptionMsg from "./MessagesSubscriptionMsg";
 
 export default function SocketHub() {
 
@@ -36,7 +37,7 @@ export default function SocketHub() {
         subscription.ok
             ?
             <div className="por">
-                <div className="tac mb45 fz14">{subscription?.msg}</div>
+                <MessagesSubscriptionMsg {...subscription} />
                 <MessageDate msgCurTopDate={msgCurTopDate} />
                 <OldDbMessages oldDbMessages={oldDbMessages} skipOldDbMessagesSet={skipOldDbMessagesSet} msgCurTopDateSet={msgCurTopDateSet} />
                 {/* NEW DB messages */}

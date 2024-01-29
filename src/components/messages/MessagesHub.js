@@ -13,7 +13,7 @@ export default function MessagesHub() {
         <>
             <RenewSubscription
                 link={MAIN_ROUTE}
-                btnText="SUBSCRIBE"
+                btnText="Subscribe"
                 onClick={() => setTimeout(() => goToCoach(), 1000)}
                 {...subscription}
             />

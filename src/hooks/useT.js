@@ -366,6 +366,30 @@ export default function useT(key) {
             "en": "Choose your course",
             "zh": "选择课程",
         },
+        "No active subscriptions": {
+            "en": "No active subscriptions",
+            "zh": "无有效订阅",
+        },
+        "Subscription activated": {
+            "en": "Subscription activated",
+            "zh": "订阅已激活",
+        },
+        "Days left": {
+            "en": "Days left",
+            "zh": "剩余天数",
+        },
+        "Next subscription date": {
+            "en": "Next subscription date",
+            "zh": "下一次订阅日期",
+        },
+        "Thank you": {
+            "en": "Thank you",
+            "zh": "谢谢",
+        },
+        "Subscribe": {
+            "en": "Subscribe",
+            "zh": "订阅",
+        },
         "000": {
             "en": "000",
             "zh": "111",

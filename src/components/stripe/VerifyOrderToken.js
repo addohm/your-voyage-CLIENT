@@ -3,12 +3,15 @@ import { useNavigate, useParams } from "react-router-dom"
 import { Context } from "../../Context"
 import axios from "../../utils/axios"
 import { MESSAGES_ROUTE } from "../../utils/consts"
+import t from "../../hooks/useT"
 
 export default function VerifyOrderToken() { // came from Stripe successful payment
 
     const { token } = useParams()
     const navigate = useNavigate()
     const { dialogSet, user } = useContext(Context)
+    const okDialogTitle = t("Subscription activated") + "!"
+    const okDialogBody = t("Thank you") + "!"
 
     useEffect(() => {
         async function verifyOrderToken() {
@@ -34,8 +37,8 @@ export default function VerifyOrderToken() { // came from Stripe successful paym
             navigate(MESSAGES_ROUTE)
             dialogSet({
                 show: true,
-                title: "Subscription activated!",
-                children: res.msg
+                title: okDialogTitle,
+                children: okDialogBody
             })
         }
 
