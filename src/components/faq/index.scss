@@ -5,4 +5,7 @@
     margin: 15px;
     border-radius: $borderRadiusLarge;
     width: 700px; 
+    @media (width<=$mobile){
+        width: 90vw;
+    }
 }
