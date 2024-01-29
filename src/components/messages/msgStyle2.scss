@@ -24,17 +24,17 @@ $otherMsgColor: #bde9ff;
 }
 
 .updatedMsg{
-    box-shadow: -10px 0px 10px -5px lightgreen;
+    box-shadow: -10px 0px 10px -5px lightgreen !important;
 }
 
 .deletedMsg{
-    background: #e0e0e0;
+    background: #e0e0e0 !important;
     box-shadow:  10px 10px 20px #bebebe,
                  -10px -10px 20px #ffffff;
 }
 
 .restoredMsg{
-    box-shadow: -10px 0px 10px -5px lighten(orange, 20%);
+    box-shadow: -10px 0px 10px -5px lighten(orange, 20%) !important;
 }
 
 .replyMsg{
