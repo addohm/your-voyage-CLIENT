@@ -17,4 +17,7 @@ export const MESSAGE_ROUTE = "/message/:token"
 export const ADD_TERMS_ROUTE = "/add/terms"
 export const ADD_PRIVACY_ROUTE = "/add/privacy"
 
+export const FAQ_ROUTE = "/faq"
+export const ADD_FAQ_ROUTE = "/add-faq"
+
 export const ADD_COURSES = "/add/courses"

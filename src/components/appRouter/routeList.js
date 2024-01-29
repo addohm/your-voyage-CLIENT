@@ -1,8 +1,10 @@
-import { ADD_COURSES, ADD_POSTS_PAGE_ROUTE, ADD_POST_ROUTE, EDIT_FOOTER_PAGE_ROUTE, EDIT_POST_ROUTE, MESSAGES_ROUTE, MESSAGE_ROUTE, POST_ROUTE } from "../../utils/consts";
+import { ADD_COURSES, ADD_FAQ_ROUTE, ADD_POSTS_PAGE_ROUTE, ADD_POST_ROUTE, EDIT_FOOTER_PAGE_ROUTE, EDIT_POST_ROUTE, FAQ_ROUTE, MESSAGES_ROUTE, MESSAGE_ROUTE, POST_ROUTE } from "../../utils/consts";
 import { MAIN_ROUTE } from "../../utils/consts";
 import VerifyLoginToken from "../loginEmail/LoginEmailVerifyToken";
 import MessagesHub from "../messages/MessagesHub";
 import SocketHub from "../messages/SocketHub";
+import AddFAQpage from "../pages/FAQpage/AddFAQpage";
+import FAQpage from "../pages/FAQpage/FAQpage";
 import AddCoursesPage from "../pages/addCourses/AddCoursesPage";
 import AddPost from "../pages/addPosts/AddPost";
 import AddPostsPage from "../pages/addPosts/AddPostsPage";
@@ -36,6 +38,13 @@ export default [
 	{
 		path: "/verifyOrderToken/:token",
 		element: <VerifyOrderToken />,
+		isPublic: true,
+		isForUser: true,
+		isForAdmin: true,
+	},
+	{
+		path: FAQ_ROUTE,
+		element: <FAQpage />,
 		isPublic: true,
 		isForUser: true,
 		isForAdmin: true,
@@ -81,6 +90,13 @@ export default [
 	{
 		path: ADD_COURSES,
 		element: <AddCoursesPage />,
+		isPublic: false,
+		isForUser: false,
+		isForAdmin: true,
+	},
+	{
+		path: ADD_FAQ_ROUTE,
+		element: <AddFAQpage />,
 		isPublic: false,
 		isForUser: false,
 		isForAdmin: true,

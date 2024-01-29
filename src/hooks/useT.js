@@ -390,6 +390,10 @@ export default function useT(key) {
             "en": "Subscribe",
             "zh": "订阅",
         },
+        "FAQ": {
+            "en": "FAQ",
+            "zh": "常问问题",
+        },
         "000": {
             "en": "000",
             "zh": "111",

@@ -1,5 +1,5 @@
 import { Button } from '@mui/material'
-import { ADD_COURSES, ADD_POSTS_PAGE_ROUTE, ADD_PRIVACY_ROUTE, ADD_TERMS_ROUTE } from '../../utils/consts'
+import { ADD_COURSES, ADD_POSTS_PAGE_ROUTE, ADD_PRIVACY_ROUTE, ADD_TERMS_ROUTE, ADD_FAQ_ROUTE } from '../../utils/consts'
 import useGetLastTermsOrPrivacyId from '../footer/useGetLastTermsOrPrivacyId'
 import For from '../other/For'
 import Link2 from '../other/Link2'
@@ -20,6 +20,10 @@ export default function AdminAddContent() {
         {
             route: ADD_POSTS_PAGE_ROUTE,
             title: `+ ${t("posts")} `,
+        },
+        {
+            route: ADD_FAQ_ROUTE,
+            title: `+ ${t("FAQ")} `,
         },
         {
             route: termsRoute,

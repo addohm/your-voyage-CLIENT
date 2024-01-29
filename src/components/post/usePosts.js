@@ -17,12 +17,12 @@ export default function usePosts({ type, sort }) {
         getPosts()
     }, [type])
 
-    async function addOrEditPosts({ e, addPath }) {
+    async function addOrEditPosts({ e, addPath, lastInputName }) {
         e.preventDefault()
         // add file: pasted/dropped
         // ! await fileArr("/upload/siteContent", pastedOrDroppedImg)
         // add/edit post
-        const forms = parseForms({ e, lastInputName: "courseLabelColor" })
+        const forms = parseForms({ e, lastInputName })
         forms.forEach(async (form) => {
             const res = await axios(addPath, { ...form, type })
         })

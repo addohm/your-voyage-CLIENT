@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
 import FooterLink from './FooterLink'
 import { useLocation } from 'react-router-dom'
-import { MAIN_ROUTE } from '../../utils/consts'
+import { FAQ_ROUTE, MAIN_ROUTE } from '../../utils/consts'
 import t from '../../hooks/useT'
 import "./index.scss"
 import { Context } from '../../Context'
 import FooterSocialLinks from './FooterSocialLinks'
+import Link2 from '../other/Link2'
 
 export default function Footer() {
 
@@ -22,8 +23,10 @@ export default function Footer() {
             <FooterSocialLinks />
             <div className='f fwn jcsb w140'>
                 <FooterLink text={t("Terms")} type="terms" />
-                <div>/</div>
+                <div className="mx15">/</div>
                 <FooterLink text={t("Privacy")} type="privacy" />
+                <div className="mx15">/</div>
+                <Link2 to={FAQ_ROUTE}>{t("FAQ")}</Link2>
             </div>
         </footer>
     )
