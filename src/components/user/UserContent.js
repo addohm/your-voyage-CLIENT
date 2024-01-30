@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
-import { MESSAGES_ROUTE } from "../../utils/consts";
+import { Link, useLocation } from "react-router-dom";
+import { MAIN_ROUTE, MESSAGES_ROUTE } from "../../utils/consts";
 import Toggle from "../toggle/Toggle";
 import { LightMode, DarkMode } from "@mui/icons-material";
 import { useContext } from "react";
@@ -11,6 +11,15 @@ import t from "../../hooks/useT";
 export default function UserContent() {
 
     const { langSet, lang, themeSet, theme } = useContext(Context)
+    const location = useLocation().pathname
+
+    function goToMainPageIfInPostLocation() {
+        // if user already sees english post go to main page to rerender Links that will lead to new chinese posts
+        // posts: (tools, books, news, terms, privacy), (courses, faq)
+        // each post when created can have 2 languages depending on the lang selected (in Menu) while creating the post
+        if (!location.includes("/post/")) return
+        window.location.href = MAIN_ROUTE
+    }
 
     return (
         <>
@@ -24,6 +33,7 @@ export default function UserContent() {
                     offValue="zh"
                     stateSetter={langSet}
                     defaultValue={lang}
+                    onToggle={goToMainPageIfInPostLocation}
                 />
                 <Toggle
                     name="theme"

@@ -33,7 +33,7 @@ export default function HeaderNav({ isVisible = true, className, isVisibleMobile
         <div className={`fcc g15 headerNav ${className}`}>
             <div className='header__btn' onClick={() => goTo("about")}>{t("About")}</div>
             <div className='header__btn' onClick={() => goTo("coaching")}>{t("Coaching")}</div>
-            <div className='header__btn' onClick={() => goTo("tools")}>{t("Tools")}</div>
+            <div className='header__btn mr15' onClick={() => goTo("tools")}>{t("Tools")}</div>
             <HeaderLoginBtn />
         </div>
     )

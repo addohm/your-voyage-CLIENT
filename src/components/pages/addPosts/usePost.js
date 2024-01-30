@@ -8,7 +8,7 @@ import axios from "../../../utils/axios"
 export default function usePost({ type, id: _id, onDoneNavigateToPost = true, onDone, addPath = "/addPost" }) {
 
     const navigate = useNavigate()
-    const { pastedOrDroppedImg } = useContext(Context)
+    const { pastedOrDroppedImg, lang } = useContext(Context)
     const { fileArr } = useAddFile()
 
     async function addOrEditPost(e, id) {
@@ -16,7 +16,8 @@ export default function usePost({ type, id: _id, onDoneNavigateToPost = true, on
         // add file: pasted/dropped
         await fileArr("/upload/siteContent", pastedOrDroppedImg)
         // add/edit post
-        const form = parseForm(e)
+        let form = parseForm(e)
+        form.lang = lang // add lang to post
         id = id ? id : _id // id can come from usePost(id) or from addOrEditPost(id)
         // no id = no post => create post; has id => edit post
         const res = !id ? await axios(addPath, { ...form, type }) : await axios("/editPost", { ...form, type, id })
