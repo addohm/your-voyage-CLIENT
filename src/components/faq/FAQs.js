@@ -13,7 +13,7 @@ export default function FAQs() {
         // <Posts Post={FAQ} type="faq" className="fc aic" />
         // 2: "closing" FAQs: after each FAQ clicked, previous FAQ will be closed
         <div className="fc aic">
-            <div className="title mb15">FAQ:</div>
+            <div className="title mb30">FAQ:</div>
             <Accordion posts={posts} className="bg_white zi2 faq" />
         </div>
     )
