@@ -18,7 +18,7 @@ export default function Banner() {
                     <img src={img} className='banner__img removedhoverMainImg' />
                 </Animation>
             </div>
-            <div className='f fwn aic banner__text pl30 removedhoverImgRotateY'>
+            <div className='f fwn aic banner__text pl15 removedhoverImgRotateY'>
                 <Arrow className="mx30 banner__arrow transition15" />
                 <div className='fc'>
                     <Animation

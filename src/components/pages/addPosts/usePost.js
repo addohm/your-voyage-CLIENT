@@ -5,7 +5,7 @@ import { useContext } from "react"
 import { Context } from "../../../Context"
 import axios from "../../../utils/axios"
 
-export default function usePost({ type, id, onDoneNavigateToPost = true, onDone, addPath = "/addPost" }) {
+export default function usePost({ type, id: _id, onDoneNavigateToPost = true, onDone, addPath = "/addPost" }) {
 
     const navigate = useNavigate()
     const { pastedOrDroppedImg } = useContext(Context)
@@ -17,6 +17,7 @@ export default function usePost({ type, id, onDoneNavigateToPost = true, onDone,
         await fileArr("/upload/siteContent", pastedOrDroppedImg)
         // add/edit post
         const form = parseForm(e)
+        id = id ? id : _id // id can come from usePost(id) or from addOrEditPost(id)
         // no id = no post => create post; has id => edit post
         const res = !id ? await axios(addPath, { ...form, type }) : await axios("/editPost", { ...form, type, id })
         onDoneNavigateToPost && navigate(`/post/${type}/${res._id}`)

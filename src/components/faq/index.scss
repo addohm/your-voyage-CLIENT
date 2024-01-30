@@ -2,7 +2,8 @@
 
 .faq{
     padding: 15px;
-    border-radius: $borderRadiusLarge;
+    border-radius: $borderRadiusSmall;
+    border-bottom: 1px solid $gray;
     width: 700px; 
     @media (width<=$mobile){
         width: 90vw;

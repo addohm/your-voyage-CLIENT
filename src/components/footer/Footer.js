@@ -21,7 +21,7 @@ export default function Footer() {
                 <div className='fw600 brand tac'>{t("Xiaoyang Li")}</div>
             </div>
             <FooterSocialLinks />
-            <div className='f fwn jcsb w140'>
+            <div className='f fwn jcsb'>
                 <FooterLink text={t("Terms")} type="terms" />
                 <div className="mx15">/</div>
                 <FooterLink text={t("Privacy")} type="privacy" />
