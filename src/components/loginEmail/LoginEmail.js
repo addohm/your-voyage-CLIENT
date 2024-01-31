@@ -1,5 +1,6 @@
 import { Button, TextField } from "@mui/material"
 import useLoginEmail from "./useLoginEmail"
+import t from "../../hooks/useT"
 
 export default function LoginEmail() {
 
@@ -11,10 +12,10 @@ export default function LoginEmail() {
                 required
                 name="email"
                 type="email"
-                label="email"
-                helperText="You will get email notification. Please confirm it. Be sure to check SPAM folder!"
+                label={t("email")}
+                helperText={t("You will get email notification")}
             />
-            <Button type="submit" variant="contained">Sign in</Button>
+            <Button type="submit" variant="contained">{t("Login")}</Button>
         </form>
     )
 }

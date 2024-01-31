@@ -1,4 +1,4 @@
-import { ADD_COURSES, ADD_FAQ_ROUTE, ADD_POSTS_PAGE_ROUTE, ADD_POST_ROUTE, EDIT_FOOTER_PAGE_ROUTE, EDIT_POST_ROUTE, FAQ_ROUTE, MESSAGES_ROUTE, MESSAGE_ROUTE, POST_ROUTE, SUPPORTS_ROUTE, SUPPORT_ROUTE } from "../../utils/consts";
+import { ADD_COURSES, ADD_FAQ_ROUTE, ADD_POSTS_PAGE_ROUTE, ADD_POST_ROUTE, EDIT_FOOTER_PAGE_ROUTE, EDIT_POST_ROUTE, FAQ_ROUTE, MESSAGES_ROUTE, MESSAGE_ROUTE, NEWSLETTER_ROUTE, POST_ROUTE, SUPPORTS_ROUTE, SUPPORT_ROUTE } from "../../utils/consts";
 import { MAIN_ROUTE } from "../../utils/consts";
 import VerifyLoginToken from "../loginEmail/LoginEmailVerifyToken";
 import MessagesRooms from "../messages/MessagesRooms";
@@ -14,6 +14,7 @@ import VerifyOrderToken from "../stripe/VerifyOrderToken";
 import SupportRooms from "../support/SupportRooms";
 import PaidSubscriptionMsgs from "../messages/PaidSubscriptionMsgs";
 import SupportMsgs from "../support/SupportMsgs";
+import Newsletter from "../newsletter/Newsletter";
 
 export default [
 	// ! VISITOR ROUTES
@@ -77,6 +78,13 @@ export default [
 	{
 		path: SUPPORT_ROUTE,
 		element: <SupportMsgs />,
+		isPublic: false,
+		isForUser: true,
+		isForAdmin: true,
+	},
+	{
+		path: NEWSLETTER_ROUTE,
+		element: <Newsletter />,
 		isPublic: false,
 		isForUser: true,
 		isForAdmin: true,

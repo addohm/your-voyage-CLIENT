@@ -1,5 +1,6 @@
 import { Button } from "@mui/material"
 import useLogin from "./useLoginGoogle"
+import t from "../../hooks/useT"
 
 export default function LoginGoogleButton({ user }) {
 
@@ -12,7 +13,7 @@ export default function LoginGoogleButton({ user }) {
             onClick={signInWithGoogle}
             style={{ background: "#1976D2" }}
         >
-            Sign in with Google
+            {t("Sign in with Google")}
         </Button>
     )
 }

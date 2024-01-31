@@ -37,6 +37,7 @@ export default function AdminAddContent() {
 
     return (
         <For role="admin">
+            <hr className="mt15 mb15"></hr>
             {list.map(({ route, title }) => (
                 <Link2 to={route}>
                     <Button style={{ marginBottom: 10 }} variant='outlined'>{title}</Button>

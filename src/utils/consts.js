@@ -23,4 +23,6 @@ export const ADD_PRIVACY_ROUTE = "/add/privacy"
 export const FAQ_ROUTE = "/faq"
 export const ADD_FAQ_ROUTE = "/add-faq"
 
+export const NEWSLETTER_ROUTE = "/newsletter"
+
 export const ADD_COURSES = "/add/courses"

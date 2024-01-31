@@ -394,9 +394,41 @@ export default function useT(key) {
             "en": "Subscribe",
             "zh": "订阅",
         },
+        "Unsubscribe": {
+            "en": "Unsubscribe",
+            "zh": "取消订阅",
+        },
         "FAQ": {
             "en": "FAQ",
             "zh": "常问问题",
+        },
+        "Login": {
+            "en": "Login",
+            "zh": "登录",
+        },
+        "You will get email notification": {
+            "en": "You will get email notification. Please confirm it. Be sure to check SPAM folder",
+            "zh": "您将收到电子邮件通知。请确认。请务必检查垃圾邮件文件夹",
+        },
+        "OR": {
+            "en": "OR",
+            "zh": "或者",
+        },
+        "Sign in with Google": {
+            "en": "Sign in with Google",
+            "zh": "使用 Google 登录",
+        },
+        "Newsletter": {
+            "en": "Newsletter",
+            "zh": "通讯",
+        },
+        "You're subscribed to our newsletter": {
+            "en": "You're subscribed to our newsletter",
+            "zh": "您已订阅我们的时事通讯",
+        },
+        "Subscribe to our newsletter": {
+            "en": "Subscribe to our newsletter",
+            "zh": "订阅我们的通讯",
         },
         "000": {
             "en": "000",
