@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
-import { MAIN_ROUTE, MESSAGES_ROUTE } from "../../utils/consts";
+import { MAIN_ROUTE, MESSAGES_ROUTE, SUPPORTS_ROUTE } from "../../utils/consts";
 import Toggle from "../toggle/Toggle";
 import { LightMode, DarkMode } from "@mui/icons-material";
 import { useContext } from "react";
@@ -47,6 +47,9 @@ export default function UserContent() {
             </Link>
             <Link2 to={MESSAGES_ROUTE}>
                 <Button style={{ marginBottom: 10 }} variant='outlined'>{t("messages")}</Button>
+            </Link2>
+            <Link2 to={SUPPORTS_ROUTE}>
+                <Button style={{ marginBottom: 10 }} variant='outlined'>{t("Support")}</Button>
             </Link2>
         </>
     )

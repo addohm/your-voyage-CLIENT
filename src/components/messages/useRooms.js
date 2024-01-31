@@ -3,7 +3,7 @@ import axios from "../../utils/axios";
 import useInterval from "../../hooks/useInterval";
 import useMessageSnackbar from "./useMessageSnackbar";
 
-export default function useRooms(snackbarSet, user) {
+export default function useRooms({ snackbarSet, user, path }) { // path = "/getRooms","/getRoomsSupport"
 
     const { interval } = useInterval()
     const [rooms, roomsSet] = useState([])
@@ -12,14 +12,16 @@ export default function useRooms(snackbarSet, user) {
 
     useEffect(() => {
         async function getRooms() {
-            const res = await axios("/getRooms")
+            if (!user) return
+            const res = await axios(path)
+            if (!res) return
             totalNotReadNumSet(res?.reduce((acc, room) => acc + room.notReadNum, 0))
-            res && roomsSet(res)
+            roomsSet(res)
             showSnackbar(res)
         }
 
         getRooms()
     }, [interval])
 
-    return { rooms, totalNotReadNum }
+    return [rooms, totalNotReadNum]
 }

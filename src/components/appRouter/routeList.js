@@ -1,8 +1,8 @@
-import { ADD_COURSES, ADD_FAQ_ROUTE, ADD_POSTS_PAGE_ROUTE, ADD_POST_ROUTE, EDIT_FOOTER_PAGE_ROUTE, EDIT_POST_ROUTE, FAQ_ROUTE, MESSAGES_ROUTE, MESSAGE_ROUTE, POST_ROUTE } from "../../utils/consts";
+import { ADD_COURSES, ADD_FAQ_ROUTE, ADD_POSTS_PAGE_ROUTE, ADD_POST_ROUTE, EDIT_FOOTER_PAGE_ROUTE, EDIT_POST_ROUTE, FAQ_ROUTE, MESSAGES_ROUTE, MESSAGE_ROUTE, POST_ROUTE, SUPPORTS_ROUTE, SUPPORT_ROUTE } from "../../utils/consts";
 import { MAIN_ROUTE } from "../../utils/consts";
 import VerifyLoginToken from "../loginEmail/LoginEmailVerifyToken";
-import MessagesHub from "../messages/MessagesHub";
-import SocketHub from "../messages/SocketHub";
+import MessagesRooms from "../messages/MessagesRooms";
+import AllMsgsAndAddMsg from "../messages/AllMsgsAndAddMsg";
 import AddFAQpage from "../pages/FAQpage/AddFAQpage";
 import FAQpage from "../pages/FAQpage/FAQpage";
 import AddCoursesPage from "../pages/addCourses/AddCoursesPage";
@@ -11,6 +11,9 @@ import AddPostsPage from "../pages/addPosts/AddPostsPage";
 import MainPage from "../pages/main/MainPage";
 import PostFullWrap from "../post/PostFullWrap";
 import VerifyOrderToken from "../stripe/VerifyOrderToken";
+import SupportRooms from "../support/SupportRooms";
+import PaidSubscriptionMsgs from "../messages/PaidSubscriptionMsgs";
+import SupportMsgs from "../support/SupportMsgs";
 
 export default [
 	// ! VISITOR ROUTES
@@ -52,14 +55,28 @@ export default [
 	// ! USER ROUTES
 	{
 		path: MESSAGES_ROUTE,
-		element: <MessagesHub />,
+		element: <MessagesRooms />,
+		isPublic: false,
+		isForUser: true,
+		isForAdmin: true,
+	},
+	{
+		path: SUPPORTS_ROUTE,
+		element: <SupportRooms />,
 		isPublic: false,
 		isForUser: true,
 		isForAdmin: true,
 	},
 	{
 		path: MESSAGE_ROUTE,
-		element: <SocketHub />,
+		element: <PaidSubscriptionMsgs />,
+		isPublic: false,
+		isForUser: true,
+		isForAdmin: true,
+	},
+	{
+		path: SUPPORT_ROUTE,
+		element: <SupportMsgs />,
 		isPublic: false,
 		isForUser: true,
 		isForAdmin: true,

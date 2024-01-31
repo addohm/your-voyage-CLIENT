@@ -4,9 +4,10 @@ import NoMessagesYet from "./NoMessagesYet";
 import UserImgWithNotReadNum from "../other/UserImgWithNotReadNum";
 import RoomLastMsg from "./RoomLastMsg";
 
-export default function Room({ img, name, room, msg, createdAt, notReadNum, msgImg, courseName }) {
+export default function Room({ img, name, room, msg, createdAt, notReadNum, msgImg, courseName, type }) {
+    // type: message, support
     return (
-        <Link className="f fwn g15 maw500 mb bg_white zi2 p brL" onClick={() => window.location.href = `/message/${room}`}>
+        <Link className="f fwn g15 maw500 mb bg_white zi2 p brL" onClick={() => window.location.href = `/${type}/${room}`}>
             <div className="por">
                 <UserImgWithNotReadNum img={img} notReadNum={notReadNum} imgClassName="h60 w60" numClassName="h22 w22" />
             </div>

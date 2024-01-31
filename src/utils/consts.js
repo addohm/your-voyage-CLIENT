@@ -14,6 +14,9 @@ export const EDIT_FOOTER_PAGE_ROUTE = "/edit/footer"
 export const MESSAGES_ROUTE = "/messages"
 export const MESSAGE_ROUTE = "/message/:token"
 
+export const SUPPORTS_ROUTE = "/supports"
+export const SUPPORT_ROUTE = "/support/:token"
+
 export const ADD_TERMS_ROUTE = "/add/terms"
 export const ADD_PRIVACY_ROUTE = "/add/privacy"
 

@@ -4,7 +4,7 @@ import { Context } from "../../Context"
 import { SERVER_URL } from "../../utils/consts"
 import useAddFile from "../pages/addPosts/useAddFile"
 
-export default function useSocket(room, dbMessagesSet) {
+export default function useSocket({ room, dbMessagesSet, type }) { // type: message/support
 
     const { user, messageReplyingTo, messageReplyingToSet, messages, messagesSet, dialogSet } = useContext(Context)
     const { fileArr } = useAddFile()
@@ -64,7 +64,7 @@ export default function useSocket(room, dbMessagesSet) {
         if (!messages?.[0]?.msg) return // no message
         messages?.map(async (message, ind) => {
             const file = await fileArr("/upload/msgContent", [message.file])
-            socket.emit("send_message", { msg: message.msg, msgReplyingTo: messageReplyingTo, room, userId: user._id, name: user.name, img: user.img, file: file[0] })
+            socket.emit("send_message", { type, msg: message.msg, msgReplyingTo: messageReplyingTo, room, userId: user._id, name: user.name, img: user.img, file: file[0] })
         })
         messageReplyingToSet(null)
         messagesSet([{ msg: "", file: "" }]) // null Context messages

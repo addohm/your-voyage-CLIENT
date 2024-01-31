@@ -310,6 +310,10 @@ export default function useT(key) {
             "en": "messages",
             "zh": "留言",
         },
+        "Support": {
+            "en": "Support",
+            "zh": "支持团队",
+        },
         "courses": {
             "en": "courses",
             "zh": "课程",

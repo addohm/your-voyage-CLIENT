@@ -4,10 +4,13 @@ import RoomsTitle from "./RoomsTitle";
 import RenewSubscription from "./RenewSubscription";
 import { MAIN_ROUTE } from "../../utils/consts";
 import goToCoach from "../../utils/goToCoach";
+import { useContext } from "react"
+import { Context } from "../../Context"
 
-export default function MessagesHub() {
+export default function MessagesRooms() {
 
     const { subscription } = useCheckSubscription({ type: "all" })
+    const { rooms } = useContext(Context)
 
     return (
         <>
@@ -18,7 +21,7 @@ export default function MessagesHub() {
                 {...subscription}
             />
             <RoomsTitle />
-            <Rooms />
+            <Rooms rooms={rooms} type="message" />
         </>
     )
 }
