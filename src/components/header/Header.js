@@ -20,6 +20,7 @@ export default function Header() {
     useEffect(() => {
         !isMobile && scrollY === 0 ? isVisibleSet(true) : isVisibleSet(false) // pc visible on very top + if hovered Header's place on top
         isMobile && isVisibleSet(true) // mobile always visible
+        isVisibleSet(true) // Header visible on all devices: REMOVE for "only show on top & on hover"
     }, [scrollY])
 
     // handleScroll
