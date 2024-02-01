@@ -1,5 +1,7 @@
 export default function genFirstCharColor(str) {
 
+    if (!str) return
+
     // Get the first character of the input
     const firstChar = str.charAt(0);
 

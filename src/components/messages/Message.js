@@ -12,6 +12,7 @@ import MessageReplyingToTop from "./MessageReplyingToTop"
 import MessageFiles from "./MessageFiles"
 import useMsgCurTopDate from "./useMsgCurTopDate"
 import t from "../../hooks/useT"
+import MessageImg from "./MessageImg"
 
 export default function Message(props) {
 
@@ -24,7 +25,7 @@ export default function Message(props) {
     return (
         <>
             <div ref={msgCurTopDateRef} className={`por f fwn g10 cardAnim ${className}`} onClick={goToReplyingToMsg}>
-                <img src={img} className="w40 h40 brL" />
+                <MessageImg img={img} name={name} />
                 <div className={`fcc g10 p15 mb10 brL ${isMyMsg ? "myMsg" : "otherMsg"} ${isUpdated ? "updatedMsg" : ""} ${isDeleted ? "deletedMsg" : ""} ${isRestored ? "restoredMsg" : ""} msg`}>
                     <div className="fw500 mra w100p">{name}</div>
 

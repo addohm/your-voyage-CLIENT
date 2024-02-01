@@ -15,7 +15,7 @@ export default function Burger({ isVisible, isVisibleMobileNavSet, isVisibleMobi
             {
                 (totalNotReadNum > 0 || totalNotReadNum?.length > 0) &&
                 <Link2 to={MESSAGES_ROUTE}>
-                    <UserImgWithNotReadNum img={user?.img} notReadNum={totalNotReadNum} imgClassName="w40 h40" numClassName="w20 h20 l-4 t-2 fz13" />
+                    <UserImgWithNotReadNum img={user?.img} name={user?.name} notReadNum={totalNotReadNum} imgClassName="w40 h40" numClassName="w20 h20 l-4 t-2 fz13" />
                 </Link2>
             }
             <div className="hamburger por zi3" >

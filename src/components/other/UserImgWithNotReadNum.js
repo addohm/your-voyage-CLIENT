@@ -1,9 +1,6 @@
-import useGenUserImgDepOnFirstChar from "../../hooks/useGenUserImgDepOnFirstChar"
+import GenUserImgDepOnFirstChar from "../user/GenUserImgDepOnFirstChar"
 
-export default function UserImgWithNotReadNum({ img, notReadNum, imgClassName, numClassName }) {
-
-    const userImg = useGenUserImgDepOnFirstChar()
-
+export default function UserImgWithNotReadNum({ img, name, notReadNum, imgClassName, numClassName }) {
     return (
         <div className="por">
             {notReadNum > 0 && <div className={`poa l4 t0 fcc bg_brand white br50 ${numClassName}`}>{notReadNum}</div>}
@@ -11,7 +8,7 @@ export default function UserImgWithNotReadNum({ img, notReadNum, imgClassName, n
                 ?
                 <img className={`br50 ${imgClassName}`} src={img} />
                 :
-                userImg
+                <GenUserImgDepOnFirstChar name={name} className={imgClassName} />
             }
         </div>
     )
