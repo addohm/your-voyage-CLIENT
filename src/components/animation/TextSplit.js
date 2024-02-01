@@ -5,7 +5,7 @@ export default function TextSplit({ str, isColor = false }) {
     const ref = useRef(null)
 
     function onMouseEnter(ind) {
-        isColor && ref?.current?.querySelector(`.letter${ind}`).classList.add("brand");
+        isColor && ref?.current?.querySelector(`.letter${ind}`).classList.add("brandi");
     }
 
     return (

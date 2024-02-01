@@ -2,10 +2,10 @@
 
 .applyForQuote{
     .title{
-        color: $brand;
+        color: $brand !important;
     }
     .bg_black{
-        background: $brand;
+        background: $brand !important;
     }
 @media (width<=$mobile) {
     // coach name title

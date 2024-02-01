@@ -9,6 +9,7 @@ export default function Link2(props) {
     return (
         <Link
             onClick={() => isVisibleMobileNavSet(false)}
+            className="hoverBrandColor hoverFont500 hoverFontTop"
             {...props}
         >
             {props.children}

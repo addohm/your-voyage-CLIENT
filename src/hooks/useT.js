@@ -430,6 +430,10 @@ export default function useT(key) {
             "en": "Subscribe to our newsletter",
             "zh": "订阅我们的通讯",
         },
+        "Please confirm login at": {
+            "en": "Please confirm login at",
+            "zh": "请在以下网址确认登录",
+        },
         "000": {
             "en": "000",
             "zh": "111",

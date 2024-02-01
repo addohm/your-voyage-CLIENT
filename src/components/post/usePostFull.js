@@ -7,7 +7,7 @@ export default function usePostFull(type, id) {
 
     useEffect(() => {
         async function getPost() {
-            if (!type || !id) return
+            if (!type || !id || id === "undefined") return
             const res = await axios("/getPost", { type, _id: id })
             res && postSet(res)
         }

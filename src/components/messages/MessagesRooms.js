@@ -10,7 +10,7 @@ import { Context } from "../../Context"
 export default function MessagesRooms() {
 
     const { subscription } = useCheckSubscription({ type: "all" })
-    const { rooms } = useContext(Context)
+    const { rooms, isLoadingCourses } = useContext(Context)
 
     return (
         <>
@@ -21,7 +21,7 @@ export default function MessagesRooms() {
                 {...subscription}
             />
             <RoomsTitle />
-            <Rooms rooms={rooms} type="message" />
+            <Rooms rooms={rooms} type="message" noRoomsMsg="No active subscriptions" isLoading={isLoadingCourses} />
         </>
     )
 }

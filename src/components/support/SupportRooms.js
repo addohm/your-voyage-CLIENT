@@ -5,12 +5,12 @@ import t from "../../hooks/useT"
 
 export default function SupportRooms() {
 
-    const { roomsSupport } = useContext(Context)
+    const { roomsSupport, isLoadingSupport } = useContext(Context)
 
     return (
         <>
             <div className="title tac mb">{t("Support")}:</div>
-            <Rooms rooms={roomsSupport} type="support" />
+            <Rooms rooms={roomsSupport} type="support" isLoading={isLoadingSupport} />
         </>
     )
 }

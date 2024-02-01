@@ -8,7 +8,7 @@ import SnackbarAction from "./SnackbarAction";
 export default function _Snackbar() {
 
 	const { snackbar, snackbarSet } = useContext(Context)
-	const { show, onClose } = snackbar
+	const { show, onClose, className } = snackbar
 
 	return (
 		show &&
@@ -20,6 +20,7 @@ export default function _Snackbar() {
 				// autoHideDuration={6000}
 				message={<SnackbarMessage {...snackbar} />}
 				action={<SnackbarAction snackbarSet={snackbarSet} onClose={onClose} />}
+				className={`${className}`}
 			/>
 		</div>
 	);

@@ -60,6 +60,7 @@ svg:not(.brand, .brandi, .white){
     cursor: pointer;
     &:hover{
         transition: all 0.5s ease;
-        color: $brand;
+        color: $brand !important;
+        fill: $brand !important;
     }
 }

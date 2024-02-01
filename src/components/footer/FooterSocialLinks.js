@@ -4,10 +4,12 @@ import { Instagram, LinkedIn, YouTube } from "@mui/icons-material";
 export default function FooterSocialLinks({ isVisible = true }) {
     return (
         isVisible &&
-        <div className='f jcsb w100'>
-            <Instagram />
-            <YouTube />
-            <LinkedIn />
+        <div className="fcc w100p">
+            <div className='f fwn jcsb w100'>
+                <Instagram />
+                <YouTube />
+                <LinkedIn />
+            </div>
         </div>
     )
 }

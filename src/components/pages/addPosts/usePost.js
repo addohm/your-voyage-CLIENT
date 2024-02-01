@@ -20,7 +20,7 @@ export default function usePost({ type, id: _id, onDoneNavigateToPost = true, on
         form.lang = lang // add lang to post
         id = id ? id : _id // id can come from usePost(id) or from addOrEditPost(id)
         // no id = no post => create post; has id => edit post
-        const res = !id ? await axios(addPath, { ...form, type }) : await axios("/editPost", { ...form, type, id })
+        const res = (!id || id === "undefined") ? await axios(addPath, { ...form, type }) : await axios("/editPost", { ...form, type, id })
         onDoneNavigateToPost && navigate(`/post/${type}/${res._id}`)
         onDone?.()
     }

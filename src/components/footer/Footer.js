@@ -13,20 +13,27 @@ export default function Footer() {
     const location = useLocation().pathname
 
     return (
-        <footer className={`por zi3 fcc jcsb pt pb px100 w100p ${location === MAIN_ROUTE ? mainRouteStyle : ""} footer`}>
-            <div>
-                <div className='fw600 wsn'>{t("Career Coach & HR director")}</div>
-                <div className='fw600 brand tac'>{t("Xiaoyang Li")}</div>
+        <footer className={`por zi3 fcc fwn jcsb pt pb px100 w100p ${location === MAIN_ROUTE ? mainRouteStyle : ""} footer`}>
+            {/* LEFT */}
+            <div className='fcc w100p'>
+                <div className='wfc'>
+                    <div className='fw600 wsn'>{t("Career Coach & HR director")}</div>
+                    <div className='fw600 brand tac'>{t("Xiaoyang Li")}</div>
+                </div>
             </div>
+            {/* CENTER */}
             <FooterSocialLinks />
-            <div className='f fwn jcsb'>
-                <FooterLink text={t("Terms")} type="terms" />
-                <div className="mx15">/</div>
-                <FooterLink text={t("Privacy")} type="privacy" />
-                <div className="mx15">/</div>
-                <Link2 to={FAQ_ROUTE}>{t("FAQ")}</Link2>
-                <div className="mx15">/</div>
-                <Link2 to={NEWSLETTER_ROUTE}>{t("Newsletter")}</Link2>
+            {/* RIGHT */}
+            <div className='fcc w100p'>
+                <div className='f fwn jcsb'>
+                    <FooterLink text={t("Terms")} type="terms" />
+                    <div className="mx15">/</div>
+                    <FooterLink text={t("Privacy")} type="privacy" />
+                    <div className="mx15">/</div>
+                    <Link2 to={FAQ_ROUTE}>{t("FAQ")}</Link2>
+                    <div className="mx15">/</div>
+                    <Link2 to={NEWSLETTER_ROUTE}>{t("Newsletter")}</Link2>
+                </div>
             </div>
         </footer>
     )

@@ -24,7 +24,7 @@
 .hoverBrandColor{
     @include transition;
     &:hover{
-        color: $brand;
+        color: $brand !important;
     }
 }
 .hoverFont500{

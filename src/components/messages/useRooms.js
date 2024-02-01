@@ -9,11 +9,13 @@ export default function useRooms({ snackbarSet, user, path }) { // path = "/getR
     const [rooms, roomsSet] = useState([])
     const [totalNotReadNum, totalNotReadNumSet] = useState([])
     const { showSnackbar } = useMessageSnackbar(snackbarSet, user)
+    const [isLoading, isLoadingSet] = useState(true)
 
     useEffect(() => {
         async function getRooms() {
             if (!user) return
             const res = await axios(path)
+            isLoadingSet(false)
             if (!res) return
             totalNotReadNumSet(res?.reduce((acc, room) => acc + room.notReadNum, 0))
             roomsSet(res)
@@ -23,5 +25,5 @@ export default function useRooms({ snackbarSet, user, path }) { // path = "/getR
         getRooms()
     }, [interval])
 
-    return [rooms, totalNotReadNum]
+    return [rooms, totalNotReadNum, isLoading]
 }

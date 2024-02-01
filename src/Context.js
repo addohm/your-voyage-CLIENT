@@ -17,8 +17,8 @@ function ContextProvider({ children }) {
     const [snackbar, snackbarSet] = useState({ show: false, text: "", link: "", linkText: "", linkType: "" })
     const [messageReplyingTo, messageReplyingToSet] = useState(null) // { img: "", name: "", msg: "" }
     const { messages, messagesSet } = useMessages(dialogSet) // add message
-    const [rooms, totalNotReadNum] = useRooms({ snackbarSet, user, path: "/getRooms" })
-    const [roomsSupport, totalNotReadNumSupport] = useRooms({ snackbarSet, user, path: "/getRoomsSupport" })
+    const [rooms, totalNotReadNum, isLoadingCourses] = useRooms({ snackbarSet, user, path: "/getRooms" })
+    const [roomsSupport, totalNotReadNumSupport, isLoadingSupport] = useRooms({ snackbarSet, user, path: "/getRoomsSupport" })
     const { dbMessages, dbMessagesSet } = useDbMessages(snackbarSet, user)
     const { oldDbMessages, oldDbMessagesSet, skipOldDbMessages, skipOldDbMessagesSet } = useOldDbMessages() // for skip: to load old messages on top of new messages (2 separate messages)
     const { lang, langSet } = useLang()
@@ -35,8 +35,8 @@ function ContextProvider({ children }) {
             snackbar, snackbarSet,
             messageReplyingTo, messageReplyingToSet,
             messages, messagesSet,
-            rooms, totalNotReadNum,
-            roomsSupport, totalNotReadNumSupport,
+            rooms, totalNotReadNum, isLoadingCourses,
+            roomsSupport, totalNotReadNumSupport, isLoadingSupport,
             dbMessages, dbMessagesSet,
             oldDbMessages, oldDbMessagesSet, skipOldDbMessages, skipOldDbMessagesSet,
             lang, langSet,

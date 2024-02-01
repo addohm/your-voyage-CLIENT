@@ -30,7 +30,7 @@ export default function Course({ coachEmail, coachName, img, courseName, price, 
                         <div className="tac fcc gray">{courseName}</div>
                         <div className="fcc mt30 poa b15 cx">
                             {!isHovered && <div className={`tac fcc fw500 fz20 cardAnim ${discountPrice ? "tdlt mr5 gray fz22" : "brand"}`}>${price}</div>}
-                            {(!isHovered && discountPrice) && <div className="tac fcc brand fw500 fz20 cardAnim">${discountPrice}</div>}
+                            {(!isHovered && discountPrice) && <div className="tac fcc brandi fw500 fz20 cardAnim">${discountPrice}</div>}
                             {isHovered && <Button className="h36 fcc w100p cardAnim" variant="contained">BUY</Button>}
                         </div>
                     </div>

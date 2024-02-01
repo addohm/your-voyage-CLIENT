@@ -2,10 +2,12 @@ import { useContext } from "react"
 import parseForm from "../../utils/parseForm"
 import { Context } from "../../Context"
 import axios from "../../utils/axios"
+import t from "../../hooks/useT"
 
 export default function useLoginEmail() {
 
     const { snackbarSet, dialogSet } = useContext(Context)
+    const loginText = t("Please confirm login at") + ": "
 
     async function loginSendEmail(e) {
         e.preventDefault()
@@ -14,7 +16,7 @@ export default function useLoginEmail() {
         const res = await axios("/loginSendEmail", { ...form })
         if (!res.ok) return
         dialogSet({ show: false })
-        snackbarSet({ show: true, text: "Please confirm login at: ", link: form.email, linkText: form.email, linkType: "web" })
+        snackbarSet({ show: true, text: loginText, link: form.email, linkText: form.email, linkType: "web", className: "white a_tdu" })
     }
 
     return (
