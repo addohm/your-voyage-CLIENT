@@ -20,70 +20,70 @@ export default function MainPage() {
     return (
         <>
             <Animation
-                // type="scale151"
-                type="opacity"
+            // type="scale151"
+            // type="opacity"
             >
                 <Banner />
             </Animation>
             <Animation
-                // type="scale151"
-                type="opacity"
+            // type="scale151"
+            // type="opacity"
             >
                 <ExperienceAndEducation />
             </Animation>
             <Animation
-                // type="scale151"
-                type="opacity"
+            // type="scale151"
+            // type="opacity"
             >
                 <div className="h50vh fcc mt200">
                     <Quote title="Steve Jobs" text={t("Your work")} />
                 </div>
             </Animation>
             <Animation
-                // type="scale151"
-                type="opacity"
+            // type="scale151"
+            // type="opacity"
             >
                 <Banner2 />
             </Animation>
             <Animation
-                // type="scale151"
-                type="opacity"
+            // type="scale151"
+            // type="opacity"
             >
                 <Tools />
             </Animation>
             <Animation
-                // type="scale151"
-                type="opacity"
+            // type="scale151"
+            // type="opacity"
             >
                 <FullWidthImg img={fullWidthImg1} />
             </Animation>
             <Animation
-                // type="scale151"
-                type="opacity"
+            // type="scale151"
+            // type="opacity"
             >
                 <Quote title="Confucius" text={t("Choose a job")} />
             </Animation>
             <Animation
-                // type="scale091"
-                type="opacity"
+            // type="scale091"
+            // type="opacity"
             >
                 <Reviews />
             </Animation>
             <Animation
-                // type="scale151"
-                type="opacity"
+            // type="scale151"
+            // type="opacity"
             >
                 <Megaphone />
             </Animation>
             <Animation
-                // type="scale151"
-                type="opacity"
+            // type="scale151"
+            // type="opacity"
             >
                 <ApplyFor />
             </Animation>
             <Animation
-                // type="scale151"
-                type="opacity"
+            // type="scale151"
+            // type="opacity"
             >
                 <JustImagine />
             </Animation>
@@ -97,15 +97,15 @@ export default function MainPage() {
             {/* ! `margin top` for Quote */}
             <div className="h300"></div>
             <Animation
-                // type="scale151"
-                type="opacity"
+            // type="scale151"
+            // type="opacity"
             >
                 <Quote title="Albert Schweitzer" text={t("Success is not the key")} />
             </Animation>
 
             <Animation
-                // type="scale151"
-                type="opacity"
+            // type="scale151"
+            // type="opacity"
             >
                 <FullWidthImg img={fullWidthImg2} />
             </Animation>
