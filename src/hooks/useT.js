@@ -378,6 +378,14 @@ export default function useT(key) {
             "en": "Subscription activated",
             "zh": "订阅已激活",
         },
+        "Renew subscription": {
+            "en": "Renew subscription",
+            "zh": "续约",
+        },
+        "Your subscription has expired, renew it to continue": {
+            "en": "Your subscription has expired, renew it to continue",
+            "zh": "您的订阅已过期，请续订以继续订阅",
+        },
         "Days left": {
             "en": "Days left",
             "zh": "剩余天数",
@@ -433,6 +441,14 @@ export default function useT(key) {
         "Please confirm login at": {
             "en": "Please confirm login at",
             "zh": "请在以下网址确认登录",
+        },
+        "If you have any questions": {
+            "en": "If you have any questions",
+            "zh": "如果您有任何问题",
+        },
+        "Please contact us": {
+            "en": "Please contact us",
+            "zh": "请联系我们",
         },
         "000": {
             "en": "000",

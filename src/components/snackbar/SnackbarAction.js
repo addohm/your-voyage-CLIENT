@@ -10,7 +10,7 @@ export default function SnackbarAction({ snackbarSet, onClose }) {
 				color="inherit"
 				onClick={() => (onClose?.(), snackbarSet({ show: false }))}
 			>
-				<Close fontSize="small" />
+				<Close fontSize="small" style={{ color: "white" }} />
 			</IconButton>
 		</>
 	)

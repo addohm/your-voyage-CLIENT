@@ -28,7 +28,7 @@ export default function PaidSubscriptionMsgs() {
             :
             <RenewSubscription
                 link={stripeLink}
-                btnText="RENEW SUBSCRIPTION"
+                btnText="Renew subscription"
                 onClick={rewriteSubscriptionInfo}
                 {...subscription}
             />

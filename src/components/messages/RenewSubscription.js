@@ -3,6 +3,7 @@ import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { Context } from "../../Context"
 import t from "../../hooks/useT"
+import HaveQuestions from "./HaveQuestions"
 
 export default function RenewSubscription({ link, btnText, ok, msg, error, onClick }) {
 
@@ -14,17 +15,20 @@ export default function RenewSubscription({ link, btnText, ok, msg, error, onCli
 
     return (
         ok === false &&
-        <Link to={link}>
-            {error && <div className="tac mb danger">{error}</div>}
-            {/* <div className="tac mb">{t(msg)}</div> */}
-            <Button
-                variant="contained"
-                onClick={onClick}
-            >
-                {t(btnText)}
-            </Button>
-            {/* margin only works this way */}
-            <div className="mb15"></div>
-        </Link>
+        <>
+            <HaveQuestions />
+            <Link to={link}>
+                {error && <div className="tac mb danger">{error}</div>}
+                {/* <div className="tac mb">{t(msg)}</div> */}
+                <Button
+                    variant="contained"
+                    onClick={onClick}
+                >
+                    {t(btnText)}
+                </Button>
+                {/* margin only works this way */}
+                <div className="mb15"></div>
+            </Link>
+        </>
     )
 }

@@ -24,5 +24,6 @@ export const FAQ_ROUTE = "/faq"
 export const ADD_FAQ_ROUTE = "/add-faq"
 
 export const NEWSLETTER_ROUTE = "/newsletter"
+export const PAYMENT_CANCEL_ROUTE = "/paymentCancel"
 
 export const ADD_COURSES = "/add/courses"
