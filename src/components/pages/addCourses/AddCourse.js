@@ -2,7 +2,7 @@ import Input from "../../form/Input"
 import InputMUI from "../../form/InputMUI"
 
 // * used as AddPosts in AddManyPosts
-export default function AddCourse({ courseName, coachEmail, coachName, price, discountPrice, order, courseLabel, courseLabelColor, _id, ind, SaveIcon, DeleteIcon }) {
+export default function AddCourse({ courseName, courseDesc, coachEmail, coachName, price, discountPrice, order, courseLabel, courseLabelColor, _id, ind, SaveIcon, DeleteIcon }) {
     return (
         <div key={_id} className="fc g15 w300 bsh brL pl15 pr15 pt15 pb30 bg_white zi2 cardAnim">
             {/* ! _id must be before last input */}
@@ -12,6 +12,7 @@ export default function AddCourse({ courseName, coachEmail, coachName, price, di
                 {DeleteIcon}
             </div>
             <InputMUI required className="fz16" defaultValue={courseName} name="courseName" placeholder="course name" label="course name" />
+            <InputMUI required multiline className="fz16" defaultValue={courseDesc} name="courseDesc" placeholder="course description" label="course description" />
             <InputMUI required className="fz16" defaultValue={coachEmail} name="coachEmail" placeholder="coach email" label="coach email" />
             <InputMUI required className="fz16" defaultValue={coachName} name="coachName" placeholder="coach name" label="coach name" />
             <InputMUI required className="fz16" defaultValue={price} name="price" placeholder="price" label="price" />

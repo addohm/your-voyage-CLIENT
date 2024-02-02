@@ -1,3 +1,8 @@
 .curPointer{
     cursor: pointer;
 }
+.cursorArrowRight{
+    &:hover{
+        cursor: url('../../public/cursors/arrowRight.svg'), auto;
+    }
+}

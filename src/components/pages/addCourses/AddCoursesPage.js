@@ -17,7 +17,7 @@ export default function AddCoursesPage() {
             previewTitle="Courses Preview"
             AddPosts={AddCourse}
             PreviewPosts={Courses}
-            addPostsClassName="fcc g20"
+            addPostsClassName="f jcc g20"
         />
     )
 }
