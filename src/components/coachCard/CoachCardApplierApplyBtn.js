@@ -8,9 +8,10 @@ export default function CoachCardApplierApplyBtn() {
 
     const { dialogSet, user, applierForm } = useContext(Context)
     const dialogTitle = t("Choose your course")
+    const isAllFieldsFilled = applierForm && Object.values(applierForm).reduce((acc, curr) => !curr ? acc : acc + 1, 0) === 11 // CoachCardApplier validation: if not filled: currently 11 fields + email
 
     function showCourseList() {
-        if (Object.keys(applierForm).length !== 11) return // if not filled: currently 11 fields + email
+        if (!isAllFieldsFilled) return
         dialogSet({
             show: true,
             title: <div className="title">{dialogTitle}</div>,
@@ -22,7 +23,7 @@ export default function CoachCardApplierApplyBtn() {
         <Button
             type="submit"
             variant="contained"
-            disabled={!user}
+            disabled={!user || !isAllFieldsFilled}
             onClick={showCourseList}
         >
             {t("apply")}

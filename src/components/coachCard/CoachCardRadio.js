@@ -44,7 +44,8 @@ export default function CoachCardRadio({ options, outerInd, isReadOnly }) {
                             checked={isRadioChecked}
                             onChange={() => onChange(option)}
                         />
-                        <InputRequiredNativeTooltip required={!selectedOption} className="r0 b0" />
+                        {/* NOT WORKING as expected */}
+                        {/* <InputRequiredNativeTooltip required={!selectedOption} className="r0 b0" /> */}
                     </label>
                 )
             })}
