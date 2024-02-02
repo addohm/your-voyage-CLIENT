@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import useAutoAuth from "./components/AutoAuth/useAutoAuth"
 import useMessages from "./components/messages/useMessages"
 import useRooms from "./components/messages/useRooms"
@@ -6,6 +6,7 @@ import useDbMessages from "./components/messages/useDbMessages"
 import useOldDbMessages from "./components/messages/useOldDbMessages"
 import useLang from "./components/user/useLang"
 import useTheme from "./components/user/useTheme"
+import useApplierForm from "./components/coachCard/useApplierForm"
 
 const Context = React.createContext()
 
@@ -24,7 +25,7 @@ function ContextProvider({ children }) {
     const { lang, langSet } = useLang()
     const { theme, themeSet } = useTheme()
     const [isVisibleMobileNav, isVisibleMobileNavSet] = useState(false)
-    const [applierForm, applierFormSet] = useState({})
+    const { applierForm, applierFormSet } = useApplierForm()
 
     // ! RETURN
     return (

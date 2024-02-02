@@ -12,7 +12,7 @@ export default function CoachCardRadio({ options, outerInd, isReadOnly }) {
     const [selectedOption, selectedOptionSet] = useState(null)
     const [clickedOptionInd, clickedOptionIndSet] = useState(null)
 
-    const { theme, applierFormSet } = useContext(Context)
+    const { theme, applierFormSet, applierForm } = useContext(Context)
     const arrowSrc = theme === "light" ? arrow2 : arrow2White
 
     function onChange(option) {
@@ -23,22 +23,28 @@ export default function CoachCardRadio({ options, outerInd, isReadOnly }) {
 
     return (
         <div className='fcc fwn por'>
-            {options.map((option, ind) => (
-                <label
-                    className={`por radio-container hoverBrandColor ${selectedOption === option ? 'brand fw600' : ''} ${ind === 0 ? "tar" : "tal"}`}
-                    onClick={() => clickedOptionIndSet(ind)}
-                >
-                    {t(option)}
-                    <Input
-                        type="radio"
-                        name={"radio" + outerInd}
-                        value={selectedOption}
-                        checked={selectedOption === option}
-                        onChange={() => onChange(option)}
-                    />
-                    <InputRequiredNativeTooltip required={!selectedOption} className="r0 b0" />
-                </label>
-            ))}
+            {options.map((option, ind) => {
+
+                const memoRadioValue = Object.values(applierForm).find((keyValue, ind) => keyValue === option)
+                const isRadioChecked = memoRadioValue === option || selectedOption === option
+
+                return (
+                    <label
+                        className={`por radio-container hoverBrandColor ${isRadioChecked ? 'brand fw600' : ''} ${ind === 0 ? "tar" : "tal"}`}
+                        onClick={() => clickedOptionIndSet(ind)}
+                    >
+                        {t(option)}
+                        <Input
+                            type="radio"
+                            name={"radio" + outerInd}
+                            value={selectedOption}
+                            checked={isRadioChecked}
+                            onChange={() => onChange(option)}
+                        />
+                        <InputRequiredNativeTooltip required={!selectedOption} className="r0 b0" />
+                    </label>
+                )
+            })}
             <img src={arrowSrc} className={`poa t-5 ${clickedOptionInd === 0 ? "tr180" : ""}`} />
         </div>
     );
