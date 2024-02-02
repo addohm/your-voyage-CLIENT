@@ -29,6 +29,18 @@
 		border-top-left-radius: #{$i}px;
 	}
  }
+ // gen border-bottom-right-radius
+@for $i from 0 through 30 {
+	.bbrr#{$i} {
+		border-bottom-right-radius: #{$i}px;
+	}
+ }
+ // gen border-bottom-left-radius
+@for $i from 0 through 30 {
+	.bblr#{$i} {
+		border-bottom-left-radius: #{$i}px;
+	}
+ }
 // gen border-radius
 @for $i from 0 through 30 {
 	.br#{$i} {

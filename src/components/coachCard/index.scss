@@ -28,11 +28,12 @@
 }
 
 .course{
+  overflow: hidden; // ! for animation: courseLabelAnimationFade<In/Out>
   height: 400px;
   width: 300px;
   margin: 10px;
   box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-  border-radius: $borderRadiusLarge;
+  border-radius: $borderRadiusSmall;
   &:hover{
     box-shadow: inset 0px 10px 15px -3px rgba(0,0,0,0.1);
   }
