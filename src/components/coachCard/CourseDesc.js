@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { Context } from "../../Context"
 import Course from "./Course"
+import useCoursesDialog from "./useCoursesDialog"
 
 export default function CourseDesc(props) {
 
@@ -9,6 +10,7 @@ export default function CourseDesc(props) {
     const charsLimit = 150
     const shortDesc = courseDesc.length <= charsLimit
     const longDesc = (courseDesc.length > charsLimit) && !isLongDesc
+    const { showCoursesDialog } = useCoursesDialog()
 
     function showCourseWithFullDesc(e) {
         // if courseDesc less than charsLimit chars skip showing new Dialog with LONG courseDesc
@@ -17,7 +19,8 @@ export default function CourseDesc(props) {
         e.stopPropagation()
         dialogSet({
             show: true,
-            children: <Course {...props} className="ha pb50 mih400" isLongDesc={true} />
+            children: <Course {...props} className="ha pb50 mih400" isLongDesc={true} />,
+            onBack: showCoursesDialog
         })
     }
 
