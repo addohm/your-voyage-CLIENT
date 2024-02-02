@@ -2,6 +2,6 @@ import { TextField } from "@mui/material";
 
 export default function InputMUI(props) {
     return (
-        <TextField {...props} />
+        <TextField variant="standard" {...props} />
     )
 }

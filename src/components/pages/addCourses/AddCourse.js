@@ -1,4 +1,5 @@
 import Input from "../../form/Input"
+import InputMUI from "../../form/InputMUI"
 
 // * used as AddPosts in AddManyPosts
 export default function AddCourse({ courseName, coachEmail, coachName, price, discountPrice, order, courseLabel, courseLabelColor, _id, ind, SaveIcon, DeleteIcon }) {
@@ -10,16 +11,16 @@ export default function AddCourse({ courseName, coachEmail, coachName, price, di
                 {SaveIcon}
                 {DeleteIcon}
             </div>
-            <Input required className="fz16" defaultValue={courseName} name="courseName" placeholder="course name" />
-            <Input required className="fz16" defaultValue={coachEmail} name="coachEmail" placeholder="coach email" />
-            <Input required className="fz16" defaultValue={coachName} name="coachName" placeholder="coach name" />
-            <Input required className="fz16" defaultValue={price} name="price" placeholder="price" />
-            <Input className="fz16" defaultValue={discountPrice} name="discountPrice" placeholder="discount" />
-            <Input className="fz16" defaultValue={order || ind + 1} name="order" placeholder="order" />
+            <InputMUI required className="fz16" defaultValue={courseName} name="courseName" placeholder="course name" label="course name" />
+            <InputMUI required className="fz16" defaultValue={coachEmail} name="coachEmail" placeholder="coach email" label="coach email" />
+            <InputMUI required className="fz16" defaultValue={coachName} name="coachName" placeholder="coach name" label="coach name" />
+            <InputMUI required className="fz16" defaultValue={price} name="price" placeholder="price" label="price" />
+            <InputMUI className="fz16" defaultValue={discountPrice} name="discountPrice" placeholder="discount" label="discount" />
+            <InputMUI className="fz16" defaultValue={order || ind + 1} name="order" placeholder="order" label="order" />
             {/* ! add new fields BEFORE last input  */}
             <div className="f fwn g10 aic jcsb">
-                <Input className="fz16 w100p" defaultValue={courseLabel} name="courseLabel" placeholder="label" />
-                <Input type="color" className="w30 bn" defaultValue={courseLabelColor} name="courseLabelColor" />
+                <InputMUI className="fz16 w100p" defaultValue={courseLabel} name="courseLabel" placeholder="label" label="label" />
+                <Input type="color" className="w30 bn mt28" defaultValue={courseLabelColor} name="courseLabelColor" />
             </div>
         </div>
     )
