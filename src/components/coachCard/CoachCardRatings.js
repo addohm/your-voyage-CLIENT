@@ -11,7 +11,10 @@ export default function CoachCardRatings({ rating, isReadOnly = false }) {
         <div className='p15'>
             {rating.map(({ name, rating }) => {
 
-                const memoRating = Object.keys(applierForm).map((keyName, ind) => keyName === name && Object.values(applierForm)[ind]).filter(leaveOnlyTrue => leaveOnlyTrue) * 1
+                let memoRating
+                if (applierForm) {
+                    memoRating = Object.keys(applierForm).map((keyName, ind) => keyName === name && Object.values(applierForm)[ind]).filter(leaveOnlyTrue => leaveOnlyTrue) * 1
+                }
 
                 return (
                     <div className='f fwn w100p g10 ttu mb10'>
