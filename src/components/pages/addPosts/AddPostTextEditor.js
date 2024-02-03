@@ -4,7 +4,7 @@ import t from "../../../hooks/useT"
 
 export default function AddPostTextEditor({ defaultValue, className, value, valueSet }) {
 
-    const { savePastedImgOnServer, saveDroppedImgOnServer } = usePastedOrDroppedFile(valueSet, "/upload/siteContent")
+    const { savePastedImgOnServer, saveDroppedImgOnServer } = usePastedOrDroppedFile({ valueSet, uploadPath: "/upload/siteContent" })
 
     return (
         <TextEditor

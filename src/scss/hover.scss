@@ -15,12 +15,6 @@
         opacity: 0.5;
     }
 }
-.hoverOpacity{
-    @include transition;
-    &:hover{
-        opacity: 0.2;
-    }
-}
 .hoverBrandColor{
     @include transition;
     &:hover{
@@ -87,5 +81,12 @@
     to{
         opacity: 1;
         width: 100px;
+    }
+}
+
+.hoverHeight55{
+    @include transition;
+    &:hover{
+        height: 55px;
     }
 }

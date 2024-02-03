@@ -2,11 +2,13 @@ import { useContext, useEffect, useState } from 'react'
 import axios from '../../utils/axios'
 import parseForms from '../../utils/parseForms'
 import { Context } from '../../Context'
+import useAddFile from '../pages/addPosts/useAddFile'
 
 export default function usePosts({ type, sort }) {
 
     const [posts, postsSet] = useState([])
-    const { lang } = useContext(Context)
+    const { lang, pastedOrDroppedImg } = useContext(Context)
+    const { fileArr } = useAddFile()
 
     useEffect(() => {
         async function getPosts() {
@@ -21,13 +23,14 @@ export default function usePosts({ type, sort }) {
 
     async function addOrEditPosts({ e, addPath, lastInputName }) {
         e.preventDefault()
-        // add file: pasted/dropped
-        // ! await fileArr("/upload/siteContent", pastedOrDroppedImg)
         // add/edit post
         const forms = parseForms({ e, lastInputName })
-        forms.forEach(async (form) => {
+        forms.forEach(async (form, formInd) => {
             form.lang = lang // add lang to posts
-            const res = await axios(addPath, { ...form, type })
+            // add file: uploaded
+            // img = coach profile picture (added on server); img2 = AddCourse picture added here
+            const img2 = await fileArr("/upload/siteContent", [pastedOrDroppedImg?.[formInd]])
+            await axios(addPath, { ...form, img2: img2?.[0], type })
         })
         setTimeout(() => window.location.reload(), 2000); // ???
     }

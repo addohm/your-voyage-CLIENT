@@ -6,11 +6,12 @@ import { Context } from "../../Context";
 import CourseDesc from "./CourseDesc";
 import CourseBuyBtn from "./CourseBuyBtn";
 import genFirstCharColor from "../../utils/genFirstCharColor";
+import CourseImg from "./CourseImg";
 
 export default function Course(props) {
 
     // ! DON'T DELETE PROPS
-    let { coachName, img, courseName, courseDesc, isLongDesc, price, discountPrice, courseLabel, courseLabelColor, _id: courseId, className } = props
+    let { coachName, img, img2, courseName, courseDesc, isLongDesc, price, discountPrice, courseLabel, courseLabelColor, _id: courseId, className } = props
 
     const { stripeLink } = useCoachCard(courseId)
     const [isHovered, isHoveredSet] = useState(false)
@@ -34,10 +35,10 @@ export default function Course(props) {
             <div className={`por course bg_white zi3 ${className || ""}`} onClick={chooseCourse} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
                 <CourseLabel isCourseHovered={isHovered} courseLabel={courseLabel} courseLabelColor={courseLabelColor} isHovered={isHovered} />
                 <div className="fcc m15">
-                    <img className="br50 w100 h100" src={img} />
+                    <CourseImg img={img} img2={img2} />
                     <div className="mt10 w100p">
                         <div className="tac fcc ttu fw500 fz20">{coachName}</div>
-                        <div className="tac fcc gray">{courseName}</div>
+                        <div className="tac fcc ttu fw500 gray mb5">{courseName}</div>
                         <CourseDesc {...props} />
                         <div className="fcc mt30 poa b15 cx">
                             {!isHovered && <div className={`tac fcc fw500 fz20 cardAnim ${discountPrice ? "tdlt mr5 gray fz22" : "brand"}`}>${price}</div>}

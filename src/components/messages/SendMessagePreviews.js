@@ -45,7 +45,7 @@ export default function SendMessagePreviews({ messages, messagePreviewClickedSet
                     ?
                     <SendMessagePreviewImg
                         file={mainPreview}
-                        className="db w300 h300 m0a"
+                        className="db w300 h300 ofCover m0a"
                     />
                     :
                     messages?.length === 1 &&

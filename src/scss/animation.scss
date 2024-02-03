@@ -112,10 +112,38 @@
 @keyframes courseLabelAnimationFadeIn {
 	0% {
 	  opacity: 0;
+	  transform: translate(0,-40px);
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.courseBuyButtonAnimationFadeIn{
+	animation: courseBuyButtonAnimationFadeIn 0.9s forwards;
+}
+
+@keyframes courseBuyButtonAnimationFadeIn {
+	0% {
+	  opacity: 0;
 	  transform: translate(0,40px);
 	}
 	100% {
 		opacity: 1;
+	}
+}
+
+.courseBuyButtonAnimationFadeOut{
+	animation: courseBuyButtonAnimationFadeOut 0.9s forwards;
+}
+
+@keyframes courseBuyButtonAnimationFadeOut {
+	0% {
+	  opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translate(0,50px);
 	}
 }
 // ? courseLabelAnimation
