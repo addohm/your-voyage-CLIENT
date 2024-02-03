@@ -19,7 +19,7 @@ export default function CourseDesc(props) {
         e.stopPropagation()
         dialogSet({
             show: true,
-            children: <Course {...props} className="ha pb50 mih400" isLongDesc={true} />,
+            children: <Course {...props} className="ha pb90 mih400" isLongDesc={true} />,
             onBack: showCoursesDialog
         })
     }
