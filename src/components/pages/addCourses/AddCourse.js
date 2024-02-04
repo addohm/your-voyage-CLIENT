@@ -16,11 +16,11 @@ export default function AddCourse({ courseName, courseDesc, coachEmail, coachNam
             <AddCourseImg ind={ind} img2={img2} />
             <InputMUI required className="fz16" defaultValue={courseName} name="courseName" placeholder="course name" label="course name" />
             <InputMultiline required className="fz16" defaultValue={courseDesc} name="courseDesc" placeholder="course description" label="course description" />
-            <InputMUI required className="fz16" defaultValue={coachEmail} name="coachEmail" placeholder="coach email" label="coach email" />
+            <InputMUI required type="email" className="fz16" defaultValue={coachEmail} name="coachEmail" placeholder="coach email" label="coach email" />
             <InputMUI required className="fz16" defaultValue={coachName} name="coachName" placeholder="coach name" label="coach name" />
-            <InputMUI required className="fz16" defaultValue={price} name="price" placeholder="price" label="price" />
-            <InputMUI className="fz16" defaultValue={discountPrice} name="discountPrice" placeholder="discount" label="discount" />
-            <InputMUI className="fz16" defaultValue={order || ind + 1} name="order" placeholder="order" label="order" />
+            <InputMUI required type="number" className="fz16" defaultValue={price} name="price" placeholder="price" label="price" />
+            <InputMUI type="number" className="fz16" defaultValue={discountPrice} name="discountPrice" placeholder="discount" label="discount" />
+            <InputMUI type="number" className="fz16" defaultValue={order || ind + 1} name="order" placeholder="order" label="order" />
             {/* ! add new fields BEFORE last input  */}
             <div className="f fwn g10 aic jcsb">
                 <InputMUI className="fz16 w100p" defaultValue={courseLabel} name="courseLabel" placeholder="label" label="label" />
