@@ -3,11 +3,14 @@ import Quote from '../quote/Quote'
 import coach from "./img/coach.png"
 import { Button } from "@mui/material"
 import Dots from '../dots/Dots'
-import goToCoach from '../../utils/goToCoach'
+import useGoToCoach from '../../hooks/useGoToCoach'
 import t from '../../hooks/useT'
 import './index.scss'
 
 export default function ApplyFor() {
+
+    const { goToCoach } = useGoToCoach()
+
     return (
         <div className='h100vh fcc applyFor'>
             <div>

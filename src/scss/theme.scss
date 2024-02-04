@@ -4,6 +4,12 @@
 .dark,.darkDialog{
     *:not(svg,.brand,.brandi,.redDiamond,.gray){
         color: $white;
+        .gray{
+            color: $grayDarkMode !important;
+        }
+        .brand,.brandi{
+            color: $brand !important;
+        }
      }
      svg:not(.brand,.brandi){
         fill: $white !important; // ???

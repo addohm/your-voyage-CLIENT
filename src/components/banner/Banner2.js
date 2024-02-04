@@ -4,12 +4,13 @@ import { Button } from '@mui/material'
 import img from './img/img2.png'
 import Animation from '../animation/Animation'
 import TextSplit from '../animation/TextSplit'
-import goToCoach from '../../utils/goToCoach'
+import useGoToCoach from '../../hooks/useGoToCoach'
 import t from '../../hooks/useT'
 
 export default function Banner2() {
 
   const [isContentHovered, isContentHoveredSet] = useState(false)
+  const { goToCoach } = useGoToCoach()
 
   return (
     <div className="fcc h100vh about banner2">
@@ -46,8 +47,8 @@ export default function Banner2() {
         <Button className='w70p' variant='contained' onClick={goToCoach}>{t("Apply for")}{t("1:1 Career Coaching")}</Button>
       </div>
       <Animation
-      // type="opacity"
-      className="banner2MainImg"
+        // type="opacity"
+        className="banner2MainImg"
       >
         <img className='removedhoverMainImg2' src={img} />
       </Animation>

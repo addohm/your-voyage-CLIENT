@@ -27,9 +27,9 @@ export default function UserContent() {
             <Link>
                 <Toggle
                     name="lang"
-                    on={<span className="poa r4 t4">EN</span>}
+                    on={<span className="poa r4 t4 hoverBrandColor">EN</span>}
                     onValue="en"
-                    off={<span className="poa l4 t4">ZH</span>}
+                    off={<span className="poa l4 t4 hoverBrandColor">ZH</span>}
                     offValue="zh"
                     stateSetter={langSet}
                     defaultValue={lang}

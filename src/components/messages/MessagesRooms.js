@@ -3,7 +3,7 @@ import Rooms from "./Rooms";
 import RoomsTitle from "./RoomsTitle";
 import RenewSubscription from "./RenewSubscription";
 import { MAIN_ROUTE } from "../../utils/consts";
-import goToCoach from "../../utils/goToCoach";
+import useGoToCoach from '../../hooks/useGoToCoach'
 import { useContext } from "react"
 import { Context } from "../../Context"
 
@@ -11,6 +11,7 @@ export default function MessagesRooms() {
 
     const { subscription } = useCheckSubscription({ type: "all" })
     const { rooms, isLoadingCourses } = useContext(Context)
+    const { goToCoach } = useGoToCoach()
 
     return (
         <>

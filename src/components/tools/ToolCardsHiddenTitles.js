@@ -1,8 +1,10 @@
-import goToCoach from "../../utils/goToCoach"
+import useGoToCoach from '../../hooks/useGoToCoach'
 import ToolCardTitle from "./ToolCardTitle"
 import t from "../../hooks/useT"
 
 export default function ToolCardsHiddenTitles({ tools, toolCardsHidden, toolCardsHiddenSet, toolNameClicked, toolNameClickedSet }) {
+
+    const { goToCoach } = useGoToCoach()
 
     function onClick(name) {
         if (name === "coach") { goToCoach(); return }

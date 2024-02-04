@@ -3,7 +3,7 @@ import { tools } from "./list.js"
 import Tool from './Tool.js'
 import ToolCardsHiddenTitles from './ToolCardsHiddenTitles.js'
 import ToolCards from './ToolCards.js'
-import goToCoach from '../../utils/goToCoach.js'
+import useGoToCoach from '../../hooks/useGoToCoach'
 import t from '../../hooks/useT.js'
 import ToolCardsArrowLabel from './ToolCardsArrowLabel.js'
 
@@ -11,6 +11,7 @@ export default function Tools() {
 
     const [toolCardsHidden, toolCardsHiddenSet] = useState(false)
     const [toolNameClicked, toolNameClickedSet] = useState("")
+    const { goToCoach } = useGoToCoach()
 
     function hideToolCardsShowExactCards(name) {
         if (name === "coach") { goToCoach(); return }

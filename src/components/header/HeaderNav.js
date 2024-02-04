@@ -3,10 +3,12 @@ import t from '../../hooks/useT';
 import { useNavigate } from "react-router-dom";
 import delay from '../../utils/delay';
 import { MAIN_ROUTE } from "../../utils/consts";
+import useGoToCoach from '../../hooks/useGoToCoach'
 
 export default function HeaderNav({ isVisible = true, className, isVisibleMobileNavSet, isMobile }) {
 
     const navigate = useNavigate()
+    const { goToCoach } = useGoToCoach()
 
     async function goTo(className) {
         isVisibleMobileNavSet?.(false)
@@ -32,7 +34,7 @@ export default function HeaderNav({ isVisible = true, className, isVisibleMobile
         isVisible &&
         <div className={`fcc g15 headerNav ${className}`}>
             <div className='header__btn' onClick={() => goTo("about")}>{t("About")}</div>
-            <div className='header__btn' onClick={() => goTo("coaching")}>{t("Coaching")}</div>
+            <div className='header__btn' onClick={goToCoach}>{t("Coaching")}</div>
             <div className='header__btn mr15' onClick={() => goTo("tools")}>{t("Tools")}</div>
             <HeaderLoginBtn />
         </div>
