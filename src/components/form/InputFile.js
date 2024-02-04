@@ -7,7 +7,7 @@ export default function InputFile({ onChange, className, placeholder, placeholde
             <div className="f fwn aic g15">
                 <AttachFile style={{ width: 30, height: 30 }} />
                 {placeholder ?
-                    <div className="w225 oh">{placeholder}</div>
+                    <div className="w225 oh wsn toe">{placeholder}</div>
                     :
                     <div className="ml10 tdu">{placeholderText}</div>
                 }
