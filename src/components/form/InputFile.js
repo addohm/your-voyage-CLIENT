@@ -3,7 +3,7 @@ import Input from "./Input";
 
 export default function InputFile({ onChange, className, placeholder, placeholderText }) {
     return (
-        <label className={className}>
+        <label className={`hoverBrandColor ${className}`}>
             <div className="f fwn aic g15">
                 <AttachFile style={{ width: 30, height: 30 }} />
                 {placeholder ?
