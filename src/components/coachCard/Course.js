@@ -37,8 +37,8 @@ export default function Course(props) {
                 <div className="fcc m15">
                     <CourseImg img={img} img2={img2} />
                     <div className="mt10 w100p">
-                        <div className="tac fcc ttu fw500 fz20">{coachName}</div>
-                        <div className="tac fcc ttu fw500 gray mb5">{courseName}</div>
+                        <div className="tac fcc ttu fw500 fz20 textLines2" title={coachName}>{coachName}</div>
+                        <div className="tac fcc ttu fw500 gray mb5 textLines2" title={courseName}>{courseName}</div>
                         <CourseDesc {...props} />
                         <div className="fcc mt30 poa b15 cx">
                             {!isHovered && <div className={`tac fcc fw500 fz20 cardAnim ${discountPrice ? "tdlt mr5 gray fz22" : "brand"}`}>${price}</div>}
