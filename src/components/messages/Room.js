@@ -15,7 +15,7 @@ export default function Room({ img, name, room, msg, createdAt, notReadNum, msgI
             <div className="fc black">
                 <div className="fw600 mt3">{coachName || name} ~ {courseName}</div>
                 <div className="f fwn g10 mt10">
-                    <RoomMsgImg isVisible={msg} msgImg={msgImg} name={name} />
+                    <RoomMsgImg isVisible={msg} msgImg={msgImg} img={img} name={name} />
                     <RoomLastMsg msg={msg} msgImg={msgImg} />
                     <NoMessagesYet isVisible={!msg && !msgImg} className="fsi gray" />
                 </div>

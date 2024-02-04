@@ -32,7 +32,7 @@ export default function Course(props) {
 
     return (
         <Link to={stripeLink}>
-            <div className={`por course bg_white zi3 ${className || ""}`} onClick={chooseCourse} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
+            <div className={`por course bg_white zi3 cardAnim ${className || ""}`} onClick={chooseCourse} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
                 <CourseLabel isCourseHovered={isHovered} courseLabel={courseLabel} courseLabelColor={courseLabelColor} isHovered={isHovered} />
                 <div className="fcc m15">
                     <CourseImg img={img} img2={img2} />

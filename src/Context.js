@@ -20,7 +20,7 @@ function ContextProvider({ children }) {
     const { messages, messagesSet } = useMessages(dialogSet) // add message
     const [rooms, totalNotReadNum, isLoadingCourses] = useRooms({ snackbarSet, user, path: "/getRooms" })
     const [roomsSupport, totalNotReadNumSupport, isLoadingSupport] = useRooms({ snackbarSet, user, path: "/getRoomsSupport" })
-    const { dbMessages, dbMessagesSet } = useDbMessages(snackbarSet, user)
+    const { dbMessages, dbMessagesSet } = useDbMessages()
     const { oldDbMessages, oldDbMessagesSet, skipOldDbMessages, skipOldDbMessagesSet } = useOldDbMessages() // for skip: to load old messages on top of new messages (2 separate messages)
     const { lang, langSet } = useLang()
     const { theme, themeSet } = useTheme()
