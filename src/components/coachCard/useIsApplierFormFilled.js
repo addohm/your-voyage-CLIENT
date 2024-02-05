@@ -4,7 +4,7 @@ import useGoToCoach from "../../hooks/useGoToCoach"
 
 export default function useIsApplierFormFilled() {
 
-    const [isApplierFormFilled, isApplierFormFilledSet] = useState(true)
+    const [isApplierFormFilled, isApplierFormFilledSet] = useState(false)
     const { applierForm, dialogSet } = useContext(Context)
     const { goToCoach } = useGoToCoach()
 
@@ -15,7 +15,7 @@ export default function useIsApplierFormFilled() {
         const applierFormCopy = { ...applierForm }
         delete applierFormCopy.courseId // don't need this field: invisible for user
         delete applierFormCopy.courseName // don't need this field: invisible for user
-        const neededFieldsNum = Object.keys(applierFormCopy).length
+        const neededFieldsNum = 11 // could have used: Object.keys(applierFormCopy).length BUT applierForm each field does not exist before input in this form is filled/click, so have to manually set 11
 
         Object.keys(applierFormCopy)?.map(applierFormKey => {
             if (!applierFormCopy[applierFormKey]) { // if any field is empty: all false
