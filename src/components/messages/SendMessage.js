@@ -21,7 +21,7 @@ export default function SendMessage({ sendMessage, isSendMessageLoading }) {
                 top={<MessageReplyingToTop text={t("Reply to a message")} />}
                 isMyMsg={messageReplyingTo?.name === user?.name}
             />
-            <div className={`fcc fwn g10 mb20 p50`}>
+            <div className={`fcc fwn g10 mb20 px50 mt15`}>
                 <AddMessageFiles className="asfe pb10" />
                 <TextEditor
                     name="msg"

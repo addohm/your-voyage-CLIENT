@@ -23,7 +23,7 @@ export default function AppBg() {
     const ref = useRef(null)
     const [move, moveSet] = useState(0)
     const isBgTextVisible = window.scrollY > ref?.current?.offsetTop
-    const isDiamondsVisible = window.scrollY > ref?.current?.offsetTop - 1000 // 1k px earlier than BgText
+    const isDiamondsVisible = window.scrollY > ref?.current?.offsetTop - 800 // 800 px earlier than BgText
 
     useEffect(() => {
         if (isBgTextVisible) { // !
@@ -44,8 +44,14 @@ export default function AppBg() {
             // Check if scrolled to the very bottom of the page
             if (isScrolledToWindowBottom) {
                 isScrolledToVeryBottomSet(true)
+                // hide header when scrolled to the very bottom
+                document.querySelector(".header").classList.remove("headerFadeIn")
+                document.querySelector(".header").classList.add("headerFadeOut")
             } else {
                 isScrolledToVeryBottomSet(false)
+                // show header when not scrolled to the very bottom
+                document.querySelector(".header").classList.remove("headerFadeOut")
+                document.querySelector(".header").classList.add("headerFadeIn")
             }
         }
         window.addEventListener("scroll", handleScroll);

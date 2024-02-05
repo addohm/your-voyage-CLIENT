@@ -1,5 +1,5 @@
 import Input from "../../form/Input";
-import InputMUI from "../../form/InputMUI";
+import InputMultiline from "../../form/InputMultiline";
 
 // * used as AddPosts in AddManyPosts
 export default function AddFAQ({ _id, title, text, SaveIcon, DeleteIcon }) {
@@ -12,7 +12,7 @@ export default function AddFAQ({ _id, title, text, SaveIcon, DeleteIcon }) {
             <input hidden value={_id} name="_id" />
             <div className="fc">
                 <Input required className="fz16 mb" defaultValue={title} name="title" placeholder="title" />
-                <InputMUI required multiline className="fz16" defaultValue={text} name="text" placeholder="text" />
+                <InputMultiline required multiline className="fz16" defaultValue={text} name="text" placeholder="text" />
             </div>
         </div>
     )

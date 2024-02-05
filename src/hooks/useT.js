@@ -450,6 +450,10 @@ export default function useT(key) {
             "en": "Please contact us",
             "zh": "请联系我们",
         },
+        "Buy": {
+            "en": "Buy",
+            "zh": "买到",
+        },
         "000": {
             "en": "000",
             "zh": "111",

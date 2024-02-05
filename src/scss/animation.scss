@@ -21,11 +21,13 @@
 		scale: 1;
 	}
 }
-// ! opAnim
-.opAnim{
-	opacity: 0;
-	animation: opAnim 0.9s forwards;
-}
+// ! gen opAnim
+@for $i from 0 through 10 {
+	.opAnim#{$i}{
+		opacity: 0;
+		animation: opAnim #{$i}s forwards; // 1s, 2s, ...
+	}
+ }
 @keyframes opAnim {
 	to{
 		opacity: 1;
@@ -147,3 +149,34 @@
 	}
 }
 // ? courseLabelAnimation
+
+// ! header
+.headerFadeOut{
+	animation: headerFadeOut 0.9s forwards;
+}
+
+@keyframes headerFadeOut {
+	0% {
+	  opacity: 1;
+	}
+	100% {
+		transform: translate(0,-80px);
+		opacity: 0;
+	}
+}
+
+.headerFadeIn{
+	animation: headerFadeIn 0.9s forwards;
+}
+
+@keyframes headerFadeIn {
+	0% {
+		transform: translate(0,-80px);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(0,0px);
+		opacity: 1;
+	}
+}
+// ? header

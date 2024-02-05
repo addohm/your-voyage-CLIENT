@@ -9,10 +9,13 @@ export default function ToolCardTitle({ name, translatedName, animationType, too
     const thisTitleClicked = name === toolNameClicked
     const iconSize = 40
 
-    const { theme } = useContext(Context)
+    const { theme, lang } = useContext(Context)
 
     return (
-        <div className="por f fwn" onClick={() => thisTitleClicked && toolCardsHiddenSet(false)}>
+        <div
+            className={`por f fwn ${thisTitleClicked && lang === "zh" ? "brand" : ""} ${lang === "zh" ? "hoverBrandColor hoverFontTop" : ""}`}
+            onClick={() => thisTitleClicked && toolCardsHiddenSet(false)}
+        >
             {thisTitleClicked &&
                 <ReviewArrow
                     onClick={() => toolCardsHiddenSet(false)}
