@@ -1,8 +1,11 @@
 import Posts from "../post/Posts"
 import Course from "./Course"
 
-export default function Courses() {
+export default function Courses({ isVisible = true, className }) {
     return (
-        <Posts Post={Course} type="courses" />
+        isVisible &&
+        <div className={className || ""}>
+            <Posts Post={Course} type="courses" />
+        </div>
     )
 }

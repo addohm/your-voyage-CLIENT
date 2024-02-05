@@ -7,6 +7,7 @@ import CourseDesc from "./CourseDesc";
 import CourseBuyBtn from "./CourseBuyBtn";
 import genFirstCharColor from "../../utils/genFirstCharColor";
 import CourseImg from "./CourseImg";
+import useIsApplierFormFilled from "./useIsApplierFormFilled";
 
 export default function Course(props) {
 
@@ -16,9 +17,11 @@ export default function Course(props) {
     const { stripeLink } = useCoachCard(courseId)
     const [isHovered, isHoveredSet] = useState(false)
     const { applierForm } = useContext(Context)
+    const { checkApplierFormFilled } = useIsApplierFormFilled()
 
     function chooseCourse() {
         let newCoachCard = applierForm
+        if (!newCoachCard) return
         newCoachCard.courseId = courseId
         newCoachCard.courseName = courseName
         // for VerifyOrderToken (comes there after Stripe payment) to create coaching (DB) using axios "/applyForCoaching": only localStorage will work, cause VerifyOrderToken page loads after Stripe payment page (full reload)
@@ -31,7 +34,7 @@ export default function Course(props) {
     courseLabelColor = (courseLabelColor && courseLabelColor !== "#000000") ? courseLabelColor : genFirstCharColor(courseLabel)
 
     return (
-        <Link to={stripeLink}>
+        <Link to={stripeLink} onClick={checkApplierFormFilled}>
             <div className={`por course bg_white zi3 cardAnim ${className || ""}`} onClick={chooseCourse} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
                 <CourseLabel isCourseHovered={isHovered} courseLabel={courseLabel} courseLabelColor={courseLabelColor} isHovered={isHovered} />
                 <div className="fcc m15">

@@ -15,7 +15,7 @@ export default function AdminAddContent() {
     const list = [
         {
             route: ADD_COURSES,
-            title: `+ ${t("courses")} `,
+            title: `+ ${t("Courses")} `,
         },
         {
             route: ADD_POSTS_PAGE_ROUTE,

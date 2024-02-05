@@ -11,6 +11,6 @@ export default function RoomsTitle() {
         user?.role === "admin" || user?.role === "coach" ?
             <div className={className}>{t("Subscribers")}:</div>
             :
-            <div className={className}>{t("Courses")}:</div>
+            <div className={className}>{t("Subscriptions")}:</div>
     )
 }

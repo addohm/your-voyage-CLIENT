@@ -46,7 +46,7 @@ export default function UserContent() {
                 />
             </Link>
             <Link2 to={MESSAGES_ROUTE}>
-                <Button style={{ marginBottom: 10 }} variant='outlined'>{t("courses")}</Button>
+                <Button style={{ marginBottom: 10 }} variant='outlined'>{t("Courses")}</Button>
             </Link2>
             <Link2 to={SUPPORTS_ROUTE}>
                 <Button style={{ marginBottom: 10 }} variant='outlined'>{t("Support")}</Button>

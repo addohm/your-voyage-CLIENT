@@ -314,10 +314,6 @@ export default function useT(key) {
             "en": "Support",
             "zh": "支持团队",
         },
-        "courses": {
-            "en": "courses",
-            "zh": "课程",
-        },
         "posts": {
             "en": "posts",
             "zh": "帖子",
@@ -373,6 +369,10 @@ export default function useT(key) {
         "No active subscriptions": {
             "en": "No active subscriptions",
             "zh": "无有效订阅",
+        },
+        "Subscriptions": {
+            "en": "Subscriptions",
+            "zh": "订阅费",
         },
         "Subscription activated": {
             "en": "Subscription activated",
@@ -453,6 +453,18 @@ export default function useT(key) {
         "Buy": {
             "en": "Buy",
             "zh": "买到",
+        },
+        "Have any questions": {
+            "en": "Have any questions",
+            "zh": "有任何问题",
+        },
+        "Visit our Support": {
+            "en": "Visit our Support",
+            "zh": "访问我们的支持",
+        },
+        "Visit our FAQ": {
+            "en": "Visit our FAQ",
+            "zh": "访问我们的常见问题",
         },
         "000": {
             "en": "000",

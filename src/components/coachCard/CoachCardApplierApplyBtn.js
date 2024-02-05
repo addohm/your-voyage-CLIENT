@@ -3,15 +3,16 @@ import { useContext } from "react";
 import { Context } from "../../Context";
 import t from "../../hooks/useT";
 import useCoursesDialog from "./useCoursesDialog";
+import useIsApplierFormFilled from "./useIsApplierFormFilled";
 
 export default function CoachCardApplierApplyBtn() {
 
-    const { user, applierForm } = useContext(Context)
+    const { user } = useContext(Context)
     const { showCoursesDialog } = useCoursesDialog()
-    const isAllFieldsFilled = applierForm && Object.values(applierForm).reduce((acc, curr) => !curr ? acc : acc + 1, 0) === 11 // CoachCardApplier validation: if not filled: currently 11 fields + email
+    const { isApplierFormFilled } = useIsApplierFormFilled()
 
     function showCourseList() {
-        if (!isAllFieldsFilled) return
+        if (!isApplierFormFilled) return
         showCoursesDialog()
     }
 
@@ -19,7 +20,7 @@ export default function CoachCardApplierApplyBtn() {
         <Button
             type="submit"
             variant="contained"
-            disabled={!user || !isAllFieldsFilled}
+            disabled={!user || !isApplierFormFilled}
             onClick={showCourseList}
         >
             {t("apply")}

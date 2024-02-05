@@ -15,6 +15,7 @@ import fullWidthImg2 from "../../fullWidthImg/img/img2.jpg"
 import Animation from "../../animation/Animation";
 import AppBg from "../../appBg/AppBg";
 import t from "../../../hooks/useT";
+import CoursesMainPage from '../../coachCard/CoursesMainPage';
 
 export default function MainPage() {
     return (
@@ -86,6 +87,12 @@ export default function MainPage() {
             // type="opacity"
             >
                 <JustImagine />
+            </Animation>
+            <Animation
+            // type="scale151"
+            // type="opacity"
+            >
+                <CoursesMainPage />
             </Animation>
             <Animation
                 // type="scale151"
