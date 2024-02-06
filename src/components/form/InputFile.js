@@ -2,7 +2,7 @@ import { AttachFile } from "@mui/icons-material";
 import Input from "./Input";
 import InputFilePlaceholder from "./InputFilePlaceholder";
 
-export default function InputFile({ onChange, className, placeholder, placeholderText }) {
+export default function InputFile({ onChange, className, placeholder, placeholderText, accept }) {
     return (
         <label className={`hoverBrandColor ${className}`}>
             <div className="f fwn aic g15">
@@ -10,7 +10,7 @@ export default function InputFile({ onChange, className, placeholder, placeholde
                 <InputFilePlaceholder placeholder={placeholder} placeholderText={placeholderText} />
             </div>
             {/* TODO !!! not files[0] */}
-            <Input hidden type="file" multiple onChange={onChange} />
+            <Input hidden type="file" multiple onChange={onChange} accept={accept} />
         </label>
     )
 }

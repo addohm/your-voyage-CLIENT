@@ -17,6 +17,7 @@ export default function AddCourseImg({ ind, img2 }) {
                 placeholder={placeholder}
                 placeholderText="Choose course image"
                 className="ml-3"
+                accept="image/*"
             />
             <InputRequiredNativeTooltip required={!placeholder} className="poa cx t80" />
         </>

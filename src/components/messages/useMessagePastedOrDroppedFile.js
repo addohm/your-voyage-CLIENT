@@ -1,3 +1,5 @@
+import validateFileSize from "../../utils/validateFileSize"
+import validateFileTypes from "../../utils/validateFileTypes"
 import useUploadedPastedDroppedFilesToMsgFiles from "./useUploadedPastedDroppedFilesToMsgFiles"
 
 export default function useMessagePastedOrDroppedFile(messagesSet) {
@@ -6,6 +8,9 @@ export default function useMessagePastedOrDroppedFile(messagesSet) {
 
     // ! processPastedOrDroppedFile
     function processPastedOrDroppedFile(pastedOrDroppedFiles) {
+        const isValidFileTypes = validateFileTypes(pastedOrDroppedFiles)
+        const isValidFileSize = validateFileSize(pastedOrDroppedFiles)
+        if (!isValidFileTypes || !isValidFileSize) return
         uploadedPastedDroppedFilesToMsgFiles(pastedOrDroppedFiles)
     }
 

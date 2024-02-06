@@ -13,7 +13,7 @@ export default function useMessages(dialogSet) {
         // clicks real send icon; this icon is fake
         const icon = document.querySelector(".sendMsgIcon")
         if (!icon) return
-        if (!messages[0]?.msg) alert("The first file should have text!")
+        // if (!messages[0]?.msg) alert("The first file should have text!")
         const clickEvent = new Event('click', { bubbles: true })
         icon.dispatchEvent(clickEvent)
     }
