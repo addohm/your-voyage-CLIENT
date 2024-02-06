@@ -45,13 +45,13 @@ export default function AppBg() {
             if (isScrolledToWindowBottom) {
                 isScrolledToVeryBottomSet(true)
                 // hide header when scrolled to the very bottom
-                document.querySelector(".header").classList.remove("headerFadeIn")
-                document.querySelector(".header").classList.add("headerFadeOut")
+                document.querySelector(".header")?.classList.remove("headerFadeIn")
+                document.querySelector(".header")?.classList.add("headerFadeOut")
             } else {
                 isScrolledToVeryBottomSet(false)
                 // show header when not scrolled to the very bottom
-                document.querySelector(".header").classList.remove("headerFadeOut")
-                document.querySelector(".header").classList.add("headerFadeIn")
+                document.querySelector(".header")?.classList.remove("headerFadeOut")
+                document.querySelector(".header")?.classList.add("headerFadeIn")
             }
         }
         window.addEventListener("scroll", handleScroll);

@@ -15,7 +15,7 @@ export default function Header() {
     const [isHovered, isHoveredSet] = useState(false)
     const [isVisible, isVisibleSet] = useState(true)
     const [scrollY, scrollYSet] = useState(true)
-    const { isVisibleMobileNav, isVisibleMobileNavSet } = useContext(Context)
+    const { isVisibleMobileNav, isVisibleMobileNavSet, user } = useContext(Context)
     const { isMobile } = useWindowSize()
     const location = useLocation().pathname
 
@@ -32,6 +32,8 @@ export default function Header() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll)
     }, []);
+
+    if (user === null) return // prevent ugly user email (LoginDisplayEmail) appearing: user is not defined yet
 
     return (
         <>

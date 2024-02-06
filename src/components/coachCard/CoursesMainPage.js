@@ -5,7 +5,7 @@ export default function CoursesMainPage() {
     return (
         <div className='h100vh fcc mb200'>
             <div>
-                <div className='title tac mb15'>{t("Courses")}: </div>
+                <div className='title tac mb15 ls1'>{t("Choose your course")}:</div>
                 <Courses />
             </div>
         </div>
