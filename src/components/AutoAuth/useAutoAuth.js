@@ -5,7 +5,7 @@ import axios from "../../utils/axios"
 export default function useAutoAuth() {
 
     // ! user
-    const [user, userSet] = useState(null) // null || {}
+    const [user, userSet] = useState(null) // NULL: initial state; FALSE: no user; <hasUser>: {<objWithSomeUserInfo>}
 
     // ! autoAuth
     useEffect(() => {
@@ -14,6 +14,8 @@ export default function useAutoAuth() {
             if (token) { // if user logged in => auto auth on every reload
                 const res = await axios("/autoAuth", { token })
                 res?.user && userSet(res?.user)
+            } else {
+                userSet(false)
             }
         }
 

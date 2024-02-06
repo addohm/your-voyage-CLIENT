@@ -28,7 +28,7 @@ export default function useRoutes() {
 				}
 
 				// show login dialog for NOT public pages and NOT logged in user
-				if ((isForUser || isForAdmin) && !user) {
+				if ((isForUser || isForAdmin) && user === false) {
 					if (isPublic) return
 					if (path !== location) return
 					showLoginDialog()
