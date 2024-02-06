@@ -19,7 +19,7 @@ export default function CoachCardRatings({ rating, isReadOnly = false }) {
                 return (
                     <div className='f fwn w100p g10 ttu mb10'>
                         <div className='w50p tar coachCardRatingTitle'>{t(name)}</div>
-                        <CoachCardRating name={name} rating={memoRating || rating} isReadOnly={isReadOnly} />
+                        <CoachCardRating name={name} rating={isReadOnly ? rating : memoRating || rating} isReadOnly={isReadOnly} />
                     </div>
                 )
             })}

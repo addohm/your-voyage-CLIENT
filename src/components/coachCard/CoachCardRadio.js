@@ -29,7 +29,7 @@ export default function CoachCardRadio({ options, outerInd, isReadOnly }) {
                 if (applierForm) {
                     memoRadioValue = Object.values(applierForm).find((keyValue, ind) => keyValue === option)
                 }
-                const isRadioChecked = memoRadioValue === option || selectedOption === option
+                const isRadioChecked = isReadOnly ? selectedOption === option : memoRadioValue === option
 
                 return (
                     <label
