@@ -17,7 +17,7 @@
     }
 }
 // gen mb
-@for $i from 1 through 100 {
+@for $i from 1 through 200 {
 	.mb#{$i} {
         margin-bottom: #{$i}px;
     }
