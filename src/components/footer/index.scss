@@ -9,3 +9,11 @@
         transform: translate(-50%);
     }
 }
+
+// right side of footer
+.footerLinks div{
+    @media (width<=$mobile) {
+        flex-direction: column !important;
+        text-align: center;
+    }
+}

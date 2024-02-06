@@ -64,3 +64,9 @@ svg:not(.brand, .brandi, .white){
         fill: $brand !important;
     }
 }
+
+.hideOnMobile{
+    @media (width<=$mobile) {
+        display: none !important;
+    }
+}
