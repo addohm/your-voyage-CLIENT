@@ -7,6 +7,8 @@ import useWindowSize from '../../hooks/useWindowSize';
 import HeaderNavMobile from './HeaderNavMobile';
 import HeaderLogo from './HeaderLogo';
 import { Context } from '../../Context';
+import { useLocation } from 'react-router-dom';
+import { MAIN_ROUTE } from '../../utils/consts';
 
 export default function Header() {
 
@@ -15,6 +17,7 @@ export default function Header() {
     const [scrollY, scrollYSet] = useState(true)
     const { isVisibleMobileNav, isVisibleMobileNavSet } = useContext(Context)
     const { isMobile } = useWindowSize()
+    const location = useLocation().pathname
 
     // isVisible Header
     useEffect(() => {
@@ -32,7 +35,7 @@ export default function Header() {
 
     return (
         <>
-            <header className={`header pof t0 l0 w100p zi9 fcc jcsb p15 bg_white zi2 ${isHovered || isVisible ? "op1 transition05" : "op0 transition05"}`} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
+            <header className={`header pof t0 l0 w100p zi9 fcc jcsb p15 bg_white zi2 ${isHovered || isVisible ? "op1 transition05" : "op0 transition05"} ${location !== MAIN_ROUTE ? "headerFadeIn" : ""}`} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
                 <HeaderLogo isVisibleMobileNavSet={isVisibleMobileNavSet} />
                 <Burger isVisible={isMobile} isVisibleMobileNavSet={isVisibleMobileNavSet} isVisibleMobileNav={isVisibleMobileNav} />
                 <HeaderNav isVisible={!isMobile} />

@@ -37,7 +37,7 @@ export default function HeaderNav({ isVisible = true, className, isVisibleMobile
     return (
         isVisible &&
         <div className={`f jcsb aic g15 headerNav ${className}`}>
-            <UserSiteSettings isVisible={!user} className="f g37 mr12" />
+            <UserSiteSettings isVisible={user === false} className="f g37 mr12" />
             <div className='header__btn' onClick={() => goTo("about")}>{t("About")}</div>
             <div className='header__btn' onClick={goToCoach}>{t("Coaching")}</div>
             <div className='header__btn' onClick={() => goTo("tools")}>{t("Tools")}</div>
