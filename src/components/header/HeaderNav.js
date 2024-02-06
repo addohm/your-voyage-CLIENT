@@ -4,11 +4,15 @@ import { useNavigate } from "react-router-dom";
 import delay from '../../utils/delay';
 import { MAIN_ROUTE } from "../../utils/consts";
 import useGoToCoach from '../../hooks/useGoToCoach'
+import UserSiteSettings from "../user/UserSiteSettings";
+import { useContext } from "react";
+import { Context } from "../../Context";
 
 export default function HeaderNav({ isVisible = true, className, isVisibleMobileNavSet, isMobile }) {
 
     const navigate = useNavigate()
     const { goToCoach } = useGoToCoach()
+    const { user } = useContext(Context)
 
     async function goTo(className) {
         isVisibleMobileNavSet?.(false)
@@ -32,10 +36,11 @@ export default function HeaderNav({ isVisible = true, className, isVisibleMobile
 
     return (
         isVisible &&
-        <div className={`fcc g15 headerNav ${className}`}>
+        <div className={`f jcsb aic g15 headerNav ${className}`}>
+            <UserSiteSettings isVisible={!user} className="f g37 mr12" />
             <div className='header__btn' onClick={() => goTo("about")}>{t("About")}</div>
             <div className='header__btn' onClick={goToCoach}>{t("Coaching")}</div>
-            <div className='header__btn mr15' onClick={() => goTo("tools")}>{t("Tools")}</div>
+            <div className='header__btn' onClick={() => goTo("tools")}>{t("Tools")}</div>
             <HeaderLoginBtn />
         </div>
     )

@@ -8,7 +8,7 @@ export default function TimeToReadText({ value }) {
 
     return (
         value &&
-        <div className='fc aic mla wfc'>
+        <div className='fc aic mla wfc pen'>
             <AccessTimeFilledRounded style={{ width: 30, height: 30 }} />
             <span className="ml5">{timeToReadText(value)}</span>
         </div>

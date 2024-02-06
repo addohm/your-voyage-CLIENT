@@ -1,7 +1,7 @@
 import React from 'react'
 import FooterLink from './FooterLink'
 import { useLocation } from 'react-router-dom'
-import { FAQ_ROUTE, MAIN_ROUTE, NEWSLETTER_ROUTE } from '../../utils/consts'
+import { FAQ_ROUTE, MAIN_ROUTE, NEWSLETTER_ROUTE, SUPPORTS_ROUTE } from '../../utils/consts'
 import t from '../../hooks/useT'
 import "./index.scss"
 import FooterSocialLinks from './FooterSocialLinks'
@@ -33,6 +33,8 @@ export default function Footer() {
                     <Link2 to={NEWSLETTER_ROUTE}>{t("Newsletter")}</Link2>
                     <div className="mx15">/</div>
                     <Link2 to={FAQ_ROUTE}>{t("FAQ")}</Link2>
+                    <div className="mx15">/</div>
+                    <Link2 to={SUPPORTS_ROUTE}>{t("Support")}</Link2>
                 </div>
             </div>
         </footer>

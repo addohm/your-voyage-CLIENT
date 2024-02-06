@@ -10,16 +10,17 @@ import { ArrowBack, Close } from '@mui/icons-material';
 export default function Dialog_() {
 
     const { dialog, dialogSet, theme } = useContext(Context)
+    const onClose = () => dialog?.onClose?.() || dialogSet({ show: false })
 
     return (
         <Dialog
             open={dialog?.show}
-            onClose={() => dialogSet({ show: false })}
+            onClose={onClose}
             className={`fcc ${theme === "dark" ? "darkDialog" : ""}`}
         >
             <div className='f jcsb'>
                 {dialog?.onBack && <ArrowBack className="m10" onClick={() => dialog?.onBack?.()} />}
-                <Close className="mla m10" onClick={() => dialog?.onClose?.() || dialogSet({ show: false })} />
+                <Close className="mla m10" onClick={onClose} />
             </div>
             <DialogTitle className="fcc">
                 {dialog?.title}

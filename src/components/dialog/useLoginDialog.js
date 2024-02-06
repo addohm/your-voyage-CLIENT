@@ -4,17 +4,20 @@ import LoginEmail from "../loginEmail/LoginEmail"
 import Or from "../other/Or"
 import LoginGoogle from "../LoginGoogle/LoginGoogle"
 import t from "../../hooks/useT"
+import { useNavigate } from "react-router-dom"
 
 export default function useLoginDialog() {
 
     const { dialogSet } = useContext(Context)
     const loginTitle = t("Login")
     const orTitle = t("OR")
+    const navigate = useNavigate()
 
     function showLoginDialog() {
         dialogSet({
             show: true,
             title: loginTitle,
+            onClose: () => navigate(-1),
             children: <>
                 <LoginEmail />
                 <Or text={orTitle} className="my20" />
