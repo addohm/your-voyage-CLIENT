@@ -26,8 +26,12 @@ export default function MessagesRooms() {
             <RoomsTitle />
             <Rooms rooms={rooms} type="message" noRoomsMsg="No active subscriptions" isLoading={isLoadingCourses} />
 
-            <div className="title tac mt100 mb5">{t("Check our courses")}:</div>
-            <Courses isVisible={user?.role === "user"} className="" />
+            {user?.role === "user" &&
+                <>
+                    <div className="title tac mt100 mb5">{t("Check our courses")}:</div>
+                    <Courses />
+                </>
+            }
         </>
     )
 }

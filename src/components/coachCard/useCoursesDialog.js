@@ -6,7 +6,7 @@ import Courses from "./Courses"
 export default function useCoursesDialog() {
 
     const { dialogSet } = useContext(Context)
-    const dialogTitle = t("Choose your course")
+    const dialogTitle = t("Choose your course") + ":"
 
     function showCoursesDialog() {
         dialogSet({
