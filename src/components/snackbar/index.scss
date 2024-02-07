@@ -2,6 +2,7 @@
 
 // mui snackbar
 .MuiSnackbar-root{
+	bottom: 50px !important;
 	@media (max-width:$mobile) {
 		bottom: 70px !important;
 	}

@@ -20,7 +20,7 @@ export default function _Snackbar() {
 				// autoHideDuration={6000}
 				message={<SnackbarMessage {...snackbar} />}
 				action={<SnackbarAction snackbarSet={snackbarSet} onClose={onClose} />}
-				className={`${className}`}
+				className={`${className || ""}`}
 			/>
 		</div>
 	);
