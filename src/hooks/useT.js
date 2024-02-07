@@ -470,6 +470,10 @@ export default function useT(key) {
             "en": "Visit our FAQ",
             "zh": "访问我们的常见问题",
         },
+        "Your success tools": {
+            "en": "Your success tools",
+            "zh": "您的成功工具",
+        },
         "000": {
             "en": "000",
             "zh": "111",
