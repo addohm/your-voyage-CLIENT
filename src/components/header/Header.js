@@ -23,7 +23,7 @@ export default function Header() {
     // isVisible Header
     useEffect(() => {
         !isMobile && scrollY === 0 ? isVisibleSet(true) : isVisibleSet(false) // pc visible on very top + if hovered Header's place on top
-        isMobile && isVisibleSet(true) // mobile always visible
+        !isInExactChatLocation && isMobile && isVisibleSet(true) // mobile header always visible: not in ExactChatLocation: to see MessageDate
         // ! show header on hover only for ExactChatLocation: other locations: always visible 
         !isInExactChatLocation && isVisibleSet(true) // Header visible on all devices: REMOVE for "only show on top & on hover"
     }, [scrollY])
