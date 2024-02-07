@@ -7,6 +7,7 @@ export default function GoToTop() {
 
     const [isHovered, isHoveredSet] = useState(false)
     const isVisible = isHovered && window.scrollY
+    const isVisibleMobile = window.scrollY
     const location = useLocation().pathname
     const isInMessageLocation = location.includes("/message/")
     const scrollType = isInMessageLocation ? document.body.scrollHeight : 0 // gotoTop / gotoBottom
@@ -25,6 +26,7 @@ export default function GoToTop() {
             />
             :
             <MobileUp
+                className={isVisibleMobile ? "op1 transition15 curPointer" : "op0 transition15"}
                 style={{ position: 'fixed', zIndex: 99, bottom: 0, right: 0, width: 50, height: 50, padding: 0, transition: "all 1s", transform: !isInMessageLocation ? "rotate(-90deg)" : "rotate(90deg)" }}
                 onClick={() => window.scrollTo(0, scrollType)}
             />
