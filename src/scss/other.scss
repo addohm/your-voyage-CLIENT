@@ -88,3 +88,11 @@
 .bsh{
 	box-shadow: 0 0 5px $gray;
 }
+
+// COMMENTED TO SAVE MEMORY
+// gen rotate
+// @for $i from 0 through 360 {
+// 	.rotate#{$i} {
+// 		transform: rotate(#{$i}deg);
+// 	}
+// }

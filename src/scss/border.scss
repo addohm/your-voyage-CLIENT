@@ -62,3 +62,30 @@
 		border: #{$i}px solid $brand;
 	}
  }
+// COMMENTED TO SAVE MEMORY
+// //  gen border right
+// @for $i from 0 through 30 {
+// 	.brr#{$i} {
+// 		border-right: #{$i}px solid $brand;
+// 	}
+//  }
+// //  gen border bottom
+// @for $i from 0 through 30 {
+// 	.brb#{$i} {
+// 		border-bottom: #{$i}px solid $brand;
+// 	}
+//  }
+
+// // gen border left
+// @for $i from 0 through 30 {
+// 	.brl#{$i} {
+// 		border-left: #{$i}px solid $brand;
+// 	}
+//  }
+
+// // gen border top
+// @for $i from 0 through 30 {
+// 	.brt#{$i} {
+// 		border-top: #{$i}px solid $brand;
+// 	}
+//  }
