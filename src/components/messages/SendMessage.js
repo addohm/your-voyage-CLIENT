@@ -33,7 +33,7 @@ export default function SendMessage({ sendMessage, isSendMessageLoading }) {
                     defaultValue={""} // ! vital for SendMessagePreviews
                     placeholder={`...${t("paste or drop image here")}`}
                 />
-                <SendMessageIcon sendMessage={sendMessage} isSendMessageLoading={isSendMessageLoading} className="asfe mb15" />
+                <SendMessageIcon sendMessage={sendMessage} isSendMessageLoading={isSendMessageLoading} className="asfe" />
             </div>
         </>
     )

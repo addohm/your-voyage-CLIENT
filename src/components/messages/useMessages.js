@@ -2,6 +2,7 @@ import { Close, Send } from "@mui/icons-material"
 import { useEffect, useState } from "react"
 import TextEditor from "../textEditor/TextEditor"
 import SendMessagePreviews from "./SendMessagePreviews"
+import clickSendMessageIcon from "./clickSendMessageIcon"
 
 export default function useMessages(dialogSet) {
 
@@ -9,21 +10,13 @@ export default function useMessages(dialogSet) {
     const [messagePreviewClicked, messagePreviewClickedSet] = useState(0) // in Dialog
     const [messagePreviewClicked2StateWithDelay, messagePreviewClicked2StateWithDelaySet] = useState(0) // in Dialog
 
-    function clickSendIcon() {
-        // clicks real send icon; this icon is fake
-        const icon = document.querySelector(".sendMsgIcon")
-        if (!icon) return
-        // if (!messages[0]?.msg) alert("The first file should have text!")
-        const clickEvent = new Event('click', { bubbles: true })
-        icon.dispatchEvent(clickEvent)
-    }
-
     // ! null localStorage's messagePreviewClicked on every reload so uploadedPastedDroppedFilesToMsgFiles can work
     useEffect(() => { localStorage.setItem("messagePreviewClicked", 0) }, [])
 
     useEffect(() => {
         if (!messages?.[0]?.file) return
 
+        // ! ADD MESSAGE FILES DIALOG
         dialogSet({
             show: true,
             // title: `for debug: messagePreviewClicked: ${messagePreviewClicked}, messagePreviewClicked2StateWithDelay: ${messagePreviewClicked2StateWithDelay} "localStorage.getItem("messagePreviewClicked")": ${localStorage.getItem("messagePreviewClicked")}`,
@@ -43,7 +36,9 @@ export default function useMessages(dialogSet) {
                             placeholder="...add your message"
                         />
 
-                        <Send onClick={clickSendIcon} className="ml10" />
+                        <div title="ctrl + enter">
+                            <Send onClick={clickSendMessageIcon} className="ml10" />
+                        </div>
                     </div>
                 </div>
         })

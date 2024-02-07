@@ -7,11 +7,13 @@ import axios from "../../utils/axios";
 import OldDbMessages from "./OldDbMessages";
 import MessageDate from "./MessageDate";
 import NoMessagesYet from "./NoMessagesYet";
+import useSendMessageShortCut from "./useSendMessageShortCut";
 
 export default function AllMsgsAndAddMsg({ token, type }) { // type: message/support
 
     const { dbMessages, dbMessagesSet, user, oldDbMessages, skipOldDbMessagesSet } = useContext(Context)
     const [msgCurTopDate, msgCurTopDateSet] = useState(null)
+    useSendMessageShortCut()
 
     useEffect(() => { // mark all messages as read when enter the room
         axios("/markAllMessagesAsRead", { room: token, userId: user?._id })

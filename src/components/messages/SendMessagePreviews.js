@@ -49,7 +49,7 @@ export default function SendMessagePreviews({ messages, messagePreviewClickedSet
                     />
                     :
                     messages?.length === 1 &&
-                    <MessageFileUploaded fileName={messages?.[0]?.file.name} />
+                    <MessageFileUploaded fileName={messages?.[0]?.file.name} className="uploadedFilePreview" />
                 }
             </div>
         </>
