@@ -18,12 +18,14 @@ export default function Header() {
     const { isVisibleMobileNav, isVisibleMobileNavSet, user } = useContext(Context)
     const { isMobile } = useWindowSize()
     const location = useLocation().pathname
+    const isInExactChatLocation = location.includes("/message/")
 
     // isVisible Header
     useEffect(() => {
         !isMobile && scrollY === 0 ? isVisibleSet(true) : isVisibleSet(false) // pc visible on very top + if hovered Header's place on top
         isMobile && isVisibleSet(true) // mobile always visible
-        isVisibleSet(true) // Header visible on all devices: REMOVE for "only show on top & on hover"
+        // ! show header on hover only for ExactChatLocation: other locations: always visible 
+        !isInExactChatLocation && isVisibleSet(true) // Header visible on all devices: REMOVE for "only show on top & on hover"
     }, [scrollY])
 
     // handleScroll
@@ -37,7 +39,7 @@ export default function Header() {
 
     return (
         <>
-            <header className={`header pof t0 l0 w100p zi9 fcc jcsb p15 bg_white zi2 ${isHovered || isVisible ? "op1 transition05" : "op0 transition05"} ${location !== MAIN_ROUTE ? "headerFadeIn" : ""}`} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
+            <header className={`header pof t0 l0 w100p zi9 fcc jcsb p15 bg_white zi2 ${isHovered || isVisible ? "op1 transition05" : "op0 transition05"} ${(location !== MAIN_ROUTE && !isInExactChatLocation) ? "headerFadeIn" : ""}`} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
                 <HeaderLogo isVisibleMobileNavSet={isVisibleMobileNavSet} />
                 <Burger isVisible={isMobile} isVisibleMobileNavSet={isVisibleMobileNavSet} isVisibleMobileNav={isVisibleMobileNav} />
                 <HeaderNav isVisible={!isMobile} />

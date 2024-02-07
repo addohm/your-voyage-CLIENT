@@ -338,6 +338,10 @@ export default function useT(key) {
             "en": "Courses",
             "zh": "课程",
         },
+        "Check our courses": {
+            "en": "Check our courses",
+            "zh": "查看我们的课程",
+        },
         "No messages yet, start a conversation": {
             "en": "No messages yet, start a conversation",
             "zh": "还没有留言，请开始对话",

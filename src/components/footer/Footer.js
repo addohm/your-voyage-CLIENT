@@ -12,7 +12,7 @@ export default function Footer() {
     const location = useLocation().pathname
 
     return (
-        <footer className={`por fcc fwn jcsb pt pb px100 w100p ${location === MAIN_ROUTE ? mainRouteStyle : ""} footer`}>
+        <footer className={`por fcc fwn jcsb mt100 pt pb px100 w100p ${location === MAIN_ROUTE ? mainRouteStyle : ""} footer`}>
             {/* LEFT */}
             <FooterLogo />
             {/* CENTER */}

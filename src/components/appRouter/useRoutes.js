@@ -37,9 +37,14 @@ export default function useRoutes() {
 		}
 
 		defineRoutes()
-		defineMainPage()
 	}, [user, location])
 
+	// redefine main page for `hasPurchase user` => redirect to MESSAGES_ROUTE one time
+	useEffect(() => {
+		defineMainPage()
+	}, [user])
+
+	// scroll to top when location changes
 	useEffect(() => {
 		setTimeout(() => window.scrollTo(0, 0), 1)
 	}, [location])

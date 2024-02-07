@@ -7,6 +7,6 @@ export default function RoomLastMsg({ msg, msgImg }) {
             <div className="textLines2 mt10"><Markdown>{msg}</Markdown></div>
             :
             msgImg &&
-            <div className="mt8">[image without text]</div>
+            <div className="mt8">[file without text]</div>
     )
 }

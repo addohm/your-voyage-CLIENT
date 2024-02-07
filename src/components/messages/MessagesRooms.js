@@ -7,6 +7,7 @@ import useGoToCoach from '../../hooks/useGoToCoach'
 import { useContext } from "react"
 import { Context } from "../../Context"
 import Courses from "../coachCard/Courses";
+import t from "../../hooks/useT"
 
 export default function MessagesRooms() {
 
@@ -16,7 +17,6 @@ export default function MessagesRooms() {
 
     return (
         <>
-            <Courses isVisible={user?.role === "user"} className="mb15 mt-30" />
             <RenewSubscription
                 link={MAIN_ROUTE}
                 btnText="Subscribe"
@@ -25,6 +25,9 @@ export default function MessagesRooms() {
             />
             <RoomsTitle />
             <Rooms rooms={rooms} type="message" noRoomsMsg="No active subscriptions" isLoading={isLoadingCourses} />
+
+            <div className="title tac mt100 mb5">{t("Check our courses")}:</div>
+            <Courses isVisible={user?.role === "user"} className="" />
         </>
     )
 }
