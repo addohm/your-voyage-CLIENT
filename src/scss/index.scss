@@ -70,3 +70,9 @@ svg:not(.brand, .brandi, .white){
         display: none !important;
     }
 }
+
+.hideOnTablet{
+    @media (width<=$tablet) {
+        display: none !important;
+    }
+}

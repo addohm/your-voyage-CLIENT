@@ -7,15 +7,21 @@ export default function FooterLinks() {
     return (
         <div className='fcc w100p footerLinks'>
             <div className='f jcsb'>
-                <FooterLink text={t("Terms")} type="terms" />
-                <div className="mx15 hideOnMobile">/</div>
-                <FooterLink text={t("Privacy")} type="privacy" />
-                <div className="mx15 hideOnMobile">/</div>
-                <Link2 to={NEWSLETTER_ROUTE}>{t("Newsletter")}</Link2>
-                <div className="mx15 hideOnMobile">/</div>
-                <Link2 to={FAQ_ROUTE}>{t("FAQ")}</Link2>
-                <div className="mx15 hideOnMobile">/</div>
-                <Link2 to={SUPPORTS_ROUTE}>{t("Support")}</Link2>
+                <div className="mr15">
+                    <FooterLink text={" ~ " + t("Terms")} type="terms" />
+                </div>
+                <div className="mr15">
+                    <FooterLink text={" ~ " + t("Privacy")} type="privacy" />
+                </div>
+                <div className="mr15">
+                    <Link2 to={NEWSLETTER_ROUTE}>{" ~ " + t("Newsletter")}</Link2>
+                </div>
+                <div className="mr15">
+                    <Link2 to={FAQ_ROUTE}>{" ~ " + t("FAQ")}</Link2>
+                </div>
+                <div className="mr15">
+                    <Link2 to={SUPPORTS_ROUTE}>{" ~ " + t("Support")}</Link2>
+                </div>
             </div>
         </div>
     )
