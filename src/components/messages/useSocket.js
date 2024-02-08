@@ -19,7 +19,6 @@ export default function useSocket({ room, dbMessagesSet, type }) { // type: mess
         // ! socket receive
         socket.on("receive_message", (data) => {
             dbMessagesSet(prev => [...prev, data])
-            isSendMessageLoadingSet(false)
         })
 
         // ! update socket message
@@ -71,6 +70,7 @@ export default function useSocket({ room, dbMessagesSet, type }) { // type: mess
         dialogSet({ show: false }) // close dialog with pasted/dropped images
         localStorage.setItem("messagePreviewClicked", 0) // null localStorage messagePreviewClicked; fixes: 1: user sent 2 imgs (messagePreviewClicked was 1) 2: trying to send 1 img (but messagePreviewClicked is 1, and you can not update text in messages[0], cause you're trying to update messages[1])
         isSendMessageLoadingSet(true)
+        setTimeout(() => isSendMessageLoadingSet(false), 2000) // !!!
     }
     // ? socket sendMessage
 

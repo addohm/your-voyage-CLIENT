@@ -13,7 +13,7 @@ export default function Tool({ img, name, ind, toolCardsHidden, onClick }) {
         // type="left" delay={ind / 2}
         >
             <div className={`w391 brL por ${toolCardsHidden ? "fadeAway" : "db"} tool cursorArrowRightWhite`} onClick={onClick}>
-                <img className={`w100p ofCover ${varHeight}`} src={img} />
+                <img className={`w100p ofCover ${varHeight} bsh`} src={img} />
                 <div className="fcc">
                     <ToolCardTitle name={name} animationType="top" />
                 </div>

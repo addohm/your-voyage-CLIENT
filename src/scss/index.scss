@@ -55,6 +55,7 @@ a{
     color: $black;
 }
 
+// ! SVG
 svg:not(.brand, .brandi, .white){
     color: rgba(0,0,0,0.8);
     cursor: pointer;
@@ -64,6 +65,13 @@ svg:not(.brand, .brandi, .white){
         fill: $brand !important;
     }
 }
+
+svg{
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+// ? SVG
 
 .hideOnMobile{
     @media (width<=$mobile) {

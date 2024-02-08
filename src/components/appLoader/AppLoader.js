@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Dots from "../dots/Dots"
+import MainLogo from "../header/MainLogo";
 
 export default function AppLoader() {
 
@@ -16,10 +17,8 @@ export default function AppLoader() {
     // fadeOut = isAppLoaded && isTimePassed 
     return (
         <div className={`fcc pof t0 l0 zi10 w100p h100p miw100vw mih100vh bg_white appLoaderAnimation ${isAppLoaded && isTimePassed ? "appLoaderAnimationFadeOut" : ""}`}>
-            <div className="fz40 opAnim10">
-                XY Consulting
-            </div>
-            <Dots className="mt50 fz50 opAnim10" />
+            <MainLogo className="fz30" />
+            <Dots className="mt30 fz50 opAnim10" />
         </div>
     )
 }

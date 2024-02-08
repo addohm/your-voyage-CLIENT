@@ -4,18 +4,24 @@ export default function Posts({
     Post,
     type,
     sort = { order: 1 },
-    className = "fcc"
+    className = "fcc",
+    title,
+    wrapClassName
 }) {
 
     const { posts } = usePosts({ type, sort })
 
     return (
-        <div className={className}>
-            {posts?.map((post, ind) => {
-                return (
-                    <Post key={post?._id} {...post} ind={ind} />
-                )
-            })}
+        posts.length > 0 &&
+        <div className={wrapClassName}>
+            {title}
+            <div className={className}>
+                {posts?.map((post, ind) => {
+                    return (
+                        <Post key={post?._id} {...post} ind={ind} />
+                    )
+                })}
+            </div>
         </div>
     )
 }

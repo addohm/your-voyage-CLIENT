@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { MAIN_ROUTE } from "../../utils/consts";
+import MainLogo from "./MainLogo";
 
 export default function HeaderLogo({ isVisibleMobileNavSet }) {
 
@@ -10,7 +11,7 @@ export default function HeaderLogo({ isVisibleMobileNavSet }) {
 
     return (
         <Link to={MAIN_ROUTE} onClick={onClick}>
-            <div className='fz20 brand hoverScale hoverFont500'>XY Consulting</div>
+            <MainLogo />
         </Link>
     )
 }

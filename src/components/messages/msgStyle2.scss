@@ -30,11 +30,11 @@ $otherMsgColor: #bde9ff;
 .deletedMsg{
     background: #e0e0e0 !important;
     box-shadow:  10px 10px 20px #bebebe,
-                 -10px -10px 20px #ffffff;
+                 -10px -10px 20px #ffffff !important;
 }
 
 .restoredMsg{
-    box-shadow: -10px 0px 10px -5px lighten(orange, 20%) !important;
+    box-shadow: -7px 0px 10px -5px lighten(orange, 20%) !important;
 }
 
 .replyMsg{
@@ -61,11 +61,14 @@ $otherMsgColor: #bde9ff;
 
 // ! dark mode
 .dark{
-    .myMsg,.otherMsg,.updatedMsg,.deletedMsg,.restoredMsg,.replyMsg,.msg{
+    .myMsg,.otherMsg,.updatedMsg,.restoredMsg,.replyMsg,.msg{
         box-shadow:none;
         *:not(svg,.brand,.brandi){
             // color: $black !important;
         }
+    }
+    .deletedMsg{
+        box-shadow:none !important;
     }
     .myMsg{
         background: darken($myMsgColor, 50%);
