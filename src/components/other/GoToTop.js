@@ -11,7 +11,7 @@ export default function GoToTop() {
     return (
         <UpIcon
             className={isVisible ? "op1 transition15 curPointer" : "op0 transition15"}
-            style={{ position: 'fixed', zIndex: 99, bottom: 0, right: 0, width: 50, height: 50, padding: 0, transition: "all 1s", transform: !isInMessageLocation ? "rotate(-90deg)" : "rotate(90deg)" }}
+            style={{ position: 'fixed', zIndex: 9, bottom: 0, right: 0, width: 50, height: 50, padding: 0, transition: "all 1s", transform: !isInMessageLocation ? "rotate(-90deg)" : "rotate(90deg)" }}
             onClick={() => window.scrollTo(0, scrollType)}
         />
     )

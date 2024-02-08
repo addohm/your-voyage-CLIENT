@@ -6,6 +6,7 @@ import GoToTop from "./components/other/GoToTop";
 import Dialog from "./components/dialog/Dialog";
 import Snackbar from "./components/snackbar/Snackbar";
 import { Context } from "./Context";
+import AppLoader from "./components/appLoader/AppLoader";
 
 const App = () => {
 
@@ -16,6 +17,7 @@ const App = () => {
       <div className="por mih100vh">
         <Header />
         <AppRouter />
+        <AppLoader />
         <GoToTop />
         <Dialog />
         <Snackbar />

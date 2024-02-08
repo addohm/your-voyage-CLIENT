@@ -180,3 +180,35 @@
 	}
 }
 // ? header
+
+// ! appLoaderAnimation
+.appLoaderAnimation{
+	animation: appLoaderAnimation 1.1s infinite;
+}
+
+@keyframes appLoaderAnimation {
+	0% {
+		color: #D19B5B; /* Red */
+	  }
+	  50% {
+		color: orange; /* Blue */
+	  }
+	  100% {
+		color: #D19B5B; /* Red (repeat) */
+	  }
+}
+
+.appLoaderAnimationFadeOut{
+	animation: appLoaderAnimationFadeOut 1.1s forwards;
+}
+
+@keyframes appLoaderAnimationFadeOut {
+	0% {
+		opacity: 1;
+	  }
+	  100% {
+		opacity: 0;
+		display: none;
+	  }
+}
+// ? appLoaderAnimation
