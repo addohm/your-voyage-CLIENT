@@ -8,7 +8,7 @@ export default function useGetLastTermsOrPrivacyId(type) {
     const [id, idSet] = useState(null)
     useEffect(() => { // get terms or privacy last post id
         idSet(posts?.reverse()?.[0]?._id)
-    }, [posts])
+    }, [posts, type])
 
     return id
 }
