@@ -6,8 +6,6 @@ export default function Socket({ room, dbMessagesSet, type }) { // type: message
     const { sendMessage, isSendMessageLoading } = useSocket({ room, dbMessagesSet, type })
 
     return (
-        <>
-            <SendMessage sendMessage={sendMessage} isSendMessageLoading={isSendMessageLoading} />
-        </>
+        <SendMessage sendMessage={sendMessage} isSendMessageLoading={isSendMessageLoading} />
     )
 }

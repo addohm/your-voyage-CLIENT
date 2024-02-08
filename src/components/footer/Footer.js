@@ -8,10 +8,14 @@ import FooterLogo from './FooterLogo'
 
 export default function Footer() {
 
-    const mainRouteStyle = "poa b0 l0" // main page: fixed at the very bottom: other pages: respect other content
+    // main page: fixed at the very bottom: other pages: respect other content
+    const mainRouteStyle = "poa b0 l0"
     const location = useLocation().pathname
+    // not visible in /support/ & /message/ routes.
+    const isVisible = !location.includes("/support/") && !location.includes("/message/")
 
     return (
+        isVisible &&
         <footer className={`por fcc fwn jcsb mt100 pt pb px100 w100p ${location === MAIN_ROUTE ? mainRouteStyle : ""} footer`}>
             {/* LEFT */}
             <FooterLogo />

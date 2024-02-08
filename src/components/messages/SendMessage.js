@@ -14,7 +14,7 @@ export default function SendMessage({ sendMessage, isSendMessageLoading }) {
     const { savePastedOnServer, saveDroppedOnServer } = useMessagePastedOrDroppedFile(messagesSet)
 
     return (
-        <>
+        <div className='mb50'>
             <MessageReplyingTo
                 isVisible={messageReplyingTo?.msg}
                 messageReplyingTo={messageReplyingTo}
@@ -35,6 +35,6 @@ export default function SendMessage({ sendMessage, isSendMessageLoading }) {
                 />
                 <SendMessageIcon sendMessage={sendMessage} isSendMessageLoading={isSendMessageLoading} className="asfe" />
             </div>
-        </>
+        </div>
     )
 }
