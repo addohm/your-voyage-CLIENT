@@ -6,7 +6,8 @@ import goToBottom from "../../utils/goToBottom"
 
 export default function useDbMessages() {
 
-    const token = useLocation().pathname.split("/")[2] // !!!
+    const location = useLocation().pathname
+    const token = location.split("/")[2] // !!!
     const { interval } = useInterval()
 
     const [dbMessages, dbMessagesSet] = useState([])
@@ -24,9 +25,10 @@ export default function useDbMessages() {
         getMessages()
     }, [interval])
 
-    // goToBottom when dbMessages is loaded ONE time
+    // goToBottom when dbMessages are loaded ONE time in message & support pages
     useEffect(() => {
         if (!isDbMessagesLoaded) return
+        if (!location.includes("/message/") && !location.includes("/support/")) return
         setTimeout(() => {
             goToBottom()
         }, 1000);
