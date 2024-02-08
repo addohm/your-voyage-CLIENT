@@ -6,6 +6,7 @@ import { MAIN_ROUTE } from '../../utils/consts'
 export default function usePostFull(type, id) {
 
     const [post, postSet] = useState(null)
+    const [isLoading, isLoadingSet] = useState(true)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -13,12 +14,13 @@ export default function usePostFull(type, id) {
             if (!type || !id || id === "undefined") return
             const res = await axios("/getPost", { type, _id: id })
             res ? postSet(res) : navigate(MAIN_ROUTE) // if post not found => redirect
+            isLoadingSet(false)
         }
 
         getPost()
     }, [type, id])
 
     return (
-        { post }
+        { post, isLoading }
     )
 }

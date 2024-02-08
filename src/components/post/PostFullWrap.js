@@ -1,13 +1,16 @@
 import { useParams } from "react-router-dom"
 import usePostFull from "./usePostFull"
 import PostFull from "./PostFull"
+import Loading from "../other/Loading"
 
 export default function PostFullWrap() {
 
     const { type, id } = useParams()
-    const { post } = usePostFull(type, id)
+    const { post, isLoading } = usePostFull(type, id)
 
     return (
-        <PostFull {...post} type={type} id={id} value={post?.textEditorValue} />
+        <Loading isLoading={isLoading}>
+            <PostFull {...post} type={type} id={id} value={post?.textEditorValue} />
+        </Loading>
     )
 }
