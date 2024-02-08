@@ -4,6 +4,7 @@ import MainLogo from "../header/MainLogo";
 
 export default function AppLoader() {
 
+    // test commit
     const [isAppLoaded, isAppLoadedSet] = useState(false)
     const [isTimePassed, isTimePassedSet] = useState(false)
 
