@@ -20,7 +20,7 @@ export default function Dialog_() {
         >
             <div className='f jcsb'>
                 {dialog?.onBack && <ArrowBack className="m10" onClick={() => dialog?.onBack?.()} />}
-                <Close className="mla m10" onClick={onClose} />
+                <Close className="mla m10 dialogCloseIcon" onClick={onClose} />
             </div>
             <DialogTitle className="fcc">
                 {dialog?.title}

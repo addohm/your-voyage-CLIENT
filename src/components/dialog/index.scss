@@ -25,3 +25,10 @@
 		color: $white;
 	}
 }
+
+.dialogCloseIcon{
+	@media (width<=$mobile) {
+		position: relative;
+		top: 30px !important;
+	}
+}
