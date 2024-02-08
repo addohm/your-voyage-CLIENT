@@ -26,7 +26,7 @@ export default function Header() {
         !isInExactChatLocation && isMobile && isVisibleSet(true) // mobile header always visible: not in ExactChatLocation: to see MessageDate
         // ! show header on hover only for ExactChatLocation: other locations: always visible 
         !isInExactChatLocation && isVisibleSet(true) // Header visible on all devices: REMOVE for "only show on top & on hover"
-    }, [scrollY])
+    }, [scrollY, user])
 
     // handleScroll
     useEffect(() => {

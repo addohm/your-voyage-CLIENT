@@ -30,7 +30,7 @@ export default function LoginDisplayEmail({ user, totalNotReadNum }) {
         <>
             {/* <div className="title tal">Email:</div> */}
             <div
-                className="por tar"
+                className="por tar curPointer"
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
                 onClick={onClick}

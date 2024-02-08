@@ -1,6 +1,7 @@
 import ToolCard from "./ToolCard"
 import usePosts from "../post/usePosts"
 import parseTextEditorImg from "../textEditor/parseTextEditorImg"
+import t from "../../hooks/useT"
 
 export default function ToolCards({ toolNameClicked, toolCardsHidden }) {
 
@@ -19,7 +20,7 @@ export default function ToolCards({ toolNameClicked, toolCardsHidden }) {
                     )
                 })}
             </div>
-            {posts?.length === 0 && <div className="title2 w100p tac mt">No posts yet...</div>}
+            {posts?.length === 0 && <div className="title2 w100p tac mt">{t("No posts yet")}...</div>}
         </div>
     )
 }

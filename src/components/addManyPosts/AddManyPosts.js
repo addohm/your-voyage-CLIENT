@@ -27,7 +27,7 @@ export default function AddManyPosts({ type, addPath, lastInputName, addTitle, p
                                 ind={ind}
                                 {...post}
                                 postsSet={postsSet}
-                                SaveIcon={<Button style={{ margin: 0, padding: 0, minWidth: 0, marginBottom: 5 }} type="submit"><Save className={`${post?._id ? "brandi" : ""}`} /></Button>}
+                                SaveIcon={<Button style={{ margin: 0, padding: 0, minWidth: 0, marginBottom: 5, cursor: "pointer" }} type="submit"><Save className={`${post?._id ? "brandi" : ""}`} /></Button>}
                                 DeleteIcon={<Close onClick={() => _deletePost(ind, post?._id)} />}
                             />
                         )

@@ -13,7 +13,7 @@ export default function ToolCardTitle({ name, translatedName, animationType, too
 
     return (
         <div
-            className={`por f fwn ${thisTitleClicked && lang === "zh" ? "brand" : ""} ${lang === "zh" ? "hoverBrandColor hoverFontTop" : ""}`}
+            className={`por f fwn ${thisTitleClicked && lang === "zh" ? "brand" : ""} ${lang === "zh" ? "hoverBrandColor hoverFontTop" : ""} curPointer`}
             onClick={() => thisTitleClicked && toolCardsHiddenSet(false)}
         >
             {thisTitleClicked &&

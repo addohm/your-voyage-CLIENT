@@ -3,6 +3,7 @@
 	display: block;
 	margin: 0 auto;
 	border-radius: $borderRadiusLarge;
+	cursor: url('../../public/cursors/arrowRightBlack.svg'), auto;
 	// contained
 	&.MuiButton-contained{
 		background: $brand;

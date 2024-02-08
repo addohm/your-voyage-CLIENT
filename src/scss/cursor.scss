@@ -6,3 +6,13 @@
         cursor: url('../../public/cursors/arrowRight.svg'), auto;
     }
 }
+.cursorArrowRightBlack{
+    &:hover{
+        cursor: url('../../public/cursors/arrowRightBlack.svg'), auto;
+    }
+}
+.cursorArrowRightWhite{
+    &:hover{
+        cursor: url('../../public/cursors/arrowRightWhite.svg'), auto;
+    }
+}

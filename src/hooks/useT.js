@@ -474,6 +474,30 @@ export default function useT(key) {
             "en": "Your success tools",
             "zh": "您的成功工具",
         },
+        "Are you sure you want to": {
+            "en": "Are you sure you want to",
+            "zh": "你确定吗",
+        },
+        "delete": {
+            "en": "delete",
+            "zh": "删除",
+        },
+        "restore": {
+            "en": "restore",
+            "zh": "恢复原状",
+        },
+        "this message": {
+            "en": "this message",
+            "zh": "此信息",
+        },
+        "This message has been deleted": {
+            "en": "This message has been deleted",
+            "zh": "此信息已被删除",
+        },
+        "No posts yet": {
+            "en": "No posts yet",
+            "zh": "尚无帖子",
+        },
         "000": {
             "en": "000",
             "zh": "111",

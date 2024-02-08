@@ -6,7 +6,7 @@ export default function LoginBtn() {
 
     return (
         <div
-            className='header__btn loginBtn'
+            className='header__btn loginBtn cursorArrowRightBlack'
             onClick={showLoginDialog}
         >
             {loginTitle}
