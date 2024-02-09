@@ -17,7 +17,8 @@ export default function usePosts({ type, sort }) {
             if (type === "coach") return
             const res = await axios("/getPosts", { type, sort, lang })
             isLoadingSet(false)
-            res && postsSet(res)
+            if (res.length === 0) return
+            postsSet(res)
         }
 
         getPosts()
