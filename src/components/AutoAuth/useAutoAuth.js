@@ -13,7 +13,7 @@ export default function useAutoAuth() {
             const token = localStorage.getItem("token")
             if (token) { // if user logged in => auto auth on every reload
                 const res = await axios("/autoAuth", { token })
-                res?.user && userSet(res?.user)
+                res?.user ? userSet(res?.user) : userSet(false)
             } else {
                 userSet(false)
             }
