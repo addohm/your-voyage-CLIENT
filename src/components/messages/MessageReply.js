@@ -14,7 +14,7 @@ export default function MessageReply({ img, name, msg }) {
 
     return (
         <Reply
-            className="poa l10 t50"
+            className="poa l10 t50 appearFromTop"
             style={{ transform: "rotateY(180deg)" }}
             onClick={prepareReply}
         />

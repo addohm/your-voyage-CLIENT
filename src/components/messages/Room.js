@@ -8,7 +8,7 @@ import RoomSmallImg from "./RoomSmallImg";
 export default function Room({ img, name, room, msg, createdAt, notReadNum, msgImg, courseName, coachName, type, senderName }) {
     // type: message, support
     return (
-        <Link className="f fwn g15 maw500 mb bg_white zi2 p brL bsh" onClick={() => window.location.href = `/${type}/${room}`}>
+        <Link className="f fwn g15 maw500 mb bg_white zi2 p brL bsh cardAnim" onClick={() => window.location.href = `/${type}/${room}`}>
             <div className="por">
                 {/* BIG Room img */}
                 <UserImgWithNotReadNum img={img} name={coachName || name} notReadNum={notReadNum} imgClassName="h60 w60 fz20" numClassName="h22 w22" />

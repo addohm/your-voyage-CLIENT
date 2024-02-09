@@ -2,6 +2,7 @@ import ToolCard from "./ToolCard"
 import usePosts from "../post/usePosts"
 import parseTextEditorImg from "../textEditor/parseTextEditorImg"
 import t from "../../hooks/useT"
+import NoPostsYet from "../other/NoPostsYet"
 
 export default function ToolCards({ toolNameClicked, toolCardsHidden }) {
 
@@ -20,7 +21,7 @@ export default function ToolCards({ toolNameClicked, toolCardsHidden }) {
                     )
                 })}
             </div>
-            {posts?.length === 0 && <div className="title2 w100p tac mt">{t("No posts yet")}...</div>}
+            <NoPostsYet isVisible={posts?.length === 0} />
         </div>
     )
 }

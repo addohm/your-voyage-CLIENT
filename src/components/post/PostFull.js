@@ -9,7 +9,7 @@ import PostFullDate from './PostFullDate'
 export default function PostFull({ type, id, value, title, link, isVisibleIcons = true, updatedAt }) {
     return (
         <>
-            <div className='postFull maw800 mla mra mb100 px15'>
+            <div className='postFull maw800 mla mra mb100 px15 blurAnim'>
                 <div className="f jcsb aic mb">
                     <ToolCardIcons isVisible={isVisibleIcons} type={type} _id={id} className="" />
                     <PostFullDate isVisible={isVisibleIcons} updatedAt={updatedAt} />

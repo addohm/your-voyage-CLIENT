@@ -212,3 +212,40 @@
 	  }
 }
 // ? appLoaderAnimation
+
+// ! appearFromRight
+.appearFromRight{
+	animation: appearFromRight 0.9s forwards;
+}
+
+@keyframes appearFromRight {
+	0% {
+		transform: translate(100%,0) scale(0);
+		filter: blur(10px);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(0,0) scale(1);
+		filter: blur(0px);
+		opacity: 1;
+	}
+}
+
+// ! appearFromTop
+// MessageReply
+.appearFromTop{
+	animation: appearFromTop 0.9s forwards;
+}
+
+@keyframes appearFromTop {
+	0% {
+		transform: translate(0,-100%) scale(0) rotateY(0deg);
+		filter: blur(10px);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(0,0) scale(1) rotateY(180deg);
+		filter: blur(0px);
+		opacity: 1;
+	}
+}

@@ -11,6 +11,7 @@ export default function usePostFull(type, id) {
 
     useEffect(() => {
         async function getPost() {
+            isLoadingSet(true)
             if (!type || !id || id === "undefined") return
             const res = await axios("/getPost", { type, _id: id })
             res ? postSet(res) : navigate(MAIN_ROUTE) // if post not found => redirect

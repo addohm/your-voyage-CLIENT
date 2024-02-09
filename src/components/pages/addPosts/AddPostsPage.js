@@ -9,11 +9,11 @@ export default function AddPostsPage({ postTypes, title }) {
     const { lang } = useContext(Context)
 
     return (
-        <>
+        <div className='cardAnim'>
             <div className="title w100p tac mb30">Add Posts ({lang.toUpperCase()})</div>
             <div className='title tac mt'>{title}</div>
             <AddPostTypes postTypes={postTypes} stateType={stateType} stateTypeSet={stateTypeSet} />
             <AddPost _type={stateType} />
-        </>
+        </div>
     )
 }

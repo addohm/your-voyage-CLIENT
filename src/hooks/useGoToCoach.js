@@ -12,7 +12,7 @@ export default function useGoToCoach() {
     async function goToCoach() {
         isVisibleMobileNavSet?.(false)
         navigate(MAIN_ROUTE)
-        await delay(100) // wait for navigate
+        await delay(200) // wait for navigate
 
         const applierCard = document.querySelector(".applier")
         let { top } = applierCard.getBoundingClientRect();

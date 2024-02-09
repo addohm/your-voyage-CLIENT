@@ -4,7 +4,7 @@ import InputMultiline from "../../form/InputMultiline";
 // * used as AddPosts in AddManyPosts
 export default function AddFAQ({ _id, title, text, SaveIcon, DeleteIcon }) {
     return (
-        <div className="bg_white zi2 faq">
+        <div className="bg_white zi2 faq cardAnim">
             <div className="f jcsb">
                 {SaveIcon}
                 {DeleteIcon}

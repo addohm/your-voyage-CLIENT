@@ -1,0 +1,17 @@
+@import "../../scss/vars.scss";
+
+.btnBrand{
+    button{
+        font-weight: 700;
+        background: lighten($brand, 33%);
+    }
+}
+
+.Link2BtnHover{
+    button{
+        &:hover{
+            font-weight: 700;
+            background: lighten($brand, 35%); 
+        }
+    }
+}

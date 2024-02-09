@@ -10,7 +10,7 @@ import { Context } from '../../Context'
 export default function Footer() {
 
     // main page: fixed at the very bottom: other pages: respect other content
-    const mainRouteStyle = "poa b0 l0"
+    const mainRouteStyle = "poa b0 l0 zi3"
     const location = useLocation().pathname
     // not visible in /support/ & /message/ routes.
     const isVisibleForLocations = !location.includes("/support/") && !location.includes("/message/")

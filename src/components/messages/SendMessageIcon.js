@@ -9,8 +9,8 @@ export default function SendMessageIcon({ sendMessage, isSendMessageLoading, cla
                 <CircularProgress className={`brandi ${className ? className : ""}`} size={25} />
             </div>
             :
-            <div title="ctrl + enter">
-                <Send onClick={sendMessage} className={`sendMsgIcon ${className ? className : ""}`} />
+            <div title="ctrl + enter" className={className || ""}>
+                <Send onClick={sendMessage} className={`sendMsgIcon`} />
             </div>
 
     )

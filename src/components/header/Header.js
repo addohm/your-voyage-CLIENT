@@ -35,6 +35,11 @@ export default function Header() {
         return () => window.removeEventListener('scroll', handleScroll)
     }, []);
 
+    // block scroll on mobile while menu is open
+    useEffect(() => {
+        isVisibleMobileNav ? document.body.style.overflow = "hidden" : document.body.style.overflow = "none"
+    }, [isVisibleMobileNav])
+
     if (user === null) return // prevent ugly user email (LoginDisplayEmail) appearing: user is not defined yet
 
     return (
