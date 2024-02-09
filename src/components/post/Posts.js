@@ -1,3 +1,5 @@
+import Loading from "../other/Loading"
+import NoPostsYet from "../other/NoPostsYet"
 import usePosts from "../post/usePosts"
 
 export default function Posts({
@@ -9,19 +11,25 @@ export default function Posts({
     wrapClassName
 }) {
 
-    const { posts } = usePosts({ type, sort })
+    const { posts, isLoading } = usePosts({ type, sort })
 
     return (
-        posts.length > 0 &&
-        <div className={wrapClassName}>
-            {title}
-            <div className={className}>
-                {posts?.map((post, ind) => {
-                    return (
-                        <Post key={post?._id} {...post} ind={ind} />
-                    )
-                })}
-            </div>
-        </div>
+        <Loading isLoading={isLoading} >
+            {posts.length > 0
+                ?
+                <div className={wrapClassName}>
+                    {title}
+                    <div className={className}>
+                        {posts?.map((post, ind) => {
+                            return (
+                                <Post key={post?._id} {...post} ind={ind} />
+                            )
+                        })}
+                    </div>
+                </div>
+                :
+                <NoPostsYet isVisible={true} />
+            }
+        </Loading>
     )
 }

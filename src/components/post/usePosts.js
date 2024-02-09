@@ -7,6 +7,7 @@ import useAddFile from '../pages/addPosts/useAddFile'
 export default function usePosts({ type, sort }) {
 
     const [posts, postsSet] = useState([])
+    const [isLoading, isLoadingSet] = useState(true)
     const { lang, pastedOrDroppedImg } = useContext(Context)
     const { fileArr } = useAddFile()
 
@@ -15,6 +16,7 @@ export default function usePosts({ type, sort }) {
             if (!type) return
             if (type === "coach") return
             const res = await axios("/getPosts", { type, sort, lang })
+            isLoadingSet(false)
             res && postsSet(res)
         }
 
@@ -36,6 +38,6 @@ export default function usePosts({ type, sort }) {
     }
 
     return (
-        { posts, postsSet, addOrEditPosts }
+        { posts, isLoading, postsSet, addOrEditPosts }
     )
 }

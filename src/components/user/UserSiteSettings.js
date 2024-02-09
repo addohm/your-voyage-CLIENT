@@ -25,9 +25,9 @@ export default function UserSiteSettings({ isVisible = true, className = "" }) {
     <Link className={className}>
       <Toggle
         name="lang"
-        on={<span className="poa r4 t4 hoverBrandColor">EN</span>}
+        on={<span className="poa r5 t6 hoverBrandColor fz14 fw600">EN</span>}
         onValue="en"
-        off={<span className="poa l4 t4 hoverBrandColor">ZH</span>}
+        off={<span className="poa l5 t6 hoverBrandColor fz14 fw600">ZH</span>}
         offValue="zh"
         stateSetter={langSet}
         defaultValue={lang}
