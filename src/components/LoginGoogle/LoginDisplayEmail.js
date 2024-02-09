@@ -35,6 +35,7 @@ export default function LoginDisplayEmail({ user, totalNotReadNum }) {
                 onMouseLeave={onMouseLeave}
                 onClick={onClick}
             >
+                <div className="poa l45 gray fz14">{user?.role !== "user" && user?.role}</div>
                 <div className="f g5 aic maw200">
                     <UserImgWithNotReadNum img={user?.img} name={user?.name} notReadNum={totalNotReadNum} imgClassName="w40 h40" numClassName="w20 h20 l-4 t-2 fz13" />
                     <div className="oh wsn toe">{user?.email?.replace(/@.*/, '')}</div>
