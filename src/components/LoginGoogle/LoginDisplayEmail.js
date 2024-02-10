@@ -7,7 +7,7 @@ import UserContent from "../user/UserContent";
 import UserImgWithNotReadNum from "../other/UserImgWithNotReadNum";
 import useWindowSize from "../../hooks/useWindowSize";
 
-export default function LoginDisplayEmail({ user, totalNotReadNum }) {
+export default function LoginDisplayEmail({ user, totalNotReadNum, totalNotReadNumSupport }) {
 
     const [isUserEmailHovered, isUserEmailHoveredSet] = useState(false)
     const { isMobile } = useWindowSize()
@@ -37,7 +37,15 @@ export default function LoginDisplayEmail({ user, totalNotReadNum }) {
             >
                 <div className="poa l45 gray fz14">{user?.role !== "user" && user?.role}</div>
                 <div className="f g5 aic maw200">
-                    <UserImgWithNotReadNum img={user?.img} name={user?.name} notReadNum={totalNotReadNum} imgClassName="w40 h40" numClassName="w20 h20 l-4 t-2 fz13" />
+                    <UserImgWithNotReadNum
+                        name={user?.name}
+                        img={user?.img}
+                        imgClassName="w40 h40"
+                        notReadNum={totalNotReadNum}
+                        numClassName="w20 h20 l-4 t-2 fz13 zi2"
+                        notReadNumSupport={totalNotReadNumSupport}
+                        numSupportClassName="w20 h20 l24 t-2 fz13 zi2"
+                    />
                     <div className="oh wsn toe">{user?.email?.replace(/@.*/, '')}</div>
                     <Arrow className={`${isUserEmailHovered ? "tr180" : ""}`} />
                 </div>

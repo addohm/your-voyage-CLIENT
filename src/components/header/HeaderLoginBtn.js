@@ -5,13 +5,13 @@ import LoginBtn from "./LoginBtn"
 
 export default function HeaderLoginBtn() {
 
-    const { user, totalNotReadNum } = useContext(Context)
+    const { user, totalNotReadNum, totalNotReadNumSupport } = useContext(Context)
 
     return (
         !user
             ?
             <LoginBtn />
             :
-            <LoginDisplayEmail user={user} totalNotReadNum={totalNotReadNum} />
+            <LoginDisplayEmail user={user} totalNotReadNum={totalNotReadNum} totalNotReadNumSupport={totalNotReadNumSupport} />
     )
 }

@@ -104,3 +104,10 @@
 		-webkit-box-orient: vertical;
 	}
  }
+
+ .ust{
+	user-select: text !important;
+	*:not(img){
+		user-select: text !important;
+	}
+ }

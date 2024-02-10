@@ -5,7 +5,7 @@ import t from "../../hooks/useT"
 export default function RoomsTitle() {
 
     const { user } = useContext(Context)
-    const className = "title tac mb"
+    const className = "title tac mb mt-15"
 
     return (
         user?.role === "admin" || user?.role === "coach" ?

@@ -1,9 +1,11 @@
 import GenUserImgDepOnFirstChar from "../user/GenUserImgDepOnFirstChar"
+import NotReadNum from "./NotReadNum"
 
-export default function UserImgWithNotReadNum({ img, name, notReadNum, imgClassName, numClassName }) {
+export default function UserImgWithNotReadNum({ name, img, imgClassName, notReadNum, numClassName, notReadNumSupport, numSupportClassName }) {
     return (
         <div className="por">
-            {notReadNum > 0 && <div className={`poa l4 t0 fcc bg_brand white br50 ${numClassName}`}>{notReadNum}</div>}
+            <NotReadNum notReadNum={notReadNum} numClassName={numClassName} />
+            <NotReadNum notReadNum={notReadNumSupport} numClassName={numSupportClassName} />
             {img
                 ?
                 <img className={`br50 ${imgClassName}`} src={img} />

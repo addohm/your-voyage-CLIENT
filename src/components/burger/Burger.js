@@ -7,7 +7,7 @@ import Link2 from '../other/Link2';
 
 export default function Burger({ isVisible, isVisibleMobileNavSet, isVisibleMobileNav }) {
 
-    const { user, totalNotReadNum } = useContext(Context)
+    const { user, totalNotReadNum, totalNotReadNumSupport } = useContext(Context)
 
     return (
         isVisible &&
@@ -15,7 +15,15 @@ export default function Burger({ isVisible, isVisibleMobileNavSet, isVisibleMobi
             {
                 (totalNotReadNum > 0 || totalNotReadNum?.length > 0) &&
                 <Link2 to={MESSAGES_ROUTE}>
-                    <UserImgWithNotReadNum img={user?.img} name={user?.name} notReadNum={totalNotReadNum} imgClassName="w40 h40" numClassName="w20 h20 l-4 t-2 fz13" />
+                    <UserImgWithNotReadNum
+                        name={user?.name}
+                        img={user?.img}
+                        imgClassName="w40 h40"
+                        notReadNum={totalNotReadNum}
+                        numClassName="w20 h20 l-4 t-2 fz13 zi2"
+                        notReadNumSupport={totalNotReadNumSupport}
+                        numSupportClassName="w20 h20 l24 t-2 fz13 zi2"
+                    />
                 </Link2>
             }
             <div className="hamburger por zi3" >

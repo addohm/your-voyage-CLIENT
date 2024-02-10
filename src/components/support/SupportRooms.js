@@ -9,7 +9,7 @@ export default function SupportRooms() {
 
     return (
         <>
-            <div className="title tac mb">{t("Support")}:</div>
+            <div className="title tac mb mt-15">{t("Support")}:</div>
             <Rooms rooms={roomsSupport} type="support" isLoading={isLoadingSupport} />
         </>
     )
