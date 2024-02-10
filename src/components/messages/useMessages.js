@@ -29,7 +29,7 @@ export default function useMessages(dialogSet) {
                     <div className="fcc">
                         <TextEditor
                             name="msg"
-                            className="maw600"
+                            className="maw600 p15"
                             value={messages?.[messagePreviewClicked2StateWithDelay]?.msg}
                             // valueSet uses localStorage's messagePreviewClicked cause state's messagePreviewClicked is always frozen to 0 inside messagesSet
                             valueSet={(value) => messagesSet(prev => prev.map((message, ind) => ind === Number(localStorage.getItem("messagePreviewClicked") ? localStorage.getItem("messagePreviewClicked") : 0) ? ({ ...message, msg: value }) : message))}

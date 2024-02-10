@@ -27,7 +27,7 @@ export default function RenewSubscription({ link, btnText, ok, msg, error, onCli
                     {t(btnText)}
                 </Button>
                 {/* margin only works this way */}
-                <div className="mb15"></div>
+                <div className="mb30"></div>
             </Link>
         </>
     )

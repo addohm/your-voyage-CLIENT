@@ -43,9 +43,9 @@ export default function Message(props) {
 
                     <div className="por f w100p">
                         <MessageText msg={msg} isContentEditable={isContentEditable} isDeleted={isDeleted} />
-                        <MessageMenu isVisible={!isReplyMode} isMyMsg={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} userId={userId} room={room} isDeleted={isDeleted} createdAt={createdAt} />
+                        <MessageMenu isVisible={!isReplyMode} isMyMsg={isMyMsg} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} userId={userId} room={room} isDeleted={isDeleted} createdAt={createdAt} msg={msg} />
                     </div>
-                    <MessageEdit SaveIcon={() => <Send />} isVisible={isContentEditable} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} userId={userId} room={room} />
+                    <MessageEdit SaveIcon={() => <Send />} isVisible={isContentEditable} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} userId={userId} room={room} msg={msg} />
                     {!isReplyMode &&
                         <div className="fcc g8 mla fz14 por t10">
                             <MessageIsRead isVisible={!isContentEditable} isRead={isRead} isMyMsg={isMyMsg} />

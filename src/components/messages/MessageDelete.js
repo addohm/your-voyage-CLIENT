@@ -4,7 +4,7 @@ import { Context } from '../../Context';
 import { Button } from '@mui/material';
 import t from '../../hooks/useT';
 
-export default function MessageDelete({ isVisible, _id, userId, room, Icon, isRestoring = false }) {
+export default function MessageDelete({ isVisible, _id, userId, room, Icon, isRestoring = false, msg }) {
 
     const { dialogSet } = useContext(Context)
 
@@ -14,6 +14,7 @@ export default function MessageDelete({ isVisible, _id, userId, room, Icon, isRe
     }
 
     const dialogTitle = `${t("Are you sure you want to")} ${isRestoring ? t("restore") : t("delete")} ${t("this message")}?`
+    const shortMsg = msg.length > 120 ? msg.slice(0, 120) + "..." : msg
     const deleteText = t("delete")
     const restoreText = t("restore")
 
@@ -22,13 +23,16 @@ export default function MessageDelete({ isVisible, _id, userId, room, Icon, isRe
             show: true,
             title: dialogTitle,
             children:
-                <Button
-                    onClick={confirmDeleteMessage}
-                    variant="contained"
-                    className={`${isRestoring ? "bg_orange white border_orange" : "bg_danger2 danger2 border_danger2"}`}
-                >
-                    {isRestoring ? restoreText : deleteText}
-                </Button>
+                <>
+                    <div className='w100p tac fsi mb50'>{shortMsg}</div>
+                    <Button
+                        onClick={confirmDeleteMessage}
+                        variant="contained"
+                        className={`${isRestoring ? "bg_orange white border_orange" : "bg_danger2 danger2 border_danger2"}`}
+                    >
+                        {isRestoring ? restoreText : deleteText}
+                    </Button>
+                </>
         })
     }
 

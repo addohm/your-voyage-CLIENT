@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { Context } from '../../Context';
 import useAddFile from '../pages/addPosts/useAddFile';
 
-export default function MessageEdit({ isVisible, isContentEditableSet, isContentEditable, _id, userId, room, SaveIcon }) {
+export default function MessageEdit({ isVisible, isContentEditableSet, isContentEditable, _id, userId, room, SaveIcon, msg: oldMsg }) {
 
     function editMessage() {
         isContentEditableSet(true)
@@ -15,6 +15,7 @@ export default function MessageEdit({ isVisible, isContentEditableSet, isContent
 
     async function saveMessage(e) {
         const msg = e.target.closest(".msg").querySelector(".updatedMessageText").innerText
+        if (msg === oldMsg) return
         await fileArr("/upload/msgContent", pastedOrDroppedImg)
         isContentEditableSet(false)
         await axios("/editMessage", { _id, userId, msg, room, type: "messages" })

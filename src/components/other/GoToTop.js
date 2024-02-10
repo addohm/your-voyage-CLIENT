@@ -3,9 +3,10 @@ import { useLocation } from 'react-router-dom';
 
 export default function GoToTop() {
 
-    const isVisible = window.scrollY
     const location = useLocation().pathname
     const isInMessageLocation = location.includes("/message/") || location.includes("/support/")
+    const reachedBottom = window.scrollY + 1000 > document.body.scrollHeight
+    const isVisible = !isInMessageLocation ? window.scrollY > 0 : !reachedBottom
     const scrollType = isInMessageLocation ? document.body.scrollHeight : 0 // gotoTop / gotoBottom
 
     return (
