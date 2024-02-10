@@ -16,7 +16,7 @@ export default function MessageText({ msg, isContentEditable, isDeleted }) {
                     ?
                     <Markdown className="msgText">{msg}</Markdown>
                     :
-                    <div className="fsi gray">{t("This message has been deleted")}</div>
+                    <div className="fsi gray wsn">{t("This message has been deleted")}</div>
                 }
             </div>
             :

@@ -13,9 +13,10 @@ export default function Burger({ isVisible, isVisibleMobileNavSet, isVisibleMobi
         isVisible &&
         <div className='fcc'>
             {
-                (totalNotReadNum > 0 || totalNotReadNum?.length > 0) &&
+                ((totalNotReadNum > 0 || totalNotReadNumSupport > 0) && !isVisibleMobileNav) &&
                 <Link2 to={MESSAGES_ROUTE}>
                     <UserImgWithNotReadNum
+                        // mobile (outside-menu, near-burger) notReadNum indicator
                         name={user?.name}
                         img={user?.img}
                         imgClassName="w40 h40"

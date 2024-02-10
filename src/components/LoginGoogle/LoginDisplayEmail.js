@@ -46,7 +46,7 @@ export default function LoginDisplayEmail({ user, totalNotReadNum, totalNotReadN
                         notReadNumSupport={totalNotReadNumSupport}
                         numSupportClassName="w20 h20 l24 t-2 fz13 zi2"
                     />
-                    <div className="oh wsn toe">{user?.email?.replace(/@.*/, '')}</div>
+                    <div className="maw125 oh wsn toe">{user?.email?.replace(/@.*/, '')}</div>
                     <Arrow className={`${isUserEmailHovered ? "tr180" : ""}`} />
                 </div>
                 <Menu isVisible={user && isUserEmailHovered} className="poa w100p bg_white zi3 py15 brL bsh blurAnim">
