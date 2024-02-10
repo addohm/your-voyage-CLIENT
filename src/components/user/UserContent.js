@@ -5,19 +5,22 @@ import t from "../../hooks/useT";
 import UserSiteSettings from "./UserSiteSettings";
 import { useContext } from "react";
 import { Context } from "../../Context";
+import NotReadNum from "../other/NotReadNum";
 
 export default function UserContent() {
 
-    const { theme } = useContext(Context)
+    const { theme, totalNotReadNum, totalNotReadNumSupport } = useContext(Context)
     const buttonThemeClassName = `${theme === "dark" ? "cursorArrowRightWhite" : "cursorArrowRightBlack"}`
 
     return (
         <>
             <UserSiteSettings />
             <Link2 to={MESSAGES_ROUTE}>
+                <NotReadNum notReadNum={totalNotReadNum} numClassName="poa w20 h20 l-140 t7 fz13 zi2" />
                 <Button className={buttonThemeClassName} style={{ marginBottom: 10 }} variant='outlined'>{t("Courses")}</Button>
             </Link2>
             <Link2 to={SUPPORTS_ROUTE}>
+                <NotReadNum notReadNum={totalNotReadNumSupport} numClassName="poa w20 h20 l-40 t7 fz13 zi2" />
                 <Button className={buttonThemeClassName} style={{ marginBottom: 10 }} variant='outlined'>{t("Support")}</Button>
             </Link2>
             <Link2 to={FAQ_ROUTE}>

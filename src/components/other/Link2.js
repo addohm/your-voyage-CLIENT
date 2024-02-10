@@ -9,7 +9,7 @@ export default function Link2(props) {
     const visitedLinkClassName = "brandi fw600 btnBrand"
 
     const { isVisibleMobileNavSet } = useContext(Context)
-    const className = `hoverBrandColor hoverFont500 hoverFontTop Link2BtnHover ${location === props.to ? visitedLinkClassName : ""}`
+    const className = `por hoverBrandColor hoverFont500 hoverFontTop Link2BtnHover ${location === props.to ? visitedLinkClassName : ""}`
 
     return (
         <Link
