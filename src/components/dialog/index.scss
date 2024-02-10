@@ -26,9 +26,9 @@
 	}
 }
 
-.dialogCloseIcon{
+.dialogCloseIcon,.dialogBackIcon{
 	@media (width<=$mobile) {
 		position: relative;
-		top: 30px !important;
+		top: 0px !important;
 	}
 }

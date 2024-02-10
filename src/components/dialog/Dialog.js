@@ -19,7 +19,7 @@ export default function Dialog_() {
             className={`fcc ${theme === "dark" ? "darkDialog" : ""}`}
         >
             <div className='f jcsb'>
-                {dialog?.onBack && <ArrowBack className="m10" onClick={() => dialog?.onBack?.()} />}
+                {dialog?.onBack && <ArrowBack className="m10 dialogBackIcon" onClick={() => dialog?.onBack?.()} />}
                 <Close className="mla m10 dialogCloseIcon" onClick={onClose} />
             </div>
             <DialogTitle className="fcc">
