@@ -73,14 +73,21 @@ svg{
 }
 // ? SVG
 
-.hideOnMobile{
+// ! hidden & visible
+.hiddenOnMobile{
     @media (width<=$mobile) {
         display: none !important;
     }
 }
 
-.hideOnTablet{
+.hiddenOnTablet{
     @media (width<=$tablet) {
+        display: none !important;
+    }
+}
+
+.visibleOnMobile{
+    @media (width>$mobile) {
         display: none !important;
     }
 }

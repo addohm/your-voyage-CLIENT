@@ -1,53 +1,53 @@
 // gen mt
-@for $i from 1 through 200 {
+@for $i from 0 through 200 {
 	.mt#{$i} {
         margin-top: #{$i}px;
     }
 }
 // gen - mt
-@for $i from 1 through 200 {
+@for $i from 0 through 200 {
 	.mt-#{$i} {
         margin-top: -#{$i}px;
     }
 }
 // gen mr
-@for $i from 1 through 100 {
+@for $i from 0 through 100 {
 	.mr#{$i} {
         margin-right: #{$i}px;
     }
 }
 // gen mb
-@for $i from 1 through 200 {
+@for $i from 0 through 200 {
 	.mb#{$i} {
         margin-bottom: #{$i}px;
     }
 }
 // gen - mb
-@for $i from 1 through 200 {
+@for $i from 0 through 200 {
 	.mb-#{$i} {
         margin-bottom: -#{$i}px;
     }
 }
 // gen ml
-@for $i from 1 through 100 {
+@for $i from 0 through 100 {
 	.ml#{$i} {
         margin-left: #{$i}px;
     }
 }
 // gen - ml
-@for $i from 1 through 100 {
+@for $i from 0 through 100 {
 	.ml-#{$i} {
         margin-left: -#{$i}px;
     }
 }
 // gen mx
-@for $i from 1 through 100 {
+@for $i from 0 through 100 {
 	.mx#{$i} {
         margin: 0 #{$i}px;
     }
 }
 // gen my
-@for $i from 1 through 100 {
+@for $i from 0 through 100 {
 	.my#{$i} {
         margin: #{$i}px 0;
     }

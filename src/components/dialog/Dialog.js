@@ -6,6 +6,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import './index.scss'
 import { Context } from '../../Context';
 import { ArrowBack, Close } from '@mui/icons-material';
+import DialogIcons from './DialogIcons';
 
 export default function Dialog_() {
 
@@ -18,10 +19,7 @@ export default function Dialog_() {
             onClose={onClose}
             className={`fcc ${theme === "dark" ? "darkDialog" : ""}`}
         >
-            <div className='f jcsb'>
-                {dialog?.onBack && <ArrowBack className="m10 dialogBackIcon" onClick={() => dialog?.onBack?.()} />}
-                <Close className="mla m10 dialogCloseIcon" onClick={onClose} />
-            </div>
+            <DialogIcons dialog={dialog} onClose={onClose} />
             <DialogTitle className="fcc">
                 {dialog?.title}
             </DialogTitle>
