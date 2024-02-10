@@ -11,7 +11,7 @@
     }
 }
 // gen pb
-@for $i from 1 through 100 {
+@for $i from 1 through 200 {
 	.pb#{$i} {
         padding-bottom: #{$i}px;
     }
