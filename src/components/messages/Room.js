@@ -18,7 +18,7 @@ export default function Room({ img, name, room, msg, createdAt, notReadNum, msgI
                 <div className="f fwn g10 mt10">
                     <RoomSmallImg isVisible={msg} msgImg={msgImg} img={img} name={name} senderName={senderName} />
                     <RoomLastMsg msg={msg} msgImg={msgImg} />
-                    <NoMessagesYet isVisible={!msg && !msgImg} className="fsi gray" />
+                    <NoMessagesYet isVisible={msg === undefined} className="fsi gray" />
                 </div>
             </div>
             {createdAt && <div className="mla">{timestampToTime(createdAt)}</div>}
