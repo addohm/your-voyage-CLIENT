@@ -19,6 +19,8 @@ export default function TextEditor(props) { // type: product/article
 
 	const noValue = value?.length === 0
 
+	const [isAutoFocused, isAutoFocusedSet] = useState(true)
+
 	return (
 		(isVisible === undefined || isVisible) &&
 		<div className={`por w100p wbba hya ${className}`}>
@@ -30,6 +32,11 @@ export default function TextEditor(props) { // type: product/article
 				onDrop={onDrop}
 				onDragOver={(e) => e.preventDefault()}
 				placeholder={placeholder}
+				options={{
+					autofocus: isAutoFocused,
+				}}
+				onBlur={() => isAutoFocusedSet(false)}
+				onFocus={() => isAutoFocusedSet(true)}
 			/>
 			<input hidden name={name} value={value} />
 			<InputRequiredNativeTooltip required={noValue} className="c" />
