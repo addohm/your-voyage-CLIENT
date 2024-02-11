@@ -19,7 +19,7 @@ export default function Dialog_() {
             onClose={onClose}
             className={`fcc ${theme === "dark" ? "darkDialog" : ""}`}
         >
-            <DialogIcons dialog={dialog} onClose={onClose} />
+            <DialogIcons />
             <DialogTitle className="fcc tac">
                 {dialog?.title}
             </DialogTitle>

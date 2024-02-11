@@ -24,7 +24,7 @@ export default function CourseDesc(props) {
             children: <div className="fc">
                 <Course {...props} className="ha pb40 mih400" isLongDesc={true} />
                 {/* add additional close icon on mobile: top mobile native (android) menu can hide top dialog icons */}
-                <DialogIcons className="wfc por cx" closeIconClassName="visibleOnMobile mt15" />
+                <DialogIcons className="wfc por cx" closeIconClassName="visibleOnMobile mt15" backIconClassName="dn" />
             </div>,
             onBack: showCoursesDialog
         })
