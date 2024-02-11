@@ -2,19 +2,20 @@ import React, { useContext } from 'react';
 import "./index.scss";
 import UserImgWithNotReadNum from '../other/UserImgWithNotReadNum';
 import { Context } from '../../Context';
-import { MESSAGES_ROUTE } from '../../utils/consts';
+import { MESSAGES_ROUTE, SUPPORTS_ROUTE } from '../../utils/consts';
 import Link2 from '../other/Link2';
 
 export default function Burger({ isVisible, isVisibleMobileNavSet, isVisibleMobileNav }) {
 
     const { user, totalNotReadNum, totalNotReadNumSupport } = useContext(Context)
+    const linkDependingOnWhereMoreMessages = totalNotReadNum >= totalNotReadNumSupport ? MESSAGES_ROUTE : SUPPORTS_ROUTE
 
     return (
         isVisible &&
         <div className='fcc'>
             {
                 ((totalNotReadNum > 0 || totalNotReadNumSupport > 0) && !isVisibleMobileNav) &&
-                <Link2 to={MESSAGES_ROUTE}>
+                <Link2 to={linkDependingOnWhereMoreMessages}>
                     <UserImgWithNotReadNum
                         // mobile (outside-menu, near-burger) notReadNum indicator
                         name={user?.name}
