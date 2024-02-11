@@ -35,7 +35,7 @@ export default function LoginDisplayEmail({ user, totalNotReadNum, totalNotReadN
                 onMouseLeave={onMouseLeave}
                 onClick={onClick}
             >
-                <div className="poa l66 gray fz14">{user?.role !== "user" && user?.role}</div>
+                <div className="poa cx gray fz14">{user?.role !== "user" && user?.role}</div>
                 <div className="fcc g5 w200">
                     <UserImgWithNotReadNum
                         name={user?.name}
