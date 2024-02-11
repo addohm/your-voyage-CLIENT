@@ -3,6 +3,7 @@ import { Context } from "../../Context"
 import Course from "./Course"
 import useCoursesDialog from "./useCoursesDialog"
 import DialogIcons from "../dialog/DialogIcons"
+import MobileDialog from "../dialog/MobileDialog"
 
 export default function CourseDesc(props) {
 
@@ -21,11 +22,9 @@ export default function CourseDesc(props) {
         // show new Dialog with LONG courseDesc course card
         dialogSet({
             show: true,
-            children: <div className="fc">
+            children: <MobileDialog>
                 <Course {...props} className="ha pb40 mih400" isLongDesc={true} />
-                {/* add additional close icon on mobile: top mobile native (android) menu can hide top dialog icons */}
-                <DialogIcons className="wfc por cx" closeIconClassName="visibleOnMobile mt15" backIconClassName="dn" />
-            </div>,
+            </MobileDialog>,
             onBack: showCoursesDialog
         })
     }
