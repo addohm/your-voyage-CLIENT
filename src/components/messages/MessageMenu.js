@@ -24,8 +24,8 @@ export default function MessageMenu({ isVisible, isMyMsg, isContentEditableSet, 
             <Menu isVisible={isMyMsg && isHovered} className="poa r11 t-37 bg_white px5 brL" >
                 {isContentEditable && <ArrowBack onClick={() => isContentEditableSet(false)} />}
                 <MessageEdit SaveIcon={() => <Check />} isVisible={isMyMsg && !isDeleted} isContentEditableSet={isContentEditableSet} isContentEditable={isContentEditable} _id={_id} userId={userId} room={room} msg={msg} />
-                <MessageDelete Icon={() => <Close style={{ marginTop: 3 }} />} isVisible={isMyMsg && !isDeleted} _id={_id} userId={userId} room={room} msg={msg} />
-                <MessageDelete Icon={() => <ReplayOutlined />} isRestoring={true} isVisible={isMyMsg && isDeleted} _id={_id} userId={userId} room={room} msg={msg} />
+                <MessageDelete Icon={() => <Close style={{ marginTop: 3 }} />} isVisible={isMyMsg && !isDeleted} _id={_id} userId={userId} room={room} msg={msg} isContentEditableSet={isContentEditableSet} />
+                <MessageDelete Icon={() => <ReplayOutlined />} isRestoring={true} isVisible={isMyMsg && isDeleted} _id={_id} userId={userId} room={room} msg={msg} isContentEditableSet={isContentEditableSet} />
             </Menu>
         </div>
     )

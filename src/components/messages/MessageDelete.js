@@ -4,13 +4,14 @@ import { Context } from '../../Context';
 import { Button } from '@mui/material';
 import t from '../../hooks/useT';
 
-export default function MessageDelete({ isVisible, _id, userId, room, Icon, isRestoring = false, msg }) {
+export default function MessageDelete({ isVisible, _id, userId, room, Icon, isRestoring = false, msg, isContentEditableSet }) {
 
     const { dialogSet } = useContext(Context)
 
     function confirmDeleteMessage() {
         axios("/deleteMessage", { _id, userId, room, isRestoring, type: "messages" })
         dialogSet({ show: false })
+        isContentEditableSet(false)
     }
 
     const dialogTitle = `${t("Are you sure you want to")} ${isRestoring ? t("restore") : t("delete")} ${t("this message")}?`
@@ -23,7 +24,7 @@ export default function MessageDelete({ isVisible, _id, userId, room, Icon, isRe
             show: true,
             title: dialogTitle,
             children:
-                <>
+                <div className='maw500'>
                     <div className='w100p tac fsi mb50'>{shortMsg}</div>
                     <Button
                         onClick={confirmDeleteMessage}
@@ -32,7 +33,7 @@ export default function MessageDelete({ isVisible, _id, userId, room, Icon, isRe
                     >
                         {isRestoring ? restoreText : deleteText}
                     </Button>
-                </>
+                </div>
         })
     }
 
