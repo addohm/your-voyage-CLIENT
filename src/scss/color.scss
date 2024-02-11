@@ -28,6 +28,7 @@
 .redDiamond{
 	color: #FC3952;
 }
+// ! light theme mode
 .bg{
 	&_gray{
 		background: #dadada;
@@ -58,6 +59,14 @@
 	}
 	&_transparent{
 		background: transparent;	
+	}
+}
+// ! dark theme mode
+.dark{
+	.bg{
+		&_gray{
+			background: #b8b8b8;
+		}
 	}
 }
 .border{
