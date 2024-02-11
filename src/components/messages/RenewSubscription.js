@@ -19,7 +19,7 @@ export default function RenewSubscription({ link, btnText, ok, msg, error, onCli
             <HaveQuestions />
             <Link to={link}>
                 {error && <div className="tac mb danger">{error}</div>}
-                {/* <div className="tac mb">{t(msg)}</div> */}
+                <div className="tac mb">{t(msg)}</div>
                 <Button
                     variant="contained"
                     onClick={onClick}
