@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import TextEditor from "../textEditor/TextEditor"
 import SendMessagePreviews from "./SendMessagePreviews"
 import clickSendMessageIcon from "./clickSendMessageIcon"
+import MobileDialog from "../dialog/MobileDialog"
 
 export default function useMessages(dialogSet) {
 
@@ -22,25 +23,27 @@ export default function useMessages(dialogSet) {
             // title: `for debug: messagePreviewClicked: ${messagePreviewClicked}, messagePreviewClicked2StateWithDelay: ${messagePreviewClicked2StateWithDelay} "localStorage.getItem("messagePreviewClicked")": ${localStorage.getItem("messagePreviewClicked")}`,
             onClose: () => messagesSet([{ msg: "", file: "" }]),
             children:
-                <div className="fc miw100vw mih100vh">
+                <MobileDialog>
+                    <div className="fc miw100vw mih100vh">
 
-                    <SendMessagePreviews messages={messages} messagePreviewClickedSet={messagePreviewClickedSet} messagePreviewClicked={messagePreviewClicked} messagePreviewClicked2StateWithDelaySet={messagePreviewClicked2StateWithDelaySet} />
+                        <SendMessagePreviews messages={messages} messagePreviewClickedSet={messagePreviewClickedSet} messagePreviewClicked={messagePreviewClicked} messagePreviewClicked2StateWithDelaySet={messagePreviewClicked2StateWithDelaySet} />
 
-                    <div className="fcc">
-                        <TextEditor
-                            name="msg"
-                            className="maw600 p15"
-                            value={messages?.[messagePreviewClicked2StateWithDelay]?.msg}
-                            // valueSet uses localStorage's messagePreviewClicked cause state's messagePreviewClicked is always frozen to 0 inside messagesSet
-                            valueSet={(value) => messagesSet(prev => prev.map((message, ind) => ind === Number(localStorage.getItem("messagePreviewClicked") ? localStorage.getItem("messagePreviewClicked") : 0) ? ({ ...message, msg: value }) : message))}
-                            placeholder="...add your message"
-                        />
+                        <div className="fcc">
+                            <TextEditor
+                                name="msg"
+                                className="maw600 p15"
+                                value={messages?.[messagePreviewClicked2StateWithDelay]?.msg}
+                                // valueSet uses localStorage's messagePreviewClicked cause state's messagePreviewClicked is always frozen to 0 inside messagesSet
+                                valueSet={(value) => messagesSet(prev => prev.map((message, ind) => ind === Number(localStorage.getItem("messagePreviewClicked") ? localStorage.getItem("messagePreviewClicked") : 0) ? ({ ...message, msg: value }) : message))}
+                                placeholder="...add your message"
+                            />
 
-                        <div title="ctrl + enter">
-                            <Send onClick={clickSendMessageIcon} className="ml10" />
+                            <div title="ctrl + enter">
+                                <Send onClick={clickSendMessageIcon} className="ml10" />
+                            </div>
                         </div>
                     </div>
-                </div>
+                </MobileDialog>
         })
     }, [messages?.[0]?.file, messagePreviewClicked, messagePreviewClicked2StateWithDelay])
 
