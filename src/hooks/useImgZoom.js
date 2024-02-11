@@ -12,7 +12,7 @@ export default function useImgZoom() {
             children:
                 <img
                     src={e.target.src}
-                    style={{ width: "40vw", height: "40%" }}
+                    style={{ width: "100%", height: "100%", minWidth: "300px" }}
                 />
         })
     }
