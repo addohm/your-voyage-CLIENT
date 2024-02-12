@@ -5,6 +5,7 @@ import Or from "../other/Or"
 import LoginGoogle from "../LoginGoogle/LoginGoogle"
 import t from "../../hooks/useT"
 import { useNavigate } from "react-router-dom"
+import { MAIN_ROUTE } from "../../utils/consts"
 
 export default function useLoginDialog() {
 
@@ -17,7 +18,7 @@ export default function useLoginDialog() {
         dialogSet({
             show: true,
             title: loginTitle,
-            onClose: () => navigate(-1),
+            onClose: () => navigate(MAIN_ROUTE),
             children: <>
                 <LoginEmail />
                 <Or text={orTitle} className="my20" />
