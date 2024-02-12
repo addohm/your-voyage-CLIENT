@@ -1,3 +1,5 @@
 export default function goToBottom() {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+    setTimeout(() => { // wait till MessageReply loads
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+    }, 300);
 }
