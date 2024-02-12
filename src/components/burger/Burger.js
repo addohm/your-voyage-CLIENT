@@ -1,32 +1,27 @@
 import React, { useContext } from 'react';
 import "./index.scss";
-import UserImgWithNotReadNum from '../other/UserImgWithNotReadNum';
 import { Context } from '../../Context';
-import { MESSAGES_ROUTE, SUPPORTS_ROUTE } from '../../utils/consts';
-import Link2 from '../other/Link2';
+import UserImgWithNotReadNumWithLinkToRooms from '../other/UserImgWithNotReadNumWithLinkToRooms';
 
 export default function Burger({ isVisible, isVisibleMobileNavSet, isVisibleMobileNav }) {
 
     const { user, totalNotReadNum, totalNotReadNumSupport } = useContext(Context)
-    const linkDependingOnWhereMoreMessages = totalNotReadNum >= totalNotReadNumSupport ? MESSAGES_ROUTE : SUPPORTS_ROUTE
 
     return (
         isVisible &&
         <div className='fcc'>
             {
                 ((totalNotReadNum > 0 || totalNotReadNumSupport > 0) && !isVisibleMobileNav) &&
-                <Link2 to={linkDependingOnWhereMoreMessages}>
-                    <UserImgWithNotReadNum
-                        // mobile (outside-menu, near-burger) notReadNum indicator
-                        name={user?.name}
-                        img={user?.img}
-                        imgClassName="w40 h40"
-                        notReadNum={totalNotReadNum}
-                        numClassName="w20 h20 l-4 t-2 fz13 zi2"
-                        notReadNumSupport={totalNotReadNumSupport}
-                        numSupportClassName="w20 h20 l24 t-2 fz13 zi2"
-                    />
-                </Link2>
+                <UserImgWithNotReadNumWithLinkToRooms
+                    // mobile (outside-menu, near-burger) notReadNum indicator
+                    name={user?.name}
+                    img={user?.img}
+                    imgClassName="w40 h40"
+                    notReadNum={totalNotReadNum}
+                    numClassName="w20 h20 l-4 t-2 fz13 zi2"
+                    notReadNumSupport={totalNotReadNumSupport}
+                    numSupportClassName="w20 h20 l24 t-2 fz13 zi2"
+                />
             }
             <div className="hamburger por zi3" >
                 <input

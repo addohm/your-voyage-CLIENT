@@ -6,6 +6,7 @@ import Menu from "./Menu";
 import UserContent from "../user/UserContent";
 import UserImgWithNotReadNum from "../other/UserImgWithNotReadNum";
 import useWindowSize from "../../hooks/useWindowSize";
+import UserImgWithNotReadNumWithLinkToRooms from "../other/UserImgWithNotReadNumWithLinkToRooms";
 
 export default function LoginDisplayEmail({ user, totalNotReadNum, totalNotReadNumSupport }) {
 
@@ -37,7 +38,7 @@ export default function LoginDisplayEmail({ user, totalNotReadNum, totalNotReadN
             >
                 <div className="poa cx gray fz14">{user?.role !== "user" && user?.role}</div>
                 <div className="fcc g5 w200">
-                    <UserImgWithNotReadNum
+                    <UserImgWithNotReadNumWithLinkToRooms
                         name={user?.name}
                         img={user?.img}
                         imgClassName="w40 h40"
