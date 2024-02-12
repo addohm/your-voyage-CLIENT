@@ -31,7 +31,7 @@ export default function Dialog_() {
             {/* show bottom close icon on mobile: top mobile native (android) menu can hide top dialog icons */}
             {isMobile &&
                 <div className="fcc">
-                    <DialogIcons closeIconClassName="mb15" backIconClassName="dn" />
+                    <DialogIcons closeIconClassName="mb45" backIconClassName="dn" />
                 </div>
             }
         </Dialog>
