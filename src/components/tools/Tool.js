@@ -1,3 +1,4 @@
+import useWindowSize from "../../hooks/useWindowSize"
 import Animation from "../animation/Animation"
 import ToolCardTitle from "./ToolCardTitle"
 
@@ -5,6 +6,7 @@ export default function Tool({ img, name, ind, toolCardsHidden, onClick }) {
 
     let varHeight = 250 + ind * 20 // add +20px to each next Tool height
     varHeight = "h" + varHeight
+    const { isMobile } = useWindowSize()
 
     return (
         // uncomment for animation
@@ -15,7 +17,7 @@ export default function Tool({ img, name, ind, toolCardsHidden, onClick }) {
             <div className={`w391 brL por ${toolCardsHidden ? "fadeAway" : "db"} tool cursorArrowRightWhite`} onClick={onClick}>
                 <img className={`w100p ofCover ${varHeight} bsh`} src={img} />
                 <div className="fcc">
-                    <ToolCardTitle name={name} animationType="top" />
+                    <ToolCardTitle name={name} animationType={isMobile ? "" : "top"} />
                 </div>
             </div>
         </Animation>
