@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { Context } from "../Context"
+import MobileDialog from "../components/dialog/MobileDialog"
 
 export default function useImgZoom() {
 
@@ -10,10 +11,12 @@ export default function useImgZoom() {
         dialogSet({
             show: true,
             children:
-                <img
-                    src={e.target.src}
-                    style={{ width: "100%", height: "100%", minWidth: "300px" }}
-                />
+                <MobileDialog>
+                    <img
+                        src={e.target.src}
+                        style={{ width: "100%", height: "100%", minWidth: "300px" }}
+                    />
+                </MobileDialog>
         })
     }
 
