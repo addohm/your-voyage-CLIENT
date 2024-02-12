@@ -20,7 +20,7 @@ export default function ToolCardsHiddenTitles({ tools, toolCardsHidden, toolCard
                 return (
                     <>
                         <div className='fcc w100p' onClick={() => onClick(name)}>
-                            <ToolCardTitle name={name} translatedName={t(name)} animationType={isMobile ? "" : "bottom"} toolNameClicked={toolNameClicked} toolCardsHiddenSet={toolCardsHiddenSet} />
+                            <ToolCardTitle name={name} translatedName={t(name)} animationType={isMobile ? "bottom" : "bottom"} toolNameClicked={toolNameClicked} toolCardsHiddenSet={toolCardsHiddenSet} />
                         </div>
                     </>
                 )
