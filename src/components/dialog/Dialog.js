@@ -19,6 +19,8 @@ export default function Dialog_() {
             onClose={onClose}
             className={`fcc ${theme === "dark" ? "darkDialog" : ""}`}
         >
+            {/* fixes not visible DialogTitle, cause of android top menu */}
+            {isMobile && <div className="mt10"></div>}
             {/* show top icons on desktop */}
             {!isMobile && <DialogIcons />}
             <DialogTitle className="fcc tac">
@@ -31,7 +33,7 @@ export default function Dialog_() {
             {/* show bottom close icon on mobile: top mobile native (android) menu can hide top dialog icons */}
             {isMobile &&
                 <div className="fcc">
-                    <DialogIcons closeIconClassName="" backIconClassName="dn" />
+                    <DialogIcons closeIconClassName="mb15" backIconClassName="dn" />
                 </div>
             }
         </Dialog>
