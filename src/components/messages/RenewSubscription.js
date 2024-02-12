@@ -7,9 +7,9 @@ import HaveQuestions from "./HaveQuestions"
 
 export default function RenewSubscription({ link, btnText, ok, msg, error, onClick }) {
 
-    // admin or coach don't need subscription
+    // admin or coach or support don't need subscription
     const { user } = useContext(Context)
-    if (user?.role === "admin" || user?.role === "coach") {
+    if (user?.role === "admin" || user?.role === "coach" || user?.role === "support") {
         ok = true
     }
 

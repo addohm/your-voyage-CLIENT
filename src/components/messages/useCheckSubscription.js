@@ -23,10 +23,10 @@ export default function useCheckSubscription({ type, room }) {
         checkSubscriptionForCoaching()
     }, [])
 
-    // admin or coach don't need subscription
+    // admin or coach or support don't need subscription
     const { user } = useContext(Context)
     useEffect(() => {
-        if (user?.role === "admin" || user?.role === "coach") {
+        if (user?.role === "admin" || user?.role === "coach" || user?.role === "support") {
             subscriptionSet({ ok: true })
         }
     }, [])
