@@ -16,6 +16,7 @@ export default function AllMsgsAndAddMsg({ token, type }) { // type: message/sup
     useSendMessageShortCut()
 
     useEffect(() => { // mark all messages as read when enter the room
+        if (user?.role === "admin") return // prevent admin from reading coach/support messages, so coach/support don't lose notifications
         axios("/markAllMessagesAsRead", { room: token, userId: user?._id })
     }, [])
 

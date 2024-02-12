@@ -13,6 +13,9 @@
 .danger2{
 	color: $danger2 !important;
 }
+.info{
+	color: $info !important;
+}
 .orange{
 	color: $orange !important;
 }
@@ -75,6 +78,9 @@
 	}
 	&_danger2{
 		border: 1px solid $danger2 !important;
+	}
+	&_info{
+		border: 1px solid $info !important;
 	}
 	&_orange{
 		border: 1px solid $orange !important;
