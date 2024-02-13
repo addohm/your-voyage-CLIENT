@@ -8,8 +8,8 @@ export default function Newsletter() {
 
     const { isSubscribedToNewsletter, isLoading } = useNewsletter()
 
-    function subUnSubNewsletter() {
-        axios("/subUnSubNewsletter")
+    async function subUnSubNewsletter() {
+        await axios("/subUnSubNewsletter")
         window.location.reload()
     }
 
