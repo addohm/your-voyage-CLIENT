@@ -498,6 +498,10 @@ export default function useT(key) {
             "en": "No posts yet",
             "zh": "尚无帖子",
         },
+        "time to read": {
+            "en": "time to read",
+            "zh": "观看时间",
+        },
         "000": {
             "en": "000",
             "zh": "111",

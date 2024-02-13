@@ -13,6 +13,8 @@ export default function SendMessagePreviews({ messages, messagePreviewClickedSet
         setTimeout(() => messagePreviewClicked2StateWithDelaySet(ind), 1); // so TextEditor in useMessages can get correct updated index
     }
 
+    const uploadedFilePreviewStyle = (ind) => ind === messagePreviewClicked ? "uploadedFilePreview bd_brand" : "uploadedFilePreview"
+
     return (
         <>
             <div className="tac fcc mb">
@@ -26,13 +28,13 @@ export default function SendMessagePreviews({ messages, messagePreviewClickedSet
                             isFileImg(fileName)
                                 ?
                                 <SendMessagePreviewImg
-                                    className="uploadedFilePreview"
+                                    className={uploadedFilePreviewStyle(ind)}
                                     file={message?.file}
                                     onClick={() => switchMessagePreviewClicked(ind)}
                                 />
                                 :
                                 <MessageFileUploaded
-                                    className="uploadedFilePreview"
+                                    className={uploadedFilePreviewStyle(ind)}
                                     onClick={() => switchMessagePreviewClicked(ind)}
                                     fileName={fileName}
                                 />
@@ -45,7 +47,7 @@ export default function SendMessagePreviews({ messages, messagePreviewClickedSet
                     ?
                     <SendMessagePreviewImg
                         file={mainPreview}
-                        className="db w300 h300 ofCover m0a"
+                        className="db w300 h300 ofCover m0a brL"
                     />
                     :
                     messages?.length === 1 &&

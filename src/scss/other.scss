@@ -40,6 +40,9 @@
 }
 .bd{
 	border: 2px dashed $gray;
+	&_brand{
+		border: 2px dashed $brand !important;
+	}
 }
 .oa{
 	overflow: auto;

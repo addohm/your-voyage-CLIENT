@@ -39,7 +39,7 @@ export default function useMessages(dialogSet) {
                             />
 
                             <div title="ctrl + enter">
-                                <Send onClick={clickSendMessageIcon} className="ml10" />
+                                <Send onClick={clickSendMessageIcon} className="" />
                             </div>
                         </div>
                     </div>

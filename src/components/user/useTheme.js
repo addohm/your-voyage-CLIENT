@@ -13,7 +13,7 @@ export default function useTheme() {
 
         themeSet(localStorage.getItem("theme"))
         // set body background dep on theme to avoid white flash on page load 
-        document.body.style.background = localStorage.getItem("theme") === "dark" || !localStorage.getItem("theme") ? "#1E2127" : "#F2F2F2"
+        document.body.style.background = localStorage.getItem("theme") === "dark" || !localStorage.getItem("theme") ? "#282c34" : "#F2F2F2"
     }, [])
 
     return { theme, themeSet }

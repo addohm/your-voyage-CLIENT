@@ -90,3 +90,13 @@
         height: 55px;
     }
 }
+
+// gen hoverBlur
+@for $i from 0 through 10 {
+	.hoverBlur#{$i} {
+        @include transition;
+        &:hover{
+            filter: blur(#{$i}px);
+        }
+	}
+ }

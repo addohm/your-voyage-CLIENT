@@ -1,4 +1,5 @@
 import { AccessTimeFilledRounded } from '@mui/icons-material'
+import t from "../../hooks/useT"
 
 export default function TimeToReadText({ value }) {
 
@@ -8,9 +9,9 @@ export default function TimeToReadText({ value }) {
 
     return (
         value &&
-        <div className='fc aic mla wfc pen'>
-            <AccessTimeFilledRounded style={{ width: 30, height: 30 }} />
-            <span className="ml5">{timeToReadText(value)}</span>
+        <div className='fc aic mla wfc' title={t("time to read")}>
+            <AccessTimeFilledRounded style={{ width: 30, height: 30, pointerEvents: "none" }} />
+            <span className="ml5 fz14">{timeToReadText(value)}</span>
         </div>
     )
 }

@@ -6,6 +6,8 @@
     max-height: 100vh !important;
 	min-width: 330px !important;
 	min-height: 200px !important;
+	background: rgba(255, 255, 255, 0.8) !important;
+	backdrop-filter: blur(5px) !important;
 	.MuiDialogContent-root{ // hide x-axis scroll
 		overflow-x: hidden !important;
 	}
@@ -15,7 +17,7 @@
 .darkDialog{
 	.MuiDialog-container.MuiDialog-scrollPaper{
 		.MuiPaper-root{
-			background: $dark300 !important;
+			background: rgba(40, 44, 52, 0.8) !important; // $dark300 with alpha chanel 0.8
 		}
 	}
 	* {
