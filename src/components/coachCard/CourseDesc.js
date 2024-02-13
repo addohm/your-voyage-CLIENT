@@ -9,7 +9,7 @@ export default function CourseDesc(props) {
 
     const { courseDesc, isLongDesc } = props
     const { dialogSet } = useContext(Context)
-    const charsLimit = 150
+    const charsLimit = 140
     const shortDesc = courseDesc?.length <= charsLimit
     const longDesc = (courseDesc?.length > charsLimit) && !isLongDesc
     const { showCoursesDialog } = useCoursesDialog()
