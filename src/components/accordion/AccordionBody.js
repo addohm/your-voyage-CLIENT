@@ -12,7 +12,7 @@ export default function AccordionBody({ title, text, className, ind, expanded, h
                 aria-controls="panel1bh-content"
                 id="panel1bh-header"
             >
-                <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                <Typography sx={{ width: '95%', flexShrink: 0 }}>
                     {title}
                 </Typography>
             </AccordionSummary>
