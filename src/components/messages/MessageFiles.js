@@ -12,7 +12,7 @@ export default function MessageFiles({ file, isVisible = true }) {
     return (
         isFileImg(fileNameOnServer)
             ?
-            <img key={file} src={file} className="w100p p15" onClick={imgZoom} />
+            <img key={file} src={file} className="w100p p15 curZoomIn" onClick={imgZoom} />
             :
             file &&
             <MessageFileUploaded

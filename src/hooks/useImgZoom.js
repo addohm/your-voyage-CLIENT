@@ -14,7 +14,7 @@ export default function useImgZoom() {
                 <MobileDialog>
                     <img
                         src={e.target.src}
-                        style={{ width: "100%", height: "100%", minWidth: "300px" }}
+                        style={{ width: "100%", height: "100%", minWidth: "300px", minWidth: "50vw" }}
                     />
                 </MobileDialog>
         })
