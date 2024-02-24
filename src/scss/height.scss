@@ -20,7 +20,7 @@
 	}
  }
 // gen height
-@for $i from 0 through 500 {
+@for $i from 0 through 550 {
 	.h#{$i} {
         height: #{$i}px;
 	}
