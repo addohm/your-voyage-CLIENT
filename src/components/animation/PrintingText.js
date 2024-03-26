@@ -20,6 +20,6 @@ export default function PrintingText({ text, className, time = 10 }) {
     return (
         // UNCOMMENT TO WORK
         // <p className={`font2 ${className}`}>{stateText}</p>
-        text
+        <p className={`font2 ${className}`}>{text}</p>
     )
 }

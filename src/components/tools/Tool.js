@@ -12,7 +12,7 @@ export default function Tool({ img, name, ind, toolCardsHidden, onClick }) {
         // uncomment for animation
         // !toolCardsHidden &&
         <Animation
-        // type="left" delay={ind / 2}
+            type="left" delay={ind / 2}
         >
             <div className={`w391 brL por ${toolCardsHidden ? "fadeAway" : "db"} tool cursorArrowRightWhite`} onClick={onClick}>
                 <img className={`w100p ofCover ${varHeight} bsh hoverBlur1`} src={img} />

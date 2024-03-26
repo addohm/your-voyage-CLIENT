@@ -37,7 +37,7 @@ export default function Course(props) {
         <Link to={stripeLink} onClick={checkApplierFormFilled}>
             <div className={`por course bg_white zi3 cardAnim ${className || ""}`} onClick={chooseCourse} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
                 <CourseLabel isCourseHovered={isHovered} courseLabel={courseLabel} courseLabelColor={courseLabelColor} isHovered={isHovered} />
-                <div className="fcc m15">
+                <div className="fcc mt15">
                     <CourseImg img={img} img2={img2} />
                     <div className="mt10 w100p">
                         <div className="tac fcc ttu fw500 fz20 textLines2" title={coachName}>{coachName}</div>

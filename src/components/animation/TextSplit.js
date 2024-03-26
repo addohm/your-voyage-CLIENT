@@ -10,10 +10,10 @@ export default function TextSplit({ str, isColor = false }) {
 
     return (
         // UNCOMMENT TO WORK
-        // <div ref={ref}>
-        //     {str && str?.split("")?.map((char, ind) => <span key={ind} onMouseEnter={() => onMouseEnter(ind)} className={`hoverBrandColor hoverFont500 hoverFontTop letter${ind}`}>{char}</span>)}
-        // </div>
+        <div ref={ref}>
+            {str && str?.split("")?.map((char, ind) => <span key={ind} onMouseEnter={() => onMouseEnter(ind)} className={`hoverBrandColor hoverFont500 hoverFontTop letter${ind}`}>{char}</span>)}
+        </div>
         // WITHOUT ANIMATION
-        str
+        // str
     )
 }

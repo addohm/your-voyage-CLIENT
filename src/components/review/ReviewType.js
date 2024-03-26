@@ -4,7 +4,7 @@ import './index.scss'
 export default function ReviewType({ type }) {
     return (
         <Animation
-        // type="right"
+            type="right"
         >
             <div className='brand reviewType'>{type}</div>
         </Animation>

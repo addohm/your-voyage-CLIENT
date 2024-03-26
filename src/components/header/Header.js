@@ -45,7 +45,7 @@ export default function Header() {
 
     return (
         <>
-            <header className={`header pof t0 l0 w100p zi9 fcc jcsb p15 bg_white zi2 ${isHovered || isVisible ? "op1 transition05" : "op0 transition05"} ${(location !== MAIN_ROUTE && !isInExactChatLocation) ? "headerFadeIn" : ""}`} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
+            <header className={`header pof t0 l0 w100p zi9 fcc jcsb p15 ${!isMobile ? "glass" : "bg_white"} zi2 ${isHovered || isVisible ? "op1 transition05" : "op0 transition05"} ${(location !== MAIN_ROUTE && !isInExactChatLocation) ? "headerFadeIn" : ""}`} onMouseEnter={() => isHoveredSet(true)} onMouseLeave={() => isHoveredSet(false)}>
                 <HeaderLogo isVisibleMobileNavSet={isVisibleMobileNavSet} />
                 <Burger isVisible={isMobile} isVisibleMobileNavSet={isVisibleMobileNavSet} isVisibleMobileNav={isVisibleMobileNav} />
                 <HeaderNav isVisible={!isMobile} />

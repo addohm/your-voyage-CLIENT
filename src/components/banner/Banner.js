@@ -13,7 +13,7 @@ export default function Banner() {
             <div className='por banner__imgWrap'>
                 <LeftTitle className="poa cx b10 banner__imgLeftTitle" text={t("Let's explore")} />
                 <Animation
-                //  type="blur"
+                    type="blur"
                 >
                     <img src={img} className='banner__img removedhoverMainImg' />
                 </Animation>
@@ -22,14 +22,14 @@ export default function Banner() {
                 <Arrow className="mx30 banner__arrow transition15" />
                 <div className='fc'>
                     <Animation
-                    //  type="right"
+                        type="right"
                     >
                         <p className='banner__textp1'>
                             <TextSplit isColor={true} str={t("Let's embrace")} />
                         </p>
                     </Animation>
                     <Animation
-                    //  type="right" delay={1}
+                        type="right" delay={1}
                     >
                         <p className='banner__textp2'>
                             <TextSplit isColor={false} str={t("Feeling lost")} />

@@ -9,7 +9,7 @@ export default function Exp({ img, position, company, ind, isExpHoveredSet, comp
 
     return (
         <Animation
-        // type="bottomRight" delay={ind / 10}
+            type="bottomRight" delay={ind / 10}
         >
             <div
                 className='fcc wfc exp'
