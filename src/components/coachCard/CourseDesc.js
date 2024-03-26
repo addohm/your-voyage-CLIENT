@@ -2,14 +2,13 @@ import { useContext } from "react"
 import { Context } from "../../Context"
 import Course from "./Course"
 import useCoursesDialog from "./useCoursesDialog"
-import DialogIcons from "../dialog/DialogIcons"
 import MobileDialog from "../dialog/MobileDialog"
 
 export default function CourseDesc(props) {
 
     const { courseDesc, isLongDesc } = props
-    const { dialogSet } = useContext(Context)
-    const charsLimit = 140
+    const { dialogSet, lang } = useContext(Context)
+    const charsLimit = lang === "en" ? 190 : 110
     const shortDesc = courseDesc?.length <= charsLimit
     const longDesc = (courseDesc?.length > charsLimit) && !isLongDesc
     const { showCoursesDialog } = useCoursesDialog()
