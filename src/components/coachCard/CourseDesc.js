@@ -32,7 +32,7 @@ export default function CourseDesc(props) {
     return (
         courseDesc &&
         <div
-            className={`tac fcc gray ${longDesc ? "cursorArrowRight" : ""}`}
+            className={`p10 tac fcc gray ${longDesc ? "cursorArrowRight" : ""}`}
             onClick={showCourseWithFullDesc}
         >
             {isLongDesc ? courseDesc : courseDesc?.slice(0, charsLimit)}
