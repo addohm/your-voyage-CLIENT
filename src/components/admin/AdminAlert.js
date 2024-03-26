@@ -4,7 +4,7 @@ export default function AdminAlert() {
     return (
         <For role="admin">
             <div
-                className="border_info info maw500 tac p15 brL mb30 wfc por cx mt-15"
+                className="border_info info maw500 tac p15 brL wfc por cx mr30 mb30"
             >
                 admin cannot mark messages as "read" to prevent coaches / support from losing their notifications...
             </div>
